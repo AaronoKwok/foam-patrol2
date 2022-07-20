@@ -15,13 +15,13 @@ function Header() {
                 <p>SURF TRIPS  &nbsp;<i className="arrow down"></i></p>
                 <p>ABOUT &nbsp;<i className="arrow down"></i></p>
                 <p>BOOK NOW</p>
-                <p>CONTACT US</p>
+                <Link to="/contactUs"><p>CONTACT US</p></Link>
                 <button className="courses">ONLINE COURSES</button>
             </section>
             {/* <button onClick={changeAesthetic}></button>  */}
             <section className="socials">
-                <img src={githubSVG} alt=""></img>
-                <img src={linkedinSVG} alt=""></img>
+                <a target="_blank" href="https://github.com/AaronoKwok" rel="noreferrer"><img src={githubSVG} alt=""></img></a>
+                <a target="_blank" href="https://www.linkedin.com/in/aaronkwok1/" rel="noreferrer"><img src={linkedinSVG} alt=""></img></a>
             </section> 
         </header>
     )
