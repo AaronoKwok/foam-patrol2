@@ -1,9 +1,9 @@
 import React from "react"
 import {Routes, Route} from "react-router-dom" 
 
-import Header from "./components/header"
-import ContactUs from "./components/contactUs"
-import AboutUs from "./components/aboutUs"
+import Header from "./components/Header"
+import ContactUs from "./components/ContactUs"
+import BookNow from "./components/BookNow"
 
 function App() {
     return (
@@ -12,7 +12,7 @@ function App() {
 
             <Routes>
                 <Route path="/contactUs" element={<ContactUs />} />
-                <Route path="/aboutUs" element={<AboutUs />} />
+                <Route path="/bookNow" element={<BookNow />} />
             </Routes>
         </div>
     )

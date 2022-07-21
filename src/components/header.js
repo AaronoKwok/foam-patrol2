@@ -14,7 +14,7 @@ function Header() {
             <section className="barInNav">
                 <p>SURF TRIPS  &nbsp;<i className="arrow down"></i></p>
                 <p>ABOUT &nbsp;<i className="arrow down"></i></p>
-                <p>BOOK NOW</p>
+                <Link to="/bookNow"><p>BOOK NOW</p></Link>
                 <Link to="/contactUs"><p>CONTACT US</p></Link>
                 <button className="courses">ONLINE COURSES</button>
             </section>
