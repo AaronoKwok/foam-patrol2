@@ -1,15 +1,12 @@
-import React, {useHistory} from "react" 
+import React from "react" 
 import {Link} from "react-router-dom"
-//import {Context} from "../Context"
-import Logo from "./Logo"
 
+import Logo from "./Logo"
 import githubSVG from "../images/github.svg"
-import linkedinSVG from "../images/linkedin.svg"
+import linkedinSVG from "../images/linkedin.svg" 
+
 
 function Header() {
-    //const {changeAesthetic} = useContext(Context)
-    //maybe put border color change in state
-
     return (
         <header className="navbar">
 
@@ -31,7 +28,7 @@ function Header() {
             </div> 
 
             {/* <button>Login</button> */}
-            
+
         </header>
     )
 }

@@ -89,6 +89,10 @@ section > p:active{
 
 /* Logo   */
 
+.logo {
+  cursor: pointer;
+}
+
 .travel {
   color: rgb(71, 180, 194);
 }
