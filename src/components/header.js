@@ -1,4 +1,4 @@
-import React from "react" 
+import React, {useHistory} from "react" 
 import {Link} from "react-router-dom"
 //import {Context} from "../Context"
 
@@ -9,20 +9,21 @@ function Header() {
     //const {changeAesthetic} = useContext(Context)
 
     return (
-        <header>
+        <header className="navbar">
             <h1>Logo</h1>
-            <section className="barInNav">
-                <p>SURF TRIPS  &nbsp;<i className="arrow down"></i></p>
-                <p>ABOUT &nbsp;<i className="arrow down"></i></p>
-                <Link to="/bookNow"><p>BOOK NOW</p></Link>
-                <Link to="/contactUs"><p>CONTACT US</p></Link>
-                <button className="courses">ONLINE COURSES</button>
+            <section className="whiteInNav">
+                <p className="navbuttons">SURF TRIPS &nbsp;<i className="arrow down"></i></p>
+                <p className="navbuttons">ABOUT &nbsp;<i className="arrow down"></i></p>
+                <p className="navbuttons "><Link to="/bookNow">BOOK NOW</Link></p>
+                <p className="navbuttons "><Link to="/contactUs">CONTACT US</Link></p>
+                <p className="navbuttons"><Link to="/onlineCourses">ONLINE COURSES</Link></p>
             </section>
-            {/* <button onClick={changeAesthetic}></button>  */}
-            <section className="socials">
-                <a target="_blank" href="https://github.com/AaronoKwok" rel="noreferrer"><img src={githubSVG} alt=""></img></a>
-                <a target="_blank" href="https://www.linkedin.com/in/aaronkwok1/" rel="noreferrer"><img src={linkedinSVG} alt=""></img></a>
-            </section> 
+                {/* <button onClick={changeAesthetic}></button>  */}
+            <div className="socials">
+                <a className="gh" target="_blank" href="https://github.com/AaronoKwok" rel="noreferrer"><img src={githubSVG} alt=""></img></a>
+                <a className="lkn" target="_blank" href="https://www.linkedin.com/in/aaronkwok1/" rel="noreferrer"><img src={linkedinSVG} alt=""></img></a>
+            </div> 
+            {/* <button>Login</button> */}
         </header>
     )
 }
