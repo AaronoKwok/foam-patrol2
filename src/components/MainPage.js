@@ -2,9 +2,9 @@ import React from "react"
 import {Routes, Route} from "react-router-dom" 
 //import {Context} from "../Context"
 
-import ContactUs from "./ContactUs"
-import BookNow from "./BookNow"
-import OnlineCourses from "./OnlineCourses"
+import ContactUs from "../pages/ContactUs"
+import BookNow from "../pages/BookNow"
+import OnlineCourses from "../pages/OnlineCourses"
 
 import Header from "./Header"
 
