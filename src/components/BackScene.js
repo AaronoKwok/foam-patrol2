@@ -2,7 +2,7 @@ import React from "react"
 
 function BackScene() {
     return (
-        <div>iamge here positioning</div>
+        <div>background img here, look @ pos</div>
     )
 }
 
