@@ -11,11 +11,20 @@ function Header() {
     const [trips, setTrips] = useState(false)
     const [abouts, setAbouts] = useState(false)
 
-    const displayTrips = trips ? <SurfTrips /> : null
-    const displayAbout = abouts ? <About /> : null
+    const displayTrips = trips === true ? <SurfTrips /> : null
+    const displayAbout = abouts === true ? <About /> : null
 
     function surfTrips() {
-        setTrips(!trips)
+  
+            setTrips(() => {
+                if (trips === false) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+     
+  
     }
 
     function about() {
