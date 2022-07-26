@@ -23,9 +23,9 @@ nav {
   position: fixed; 
   display: flex; 
   color: var(--black);
-  height: 75px;
+  height: 70px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.05);
   justify-content: space-around;
   align-items: center;
   padding: 0px 45px;
@@ -42,6 +42,9 @@ nav {
   width: 700px;
   background-color: white;
   height: 100%;
+  margin-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 } 
 
 .navbuttons {
@@ -55,6 +58,7 @@ nav {
 .socials {
   display: flex; 
   margin-right: 90px; 
+  margin-left: 15px;
 }
 
 .gh, .lkn {
@@ -103,7 +107,11 @@ a:visited {
 /* Main Page rotating background image */
 
 .backgroundImgPos {
-  position: 
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: 0% 60%;
 }
 
 /* SurfTrips drop down */

@@ -3,8 +3,8 @@ import testimg from "../images/barrel.png"
 
 function BackScene() {
     return (
-        <div className="backgroundImgPos">
-            <img src={testimg} alt="" />
+        <div>
+            <img className="backgroundImgPos" src={testimg} alt="" />
         </div>
     )
 }
