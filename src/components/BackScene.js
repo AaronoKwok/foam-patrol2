@@ -1,8 +1,11 @@
 import React from "react" 
+import testimg from "../images/barrel.png"
 
 function BackScene() {
     return (
-        <div>background img here, look @ pos</div>
+        <div className="backgroundImgPos">
+            <img src={testimg} alt="" />
+        </div>
     )
 }
 

@@ -2,6 +2,7 @@
   --black: black;
   --blue: blue;
   --noHover: 1px solid rgb(145, 145, 145);
+  
 }
 
 * {
@@ -19,10 +20,12 @@ body {
 /* Header  */
 
 nav {
+  position: fixed; 
   display: flex; 
   color: var(--black);
   height: 75px;
-  background-color: rgba(0, 0, 0, 0.02);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.04);
   justify-content: space-around;
   align-items: center;
   padding: 0px 45px;
@@ -46,6 +49,7 @@ nav {
   border: var(--noHover);
   border-radius: 5px;
   cursor: pointer;
+  transition: all .1s ease;
 }
 
 .socials {
@@ -80,12 +84,10 @@ a:visited {
   text-decoration: none;
 }
 
-/* .coChange:active{
-  background-color: rgb(215, 255, 255);
-} */
-
 .coChange:active {
-  box-shadow: -5px -5px 5px 5px rgb(215, 255, 255) inset;
+  box-shadow:         0px 0px 7px 8px rgb(215, 255, 255) inset;
+  -webkit-box-shadow: 0px 0px 7px 8px rgb(215, 255, 255) inset;
+  -moz-box-shadow:    0px 0px 7px 8px rgb(215, 255, 255) inset;
 }
 
 /* Logo  */
@@ -96,6 +98,12 @@ a:visited {
 
 .travel {
   color: rgb(71, 180, 194);
+}
+
+/* Main Page rotating background image */
+
+.backgroundImgPos {
+  position: 
 }
 
 /* SurfTrips drop down */
@@ -109,3 +117,4 @@ a:visited {
 
   background-color: rgba(77, 255, 255, 0.527); 
 }
+
