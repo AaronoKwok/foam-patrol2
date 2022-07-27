@@ -7,7 +7,16 @@ import sunsetlb from "../images/sunsetlb.png"
 import emptywave from "../images/emptywave.png"  
 
 function BackScene() {
-    const [index, setIndex] = useState(0);
+    return (
+        <div>
+            <img className="background-image" src={emptywave} alt="" />
+        </div>
+    )
+}
+
+export default BackScene;
+
+   /*  const [index, setIndex] = useState(0);
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex)
@@ -67,7 +76,4 @@ function BackScene() {
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
-    );
-}
-
-export default BackScene;
+    ); */
