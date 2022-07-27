@@ -10,9 +10,9 @@ function Logo() {
 
     return (
         <div className="logo" onClick={handleClick}>
-            <p>FOAM</p>
-            <p>PATROL.</p>
-            <p className="travel">TRAVEL</p>
+            <p className="logoSpacing">FOAM</p>
+            <p className="logoSpacing">PATROL.</p>
+            <p className="travel logoSpacing">TRAVEL</p>
         </div>
     )
 }

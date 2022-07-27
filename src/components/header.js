@@ -32,7 +32,7 @@ function Header() {
     }
 
     return (
-        <header >
+        <header>
 
             <nav>
                 <Logo />
