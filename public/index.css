@@ -29,10 +29,11 @@ nav {
   align-items: center;
   padding: 0px 45px;
   letter-spacing: .05em;
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15)
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
-.whiteInNav {
+.white-in-nav {
   width: 700px;
   height: 70px;
   font-size: .70em;
@@ -47,7 +48,7 @@ nav {
   padding-top: 15px;
 } 
 
-.navbuttons {
+.nav-button {
   padding: 8px;
   border: var(--border);
   border-radius: 5px;
@@ -89,7 +90,7 @@ a:visited {
   text-decoration: none;
 }
 
-.coChange:active {
+.color-change:active {
   box-shadow:         0px 0px 7px 8px rgb(215, 255, 255) inset;
   -webkit-box-shadow: 0px 0px 7px 8px rgb(215, 255, 255) inset;
   -moz-box-shadow:    0px 0px 7px 8px rgb(215, 255, 255) inset;
@@ -101,7 +102,7 @@ a:visited {
   cursor: pointer;
 }
 
-.logoSpacing {
+.logo-spacing {
   margin: -5px; 
   padding: 0px; 
 }
@@ -110,7 +111,7 @@ a:visited {
   color: rgb(71, 180, 194);
 }
 
-/* Main Page rotating background image */
+/* Main Page rotating background image. numbered*/
 
 .backgroundImgPos {
   width: 100%;
@@ -122,7 +123,7 @@ a:visited {
 
 /* SurfTrips drop down */
 
-.surfTripdd {
+.trips-drop-down {
   position: fixed;
   top: 55px;
   left: 20%;

@@ -2,7 +2,7 @@ import React from "react"
 
 function SurfTrips() {
     return (
-        <div className="surfTripdd">
+        <div className="trips-drop-down">
             drop down trips
         </div>
     )

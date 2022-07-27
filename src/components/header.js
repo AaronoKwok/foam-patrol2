@@ -37,13 +37,13 @@ function Header() {
             <nav>
                 <Logo />
 
-                <section className="whiteInNav">
-                    <p className="navbuttons" onMouseEnter={surfTrips} onMouseLeave={surfTrips}>SURF TRIPS &nbsp;<i className="arrow down"></i></p>
-                    <p className="navbuttons" onMouseEnter={about} onMouseLeave={about}>ABOUT &nbsp;<i className="arrow down"></i></p>
+                <section className="white-in-nav">
+                    <p className="nav-button" onMouseEnter={surfTrips} onMouseLeave={surfTrips}>SURF TRIPS &nbsp;<i className="arrow down"></i></p>
+                    <p className="nav-button" onMouseEnter={about} onMouseLeave={about}>ABOUT &nbsp;<i className="arrow down"></i></p>
 
-                    <Link to="/bookNow"><p className="navbuttons coChange">BOOK NOW</p></Link>
-                    <Link to="/contactUs"><p className="navbuttons coChange">CONTACT US</p></Link>
-                    <Link to="/onlineCourses"><p className="navbuttons coChange">ONLINE COURSES</p></Link>
+                    <Link to="/bookNow"><p className="nav-button color-change">BOOK NOW</p></Link>
+                    <Link to="/contactUs"><p className="nav-button color-change">CONTACT US</p></Link>
+                    <Link to="/onlineCourses"><p className="nav-button color-change">ONLINE COURSES</p></Link>
                 </section>
 
                     {/* <button onClick={changeAesthetic}></button>  */}
