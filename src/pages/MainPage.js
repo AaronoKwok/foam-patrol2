@@ -9,6 +9,7 @@ function MainPage() {
     return (
         <main>
             <BackScene />
+            
         </main>
     )
 }

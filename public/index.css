@@ -22,7 +22,7 @@ nav {
   position: fixed; 
   display: flex; 
   color: var(--black);
-  height: 70px;
+  height: 75px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.7);
   justify-content: space-around;
@@ -35,32 +35,36 @@ nav {
 
 .white-in-nav {
   width: 700px;
-  height: 70px;
+  height: 75px;
   font-size: .70em;
   font-weight: bold; 
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
   background-color: white;
   margin-left: 15px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 15px;
+  padding-top: 14px; 
 } 
 
 .nav-button {
-  padding: 8px;
   border: var(--border);
   border-radius: 5px;
   cursor: pointer;
   transition: all .1s ease;
+  padding: 5px;
+}
+
+.nav-link {
+  margin: 0px; 
+  padding: 0px; 
 }
 
 .socials {
   display: flex; 
   margin-right: 90px; 
   margin-left: 15px;
-  
 }
 
 .gh, .lkn {
@@ -81,13 +85,11 @@ nav {
   margin-bottom: 2.5px; 
 }
 
-a:link {
-  color: black; 
-  text-decoration: none;
-}
-a:visited {
+.nav-link:link {
   color: black;
-  text-decoration: none;
+}
+.nav-link:visited {
+  color: black;
 }
 
 .color-change:active {
@@ -113,12 +115,37 @@ a:visited {
 
 /* Main Page rotating background image. numbered*/
 
+.background {
+  position: relative;
+  
+}
+
 .background-image {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   overflow: hidden;
   object-fit: cover;
-  object-position: 0% 60%;
+  object-position: 0% 55%;
+}
+
+/* backscene text */
+
+.backscene-text {
+  position: absolute;
+  top: 100px;
+  color: white;
+}
+
+.wave {
+  width: 50px;
+}
+
+.image-h1 {
+  
+}
+
+.backscene-links {
+  color: white;
 }
 
 /* SurfTrips drop down */
@@ -129,7 +156,7 @@ a:visited {
   left: 20%;
   height: 200px; 
   width: 60%;
-
+  z-index: 2;
   background-color: rgba(77, 255, 255, 0.527); 
 }
 
