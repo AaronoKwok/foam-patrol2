@@ -19,6 +19,7 @@ body {
 /* Header  */
 
 nav {
+  letter-spacing: .05em;
   position: fixed; 
   display: flex; 
   color: var(--black);
@@ -28,7 +29,6 @@ nav {
   justify-content: space-around;
   align-items: center;
   padding: 0px 45px;
-  letter-spacing: .05em;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
@@ -45,7 +45,6 @@ nav {
   margin-left: 15px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 14px; 
 } 
 
 .nav-button {
@@ -54,6 +53,7 @@ nav {
   cursor: pointer;
   transition: all .1s ease;
   padding: 5px;
+  margin: 0px; 
 }
 
 .nav-link {
@@ -131,22 +131,48 @@ nav {
 /* backscene text */
 
 .backscene-text {
+  letter-spacing: .04em;
   position: absolute;
-  top: 100px;
+  left: 40px; 
+  top: 180px; 
   color: white;
+  text-align: left;
 }
 
 .wave {
-  width: 50px;
+  width: 80px;
+  margin-bottom: 25px; 
 }
 
 .image-h1 {
-  
+  font-weight: bold;
+}
+
+.description-on-backscene {
+  font-size: 1.3em;
 }
 
 .backscene-links {
+  width: 800px;
+}
+
+.link-loc {
+  margin-right: 100px; 
+
+}
+
+.link-loc.color-change:active {
   color: white;
 }
+.link-loc:visited {
+  color: white;
+}
+.link-loc:hover {
+  text-decoration: underline;
+  color: rgb(177, 177, 177);
+}
+
+
 
 /* SurfTrips drop down */
 

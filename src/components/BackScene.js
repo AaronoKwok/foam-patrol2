@@ -1,17 +1,17 @@
 import React, {useState} from "react" 
 //import Carousel from 'react-bootstrap/Carousel';
 
-/* import barrel from "../images/barrel.png"
-import coupleBus from "../images/couplebus.png" 
-import sunsetlb from "../images/sunsetlb.png"  */ 
+import barrel from "../images/barrel.png"
+import sunsetlb from "../images/sunsetlb.png"  
 import emptywave from "../images/emptywave.png" 
+import marWave from "../images/margarita-salyek-wave.png"
 
 import BacksceneText from "./BacksceneText" 
 
 function BackScene() {
     return (
         <div className="background">
-            <img className="background-image" src={emptywave} alt="" />
+            <img className="background-image" src={marWave} alt="" />
             <BacksceneText />                
             <div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div>
         </div>
