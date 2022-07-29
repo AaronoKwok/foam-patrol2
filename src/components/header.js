@@ -1,4 +1,4 @@
-import React, {useState} from "react" 
+import React, {useState, useEffect} from "react" 
 import {Link} from "react-router-dom"
 
 import Logo from "./Logo"
@@ -15,16 +15,13 @@ function Header() {
     const displayAbout = abouts === true ? <About /> : null
 
     function surfTrips() {
-  
-            setTrips(() => {
-                if (trips === false) {
-                    return true
-                } else {
-                    return false
-                }
-            })
-     
-  
+        setTrips(() => {
+            if (trips === false) {
+                return true
+            } else {
+                return false
+            }
+        })
     }
 
     function about() {

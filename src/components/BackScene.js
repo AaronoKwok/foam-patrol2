@@ -13,14 +13,15 @@ function BackScene() {
         <div className="background">
             <img className="background-image" src={marWave} alt="" />
             <BacksceneText />                
-            <div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div><div>d</div>
         </div>
     )
 }
 
 export default BackScene;
 
-   /*  const [index, setIndex] = useState(0);
+   /*  CAROUSEL didnt work
+   
+   const [index, setIndex] = useState(0);
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex)

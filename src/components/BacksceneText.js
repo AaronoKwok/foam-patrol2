@@ -6,7 +6,10 @@ function BacksceneText() {
     return (
         <div className="backscene-text">
             <img className="wave" src={wave} alt=""/>
-            <h1 className="image-h1">The most consistent surf <br /> spots on earth.</h1>
+            <div>
+                <h1 className="image-h1 image-h1-margin">The most consistent surf</h1>
+                <h1 className="image-h1">spots on earth.</h1>
+            </div>
             <p className="description-on-backscene">Retreats only occur during optimal surf seasons for your level.</p>
             <div className="backscene-links">
                 <a className="link-loc" href="#">Costa Rica</a>
