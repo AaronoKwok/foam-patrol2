@@ -6,10 +6,13 @@ import courseData from '../courseData.json'
 //import {Context} from "../Context"
 
 import BackScene from "../components/BackScene"
+import Course from "../components/Course"
 
 function MainPage() {
-
-console.log(JSON.parse())
+    console.log(courseData)
+    const courses = courseData.map((course) => {
+        return <Course key={course.id}/>
+    })
 
     return (
         <main>
@@ -30,7 +33,10 @@ console.log(JSON.parse())
 
             <section className="browse-courses">
 
-                <h1 className="courses-h1">Discover our Online Surf Courses</h1>
+                <p className="courses-p">Discover our Online Surf Courses</p>
+                <div className="courses-layout">
+                    {courses}
+                </div>
 
             </section>
 

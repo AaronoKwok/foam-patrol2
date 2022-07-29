@@ -2,7 +2,8 @@
   --black: black;
   --blue: blue;
   --border: 1px solid rgb(145, 145, 145);
-  
+  --des-size: 1.7em;
+  --des-weight: 600;
 }
 
 * {
@@ -63,7 +64,7 @@ nav {
 
 .socials {
   display: flex; 
-  margin-right: 90px; 
+  margin-right: 80px; 
   margin-left: 15px;
 }
 
@@ -108,6 +109,7 @@ nav {
 
 .logo {
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .logo-spacing {
@@ -198,17 +200,17 @@ nav {
 
 .main-info {
   height: 290px; 
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .main-info-paragraph {
-  width: 330px;
+  width: 300px;
   text-align: right;
-  font-size: 1.7em;
-  font-weight: 600; 
+  font-size: var(--des-size);
+  font-weight: var(--des-weight); 
   margin-right: 15px; 
 }
 
@@ -230,14 +232,19 @@ nav {
 
 .browse-courses { 
   height: 450px;
-  display: flex; 
-  justify-content: center;
   background-color: rgb(200, 255, 127);
-
+  display: flex; 
+  align-items: center;
+  flex-direction: column;
 }
 
-.courses-h1 {
-  font-size: 1.75em;
+.courses-p {
+  font-size: var(--des-size);
+  font-weight: var(--des-weight);
+}
+
+.courses-layout {
+  display: flex;
 }
 
 /* SurfTrips drop down */
