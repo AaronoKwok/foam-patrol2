@@ -1,9 +1,9 @@
-import React, {useState} from "react" 
+import React from "react" 
 //import Carousel from 'react-bootstrap/Carousel';
 
-import barrel from "../images/barrel.png"
+/* import barrel from "../images/barrel.png"
 import sunsetlb from "../images/sunsetlb.png"  
-import emptywave from "../images/emptywave.png" 
+import emptywave from "../images/emptywave.png"  */
 import marWave from "../images/margarita-salyek-wave.png"
 
 import BacksceneText from "./BacksceneText" 

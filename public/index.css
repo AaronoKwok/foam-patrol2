@@ -190,8 +190,48 @@ nav {
   text-decoration: none;
   background-color: rgba(59, 121, 121, 0.747);
 }
+.link-loc:active {
+  background-color: rgb(207, 195, 144);
+}
 
+/* MainPage main info  */
 
+.main-info {
+  height: 300px; 
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-info-paragraph {
+  width: 300px;
+  text-align: right;
+  font-size: 1.6em;
+  font-weight: 600; 
+  margin-right: 15px; 
+}
+
+.main-info-span {
+  color: rgb(80, 187, 187);
+}
+
+.arrow-icon {
+  color: rgb(80, 187, 187); 
+  font-size: 12px;
+  padding-bottom: 0.08em;  
+}
+
+.main-info-bullets {
+  margin-left: 15px;
+}
+
+/* MainPage browse courses */
+
+.browse-courses {
+  height: 750px;
+  background-color: rgb(200, 255, 127);
+}
 
 /* SurfTrips drop down */
 
