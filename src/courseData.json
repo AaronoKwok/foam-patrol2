@@ -2,7 +2,8 @@
     {
         "id": 0,
         "free": "true", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/DuckDive-1024x576.jpg", 
         "level": 2, 
         "preposition": "to", 
         "title": "Duck Dive"
@@ -10,7 +11,8 @@
     {
         "id": 1,
         "free": "false", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/BBA4D6DD-D013-4958-97D8-33DAC8B5C365.jpeg", 
         "level": 2, 
         "preposition": "to", 
         "title": "Generate Speed"
@@ -18,7 +20,8 @@
     {
         "id": 2,
         "free": "false", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/A0584307-A6CA-457D-893D-9CEB7B3685A2.jpeg", 
         "level": 1, 
         "preposition": "to", 
         "title": "Paddle Efficiently"
@@ -26,7 +29,8 @@
     {
         "id": 3,
         "free": "true", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/WahtTakeOff-624x351@2x.jpg", 
         "level": 1, 
         "preposition": "to", 
         "title": "Pop Up"
@@ -34,7 +38,8 @@
     {
         "id": 4,
         "free": "false", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/4B2AA31A-5744-499F-913A-A063F38EBC56.jpeg", 
         "level": 2, 
         "preposition": "to", 
         "title": "Turn"
@@ -42,7 +47,8 @@
     {
         "id": 5,
         "free": "false", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/84B56C19-712C-4B7C-8102-7C313A8246EB.jpeg", 
         "level": 1, 
         "preposition": "to", 
         "title": "Push Through"
@@ -50,7 +56,8 @@
     {
         "id": 6,
         "free": "false", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/FAE7B88F-D0A7-4578-8F25-E81A3D9B6339.jpeg", 
         "level": 2, 
         "preposition": "about", 
         "title": "Surfboards"
@@ -58,7 +65,8 @@
     {
         "id": 7,
         "free": "false", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Precise-Positioning-no-logo-1-1-624x347@2x.png", 
         "level": 2, 
         "preposition": "to", 
         "title": "Catch Better Waves"
@@ -66,7 +74,8 @@
     {
         "id": 8,
         "free": "false", 
-        "url": "", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/IMG_0183-2048x1134.jpg", 
         "level": [1, 2], 
         "preposition": "", 
         "title": "All other courses"
