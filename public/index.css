@@ -25,7 +25,7 @@ nav {
   color: var(--black);
   height: 75px;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.959);
   justify-content: space-around;
   align-items: center;
   padding: 0px 45px;
@@ -197,7 +197,7 @@ nav {
 /* MainPage main info  */
 
 .main-info {
-  height: 300px; 
+  height: 290px; 
   background-color: white;
   display: flex;
   justify-content: center;
@@ -205,9 +205,9 @@ nav {
 }
 
 .main-info-paragraph {
-  width: 300px;
+  width: 330px;
   text-align: right;
-  font-size: 1.6em;
+  font-size: 1.7em;
   font-weight: 600; 
   margin-right: 15px; 
 }
@@ -228,9 +228,16 @@ nav {
 
 /* MainPage browse courses */
 
-.browse-courses {
-  height: 750px;
+.browse-courses { 
+  height: 450px;
+  display: flex; 
+  justify-content: center;
   background-color: rgb(200, 255, 127);
+
+}
+
+.courses-h1 {
+  font-size: 1.75em;
 }
 
 /* SurfTrips drop down */

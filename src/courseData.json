@@ -1,0 +1,75 @@
+[
+    {
+        "id": 0,
+        "free": "true", 
+        "url": "", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Duck Dive"
+    },
+    {
+        "id": 1,
+        "free": "false", 
+        "url": "", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Generate Speed"
+    }, 
+    {
+        "id": 2,
+        "free": "false", 
+        "url": "", 
+        "level": 1, 
+        "preposition": "to", 
+        "title": "Paddle Efficiently"
+    },
+    {
+        "id": 3,
+        "free": "true", 
+        "url": "", 
+        "level": 1, 
+        "preposition": "to", 
+        "title": "Pop Up"
+    }, 
+    {
+        "id": 4,
+        "free": "false", 
+        "url": "", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Turn"
+    }, 
+    {
+        "id": 5,
+        "free": "false", 
+        "url": "", 
+        "level": 1, 
+        "preposition": "to", 
+        "title": "Push Through"
+    }, 
+    {
+        "id": 6,
+        "free": "false", 
+        "url": "", 
+        "level": 2, 
+        "preposition": "about", 
+        "title": "Surfboards"
+    }, 
+    {
+        "id": 7,
+        "free": "false", 
+        "url": "", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Catch Better Waves"
+    }, 
+    {
+        "id": 8,
+        "free": "false", 
+        "url": "", 
+        "level": [1, 2], 
+        "preposition": "", 
+        "title": "All other courses"
+    }
+]
+
