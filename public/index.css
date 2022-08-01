@@ -204,6 +204,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: -30px; 
 }
 
 .main-info-paragraph {
@@ -228,23 +229,99 @@ nav {
   margin-left: 15px;
 }
 
+.line-break {
+  margin: auto;
+  width: 90vw;
+  border: 0.7px solid rgba(128, 128, 128, 0.5);
+}
+
 /* MainPage browse courses */
 
 .browse-courses { 
   height: 450px;
-  background-color: rgb(200, 255, 127);
-  display: flex; 
-  align-items: center;
-  flex-direction: column;
 }
 
 .courses-p {
-  font-size: var(--des-size);
+  padding-top: 20px;
+  font-size: 2em;
   font-weight: var(--des-weight);
+  text-align: center;
 }
 
 .courses-layout {
   display: flex;
+  justify-content: center;
+  margin-top: 40px;
+} 
+
+/* Course component */
+
+.course {
+  position: relative;
+  height: 300px; 
+  min-width: 300px; 
+  max-width: 300px;
+  background-color: rgb(241, 246, 247);
+  margin: 0px 12px; 
+  border-radius: 20px;   
+}
+
+.course-image {
+  height: auto; 
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-top-left-radius: 20px; 
+  border-top-right-radius: 20px;
+}
+
+.is-free {
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  background-color: rgb(212, 190, 66);
+  font-weight: 500;
+  font-size: 0.9em;
+  letter-spacing: .03em;
+  padding: 6px 10px; 
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.level {
+  position: absolute;
+  background-color:rgb(212, 212, 212);
+  color: rgb(121, 121, 121);
+  bottom: 80px; 
+  left: 18px; 
+  padding: 2px 7px; 
+  border-radius: 15px;
+  font-size: 0.6em;
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+
+.intermediate {
+  margin-left: 80px; 
+}
+
+.learn {
+  position: absolute;
+  left: 18px;
+  bottom: 40px;
+  font-size: 1.7em;
+  font-weight: 500;
+}
+
+.title {
+  position: absolute;
+  left: 18px; 
+  bottom: 3px;
+  font-size: 1.95em; 
+  font-weight: 600;
+  color: rgb(38, 156, 160); 
+  letter-spacing: .02em;
 }
 
 /* SurfTrips drop down */
