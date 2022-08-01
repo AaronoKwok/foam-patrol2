@@ -35,14 +35,14 @@ function Header() {
                 <Logo />
 
                 <section className="white-in-nav">
-                    <p className="nav-button" onMouseEnter={surfTrips} onMouseLeave={surfTrips}>SURF TRIPS &nbsp;<i className="arrow down"></i></p>
+                    <p className="nav-button" onMouseEnter={surfTrips} onMouseLeave={surfTrips}>SURF RETREATS &nbsp;<i className="arrow down"></i></p>
                     <p className="nav-button" onMouseEnter={about} onMouseLeave={about}>ABOUT &nbsp;<i className="arrow down"></i></p>
 
                     <Link className="nav-link color-change" to="/bookNow">
                         <p className="nav-button">BOOK NOW</p>
                     </Link>
                     <Link className="nav-link color-change" to="/contactUs">
-                        <p className="nav-button">CONTACT US</p>
+                        <p className="nav-button">SURF CHARTS</p>
                     </Link>
                     <Link className="nav-link color-change" to="/onlineCourses">
                         <p className="nav-button">ONLINE COURSES</p>

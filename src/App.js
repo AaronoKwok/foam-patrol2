@@ -1,7 +1,7 @@
 import React from "react"
 import {Routes, Route} from "react-router-dom" 
 
-import ContactUs from "./pages/ContactUs"
+import ContactUs from "./pages/SurfCharts"
 import BookNow from "./pages/BookNow"
 import OnlineCourses from "./pages/OnlineCourses"
 import Header from "./components/Header"

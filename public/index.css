@@ -121,6 +121,18 @@ nav {
   color: rgb(71, 180, 194);
 }
 
+/* Footer Component */
+
+
+
+
+
+
+
+
+
+
+
 /* Main Page rotating background image */
 
 .background {
@@ -238,7 +250,7 @@ nav {
 /* MainPage browse courses */
 
 .browse-courses { 
-  height: 450px;
+  height: 475px;
 }
 
 .courses-p {

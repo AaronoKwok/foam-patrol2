@@ -13,7 +13,7 @@ function BacksceneText() {
             <p className="description-on-backscene">Retreats only occur during optimal surf seasons for your level.</p>
             <div className="backscene-links">
                 <a className="link-loc" href="#">Costa Rica</a>
-                <a className="link-loc" href="#">Nica</a>
+                <a className="link-loc" href="#">Nicaragua</a>
                 <a className="link-loc" href="#">Bali</a>
                 <a className="link-loc" href="#">Mentawai</a>
                 <a className="link-loc" href="#">Maldives</a>

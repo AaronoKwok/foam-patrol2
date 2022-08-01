@@ -42,6 +42,12 @@ function MainPage() { //to change once have a courses scroll functionality
                 </div>
             </section>
 
+            <section> 
+
+            </section>
+
+            <Footer />
+
         </main>
     )
 }
