@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
 
@@ -9,7 +10,7 @@ import BackScene from "../components/BackScene"
 import Course from "../components/Course"
 
 function MainPage() { //to change once have a courses scroll functionality
-    console.log(courseData)
+
     const courses = courseData.map((course) => {
         if (course.id < 4) {
             return <Course key={course.id} courseName={course} />
@@ -40,6 +41,8 @@ function MainPage() { //to change once have a courses scroll functionality
                 <div className="courses-layout">
                     {courses}
                 </div>
+                <Link className="courses-test" to="/onlineCourses">aadf</Link>
+                <p className="courses-link">See more courses</p>
             </section>
 
             <section> 

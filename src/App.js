@@ -1,8 +1,8 @@
 import React from "react"
 import {Routes, Route} from "react-router-dom" 
 
-import ContactUs from "./pages/SurfCharts"
-import BookNow from "./pages/BookNow"
+import SurfForecasts from "./pages/SurfForecasts"
+import Shop from "./pages/Shop"
 import OnlineCourses from "./pages/OnlineCourses"
 import Header from "./components/Header"
 import MainPage from "./pages/MainPage"
@@ -16,8 +16,8 @@ function App() {
            
             <Routes>
                 <Route path="/" element={<MainPage />} />
-                <Route path="/contactUs" element={<ContactUs />} />
-                <Route path="/bookNow" element={<BookNow />} />
+                <Route path="/SurfForecasts" element={<SurfForecasts />} />
+                <Route path="/shop" element={<Shop />} />
                 <Route path="onlineCourses" element={<OnlineCourses />} />
             </Routes>
 

@@ -38,14 +38,14 @@ function Header() {
                     <p className="nav-button" onMouseEnter={surfTrips} onMouseLeave={surfTrips}>SURF RETREATS &nbsp;<i className="arrow down"></i></p>
                     <p className="nav-button" onMouseEnter={about} onMouseLeave={about}>ABOUT &nbsp;<i className="arrow down"></i></p>
 
-                    <Link className="nav-link color-change" to="/bookNow">
-                        <p className="nav-button">BOOK NOW</p>
-                    </Link>
-                    <Link className="nav-link color-change" to="/contactUs">
-                        <p className="nav-button">SURF CHARTS</p>
+                    <Link className="nav-link color-change" to="/surfForecasts">
+                        <p className="nav-button">SURF FORECAST</p>
                     </Link>
                     <Link className="nav-link color-change" to="/onlineCourses">
                         <p className="nav-button">ONLINE COURSES</p>
+                    </Link>
+                    <Link className="nav-link color-change" to="/shop">
+                        <p className="nav-button">SHOP</p>
                     </Link>
                 </section>
 

@@ -1,6 +1,6 @@
 import React from "react"  
 
-function BookNow() {
+function Shop() {
     return (
         <div>
             Book now
@@ -8,4 +8,4 @@ function BookNow() {
     )
 }
 
-export default BookNow
+export default Shop

@@ -188,8 +188,8 @@ nav {
   font-size: 0.8em;
   display: flex; 
   justify-content: space-between;
-  padding-top: 11px;
-  height: 40px;
+  padding-top: 8px;
+  height: 35px;
   background-color: rgb(66, 66, 66);
   color: white; 
 }
@@ -338,6 +338,22 @@ nav {
   justify-content: center;
   margin-top: 40px;
 } 
+
+.courses-test {
+  display: block;
+  width: 100px; 
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+
+
+
+.courses-link {
+  background-color: orange;
+  width: 200px;
+}
 
 /* Course component */
 
