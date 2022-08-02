@@ -123,11 +123,84 @@ nav {
 
 /* Footer Component */
 
+.one-percent {
+  display: flex; 
+  height: 200px; 
+  background-color: rgb(93, 168, 146); /* rgb(233, 224, 148) */
+  justify-content: space-between;
+  align-items: center;
+}
 
+.one-percent-desc {
+  margin-left: 25%; 
+  margin-right: 5%;
+  color: white;
+  font-size: 1.5em;
+  width: 400px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
 
+.one-percent-link {
+  margin-right: 25%;
+}
 
+.one-percent-img {
+  height: 150px; 
+}
 
+.footer-mid {
+  color: white;
+  display: flex; 
+  justify-content: space-evenly;
+  padding-top: 50px; 
+  height: 250px;
+  background-color: rgb(21, 58, 88);
+}
 
+.footer-surf {
+  border-bottom: 1px solid white;
+}
+
+.footer-surf-questions:link {
+  color: white;
+}
+.footer-surf-questions:visited {
+  color: white;
+}
+.footer-surf-questions:hover {
+  border: none;
+}
+
+.footer-socials {
+  border-bottom: 1px solid white;
+}
+
+.footer-socials-background {
+  background-color: rgb(250, 250, 250);
+  padding: 3px; 
+  border-radius: 15px; 
+}
+
+.footer-base {
+  font-weight: 300;
+  font-size: 0.8em;
+  display: flex; 
+  justify-content: space-between;
+  padding-top: 11px;
+  height: 40px;
+  background-color: rgb(66, 66, 66);
+  color: white; 
+}
+
+.footer-base-left {
+  margin-left: 3%;
+}
+
+.footer-base-right {
+  margin-right: 3%;
+}
 
 
 

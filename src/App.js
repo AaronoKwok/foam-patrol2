@@ -6,6 +6,7 @@ import BookNow from "./pages/BookNow"
 import OnlineCourses from "./pages/OnlineCourses"
 import Header from "./components/Header"
 import MainPage from "./pages/MainPage"
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
                 <Route path="/bookNow" element={<BookNow />} />
                 <Route path="onlineCourses" element={<OnlineCourses />} />
             </Routes>
+
+            <Footer />
             
         </div>
     )
