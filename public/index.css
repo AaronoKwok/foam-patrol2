@@ -320,7 +320,20 @@ nav {
   border: 0.7px solid rgba(128, 128, 128, 0.5);
 }
 
-/* MainPage browse courses */
+/* MainPage Retreats */
+
+.browse-retreats {
+
+}
+
+.retreats-p {
+
+}
+
+
+
+
+/* MainPage Courses */
 
 .browse-courses { 
   height: 475px;
@@ -339,21 +352,29 @@ nav {
   margin-top: 40px;
 } 
 
-.courses-test {
+.courses-link {
   display: block;
-  width: 100px; 
-  background-color: rgb(0, 0, 0);
+  width: 200px; 
+  border: 1px solid rgb(24, 135, 155); 
+  border-radius: 15px;
   color: white;
   margin: auto;
   text-align: center;
+  margin-top: 20px; 
 }
 
-
-
-.courses-link {
-  background-color: orange;
-  width: 200px;
+.courses-link:link {
+  color: black;
 }
+.courses-link:visited {
+  color: black; 
+}
+.courses-link:hover {
+  background-color: rgb(28, 114, 148);
+  color: white; 
+  text-decoration: none;
+}
+
 
 /* Course component */
 

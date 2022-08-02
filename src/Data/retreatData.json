@@ -1,0 +1,52 @@
+[
+    {
+        "id": 0, 
+        "cost": "", 
+        "location": "Costa Rica", 
+        "img": "", 
+        "title": "", 
+        "description": "",
+        "classNameImg": "", 
+        "classNameDes": ""
+    }, 
+    {
+        "id": 1, 
+        "cost": "", 
+        "location": "Nicaragua", 
+        "img": "", 
+        "title": "", 
+        "description": "",
+        "classNameImg": "", 
+        "classNameDes": ""
+    }, 
+    {
+        "id": 2, 
+        "cost": "", 
+        "location": "Bali", 
+        "img": "", 
+        "title": "", 
+        "description": "",
+        "classNameImg": "", 
+        "classNameDes": ""
+    }, 
+    {
+        "id": 3, 
+        "cost": "", 
+        "location": "Mentawai", 
+        "img": "", 
+        "title": "", 
+        "description": "",
+        "classNameImg": "", 
+        "classNameDes": ""
+    }, 
+    {
+        "id": 4, 
+        "cost": "", 
+        "location": "Maldives", 
+        "img": "", 
+        "title": "", 
+        "description": "",
+        "classNameImg": "", 
+        "classNameDes": ""
+    }
+]

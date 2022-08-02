@@ -3,11 +3,13 @@ import {Link} from "react-router-dom"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
 
-import courseData from '../courseData.json'
+import courseData from '../Data/courseData.json'
+import retreatData from '../Data/retreatData.json'
 //import {Context} from "../Context"
 
 import BackScene from "../components/BackScene"
 import Course from "../components/Course"
+import Retreat from "../components/Retreat"
 
 function MainPage() { //to change once have a courses scroll functionality
 
@@ -19,6 +21,9 @@ function MainPage() { //to change once have a courses scroll functionality
         }
     })
 
+    const retreats = retreatData.map((retreat) => {
+        return <Retreat key={retreat.id} retreat={retreat} />
+    })
 
     return (
         <main>
@@ -36,13 +41,20 @@ function MainPage() { //to change once have a courses scroll functionality
             </section>
             <hr className="line-break"/>
 
+            <section className="browse-retreats">
+                <p>Find the Perfect Retreat!</p>
+                <div>
+                    {retreats}
+                </div>
+            </section> 
+            <hr className="line-break"/>
+            
             <section className="browse-courses">
                 <p className="courses-p">Discover our Online Surf Courses</p>
                 <div className="courses-layout">
                     {courses}
                 </div>
-                <Link className="courses-test" to="/onlineCourses">aadf</Link>
-                <p className="courses-link">See more courses</p>
+                <Link className="courses-link" to="/onlineCourses">Go to more courses...</Link>
             </section>
 
             <section> 
