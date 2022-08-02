@@ -39,15 +39,15 @@ function MainPage() { //to change once have a courses scroll functionality
                     <p><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} /> Only the best surf spots for your level</p>
                 </div>
             </section>
-            <hr className="line-break"/>
+            {/* <hr className="line-break"/> */}
 
             <section className="browse-retreats">
-                <p>Find the Perfect Retreat!</p>
-                <div>
+                <p className="retreats-p">Plan Your Next Retreat!</p>
+                <div className="retreats-layout">
                     {retreats}
                 </div>
             </section> 
-            <hr className="line-break"/>
+            {/* <hr className="line-break"/> */}
             
             <section className="browse-courses">
                 <p className="courses-p">Discover our Online Surf Courses</p>
