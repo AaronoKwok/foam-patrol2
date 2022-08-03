@@ -267,8 +267,12 @@ nav {
   border-radius: 15px;
 }
 
+
 .link-loc.color-change:active {
   color: rgb(252, 249, 240);
+}
+.link-loc:link {
+  color: white;
 }
 .link-loc:visited {
   color: rgb(252, 249, 240);
