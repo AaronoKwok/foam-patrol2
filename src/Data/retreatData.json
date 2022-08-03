@@ -2,27 +2,27 @@
     {
         "id": 0, 
         "cost": "", 
-        "location": "Costa Rica", 
+        "location": "COSTA RICA", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/158A3596-1600x1200.jpg", 
         "title": "", 
-        "description": "Surf a pristine 7 km long beach break surrounded by some of the lushest rainforest hills on earth.",
+        "description": "Surf a pristine 7 km long beach break surrounded by some of the lushest rainforests on earth.",
         "classNameImg": "", 
         "classNameDes": ""
     }, 
     {
         "id": 1, 
         "cost": "", 
-        "location": "Nicaragua", 
+        "location": "NICARAGUA", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/IMG_3715.jpg", 
         "title": "", 
-        "description": "Enjoy a exclusive villa for our groups of 12 surfers, with panoramic views on the Pacific.",
+        "description": "Enjoy an exclusive villa for our groups of 12 surfers with panoramic views on the Pacific.",
         "classNameImg": "", 
         "classNameDes": ""
     }, 
     {
         "id": 2, 
         "cost": "", 
-        "location": "Bali", 
+        "location": "BALI", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2017/05/Villa-Lembongan.jpg", 
         "title": "", 
         "description": "Ride turquoise waves in a tropical paradise on this Indonesian journey across two amazing islands.",
@@ -32,20 +32,20 @@
     {
         "id": 3, 
         "cost": "", 
-        "location": "Mentawai", 
+        "location": "MENTAWAI", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/12/Beng2s-take-off.jpg", 
         "title": "", 
-        "description": "Carve secluded tropical island waves that deliver absolute perfection that you dream about.",
+        "description": "Carve secluded tropical island waves that deliver the absolute perfection that you dream about.",
         "classNameImg": "", 
         "classNameDes": ""
     }, 
     {
         "id": 4, 
         "cost": "", 
-        "location": "Maldives", 
+        "location": "MALDIVES", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2020/01/handy19-0266-2.jpg", 
         "title": "", 
-        "description": "Uncrowded blissful waves, secluded location hundreds of kilometres South of Male.",
+        "description": "Uncrowded blissful waves, a secluded location hundreds of kilometres South of Male.",
         "classNameImg": "", 
         "classNameDes": ""
     }

@@ -1,11 +1,16 @@
 import React from "react"
 
-function ContactUs() {
+import backScene from "../images/forecast-backscene.png"
+
+function surfForecasts() {
     return (
         <div>
-            Contact Us
+            <section>
+                <img className="forecast-backscene" src={backScene} alt=""></img>  
+            </section>
+
         </div>
     )
 }
  
-export default ContactUs
+export default surfForecasts
