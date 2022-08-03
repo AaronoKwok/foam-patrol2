@@ -4,7 +4,7 @@ import {Routes, Route} from "react-router-dom"
 import SurfForecasts from "./pages/SurfForecasts"
 import Shop from "./pages/Shop"
 import OnlineCourses from "./pages/OnlineCourses"
-import Header from "./components/Header"
+import Header from "./components/header"
 import MainPage from "./pages/MainPage"
 import Footer from "./components/Footer"
 
