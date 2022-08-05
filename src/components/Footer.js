@@ -14,10 +14,10 @@ function Footer() {
             <section className="footer-mid">
                 <div>
                     <p className="footer-surf">Surfing</p>
-                    {/* <p><a className="footer-surf-questions" href="#">What's my surfing level?</a></p> 
+                    <p><a className="footer-surf-questions" href="#">What's my surfing level?</a></p> 
                     <p><a className="footer-surf-questions" href="#">Is this surf trip for me?</a></p>
                     <p><a className="footer-surf-questions" href="#">How do we coach surfing?</a></p>
-                 */}</div>
+                </div>
                 <div>
                     <p>Trip Advisor</p>
                 </div>

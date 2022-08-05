@@ -269,9 +269,9 @@ nav {
 }
 
 
-.link-loc.color-change:active {
+/* .link-loc.color-change:active {
   color: rgb(252, 249, 240);
-}
+} NOTE: visceral, not used atm */
 .link-loc:link {
   color: white; 
 }
@@ -533,3 +533,126 @@ nav {
   height: 70vh;
   object-fit: cover;
 }
+
+/* Online Courses */
+
+.oc-bg-img {
+  position: relative; 
+}
+
+.oc-backscene {
+  width: 100%; 
+  height: 70vh; 
+  overflow: hidden;
+  object-fit: cover;
+  object-position: 0% 60%;
+}
+
+.oc-backscene-text {
+  letter-spacing: .08em;
+  position: absolute;
+  left: 50px; 
+  top: 170px; 
+  color: rgb(252, 249, 240);
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.shack-icon {
+  width: 90px; 
+  margin-bottom: 20px; /* NOTE: styling of components here also in main scene backscene section in this file */
+} 
+
+.description-on-backscene-oc {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.backscene-types {
+  margin-top: 40px; 
+  width: 800px;
+  font-weight: 300;
+  display: flex; 
+}
+
+.choose-type {
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  margin-right: 40px; 
+  border: 1px solid rgb(252, 249, 240);
+  background-color: rgba(59, 121, 121, 0.747);
+  padding: 3px 10px; 
+  border-radius: 15px;
+}
+
+.choose-type:hover {
+  cursor: pointer;
+  background-color: rgba(35, 73, 73, 0.747);
+}
+.choose-type:active {
+  background-color: rgb(163, 154, 115);
+}
+
+/* browse courses layout */
+
+.courses-pg-layout {
+  position: relative;
+  height: 800px;
+  width: 85%;
+  background-color: rgb(160, 235, 231);;
+  margin: auto;
+}
+
+.all-surf-header {
+  margin-bottom: 0px; 
+  margin-top: 10px; 
+  font-size: 1.7em; 
+  font-weight: 500;
+  color: rgb(71, 71, 71);
+}
+
+.hr-surf-header {
+  border: 0.7px solid rgb(190, 190, 190); 
+  margin: auto;
+}
+
+.choose-view {
+  background-color: lightgreen; 
+  position: absolute;
+  display: flex; 
+  justify-content: center;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0px; 
+  align-items: center;
+  width: 5vw; 
+  height: 4vh;
+  right: 0px; 
+  margin-top: 10px; 
+}
+
+.grid-icon {
+  width: 2vw;
+  
+}
+
+.vert {
+  width: 1px; 
+  background-color: black; 
+  height: 70%;
+}
+
+.list-icon {
+  width: 1.4vw; 
+  margin-left: 9%;
+  margin-right: 4%;
+  
+}
+
+.course-levels {
+  margin-top: 45px; 
+}
+
+
+
