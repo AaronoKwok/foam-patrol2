@@ -618,11 +618,11 @@ nav {
 }
 
 .choose-view {
-  background-color: lightgreen; 
   position: absolute;
   display: flex; 
   justify-content: center;
   border: 1px solid gray;
+
   border-radius: 10px;
   padding: 0px; 
   align-items: center;
@@ -634,7 +634,19 @@ nav {
 
 .grid-icon {
   width: 2vw;
-  
+  padding-left: 0px; 
+  margin-left: 0px; 
+  position: relative
+}
+
+.grid-tip {
+  position: absolute;
+  visibility: hidden; 
+
+}
+
+.grid-icon:hover .grid-tip {
+  visibility: visible;
 }
 
 .vert {
@@ -646,8 +658,7 @@ nav {
 .list-icon {
   width: 1.4vw; 
   margin-left: 9%;
-  margin-right: 4%;
-  
+  margin-right: 6%;
 }
 
 .course-levels {
