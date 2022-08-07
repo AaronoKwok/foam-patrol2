@@ -33,7 +33,6 @@ function OnlineCourses() {
                 <hr className="hr-surf-header"/>
                 <div className="choose-view">
                     <img className="grid-icon" src={gridIcon} alt="" />
-                    <div className="grid-tip">Grid View</div>
                     <div className="vert"></div>
                     <img className="list-icon" src={listIcon} alt=""/> 
                 </div>

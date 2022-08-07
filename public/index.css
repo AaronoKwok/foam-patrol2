@@ -622,7 +622,6 @@ nav {
   display: flex; 
   justify-content: center;
   border: 1px solid gray;
-
   border-radius: 10px;
   padding: 0px; 
   align-items: center;
@@ -639,16 +638,6 @@ nav {
   position: relative
 }
 
-.grid-tip {
-  position: absolute;
-  visibility: hidden; 
-
-}
-
-.grid-icon:hover .grid-tip {
-  visibility: visible;
-}
-
 .vert {
   width: 1px; 
   background-color: black; 
@@ -660,6 +649,7 @@ nav {
   margin-left: 9%;
   margin-right: 6%;
 }
+
 
 .course-levels {
   margin-top: 45px; 
