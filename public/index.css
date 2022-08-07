@@ -625,17 +625,32 @@ nav {
   border-radius: 10px;
   padding: 0px; 
   align-items: center;
-  width: 5vw; 
+  width: 70px; 
   height: 4vh;
   right: 0px; 
   margin-top: 10px; 
 }
 
-.grid-icon {
-  width: 2vw;
+.grid-tip {
+  position: relative; 
   padding-left: 0px; 
   margin-left: 0px; 
+}
+
+.grid-icon {
+  width: 2vw; 
   position: relative
+}
+
+.grid-tip-text {
+  position: absolute;
+  background-color: black; 
+  color: white; 
+  visibility: hidden;  
+}
+
+.grid-tip:hover .grid-tip-text {
+  visibility: visible;
 }
 
 .vert {
@@ -644,10 +659,26 @@ nav {
   height: 70%;
 }
 
-.list-icon {
-  width: 1.4vw; 
+.list-tip {
+  position: relative; 
   margin-left: 9%;
   margin-right: 6%;
+  margin-bottom: 4%;
+}
+
+.list-icon {
+  width: 1.4vw; 
+}
+
+.list-tip-text {
+  position: absolute; 
+  background-color: black; 
+  color: white; 
+  visibility: hidden;
+}
+
+.list-tip:hover .list-tip-text {
+  visibility: visible;
 }
 
 

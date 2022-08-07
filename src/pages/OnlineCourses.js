@@ -32,9 +32,17 @@ function OnlineCourses() {
                 <p className="all-surf-header">All Surfing Courses</p>
                 <hr className="hr-surf-header"/>
                 <div className="choose-view">
-                    <img className="grid-icon" src={gridIcon} alt="" />
+                    <div className="grid-tip">
+                        <img className="grid-icon" src={gridIcon} alt="" />
+                        <div className="grid-tip-text">Grid View</div>
+                    </div>
+
                     <div className="vert"></div>
-                    <img className="list-icon" src={listIcon} alt=""/> 
+
+                    <div className="list-tip">
+                        <img className="list-icon" src={listIcon} alt=""/> 
+                        <div className="list-tip-text">List View</div>
+                    </div>
                 </div>
                 <p className="course-levels">Course Levels: <select>All</select></p>
             </div>
