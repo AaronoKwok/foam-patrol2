@@ -639,14 +639,33 @@ nav {
 
 .grid-icon {
   width: 30px; 
-  position: relative
+  position: relative; 
+
 }
 
 .grid-tip-text {
   position: absolute;
+  z-index: 1;
   background-color: black; 
   color: white; 
   visibility: hidden;  
+  bottom: 120%;
+  width: 100px; 
+  text-align: center;
+  border-radius: 5px; 
+  margin-left: -51px; 
+  left: 50%; 
+}
+
+.grid-tip-text::after { /* pseudo class ::after and empty content are used to make bottom arrow */
+  content: ""; 
+  position: absolute; 
+  top: 100%; 
+  left: 50%; 
+  margin-left: -5px; 
+  border-width: 5px; 
+  border-style: solid; 
+  border-color: black transparent transparent transparent; 
 }
 
 .grid-tip:hover .grid-tip-text {
@@ -671,10 +690,28 @@ nav {
 }
 
 .list-tip-text {
-  position: absolute; 
+  position: absolute;
+  z-index: 1;
   background-color: black; 
   color: white; 
-  visibility: hidden;
+  visibility: hidden;  
+  bottom: 130%;
+  width: 100px; 
+  text-align: center;
+  border-radius: 5px; 
+  margin-left: -51px; 
+  left: 50%; 
+}
+
+.list-tip-text::after {
+  content: ""; 
+  position: absolute; 
+  top: 100%; 
+  left: 50%; 
+  margin-left: -5px; 
+  border-width: 5px; 
+  border-style: solid; 
+  border-color: black transparent transparent transparent;
 }
 
 .list-tip:hover .list-tip-text {

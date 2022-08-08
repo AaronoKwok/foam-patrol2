@@ -31,19 +31,21 @@ function OnlineCourses() {
             <div className="courses-pg-layout">
                 <p className="all-surf-header">All Surfing Courses</p>
                 <hr className="hr-surf-header"/>
-                <div className="choose-view">
+
+                <div className="choose-view"> {/* grid/list view chooser - add color background color change */}
                     <div className="grid-tip">
                         <img className="grid-icon" src={gridIcon} alt="" />
-                        <div className="grid-tip-text">Grid View</div>
+                        <span className="grid-tip-text">Grid View</span>
                     </div>
 
                     <div className="vert"></div>
 
                     <div className="list-tip">
                         <img className="list-icon" src={listIcon} alt=""/> 
-                        <div className="list-tip-text">List View</div>
+                        <span className="list-tip-text">List View</span>
                     </div>
                 </div>
+
                 <p className="course-levels">Course Levels: <select>All</select></p>
             </div>
 
