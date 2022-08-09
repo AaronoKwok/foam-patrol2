@@ -58,6 +58,53 @@ nav {
   margin: 0px; 
 }
 
+.retreat-dropdown {
+  position: relative;
+  
+}
+
+.retreat-section {
+  position: absolute;
+  z-index: 1;
+  width: 900px; 
+  height: 50px; 
+  background-color: rgba(0, 0, 255, 0.192); 
+  top: 70%;  
+}
+
+.retreat-dropdown:hover .retreat-section {
+  background: red;
+}
+
+.about-dropdown {
+  position: relative; 
+
+}
+
+.about-section {
+  position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .nav-link {
   margin: 0px; 
   padding: 0px; 

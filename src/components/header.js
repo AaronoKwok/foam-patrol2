@@ -4,29 +4,9 @@ import {Link} from "react-router-dom"
 import Logo from "./Logo"
 import githubSVG from "../images/github.svg"
 import linkedinSVG from "../images/linkedin.svg" 
-import SurfTrips from "./HeaderComps/SurfTrips"
-import About from "./HeaderComps/About"
+
  
 function Header() {
-    const [trips, setTrips] = useState(false)
-    const [abouts, setAbouts] = useState(false)
-
-    const displayTrips = trips === true ? <SurfTrips /> : null
-    const displayAbout = abouts === true ? <About /> : null
-
-    function surfTrips() {
-        setTrips(() => {
-            if (trips === false) {
-                return true
-            } else {
-                return false
-            }
-        })
-    }
-
-    function about() {
-        setAbouts(!abouts)
-    }
 
     return (
         <header>
@@ -35,8 +15,17 @@ function Header() {
                 <Logo />
 
                 <section className="white-in-nav">
-                    <p className="nav-button" onMouseEnter={surfTrips} onMouseLeave={surfTrips}>SURF RETREATS &nbsp;<i className="arrow down"></i></p>
-                    <p className="nav-button" onMouseEnter={about} onMouseLeave={about}>ABOUT &nbsp;<i className="arrow down"></i></p>
+                    <div className="retreat-dropdown">
+                        <p className="nav-button">SURF RETREATS &nbsp;<i className="arrow down"></i></p>
+                        <span className="retreat-section">
+                            testing
+                        </span>
+                    </div>
+
+                    <p className="nav-button about-dropdown">ABOUT &nbsp;<i className="arrow down"></i></p>
+                    <section className="about-section"> 
+
+                    </section>
 
                     <Link className="nav-link color-change" to="/surfForecasts">
                         <p className="nav-button">SURF FORECAST</p>
@@ -50,6 +39,7 @@ function Header() {
                 </section>
 
                     {/* <button onClick={changeAesthetic}></button>  */}
+
                 <div>add tripad</div>
 
                 <div className="socials">
@@ -60,9 +50,7 @@ function Header() {
                     {/* <button>Login</button> */}
             </nav>
 
-            {displayTrips}
-            {displayAbout}
-            
+           
         </header>
     )
 }
