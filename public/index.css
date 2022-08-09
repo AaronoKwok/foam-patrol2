@@ -64,17 +64,18 @@ nav {
 
 .dropdown-section {
   position: absolute;
-  /* visibility: hidden;
+  visibility: hidden;
   opacity: 0;
-  transition: opacity .5s; z-index: 1; */
+  transition: opacity .5s; z-index: 1;
   width: 60vw; 
-  height: 250px; 
+  height: 200px; 
   background-color: rgb(255, 255, 255); 
   top: 100%;
   border-radius: 5px; 
   display: flex;
   justify-content: space-evenly;
   padding-top: 25px; 
+  padding-left: 10px; 
   border: 1px solid rgb(136, 136, 136);
 }
 
@@ -97,6 +98,17 @@ nav {
   font-size: 1.1em;
   font-weight: 400;
 }
+
+.dropdown-link:link {
+  color: black;
+}
+.dropdown-link:visited {
+  color: black; 
+}
+.dropdown-link:hover {
+  text-decoration: none;
+}
+
 
 .dropdown-info:hover {
   font-weight: 600; 
