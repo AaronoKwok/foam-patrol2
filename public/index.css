@@ -58,27 +58,54 @@ nav {
   margin: 0px; 
 }
 
-.retreat-dropdown {
+.nav-dropdown {
   position: relative;
+}
+
+.dropdown-section {
+  position: absolute;
+  /* visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s; z-index: 1; */
+  width: 60vw; 
+  height: 250px; 
+  background-color: rgb(255, 255, 255); 
+  top: 100%;
+  border-radius: 5px; 
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 25px; 
+  border: 1px solid rgb(136, 136, 136);
+}
+
+.nav-dropdown:hover .dropdown-section {
+  visibility: visible;
+  opacity: 1; 
+}
+
+.retreat-dropdown-content {
+  width: 200px;
+  margin-right: 20px;  
   
 }
 
-.retreat-section {
-  position: absolute;
-  z-index: 1;
-  width: 900px; 
-  height: 50px; 
-  background-color: rgba(0, 0, 255, 0.192); 
-  top: 70%;  
+.dropdown-title {
+  font-size: 1.12em; 
 }
 
-.retreat-dropdown:hover .retreat-section {
-  background: red;
+.dropdown-info {
+  font-size: 1.1em;
+  font-weight: 400;
 }
 
-.about-dropdown {
-  position: relative; 
+.dropdown-info:hover {
+  font-weight: 600; 
+  cursor: pointer;
+}
 
+.hr-dropdown {
+  margin-top: -11px; 
+  border: .5px solid rgb(131, 131, 131);
 }
 
 .about-section {

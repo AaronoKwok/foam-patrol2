@@ -15,17 +15,37 @@ function Header() {
                 <Logo />
 
                 <section className="white-in-nav">
-                    <div className="retreat-dropdown">
+                    {/* Two Dropdowns */}
+                    <div className="nav-dropdown">
                         <p className="nav-button">SURF RETREATS &nbsp;<i className="arrow down"></i></p>
-                        <span className="retreat-section">
-                            testing
+                        <span className="dropdown-section">
+                            <div className="retreat-dropdown-content">
+                                <p className="dropdown-title">MAIN COACHING RETREATS</p>
+                                <hr className="hr-dropdown"/> {/* add links later */}
+                                <p className="dropdown-info">COSTA RICA | 7 DAYS</p>
+                                <p className="dropdown-info">NICARAGUA | 7 DAYS</p>
+                                <p className="dropdown-info">BALI | 10 DAYS</p>
+                            </div>
+                            <div className="retreat-dropdown-content">
+                                <p className="dropdown-title">INTERMEDIATE ONLY TRIPS</p>
+                                <hr className="hr-dropdown"/>
+                                <p className="dropdown-info">MALDIVES | OCTOBER</p>
+                                <p className="dropdown-info">MENTAWAIS | NOVEMBER</p>
+                            </div>
+                            <div className="retreat-dropdown-content">
+                                <p className="dropdown-title">MORE INFO</p>
+                                <hr className="hr-dropdown"/>
+                                <p className="dropdown-info">SURF TRIP CALENDAR</p>
+                            </div>
                         </span>
                     </div>
 
-                    <p className="nav-button about-dropdown">ABOUT &nbsp;<i className="arrow down"></i></p>
-                    <section className="about-section"> 
-
-                    </section>
+                    {/* <div className="nav-dropdown">
+                        <p className="nav-button">ABOUT &nbsp;<i className="arrow down"></i></p>
+                        <span className="dropdown-section"> 
+                            test text
+                        </span>
+                    </div> */}
 
                     <Link className="nav-link color-change" to="/surfForecasts">
                         <p className="nav-button">SURF FORECAST</p>
