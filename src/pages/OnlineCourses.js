@@ -46,7 +46,15 @@ function OnlineCourses() {
                     </div>
                 </div>
 
-                <p className="course-levels">Course Levels: <select>All</select></p>
+                <p>
+                    <label className="course-levels" for="levels">Course Levels:</label>
+                    <select className="level-select" name="levels" id="levels">
+                        <option selected="selected" value="all">All</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="more">More</option>
+                    </select>
+                </p>
             </div>
 
         </section>

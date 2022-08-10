@@ -6,7 +6,8 @@
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/DuckDive-1024x576.jpg", 
         "level": 2, 
         "preposition": "to", 
-        "title": "Duck Dive"
+        "title": "Duck Dive", 
+        "tutorials": 8
     },
     {
         "id": "1",
@@ -15,7 +16,8 @@
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/BBA4D6DD-D013-4958-97D8-33DAC8B5C365.jpeg", 
         "level": 2, 
         "preposition": "to", 
-        "title": "Generate Speed"
+        "title": "Generate Speed", 
+        "tutorials": 9
     }, 
     {
         "id": "2",
@@ -24,7 +26,8 @@
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/A0584307-A6CA-457D-893D-9CEB7B3685A2.jpeg", 
         "level": 1, 
         "preposition": "to", 
-        "title": "Paddle Efficiently"
+        "title": "Paddle Efficiently", 
+        "tutorials": 12
     },
     {
         "id": "3",
@@ -33,52 +36,208 @@
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/WahtTakeOff-624x351@2x.jpg", 
         "level": 1, 
         "preposition": "to", 
-        "title": "Pop Up"
+        "title": "Pop Up", 
+        "tutorials": 18
     }, 
     {
         "id": "4",
         "free": "false", 
         "address": "",
-        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/4B2AA31A-5744-499F-913A-A063F38EBC56.jpeg", 
-        "level": 2, 
-        "preposition": "to", 
-        "title": "Turn"
-    }, 
-    {
-        "id": "5",
-        "free": "false", 
-        "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/84B56C19-712C-4B7C-8102-7C313A8246EB.jpeg", 
         "level": 1, 
         "preposition": "to", 
-        "title": "Push Through"
+        "title": "Push Through", 
+        "tutorials": 8
+    }, 
+    {
+        "id": "5",
+        "free": "true", 
+        "address": "",
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Precise-Positioning-no-logo-1-1-624x347@2x.png", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Catch Better Waves", 
+        "tutorials": 11
     }, 
     {
         "id": "6",
         "free": "false", 
         "address": "",
-        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/FAE7B88F-D0A7-4578-8F25-E81A3D9B6339.jpeg", 
-        "level": 2, 
-        "preposition": "about", 
-        "title": "Surfboards"
-    }, 
-    {
-        "id": "7",
-        "free": "false", 
-        "address": "",
-        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Precise-Positioning-no-logo-1-1-624x347@2x.png", 
-        "level": 2, 
-        "preposition": "to", 
-        "title": "Catch Better Waves"
-    }, 
-    {
-        "id": "8",
-        "free": "false", 
-        "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/IMG_0183-2048x1134.jpg", 
         "level": [1, 2], 
+        "preposition": "about", 
+        "title": "All other courses", 
+        "tutorials": 24
+    }, 
+    {
+        "id": "7", 
+        "free": "true", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2021/02/Learndash-Image-Learning-624x333@2x.png", 
+        "level": 1, 
+        "preposition": "about", 
+        "title": "Learning Tips", 
+        "tutorials": 4
+    }, 
+    {
+        "id": "8", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/464EBBCF-71AF-4890-BF41-D352936EF1E9-1024x576.jpeg", 
+        "level": 1, 
+        "preposition": "about", 
+        "title": "Surfboards for Beginners", 
+        "tutorials": 7
+    }, 
+    {
+        "id": "9", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/479BF669-5E1F-42FD-B0B9-E76F0E1821EC-1024x576.jpeg", 
+        "level": 1, 
+        "preposition": "to", 
+        "title": "Turtle Roll", 
+        "tutorials": 5
+    }, 
+    {
+        "id": "10", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/FD99928A-0EE8-43CF-9D5A-E2A6315FA120-1024x576.jpeg", 
+        "level": 1, 
+        "preposition": "about", 
+        "title": "Turning in the White Water", 
+        "tutorials": 6
+    }, 
+    {
+        "id": "11", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Footwork-624x358@2x.png", 
+        "level": 1, 
+        "preposition": "about", 
+        "title": "Footwork", 
+        "tutorials": 5
+    }, 
+    {
+        "id": "12", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Youtube-Thumbnail-3-624x351@2x.jpg", 
+        "level": 2, 
+        "preposition": "about", 
+        "title": "Angling the Take Off", 
+        "tutorials": 15
+    }, 
+    {
+        "id": "13", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Reading-Waves-624x382@2x.png", 
+        "level": 1, 
+        "preposition": "about", 
+        "title": "Reading Waves", 
+        "tutorials": 13
+    }, 
+    {
+        "id": "14", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/F7C4D9C5-C620-48DD-BA75-4D49539C6CA4-1024x576.jpeg", 
+        "level": 1, 
+        "preposition": "about", 
+        "title": "Stance", 
+        "tutorials": 8
+    }, 
+    {
+        "id": "15", 
+        "free": "true", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/F7FA33A8-61C9-4238-BB89-6CF8771E59BC.jpeg", 
+        "level": 1, 
+        "preposition": "about", 
+        "title": "Etiquette", 
+        "tutorials": 10
+    }, 
+    {
+        "id": "16", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/FAE7B88F-D0A7-4578-8F25-E81A3D9B6339-1024x576.jpeg", 
+        "level": 2, 
+        "preposition": "about", 
+        "title": "Surfboards for Intermediates", 
+        "tutorials": 11
+    }, 
+    {
+        "id": "17", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Precise-Positioning-no-logo-1-1-624x347@2x.png", 
+        "level": [1, 2], 
+        "preposition": "about", 
+        "title": "Positioning for Waves", 
+        "tutorials": 13
+    },
+    {
+        "id": "18", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/FBB267FF-7215-4423-88DF-9FE1F08F52FE-1024x576.jpeg", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Cross Step", 
+        "tutorials": 7
+    }, 
+    {
+        "id": "19", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/7B01A4DD-728E-4FFE-8B5D-29E5BACBA319-1024x576.jpeg", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Bottom Turn", 
+        "tutorials": 10
+    }, 
+    {
+        "id": "20", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/89B5D79A-3C64-47DB-8483-090A62DE631E-1024x576.jpeg", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Cutback", 
+        "tutorials": 11
+    }, 
+    {
+        "id": "21", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/8615BDBD-82DA-4457-886D-F355B86F11AA-1024x576.jpeg", 
+        "level": 2, 
+        "preposition": "to", 
+        "title": "Top Turn", 
+        "tutorials": 10
+    }, 
+    {
+        "id": "22", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2021/03/YogaCourse-624x354@2x.jpg", 
+        "level": 0, 
         "preposition": "", 
-        "title": "All other courses"
+        "title": "Yoga with Sally", 
+        "tutorials": 7
+    }, 
+    {
+        "id": "23", 
+        "free": "false", 
+        "address": "", 
+        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2021/08/Learndash-Thumbnail-Michelle-2-624x351@2x.jpg", 
+        "level": 0, 
+        "preposition": "about", 
+        "title": "Fitness & Mobility with Michelle", 
+        "tutorials": 7
     }
 ]
 
