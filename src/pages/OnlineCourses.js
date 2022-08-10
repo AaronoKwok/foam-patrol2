@@ -21,13 +21,13 @@ function OnlineCourses() {
                     <h1 className="image-h1 image-h1-margin">Here to Help You Surf</h1>
                     <h1 className="image-h1">Better, Faster.</h1>
                 </div>
-                <p className="description-on-backscene-oc">Learn online, anytime.</p>
+                <p className="description-on-backscene-oc">Over 70 hours of courses.</p>
                 <div className="backscene-types">
                     <p className="choose-type">All Courses</p>
                     <p className="choose-type">Free Courses</p>
                 </div>
             </div>
-
+        
             <div className="courses-pg-layout">
                 <p className="all-surf-header">All Surfing Courses</p>
                 <hr className="hr-surf-header"/>
@@ -55,7 +55,12 @@ function OnlineCourses() {
                         <option value="more">More</option>
                     </select>
                 </p>
+
             </div>
+
+            <p className="online-anytime">Learn Online, Anytime.</p>
+            <p className="course-page-bottom">With our surf courses tailored for beginner and intermediate surfers.</p>
+          
 
         </section>
     )
