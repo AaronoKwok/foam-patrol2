@@ -5,6 +5,7 @@
   --des-size: 1.7em;
   --des-weight: 600;
   --course-gray: rgb(206, 206, 206);
+  
 }
 
 * {
@@ -661,10 +662,9 @@ nav {
 
 .courses-pg-layout {
   position: relative;
-  height: 800px;
   width: 85%;
   margin: auto;
-  border: 1px solid black
+  margin-top: 20px; 
 }
 
 .all-surf-header {
@@ -698,6 +698,7 @@ nav {
   position: relative; 
   padding-left: 0px; 
   margin-left: 0px; 
+  cursor: pointer;
 }
 
 .grid-icon {
@@ -746,6 +747,7 @@ nav {
   margin-left: 6.5px;
   margin-right: 5px;
   margin-bottom: 3px;
+  cursor: pointer;
 }
 
 .list-icon {
@@ -794,12 +796,22 @@ nav {
   width: 140px;  
 }
 
+.courses-in-grid {
+  display: grid; 
+  grid-template-columns: repeat(4, auto);
+  width: 100%; 
+}
+
+.courses-in-list {
+  width: 100%; 
+}
+
 .online-anytime {
   font-size: 2.5em;
   font-weight: 600;
   color: rgb(77, 76, 76);
   text-align: center;
-  margin-top: 20px; 
+  margin-top: 0px; 
 }
 
 .course-page-bottom {
@@ -811,4 +823,157 @@ nav {
 
 }
 
+/* Online Course Page Courses */
+
+.oc-card {
+  position: relative; 
+  height: 320px; 
+  width: 280px;
+  max-width: 280px; 
+  min-width: 200px; 
+  background-color: rgb(255, 255, 255); 
+  border: .5px solid rgb(209, 209, 209); 
+  border-radius: 5px; 
+  margin: auto;
+  margin-bottom: 25px; 
+}
+
+.oc-card:hover {
+  box-shadow: 0px 0px 8px 2px rgb(221, 221, 221);
+  cursor: pointer;
+}
+
+.oc-card-img {
+  object-fit: cover;
+  overflow: hidden;
+  height: 45%;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.oc-card-premium {
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  background-color: rgb(212, 190, 66);
+  font-weight: 400;
+  font-size: 0.7em;
+  letter-spacing: .03em;
+  padding: 3px 10px; 
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.oc-card-free {
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  background-color: rgb(65, 87, 134);
+  font-weight: 400;
+  font-size: 0.7em;
+  letter-spacing: .03em;
+  padding: 3px 10px; 
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.oc-card-tutorials {
+  margin-left: 12px;
+  margin-top: 12px;  
+  margin-bottom: 0px;
+  font-size: .9em;
+  color: rgb(87, 87, 87);
+}
+
+.oc-card-title {
+  margin: 0px 12px; 
+  font-size: 1.45em;
+  font-weight: 800;
+  padding: 0px; 
+  color: rgb(87, 87, 87);
+}
+
+.oc-card-progress {
+  margin: 3px 12px; 
+  height: 3px; 
+  width: 91%;
+  background-color: rgb(196, 196, 196);
+}
+
+.oc-card-percent {
+  margin: 5px 12px; 
+  font-size: .9em;
+  color: rgb(87, 87, 87);
+}
+
+.oc-card-steps {
+  margin: 0px 12px; 
+  font-size: .9em;
+  color: rgb(87, 87, 87);
+}
+
+.oc-long {
+  position: relative;
+  background-color: white; 
+  height: 150px; 
+  min-width: 800px;
+  margin: 5px 0px 15px 0px; 
+  border: .5px solid rgb(209, 209, 209);
+  border-radius: 5px; 
+}
+
+.oc-long:hover {
+  box-shadow: 0px 0px 10px 4px rgb(221, 221, 221);
+  cursor: pointer;
+}
+
+.oc-long-img {
+  height: 100%;
+  object-fit: cover;
+  width: 250px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; 
+}
+
+.oc-long-tutorials {
+  position: absolute;
+  left: 270px; 
+  top: 15px;
+  color: rgb(87, 87, 87)
+}
+
+.oc-long-title {
+  position: absolute;
+  left: 270px; 
+  top: 35px; 
+  font-size: 1.45em;
+  font-weight: 600; 
+  color: rgb(65, 65, 65)
+}
+
+.oc-long-progress {
+  position: absolute; 
+  left: 270px; 
+  top: 70px; 
+  height: 3px; 
+  width: 50%; 
+  background-color: rgb(196, 196, 196);
+}
+
+.oc-long-percent {
+  position: absolute;
+  left: 270px; 
+  top: 80px; 
+  color: rgb(87, 87, 87)
+}
+
+.oc-long-steps {
+  position: absolute; 
+  left: 270px; 
+  top: 100px; 
+  color: rgb(87, 87, 87)
+}
 
