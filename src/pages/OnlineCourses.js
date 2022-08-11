@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 
 /* import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAnglesRight} from '@fortawesome/free-solid-svg-icons' NOTE: not working atm*/
@@ -14,7 +14,9 @@ import shackIcon from "../images/shackIcon.png"
 
 function OnlineCourses() {
 
-    const [isGrid, setIsGrid] = useState(true) 
+    const [isGrid, setIsGrid] = useState(true)
+    const [availableCourses, setAvailableCourses] = useState(courseData)
+    const [free, setFree] = useState(false)
 
     function viewChange(view) {
         if(view === "grid") {
@@ -24,7 +26,20 @@ function OnlineCourses() {
         }
     }
 
-    const courses = courseData.map((course) => {
+    function viewFree(isFree) {
+        if(isFree) {
+            setFree(true)
+            setAvailableCourses(courseData.filter(course => course.free === true)) 
+        } else {
+            setFree(false)
+            setAvailableCourses(courseData)
+        }
+    }
+
+    const allButton = free ? "free" : "notFree";
+    const freeButton = free ? "notFree" : "free";
+
+    const specifiedCourses = availableCourses.map((course) => {
         return <OnlineCourse course={course} grid={isGrid} key={course.id}/>
     })
 
@@ -41,8 +56,8 @@ function OnlineCourses() {
                 </div>
                 <p className="description-on-backscene-oc">Over 70 hours of courses.</p>
                 <div className="backscene-types">
-                    <p className="choose-type">All Courses</p>
-                    <p className="choose-type">Free Courses</p>
+                    <p className={`button-${allButton}`} onClick={() => viewFree(false)}>All Courses</p>
+                    <p className={`button-${freeButton}`} onClick={() => viewFree(true)}>Free Courses</p>
                 </div>
             </div>
         
@@ -65,20 +80,20 @@ function OnlineCourses() {
                 </div>
 
                 <p>
-                    <label className="course-levels" for="levels">Course Levels:</label>
-                    <select className="level-select" name="levels" id="levels">
-                        <option selected="selected" value="all">All (for now...)</option>
-                        {/* <option value="beginner">Beginner</option>
+                    <label className="course-levels">Course Levels:</label>
+                    <select className="level-select" name="levels">
+                        <option value="all">All</option>
+                        <option value="beginner">Beginner</option>
                         <option value="intermediate">Intermediate</option>
-                        <option value="more">More</option> */}
+                        <option value="more">More</option>
                     </select>
                 </p>
-                {isGrid === true && <div className="courses-in-grid">
-                    {courses}
-                </div>}
 
+                {isGrid === true && <div className="courses-in-grid">
+                    {specifiedCourses}
+                </div>}
                 {isGrid === false && <div className="courses-in-list">
-                    {courses}
+                    {specifiedCourses}
                 </div>}
 
                 
