@@ -14,7 +14,7 @@ import shackIcon from "../images/shackIcon.png"
 
 function OnlineCourses() {
 
-    const [isGrid, setIsGrid] = useState(false) // change back to true once don
+    const [isGrid, setIsGrid] = useState(true) 
 
     function viewChange(view) {
         if(view === "grid") {
