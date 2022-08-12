@@ -8,11 +8,17 @@ function SurfForecasts() {
 
     return (
         <div>
-            <section>
+            <section className="fc-backscene-img">
                 <img className="forecast-backscene" src={backScene} alt=""></img>  
                 {test}
+                <form className="fc-backscene-form">
+                    testing
+                    <input></input>
+                </form>
+                
             </section>
-
+            
+                <p>forecast</p>
         </div>
     )
 }

@@ -84,17 +84,19 @@ function OnlineCourses() {
 
     return (
         <section className="oc-bg-img">
-            <img className="oc-backscene" src={courseBackscene} alt=""></img>  {/* need to change sizing of image when screen size changes */}
-            <div className="oc-backscene-text">
-                <img className="shack-icon" src={shackIcon} alt=""></img> {/* need to fix positioning of text when screen size changes */}
-                <div>
-                    <h1 className="image-h1 image-h1-margin">Here to Help You Surf</h1>
-                    <h1 className="image-h1">Better, Faster.</h1>
-                </div>
-                <p className="description-on-backscene-oc">Over 70 hours of courses.</p>
-                <div className="backscene-types">
-                    <p className={`button-${allButton}`} onClick={() => payCourses(false)}>All Courses</p>
-                    <p className={`button-${freeButton}`} onClick={() => payCourses(true)}>Free Courses</p>
+            <div className="oc-bg-img-position">
+                <img className="oc-backscene" src={courseBackscene} alt=""></img>  {/* need to change sizing of image when screen size changes */}
+                <div className="oc-backscene-text">
+                    <img className="shack-icon" src={shackIcon} alt=""></img> {/* need to fix positioning of text when screen size changes */}
+                    <div>
+                        <h1 className="image-h1 image-h1-margin">Here to Help You Surf</h1>
+                        <h1 className="image-h1">Better, Faster.</h1>
+                    </div>
+                    <p className="description-on-backscene-oc">Over 70 hours of courses.</p>
+                    <div className="backscene-types">
+                        <p className={`button-${allButton}`} onClick={() => payCourses(false)}>All Courses</p>
+                        <p className={`button-${freeButton}`} onClick={() => payCourses(true)}>Free Courses</p>
+                    </div>
                 </div>
             </div>
         

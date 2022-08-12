@@ -275,7 +275,6 @@ nav {
 
 .background {
   position: relative;
-  
 }
 
 .background-image {
@@ -292,7 +291,7 @@ nav {
   letter-spacing: .08em;
   position: absolute;
   left: 50px; 
-  top: 170px; 
+  bottom: 50px;
   color: rgb(252, 249, 240);
   text-align: left;
   font-family: 'Montserrat', sans-serif;
@@ -352,13 +351,16 @@ nav {
 
 /* MainPage main info  */
 
+.mp-img-position {
+  position: relative;
+}
+
 .main-info {
   height: 340px; 
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: -25px; 
 }
 
 .main-info-paragraph {
@@ -468,7 +470,6 @@ nav {
 
 .browse-courses { 
   height: 550px;
-  margin-top: 20px;
 }
 
 .courses-p {
@@ -593,16 +594,73 @@ nav {
 
 /* Surf Forecast Page */
 
+.fc-backscene-img {
+  position: relative; 
+}
+
 .forecast-backscene {
   width: 100%;
   height: 70vh;
   object-fit: cover;
 }
 
+.fc-backscene-form {
+  position: absolute;
+  bottom: 30px; 
+  font-size: 80px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Online Courses */
 
 .oc-bg-img {
   position: relative; 
+}
+
+.oc-bg-img-position {
+  position: relative;
 }
 
 .oc-backscene {
@@ -614,10 +672,10 @@ nav {
 }
 
 .oc-backscene-text {
-  letter-spacing: .08em;
   position: absolute;
   left: 50px; 
-  top: 170px; 
+  bottom: 30px; 
+  letter-spacing: .08em;
   color: rgb(252, 249, 240);
   text-align: left;
   font-family: 'Montserrat', sans-serif;
