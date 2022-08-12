@@ -17,6 +17,7 @@ function OnlineCourses() {
     const [isGrid, setIsGrid] = useState(true)
     const [availableCourses, setAvailableCourses] = useState(courseData)
     const [free, setFree] = useState(false)
+    const [level, setLevel] = useState("all")
 
     function viewChange(view) {
         if(view === "grid") {
@@ -26,24 +27,50 @@ function OnlineCourses() {
         }
     }
 
-    function viewFree(isFree) {
-        if(isFree) {
+    function payCourses(pay) {
+        if(pay) {
             setFree(true)
             setAvailableCourses(courseData.filter(course => course.free === true)) 
         } else {
             setFree(false)
             setAvailableCourses(courseData)
+            setLevel("all")
         }
     }
 
+    function levelCourses(event) { 
+        const selected = event.target.value;
+        setLevel(selected)
+
+        switch(selected) {
+            case "all": 
+                setAvailableCourses(availableCourses.filter(course => course)); 
+                break;
+            case "beginner":
+                setAvailableCourses(availableCourses.filter(course => course.level === 1));
+                break;
+            case "intermediate": 
+                setAvailableCourses(availableCourses.filter(course => course.level === 2))
+                break; 
+            case "more": 
+                setAvailableCourses(availableCourses.filter(course => course.level === 0))
+                break;
+            default: 
+                setAvailableCourses(courseData)
+        } 
+    }
+
+    //variables for css
     const allButton = free ? "free" : "notFree";
     const freeButton = free ? "notFree" : "free";
 
     const specifiedCourses = availableCourses.map((course) => {
-        return <OnlineCourse course={course} grid={isGrid} key={course.id}/>
+        if (availableCourses.length === 0) {
+            return <p>No courses available</p>
+        } else {
+            return <OnlineCourse course={course} grid={isGrid} key={course.id}/>
+        }
     })
-
-
 
     return (
         <section className="oc-bg-img">
@@ -56,8 +83,8 @@ function OnlineCourses() {
                 </div>
                 <p className="description-on-backscene-oc">Over 70 hours of courses.</p>
                 <div className="backscene-types">
-                    <p className={`button-${allButton}`} onClick={() => viewFree(false)}>All Courses</p>
-                    <p className={`button-${freeButton}`} onClick={() => viewFree(true)}>Free Courses</p>
+                    <p className={`button-${allButton}`} onClick={() => payCourses(false)}>All Courses</p>
+                    <p className={`button-${freeButton}`} onClick={() => payCourses(true)}>Free Courses</p>
                 </div>
             </div>
         
@@ -81,7 +108,7 @@ function OnlineCourses() {
 
                 <p>
                     <label className="course-levels">Course Levels:</label>
-                    <select className="level-select" name="levels">
+                    <select className="level-select" name="levels" value={level} onChange={levelCourses}>
                         <option value="all">All</option>
                         <option value="beginner">Beginner</option>
                         <option value="intermediate">Intermediate</option>

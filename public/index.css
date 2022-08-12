@@ -812,7 +812,7 @@ nav {
 
 .courses-in-grid {
   display: grid; 
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 25%);
   width: 100%; 
 }
 
@@ -959,7 +959,7 @@ nav {
   color: rgb(87, 87, 87)
 }
 
-.oc-long-title {
+.oc-long-title {  
   position: absolute;
   left: 270px; 
   top: 35px; 
