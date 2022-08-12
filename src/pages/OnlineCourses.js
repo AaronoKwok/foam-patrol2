@@ -18,6 +18,7 @@ function OnlineCourses() {
     const [availableCourses, setAvailableCourses] = useState(courseData)
     const [free, setFree] = useState(false)
     const [level, setLevel] = useState("all")
+    const [numberCourses, setNumberCourses] = useState(24)
 
     function viewChange(view) {
         if(view === "grid") {
@@ -30,7 +31,7 @@ function OnlineCourses() {
     function payCourses(pay) {
         if(pay) {
             setFree(true)
-            setAvailableCourses(courseData.filter(course => course.free === true)) 
+            setAvailableCourses(availableCourses.filter(course => course.free === true)) 
         } else {
             setFree(false)
             setAvailableCourses(courseData)
@@ -42,34 +43,43 @@ function OnlineCourses() {
         const selected = event.target.value;
         setLevel(selected)
 
-        switch(selected) {
-            case "all": 
-                setAvailableCourses(availableCourses.filter(course => course)); 
-                break;
-            case "beginner":
-                setAvailableCourses(availableCourses.filter(course => course.level === 1));
-                break;
-            case "intermediate": 
-                setAvailableCourses(availableCourses.filter(course => course.level === 2))
-                break; 
-            case "more": 
-                setAvailableCourses(availableCourses.filter(course => course.level === 0))
-                break;
-            default: 
+        if (selected === "all") {
+            if (free) {
+                setAvailableCourses(courseData.filter(course => course.free === true))
+            } else {
                 setAvailableCourses(courseData)
-        } 
+            }
+        } else if (selected === "beginner") {
+            if (free) {
+                setAvailableCourses(courseData.filter(course => course.level === 1 && course.free === true))
+            } else {
+                setAvailableCourses(courseData.filter(course => course.level === 1))
+            }
+        } else if (selected === "intermediate") {
+            if (free) {
+                setAvailableCourses(courseData.filter(course => course.level === 2 && course.free === true))
+            } else {
+                setAvailableCourses(courseData.filter(course => course.level === 2))
+            }
+        } else {
+            if (free) {
+                setAvailableCourses(courseData.filter(course => course.level === 0 && course.free === true))
+            } else {
+                setAvailableCourses(courseData.filter(course => course.level === 0))
+            }
+        }  
     }
+
+    useEffect(() => {
+        setNumberCourses(availableCourses.length)
+    }, [availableCourses])
 
     //variables for css
     const allButton = free ? "free" : "notFree";
     const freeButton = free ? "notFree" : "free";
 
     const specifiedCourses = availableCourses.map((course) => {
-        if (availableCourses.length === 0) {
-            return <p>No courses available</p>
-        } else {
             return <OnlineCourse course={course} grid={isGrid} key={course.id}/>
-        }
     })
 
     return (
@@ -89,7 +99,7 @@ function OnlineCourses() {
             </div>
         
             <div className="courses-pg-layout">
-                <p className="all-surf-header">All Surfing Courses</p>
+                <p className="all-surf-header">{numberCourses} Surfing Courses</p>
                 <hr className="hr-surf-header"/>
 
                 <div className="choose-view"> {/* grid/list view chooser - add color background color change */}
