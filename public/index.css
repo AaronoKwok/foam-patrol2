@@ -649,8 +649,8 @@ nav {
 }
 
 .find-break {
-  background-color: rgb(15, 79, 121);
-  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(19, 146, 146);
+  border: 1.5px solid rgb(255, 255, 255);
   border-radius: 20px; 
   padding: 0px 30px;
   color: white;
@@ -658,11 +658,11 @@ nav {
 }
 
 .find-break:hover{
-  background-color: rgb(19, 146, 146);
+  background-color: rgb(15, 79, 121);
   cursor: pointer;
 }
 .find-break:active {
-  background-color: rgb(15, 79, 121);
+  background-color: rgb(19, 146, 146);
 }
 
 .fc-backscene-form {
@@ -673,6 +673,14 @@ nav {
   font-weight: 400; 
   color: var(--backscene-text);
   
+}
+
+.forecast {
+  height: 900px; 
+  width: 85%;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 10px; 
 }
 
 

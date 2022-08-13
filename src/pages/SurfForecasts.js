@@ -32,12 +32,14 @@ function SurfForecasts() {
                         <input className="loc-input" required type="text" value={lookUpLoc} onChange={lookChange} placeholder="Search for a surf break - ex:  'North Shore Oahu, HI'"></input>
                     </label>
                     <br />
-                    <input className="find-break" type="submit" value="Find Break" />
+                    <input className="find-break" type="submit" value="Find a Break" />
                 </form>
-                
+            </section>
+
+            <section className="forecast"> 
+                <p>forecast</p>
             </section>
             
-                <p>forecast</p>
         </div>
     )
 }
