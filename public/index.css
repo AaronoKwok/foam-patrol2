@@ -5,7 +5,7 @@
   --des-size: 1.7em;
   --des-weight: 600;
   --course-gray: rgb(206, 206, 206);
-  
+  --backscene-text: rgb(252, 249, 240)
 }
 
 * {
@@ -596,18 +596,47 @@ nav {
 
 .fc-backscene-img {
   position: relative; 
+  font-family: 'Montserrat', sans-serif;
 }
 
 .forecast-backscene {
+  transform: scaleX(-1);
   width: 100%;
   height: 70vh;
   object-fit: cover;
 }
 
+.fc-backscene-title {
+  position: absolute;
+  bottom: 200px;
+  left: 45px; 
+  color: var(--backscene-text); 
+  font-size: 3.3em;
+  font-weight: bold;
+  letter-spacing: .07em;
+  margin: 0px; 
+
+}
+
+.loc-input {
+  border: none;
+}
+
+.find-break {
+  background-color: rgb(48, 48, 148);
+  border-radius: 20px; 
+  padding: 5px 10px;
+  border: none;
+}
+
 .fc-backscene-form {
   position: absolute;
-  bottom: 30px; 
-  font-size: 80px; 
+  bottom: 150px; 
+  left: 45px; 
+  font-size: 1.3em;
+  font-weight: 400; 
+  color: var(--backscene-text);
+  
 }
 
 
@@ -673,7 +702,7 @@ nav {
 
 .oc-backscene-text {
   position: absolute;
-  left: 50px; 
+  left: 45px; 
   bottom: 30px; 
   letter-spacing: .08em;
   color: rgb(252, 249, 240);
@@ -681,8 +710,8 @@ nav {
   font-family: 'Montserrat', sans-serif;
 }
 
-.shack-icon {
-  width: 90px; 
+.progress-icon {
+  width: 80px; 
   margin-bottom: 20px; /* NOTE: styling of components here also in main scene backscene section in this file */
 } 
 

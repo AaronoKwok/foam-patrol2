@@ -10,7 +10,7 @@ import gridIcon from "../images/gridIcon.png"
 import listIcon from "../images/listView.png"
 
 import courseBackscene from "../images/courses.png"
-import shackIcon from "../images/shackIcon.png"
+import progress from "../images/progress.png"
 
 function OnlineCourses() {
 
@@ -87,7 +87,7 @@ function OnlineCourses() {
             <div className="oc-bg-img-position">
                 <img className="oc-backscene" src={courseBackscene} alt=""></img>  {/* need to change sizing of image when screen size changes */}
                 <div className="oc-backscene-text">
-                    <img className="shack-icon" src={shackIcon} alt=""></img> {/* need to fix positioning of text when screen size changes */}
+                    <img className="progress-icon" src={progress} alt=""></img> {/* need to fix positioning of text when screen size changes */}
                     <div>
                         <h1 className="image-h1 image-h1-margin">Here to Help You Surf</h1>
                         <h1 className="image-h1">Better, Faster.</h1>
