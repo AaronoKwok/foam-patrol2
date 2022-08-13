@@ -2,6 +2,7 @@ import React, {useState, useContext} from "react"
 
 import {Context} from "../Context"
 import backScene from "../images/forecast-backscene.png"
+import shack from "../images/shackIcon.png"
 
 function SurfForecasts() {
     const {test} = useContext(Context) //test to be replaced by a forecast
@@ -23,12 +24,15 @@ function SurfForecasts() {
             <section className="fc-backscene-img">
                 <img className="forecast-backscene" src={backScene} alt=""></img>  
                 {test}
-                <p className="fc-backscene-title">Know When and Where to Surf</p>
+                <img className="fc-shack" src={shack} alt="" />
+                <p className="fc-backscene-title">Know When and Where</p>
+                <p className="fc-backscene-p">Check current conditions anytime.</p>
                 <form onSubmit={findLoc} className="fc-backscene-form">
                     <label>
-                        <input className="loc-input" required type="text" value={lookUpLoc} onChange={lookChange} placeholder=" 'North Shore, Oahu'"></input>
+                        <input className="loc-input" required type="text" value={lookUpLoc} onChange={lookChange} placeholder="Search for a surf break - ex:  'North Shore Oahu, HI'"></input>
                     </label>
-                    <input className="find-break" type="submit" value="Go" />
+                    <br />
+                    <input className="find-break" type="submit" value="Find Break" />
                 </form>
                 
             </section>
