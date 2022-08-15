@@ -1,0 +1,21 @@
+[
+    {
+        "id": "", 
+        "name": "", 
+        "mapImg": "", 
+        "surfHeight": "", 
+        "status": "", 
+        "primarySwell": "", 
+        "secondarySwell": "", 
+        "windSwell": "", 
+        "airTemp": "", 
+        "waterTemp": "", 
+        "tideLocation": "", 
+        "waveHeight": "", 
+        "waveRating": "", 
+        "windRating": "", 
+        "localTime": "", 
+        "about": "", 
+        "localPhotos": ""
+    }
+]

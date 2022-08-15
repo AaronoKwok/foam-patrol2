@@ -37,6 +37,14 @@ function SurfForecasts() {
             </section>
 
             <section className="forecast"> 
+                {/* 
+                    fill in blank search bar for 50 surfing spots local and far. 
+                    - execute onchange function
+                    json for surfing location data with initial states change every 30 min.
+                    - useeffect timeout
+                    hoverable buttons in a div with drop downs to choose from locations 
+                    - search locations on weather api, then make up surf spot data
+                */}
                 <p>forecast</p>
             </section>
             

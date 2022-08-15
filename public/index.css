@@ -619,7 +619,7 @@ nav {
   bottom: 195px;
   left: 45px; 
   color: var(--backscene-text); 
-  font-size: 3.3em;
+  font-size: 3.27em;
   font-weight: bold;
   letter-spacing: .07em;
   margin: 0px; 
@@ -654,7 +654,6 @@ nav {
   border-radius: 20px; 
   padding: 0px 30px;
   color: white;
-  font-weight: 500;
 }
 
 .find-break:hover{
@@ -669,7 +668,7 @@ nav {
   position: absolute;
   bottom: 65px; 
   left: 45px; 
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 400; 
   color: var(--backscene-text);
   
