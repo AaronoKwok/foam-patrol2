@@ -26,7 +26,7 @@ function SurfForecasts() {
                 {test}
                 <img className="fc-shack" src={shack} alt="" />
                 <p className="fc-backscene-title">Know When and Where</p>
-                <p className="fc-backscene-p">Check current conditions anytime.</p>
+                <p className="fc-backscene-p">Check conditions anytime.</p>
                 <form onSubmit={findLoc} className="fc-backscene-form">
                     <label>
                         <input className="loc-input" required type="text" value={lookUpLoc} onChange={lookChange} placeholder="Search for a surf break - ex:  'North Shore Oahu, HI'"></input>
@@ -35,6 +35,9 @@ function SurfForecasts() {
                     <input className="find-break" type="submit" value="Find a Break" />
                 </form>
             </section>
+            <div className="forecastNote">
+                <p><span style={{'font-weight': 'bold', 'text-decoration': 'underline'}}>NOTICE</span>: Currently, surf forecast API providers are not providing API keys, so some surf report data (wave height, wave rating, wind rating, water temperature, status, and swell data) is not real. Other data points (air temperature, local time, sunrise, and sunset data) are taken from weather APIs.</p>
+            </div>
 
             <section className="forecast"> 
                 {/* 

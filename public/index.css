@@ -649,7 +649,7 @@ nav {
 }
 
 .find-break {
-  background-color: rgb(19, 146, 146);
+  background-color: rgba(19, 146, 146, 0.829);
   border: 1.5px solid rgb(255, 255, 255);
   border-radius: 20px; 
   padding: 0px 30px;
@@ -657,7 +657,7 @@ nav {
 }
 
 .find-break:hover{
-  background-color: rgb(15, 79, 121);
+  background-color: rgba(15, 79, 121, 0.781);
   cursor: pointer;
 }
 .find-break:active {
@@ -674,12 +674,29 @@ nav {
   
 }
 
+/* TEMPORARY FORECAST NOTE */
+
+.forecastNote {
+  width: 750px;
+  margin: 15px auto 15px auto;  
+  text-align: center;
+  padding: 10px 10px 0px 10px;
+  background-color: rgb(254, 255, 177);
+  border: 4px solid rgb(196, 231, 255); 
+  border-radius: 15px; 
+  font-size: 1.18em; 
+}
+
+/* end of note */
+
 .forecast {
+  position: relative;
   height: 900px; 
   width: 85%;
   border: 1px solid black;
   margin: auto;
   margin-top: 10px; 
+  margin-bottom: 10px;
 }
 
 
