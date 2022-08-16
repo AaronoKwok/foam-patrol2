@@ -15,7 +15,7 @@ function SurfForecasts() {
     }
 
     function findLoc(event) {
-        event.preventDefault();
+        event.preventDefault();   
         console.log("Searching")
         setLookUpLoc("")
     }
@@ -35,6 +35,21 @@ function SurfForecasts() {
             }
         }).then((res) => res.json()).then((data) => console.log(data))
     }, []) */
+
+    /* 
+    
+    useEffect(() => {(
+
+    )
+        async () => (`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`) {
+            const res = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`);
+            var data = await res.json()
+            console.log(data)
+        }
+    }, [])
+
+    */
+
 
     return (
         <div>
