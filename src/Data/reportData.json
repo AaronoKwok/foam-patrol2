@@ -1,19 +1,16 @@
 [
     {
-        "id": "", 
-        "name": "", 
-        "mapImg": "", 
-        "status": "", 
+        "id": "0", 
+        "name": "Pleasure Point", 
+        "mapImg": "https://chart-1.msw.ms/maps/spot/16b385729160c1d946e20cb9302db12c.png", 
         "primarySwell": "", 
         "secondarySwell": "", 
         "windSwell": "", 
-        "airTemp": "", 
         "waterTemp": "", 
         "tideLocation": "", 
         "waveHeight": "", 
         "waveRating": "", 
         "windRating": "", 
-        "localTime": "", 
         "about": "", 
         "localPhotos": ""
     }

@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react"
+import React, {useState, useContext, useEffect} from "react"
 
 import {Context} from "../Context"
 import backScene from "../images/forecast-backscene.png"
@@ -7,6 +7,7 @@ import shack from "../images/shackIcon.png"
 function SurfForecasts() {
     const {test} = useContext(Context) //test to be replaced by a forecast
     const [lookUpLoc, setLookUpLoc] = useState("")
+    const [forecastID, setForecastID] = useState("")
 
     function lookChange(event) {
         const text = event.target.value
@@ -18,6 +19,22 @@ function SurfForecasts() {
         console.log("Searching")
         setLookUpLoc("")
     }
+
+
+    //test stormglass
+
+    const lat = 36.9562; 
+    const lng = -121.9711; 
+    const params = 'airTemperature,waveHeight'; 
+
+
+    /* useEffect(() => {
+        fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
+            headers: {
+                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+            }
+        }).then((res) => res.json()).then((data) => console.log(data))
+    }, []) */
 
     return (
         <div>
@@ -57,4 +74,62 @@ function SurfForecasts() {
  
 export default SurfForecasts
 
-//add api
+// can unfamiliar terms link to glossary
+
+
+//template report data
+/* {
+        "id": "", 
+        "name": "", 
+        "mapImage": "",
+        "about": "", 
+        "localPhotos": []
+        "guide": {
+            "abilityLevel": 0, 
+            "localVibe": "", 
+            "crowdFactor": "", 
+            "spotRating": "", 
+            "shoulderBurn": "", 
+            "waterQuality": "", 
+            "hazards": "", 
+            "access": "", 
+            "bestSeason": "", 
+            "bringYour": "", 
+            "bottom": "",
+            "idealConditions": {
+                "swellDirection": "", 
+                "wind": "", 
+                "surfHeight": "", 
+                "tide": ""
+            }
+        }
+    } */
+
+    /* fake data */
+    /*  
+        - wave height
+        - wave rating
+        - water temp
+        - status
+        - swell data: 
+            - primary (format: ft at seconds)
+            - secondary
+            - wind swell
+    */
+
+    /* api data */
+    /* 
+        - air temp
+        - sunrise/set
+        - first/last light
+        - tide
+        - local time ??
+        - swell ??
+        - wave height ??
+    */
+
+    /* possible layout: 
+        - 
+    
+    */
+
