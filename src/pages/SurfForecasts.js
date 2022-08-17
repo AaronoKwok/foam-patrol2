@@ -1,4 +1,5 @@
 import React, {useState, useContext, useEffect} from "react"
+import axios from "axios"
 
 import {Context} from "../Context"
 import backScene from "../images/forecast-backscene.png"
@@ -25,7 +26,47 @@ function SurfForecasts() {
 
     const lat = 36.9562; 
     const lng = -121.9711; 
-    const params = 'airTemperature,waveHeight'; 
+    const end = '2022-8-22 12:00'; //5 days ahead -- needed for astronomy
+
+    const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveDirection,waveHeight'; 
+    const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}`
+
+    //const astronomyParams = ''; not needed
+    const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&end=${end}`
+
+    /* const solarParams = 'uvIndex' //NOTE: UV index not accurate
+    const solarUrl = `https://api.stormglass.io/v2/solar/point?lat=${lat}&lng=${lng}&params=${solarParams}`
+ */
+    
+    const headers = {
+        headers: {
+            'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+        }
+    }
+
+    const requestOne = axios.get(weatherUrl, headers);
+    const requestTwo = axios.get(astronomyUrl, headers); 
+    
+    useEffect(() => {
+        axios.all([requestOne, requestTwo])
+            .then(axios.spread((...res) => { 
+                console.log(res[0].data)
+                console.log(res[1].data)
+            }))
+    }, [])
+    
+
+
+    /* useEffect(() => {
+        axios.get(astronomyUrl, {
+            headers: {
+                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+            }
+        })
+            .then(res => { //axios library auto changes response from string to object
+                console.log(res.data)
+            })
+    }, []) */
 
 
     /* useEffect(() => {
@@ -36,19 +77,7 @@ function SurfForecasts() {
         }).then((res) => res.json()).then((data) => console.log(data))
     }, []) */
 
-    /* 
-    
-    useEffect(() => {(
-
-    )
-        async () => (`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`) {
-            const res = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`);
-            var data = await res.json()
-            console.log(data)
-        }
-    }, [])
-
-    */
+   
 
 
     return (
@@ -68,7 +97,7 @@ function SurfForecasts() {
                 </form>
             </section>
             <div className="forecastNote">
-                <p><span style={{'font-weight': 'bold', 'text-decoration': 'underline'}}>NOTICE</span>: Currently, surf forecast API providers are not providing API keys, so some surf report data (wave height, wave rating, wind rating, water temperature, status, and swell data) is not real. Other data points (air temperature, local time, sunrise, and sunset data) are taken from weather APIs.</p>
+                <p><span style={{'fontWeight': 'bold', 'textDecoration': 'underline'}}>NOTICE</span>: Currently, surf forecast API providers are not providing API keys, so some surf report data (wave height, wave rating, wind rating, water temperature, status, and swell data) is not real. Other data points (air temperature, local time, sunrise, and sunset data) are taken from weather APIs.</p>
             </div>
 
             <section className="forecast"> 
