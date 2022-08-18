@@ -39,9 +39,9 @@ function SurfForecasts() {
         }
     }
 
-    const requestOne = axios.get(weatherUrl, headers);
+   /*  const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
-    const requestThree = axios.get(tideUrl, headers); 
+    const requestThree = axios.get(tideUrl, headers);  */
     
     /* useEffect(() => {
         axios.all([requestOne, requestTwo, requestThree])

@@ -56,6 +56,10 @@ function Header() {
                                 <Link className="dropdown-link" to="/surf-trip-calendar">
                                     <p className="dropdown-info">SURF TRIP CALENDAR</p>
                                 </Link>
+
+                                <Link className="dropdown-link" to="/surfForecasts">
+                                    <p className="dropdown-info">Temporary surf forecasts</p>
+                                </Link>
                             </div>
 
                         </span>
@@ -64,115 +68,22 @@ function Header() {
 
                     <div className="nav-dropdown">
 
-                    <Link className="nav-link color-change" to="/surfForecasts">
-                        <p className="nav-button">SURF FORECAST</p>
-                    </Link>
                         <p className="nav-button">SURF FORECASTS &nbsp;<i className="arrow down"></i></p>
 
                         <span className="dropdown-section"> 
 
-                            <div className="retreat-dropdown-content">
-                                <p className="dropdown-title">OUR COMPANY</p>
-                                <hr className="hr-dropdown"/>
-
-                                <Link className="dropdown-link" to="/team">
-                                    <p className="dropdown-info">TEAM</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/what-we-do">
-                                    <p className="dropdown-info">WHAT WE DO</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/social-resonsibility">
-                                    <p className="dropdown-info">SOCIAL RESPONSIBILITY</p>
-                                </Link>
-                            </div>
-
-                            <div className="retreat-dropdown-content">
-                                <p className="dropdown-title">SURFING</p>
-                                <hr className="hr-dropdown"/>
-
-                                <Link className="dropdown-link" to="/is-this-trip-for-me">
-                                    <p className="dropdown-info">IS THIS TRIP FOR ME?</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/surfing-level">
-                                    <p className="dropdown-info">WHAT IS MY SURF LEVEL?</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/how-we-coach">
-                                    <p className="dropdown-info">HOW DO WE COACH SURFING?</p>
-                                </Link>
-                            </div>
-
-                            <div className="retreat-dropdown-content">
-                                <p className="dropdown-title">RESOURCES</p>
-                                <hr className="hr-dropdown"/>
-
-                                <Link className="dropdown-link" to="/contact-us">
-                                    <p className="dropdown-info">CONTACT US</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/reservation-policy">
-                                    <p className="dropdown-info">RESERVATION POLICY</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/faq">
-                                    <p className="dropdown-info">FAQ</p>
-                                </Link>
-                            </div>
-
+                            
                         </span>
 
                     </div>
 
                     <div className="nav-dropdown">
-                    <Link className="nav-link color-change" to="/shop">
-                        <p className="nav-button">PRODUCTS</p>
-                    </Link>
+            
                         <p className="nav-button">PRODUCTS &nbsp;<i className="arrow down"></i></p>
 
                         <span className="dropdown-section"> 
 
-                            <div className="retreat-dropdown-content">
-                                <p className="dropdown-title">OUR COMPANY</p>
-                                <hr className="hr-dropdown"/>
-
-                                <Link className="dropdown-link" to="/team">
-                                    <p className="dropdown-info">TEAM</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/what-we-do">
-                                    <p className="dropdown-info">WHAT WE DO</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/social-resonsibility">
-                                    <p className="dropdown-info">SOCIAL RESPONSIBILITY</p>
-                                </Link>
-                            </div>
-
-                            <div className="retreat-dropdown-content">
-                                <p className="dropdown-title">SURFING</p>
-                                <hr className="hr-dropdown"/>
-
-                                <Link className="dropdown-link" to="/is-this-trip-for-me">
-                                    <p className="dropdown-info">IS THIS TRIP FOR ME?</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/surfing-level">
-                                    <p className="dropdown-info">WHAT IS MY SURF LEVEL?</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/how-we-coach">
-                                    <p className="dropdown-info">HOW DO WE COACH SURFING?</p>
-                                </Link>
-                            </div>
-
-                            <div className="retreat-dropdown-content">
-                                <p className="dropdown-title">RESOURCES</p>
-                                <hr className="hr-dropdown"/>
-
-                                <Link className="dropdown-link" to="/contact-us">
-                                    <p className="dropdown-info">CONTACT US</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/reservation-policy">
-                                    <p className="dropdown-info">RESERVATION POLICY</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/faq">
-                                    <p className="dropdown-info">FAQ</p>
-                                </Link>
-                            </div>
-
+                            
                         </span>
 
                     </div>

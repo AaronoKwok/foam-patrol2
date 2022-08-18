@@ -72,6 +72,7 @@ nav {
   height: 200px; 
   background-color: rgb(255, 255, 255); 
   top: 100%;
+  left: -170px;
   border-radius: 5px; 
   display: flex;
   justify-content: space-evenly;
