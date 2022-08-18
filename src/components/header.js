@@ -5,8 +5,15 @@ import Logo from "./Logo"
 import githubSVG from "../images/github.svg"
 import linkedinSVG from "../images/linkedin.svg" 
 
+import locationData from "../Data/locationData.json"
+
  
 function Header() {
+
+    const usaState = locationData[0].globe.northAmerica.country.unitedStates.state
+
+    const pleasurePoint = usaState.california.northern[0].name;
+    const waikiki = usaState.hawaii.oahu[0].name
 
     return (
         <header>
@@ -58,7 +65,7 @@ function Header() {
                                 </Link>
 
                                 <Link className="dropdown-link" to="/surfForecasts">
-                                    <p className="dropdown-info">Temporary surf forecasts</p>
+                                    <p className="dropdown-info">Surf Forecast Component</p>
                                 </Link>
                             </div>
 
@@ -71,6 +78,15 @@ function Header() {
                         <p className="nav-button">SURF FORECASTS &nbsp;<i className="arrow down"></i></p>
 
                         <span className="dropdown-section"> 
+                            <Link to="/surfForecasts/pleasurePoint">
+                                <p>{pleasurePoint}</p>
+                            </Link>
+                            <Link to="/surfForecasts/waikiki">
+                                <p>{waikiki}</p>            
+                            </Link>
+
+                            
+                            
 
                             
                         </span>

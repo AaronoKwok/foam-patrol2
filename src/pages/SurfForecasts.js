@@ -2,10 +2,11 @@ import React, {useState, useContext, useEffect} from "react"
 import axios from "axios"
 
 import {Context} from "../Context"
-import backScene from "../images/forecast-backscene.png"
-import shack from "../images/shackIcon.png"
 
-function SurfForecasts() {
+
+function SurfForecasts({loc}) {
+    console.log(loc)
+
     const {test} = useContext(Context) //test to be replaced by a forecast
     const [lookUpLoc, setLookUpLoc] = useState("")
     const [forecastID, setForecastID] = useState("")
@@ -57,24 +58,6 @@ function SurfForecasts() {
 
     return (
         <div>
-            <section className="fc-backscene-img">
-                <img className="forecast-backscene" src={backScene} alt=""></img>  
-                {test}
-                <img className="fc-shack" src={shack} alt="" />
-                <p className="fc-backscene-title">Know When and Where</p>
-                <p className="fc-backscene-p">Check conditions anytime.</p>
-                <form onSubmit={findLoc} className="fc-backscene-form">
-                    <label>
-                        <input className="loc-input" required type="text" value={lookUpLoc} onChange={lookChange} placeholder="Search for a surf break - ex:  'North Shore Oahu, HI'"></input>
-                    </label>
-                    <br />
-                    <input className="find-break" type="submit" value="Find a Break" />
-                </form>
-            </section>
-
-            <section className="forecast"> 
-                <p>forecast</p>
-            </section>
             
         </div>
     )
@@ -83,4 +66,16 @@ function SurfForecasts() {
 export default SurfForecasts
 
 // can unfamiliar terms link to glossary
+
+
+           /*  <section className="fc-backscene-img">
+                
+                <form onSubmit={findLoc} className="fc-backscene-form">
+                    <label>
+                        <input className="loc-input" required type="text" value={lookUpLoc} onChange={lookChange} placeholder="Search for a surf break - ex:  'North Shore Oahu, HI'"></input>
+                    </label>
+                    <br />
+                    <input className="find-break" type="submit" value="Find a Break" />
+                </form>
+            </section> */
 
