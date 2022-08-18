@@ -26,17 +26,14 @@ function SurfForecasts() {
 
     const lat = 36.9562; 
     const lng = -121.9711; 
-    const end = '2022-8-22 12:00'; //5 days ahead -- needed for astronomy
+    const start = '2022-8-17 00:00'
+    const end = '2022-8-28 00:00'; //5 days ahead -- needed for astronomy
 
-    const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveDirection,waveHeight'; 
+    const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
+    
     const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}`
-
-    //const astronomyParams = ''; not needed
     const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&end=${end}`
-
-    /* const solarParams = 'uvIndex' //NOTE: UV index not accurate
-    const solarUrl = `https://api.stormglass.io/v2/solar/point?lat=${lat}&lng=${lng}&params=${solarParams}`
- */
+    const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&start=${start}&end=${end}`
     
     const headers = {
         headers: {
@@ -45,36 +42,16 @@ function SurfForecasts() {
     }
 
     const requestOne = axios.get(weatherUrl, headers);
-    const requestTwo = axios.get(astronomyUrl, headers); 
+    const requestTwo = axios.get(astronomyUrl, headers);
+    const requestThree = axios.get(tideUrl, headers); 
     
-    useEffect(() => {
-        axios.all([requestOne, requestTwo])
+    /* useEffect(() => {
+        axios.all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => { 
                 console.log(res[0].data)
                 console.log(res[1].data)
+                console.log(res[2].data)
             }))
-    }, [])
-    
-
-
-    /* useEffect(() => {
-        axios.get(astronomyUrl, {
-            headers: {
-                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
-            }
-        })
-            .then(res => { //axios library auto changes response from string to object
-                console.log(res.data)
-            })
-    }, []) */
-
-
-    /* useEffect(() => {
-        fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
-            headers: {
-                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
-            }
-        }).then((res) => res.json()).then((data) => console.log(data))
     }, []) */
 
    
@@ -125,17 +102,18 @@ export default SurfForecasts
 /* {
         "id": "", 
         "name": "", 
+        "location": ["", ""],
         "mapImage": "",
         "about": "", 
-        "localPhotos": []
+        "localPhotos": [],
         "guide": {
-            "abilityLevel": 0, 
-            "localVibe": "", 
-            "crowdFactor": "", 
-            "spotRating": "", 
-            "shoulderBurn": "", 
-            "waterQuality": "", 
-            "hazards": "", 
+            "abilityLevel": 0,          // 0 beg // 1 int / 2 adv           //add des
+            "localVibe": "",            0-100 welcoming - intimidating      //add des
+            "crowdFactor": "",          0-100 mellow - heavy                //add des   
+            "spotRating": "",           0-100 poor - perfect                //add des
+            "shoulderBurn": "",         0-100 light - exhausting            //add des     
+            "waterQuality": "",         0-100 clean - dirty                 //add des
+            "hazards": "",      
             "access": "", 
             "bestSeason": "", 
             "bringYour": "", 
@@ -151,29 +129,7 @@ export default SurfForecasts
 
     /* fake data */
     /*  
-        - wave height
-        - wave rating
-        - water temp
         - status
-        - swell data: 
-            - primary (format: ft at seconds)
-            - secondary
-            - wind swell
     */
 
-    /* api data */
-    /* 
-        - air temp
-        - sunrise/set
-        - first/last light
-        - tide
-        - local time ??
-        - swell ??
-        - wave height ??
-    */
-
-    /* possible layout: 
-        - 
-    
-    */
 

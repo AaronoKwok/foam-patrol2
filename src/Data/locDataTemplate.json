@@ -1,0 +1,53 @@
+[
+    {
+        "id": "", 
+        "name": "", 
+        "location": [36.9576, -121.9688],
+        "mapImage": "",
+        "about": "", 
+        "localPhotos": [],
+        "guide": {
+            "abilityLevel": {
+                "title": "", 
+                "level": [1, 2], 
+                "description": ""
+            }, 
+            "localVibe": {
+                "title": "", 
+                "level": 70, 
+                "description": ""
+            }, 
+            "crowdFactor": {
+                "title": "", 
+                "level": 90, 
+                "description": ""
+            }, 
+            "spotRating": {
+                "title": "", 
+                "level": 80, 
+                "description": ""
+            }, 
+            "shoulderBurn": {
+                "title": "",
+                "level": 50, 
+                "description": ""
+            }, 
+            "waterQuality": {
+                "title": "",
+                "level": 28, 
+                "description": ""
+            }, 
+            "hazards": "", 
+            "access": "", 
+            "bestSeason": "", 
+            "bringYour": "", 
+            "bottom": "",
+            "idealConditions": {
+                "swellDirection": "", 
+                "wind": "", 
+                "surfHeight": "", 
+                "tide": ""
+            }
+        }
+    }
+]
