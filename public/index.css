@@ -676,16 +676,6 @@ nav {
 
 /* TEMPORARY FORECAST NOTE */
 
-.forecastNote {
-  width: 750px;
-  margin: 15px auto 15px auto;  
-  text-align: center;
-  padding: 10px 10px 0px 10px;
-  background-color: rgb(254, 255, 177);
-  border: 4px solid rgb(196, 231, 255); 
-  border-radius: 15px; 
-  font-size: 1.18em; 
-}
 
 /* end of note */
 

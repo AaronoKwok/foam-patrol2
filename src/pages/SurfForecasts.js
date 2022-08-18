@@ -21,11 +21,9 @@ function SurfForecasts() {
         setLookUpLoc("")
     }
 
-
-    //test stormglass
-
-    const lat = 36.9562; 
-    const lng = -121.9711; 
+    //stormglass api
+    const lat = ""; 
+    const lng = ""; 
     const start = '2022-8-17 00:00'
     const end = '2022-8-28 00:00'; //5 days ahead -- needed for astronomy
 
@@ -73,19 +71,8 @@ function SurfForecasts() {
                     <input className="find-break" type="submit" value="Find a Break" />
                 </form>
             </section>
-            <div className="forecastNote">
-                <p><span style={{'fontWeight': 'bold', 'textDecoration': 'underline'}}>NOTICE</span>: Currently, surf forecast API providers are not providing API keys, so some surf report data (wave height, wave rating, wind rating, water temperature, status, and swell data) is not real. Other data points (air temperature, local time, sunrise, and sunset data) are taken from weather APIs.</p>
-            </div>
 
             <section className="forecast"> 
-                {/* 
-                    fill in blank search bar for 50 surfing spots local and far. 
-                    - execute onchange function
-                    json for surfing location data with initial states change every 30 min.
-                    - useeffect timeout
-                    hoverable buttons in a div with drop downs to choose from locations 
-                    - search locations on weather api, then make up surf spot data
-                */}
                 <p>forecast</p>
             </section>
             
@@ -96,40 +83,4 @@ function SurfForecasts() {
 export default SurfForecasts
 
 // can unfamiliar terms link to glossary
-
-
-//template report data
-/* {
-        "id": "", 
-        "name": "", 
-        "location": ["", ""],
-        "mapImage": "",
-        "about": "", 
-        "localPhotos": [],
-        "guide": {
-            "abilityLevel": 0,          // 0 beg // 1 int / 2 adv           //add des
-            "localVibe": "",            0-100 welcoming - intimidating      //add des
-            "crowdFactor": "",          0-100 mellow - heavy                //add des   
-            "spotRating": "",           0-100 poor - perfect                //add des
-            "shoulderBurn": "",         0-100 light - exhausting            //add des     
-            "waterQuality": "",         0-100 clean - dirty                 //add des
-            "hazards": "",      
-            "access": "", 
-            "bestSeason": "", 
-            "bringYour": "", 
-            "bottom": "",
-            "idealConditions": {
-                "swellDirection": "", 
-                "wind": "", 
-                "surfHeight": "", 
-                "tide": ""
-            }
-        }
-    } */
-
-    /* fake data */
-    /*  
-        - status
-    */
-
 
