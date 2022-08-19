@@ -5,7 +5,7 @@ import {Context} from "../Context"
 
 
 function SurfForecasts({loc}) {
-    console.log(loc)
+    console.log(loc.location)
 
     const {test} = useContext(Context) //test to be replaced by a forecast
     const [lookUpLoc, setLookUpLoc] = useState("")
@@ -23,9 +23,16 @@ function SurfForecasts({loc}) {
     }
 
     //stormglass api
-    const lat = ""; 
-    const lng = ""; 
-    const start = '2022-8-17 00:00'
+    const lat = loc.location[0]; 
+    const lng = loc.location[1];
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1; //added 1 bc months is 0-based, so 0 in the array would be january
+    const year = date.getFullYear()
+    const currentDate = `${year}-${month}-${day}`
+
+    console.log(currentDate)
+    const start = `${currentDate} 00:00`
     const end = '2022-8-28 00:00'; //5 days ahead -- needed for astronomy
 
     const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
