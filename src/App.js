@@ -26,8 +26,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/surfForecasts">
-                    <Route path="pleasurePoint" element={<SurfForecasts loc={pleasurePoint}/>} />
-                    <Route path="waikiki" element={<SurfForecasts loc={waikiki}/>} />
+                    <Route path="/surfForecasts/pleasurePoint" element={<SurfForecasts loc={pleasurePoint}/>} />
+                    <Route path="/surfForecasts/waikiki" element={<SurfForecasts loc={waikiki}/>} />
                 </Route> 
                 <Route path="/shop" element={<Shop />} />
                 <Route path="onlineCourses" element={<OnlineCourses />} />

@@ -1,15 +1,21 @@
 import React, {useState, useContext, useEffect} from "react"
 import axios from "axios"
 
-import {Context} from "../Context"
+//import {Context} from "../Context"
 
 
 function SurfForecasts({loc}) {
     console.log(loc.location)
 
-    const {test} = useContext(Context) //test to be replaced by a forecast
+    //const {test} = useContext(Context) //test to be replaced by a forecast
     const [lookUpLoc, setLookUpLoc] = useState("")
     const [forecastID, setForecastID] = useState("")
+
+    const [change, setChange] = useState(true)
+
+    function changeState() {
+        setChange(!change)
+    }
 
     function lookChange(event) {
         const text = event.target.value
@@ -26,14 +32,13 @@ function SurfForecasts({loc}) {
     const lat = loc.location[0]; 
     const lng = loc.location[1];
     const date = new Date();
+    const hour = date.getHours();
     const day = date.getDate();
     const month = date.getMonth() + 1; //added 1 bc months is 0-based, so 0 in the array would be january
     const year = date.getFullYear()
     const currentDate = `${year}-${month}-${day}`
-
-    console.log(currentDate)
-    const start = `${currentDate} 00:00`
-    const end = '2022-8-28 00:00'; //5 days ahead -- needed for astronomy
+    const start = `${currentDate} ${hour}:00`
+    const end = '2022-8-24 00:00'; //5 days ahead -- needed for astronomy
 
     const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
     
@@ -65,7 +70,7 @@ function SurfForecasts({loc}) {
 
     return (
         <div>
-            
+            <p className="test" onClick={changeState}>test</p>
         </div>
     )
 }

@@ -63,10 +63,6 @@ function Header() {
                                 <Link className="dropdown-link" to="/surf-trip-calendar">
                                     <p className="dropdown-info">SURF TRIP CALENDAR</p>
                                 </Link>
-
-                                <Link className="dropdown-link" to="/surfForecasts">
-                                    <p className="dropdown-info">Surf Forecast Component</p>
-                                </Link>
                             </div>
 
                         </span>
