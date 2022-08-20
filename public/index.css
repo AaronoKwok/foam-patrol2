@@ -596,8 +596,10 @@ nav {
 /* Surf Forecast Page */
 
 .test {
+  padding-top: 75px;
   font-size: 200px;
   background-color: cyan;
+
 }
 
 

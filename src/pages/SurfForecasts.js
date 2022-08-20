@@ -1,6 +1,10 @@
 import React, {useState, useContext, useEffect} from "react"
 import axios from "axios"
 
+import weatherData from "../Data/weatherData.json" 
+import tideData from "../Data/tideData.json"
+import astData from "../Data/astData.json"
+
 //import {Context} from "../Context"
 
 
@@ -51,19 +55,20 @@ function SurfForecasts({loc}) {
             'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
         }
     }
-
-   /*  const requestOne = axios.get(weatherUrl, headers);
+/* 
+    const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
-    const requestThree = axios.get(tideUrl, headers);  */
+    const requestThree = axios.get(tideUrl, headers);  
     
-    /* useEffect(() => {
+    useEffect(() => {
+        console.log("effect ran")
         axios.all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => { 
                 console.log(res[0].data)
                 console.log(res[1].data)
                 console.log(res[2].data)
             }))
-    }, []) */
+    }, [change])  */
 
    
 
