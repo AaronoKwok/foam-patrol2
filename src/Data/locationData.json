@@ -2,528 +2,568 @@
     {
         "globe": {
             "northAmerica": {
+                "name": "North America", 
                 "country": {
                     "unitedStates": {
+                        "name": "United States",
                         "state": {
                             "california": {
-                                "northern": [
-                                    {
-                                        "id": "0", 
-                                        "name": "Pleasure Point", 
-                                        "location": [36.9553, -121.9710],
-                                        "mapImage": "https://charts.metcentral.com/maps/spot/16b385729160c1d946e20cb9302db12c.png",
-                                        "about": "This is the East Side of Santa Cruz. Once the shy little sister to the West Side, Pleasure Point is now producing its fair share of world-class surfers. Jay Moriarity, may he rest in peace, used to live at Pleasure Point, Chris Gallagher at 41st Avenue. Pleasure Point, with multiple sections peeling along the point, offers something for every possible kind of waverider, from bodyboarders to shortboarders to longboarders, and this place is very, very popular with all of that and everything between.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "Intermediate - Advanced", 
-                                                "level": [1, 2], 
-                                                "description": "The wave itself isn't generally considered heavy, but the well-established crowd makes it better for intermediate+ surfers."
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Doable", 
-                                                "level": 70, 
-                                                "description": "Edgy, especially when it's good."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Heavy", 
-                                                "level": 90, 
-                                                "description": "Very crowded. This place is extremely popular with everyone. Mid-week is the best call."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Perfect", 
-                                                "level": 80, 
-                                                "description": "Quite good."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Medium",
-                                                "level": 50, 
-                                                "description": "Minimal to moderate depending on size."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Clean",
-                                                "level": 28, 
-                                                "description": "Minimal. It used to be bad at Sewer Peak but no longer."
-                                            }, 
-                                            "hazards": "Kelp, long lulls, angry flesh eating sea otters, crowds.", 
-                                            "access": "Ask any local, access here is too easy. Just pull up to the cliff and park, then scramble down the numerous stairways.", 
-                                            "bestSeason": "April-October", 
-                                            "bringYour": "Shortboard, Funboard, Longboard, Fish", 
-                                            "bottom": "Rock-reef, Sand, Kelp",
-                                            "idealConditions": {
-                                                "swellDirection": "SSW, SW, W, WNW", 
-                                                "wind": "NE, N, NW, Glassy", 
-                                                "surfHeight": "Chest high-2X overhead", 
-                                                "tide": "Works on most tides but best on incoming, medium tide."
+                                "name": "Califonia",
+                                "county": {
+                                    "santaCruz": [
+                                        {
+                                            "id": "0", 
+                                            "name": "Pleasure Point", 
+                                            "state": "California", 
+                                            "county": "Santa Cruz County",
+                                            "country": "United States", 
+                                            "location": [36.9553, -121.9710],
+                                            "mapImage": "https://charts.metcentral.com/maps/spot/16b385729160c1d946e20cb9302db12c.png",
+                                            "about": "This is the East Side of Santa Cruz. Once the shy little sister to the West Side, Pleasure Point is now producing its fair share of world-class surfers. Jay Moriarity, may he rest in peace, used to live at Pleasure Point, Chris Gallagher at 41st Avenue. Pleasure Point, with multiple sections peeling along the point, offers something for every possible kind of waverider, from bodyboarders to shortboarders to longboarders, and this place is very, very popular with all of that and everything between.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "Intermediate - Advanced", 
+                                                    "level": [1, 2], 
+                                                    "description": "The wave itself isn't generally considered heavy, but the well-established crowd makes it better for intermediate+ surfers."
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Doable", 
+                                                    "level": 70, 
+                                                    "description": "Edgy, especially when it's good."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Heavy", 
+                                                    "level": 90, 
+                                                    "description": "Very crowded. This place is extremely popular with everyone. Mid-week is the best call."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Perfect", 
+                                                    "level": 80, 
+                                                    "description": "Quite good."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Medium",
+                                                    "level": 50, 
+                                                    "description": "Minimal to moderate depending on size."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Clean",
+                                                    "level": 28, 
+                                                    "description": "Minimal. It used to be bad at Sewer Peak but no longer."
+                                                }, 
+                                                "hazards": "Kelp, long lulls, angry flesh eating sea otters, crowds.", 
+                                                "access": "Ask any local, access here is too easy. Just pull up to the cliff and park, then scramble down the numerous stairways.", 
+                                                "bestSeason": "April-October", 
+                                                "bringYour": "Shortboard, Funboard, Longboard, Fish", 
+                                                "bottom": "Rock-reef, Sand, Kelp",
+                                                "idealConditions": {
+                                                    "swellDirection": "SSW, SW, W, WNW", 
+                                                    "wind": "NE, N, NW, Glassy", 
+                                                    "surfHeight": "Chest high-2X overhead", 
+                                                    "tide": "Works on most tides but best on incoming, medium tide."
+                                                }
+                                            }
+                                        }, 
+                                        {
+                                            "id": "1", 
+                                            "name": "Jack's", 
+                                            "state": "California",
+                                            "county": "Santa Cruz County",
+                                            "country": "United States",
+                                            "location": [36.9574, -121.9688],
+                                            "mapImage": "https://charts.metcentral.com/maps/spot/c040173130a2290d41e874240518ca73436c80bb.png",
+                                            "about": "On big winter swells and the occasional macking S swell, 38th transforms into a world-class wave. On the biggest swells, it is possible to ride a wave from First Peak Pleasure Point all the way through 38th Avenue.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "Beginner - Intermediate", 
+                                                    "level": [0, 1], 
+                                                    "description": "Beginner-Intermediate"
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Doable", 
+                                                    "level": 70, 
+                                                    "description": "Very edgy, especially when it's good."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Heavy", 
+                                                    "level": 90, 
+                                                    "description": "Very crowded. This place is extremely popular with everyone. Mid-week is the best call."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Perfect", 
+                                                    "level": 80, 
+                                                    "description": ""
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Medium",
+                                                    "level": 50, 
+                                                    "description": "Minimal to moderate depending on size."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Clean",
+                                                    "level": 28, 
+                                                    "description": "Minimal. It used to be bad at Sewer Peak but no longer."
+                                                }, 
+                                                "hazards": "Longboarder, kelp, long lulls, angry flesh eating sea otters, crowds, surfers with tattoos and bald heads.", 
+                                                "access": "Ask any local, access here is too easy. Just pull up to the cliff and park, then scramble down the numerous stairways.", 
+                                                "bestSeason": "January-December", 
+                                                "bringYour": "Shortboard, Funboard, Longboard, Fish", 
+                                                "bottom": "Rock-reef, sand, kelp",
+                                                "idealConditions": {
+                                                    "swellDirection": "SSW, SW, W, NW", 
+                                                    "wind": "NE, N, NW, glassy", 
+                                                    "surfHeight": "Knee high-2X overhead", 
+                                                    "tide": "Low tide"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "2", 
+                                            "name": "Cowells",
+                                            "state": "California",
+                                            "county": "Santa Cruz County",
+                                            "country": "United States", 
+                                            "location": [36.9591, -122.0245],
+                                            "mapImage": "https://charts.metcentral.com/maps/spot/fcbea6334c95a229914bf5d94cd6d241.png",
+                                            "about": "Cowell's Beach is one of the best places in the world to learn how to surf. All the energy pulsing around Lighthouse Point mellows out by the time it gets to Cowell's, and the result is a long, gentle, easy wave that breaks for a very long time. Cowell's is one of the most crowded surf spots in Santa Cruz, but as most of the surfers are beginners, there is little animosity. Most of the people at Cowell's are there to learn and have fun and have a good time. Mixed in with all the learners and Banana Slugs and other flotsam and jetsam is a cadre of red-hot longboarders who can score major tip time from the staircase all the way to the beach.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "Beginner - Intermediate", 
+                                                    "level": [0, 1], 
+                                                    "description": "Beginner-Intermediate longboarder"
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Welcoming", 
+                                                    "level": 17, 
+                                                    "description": "None, all beginners."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Heavy", 
+                                                    "level": 100, 
+                                                    "description": "Very, very crowded on sunny days, but it's mostly beginners."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Fun", 
+                                                    "level": 50, 
+                                                    "description": "Fun."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Light",
+                                                    "level": 17, 
+                                                    "description": "Minimal"
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Clean",
+                                                    "level": 17, 
+                                                    "description": "Clean."
+                                                }, 
+                                                "hazards": "Getting run over by the pack or nailed by someone's longboard.", 
+                                                "access": "Parking on West Cliff Drive and by the Dream Inn.", 
+                                                "bestSeason": "Year-round", 
+                                                "bringYour": "Longboard", 
+                                                "bottom": "Sand over reef",
+                                                "idealConditions": {
+                                                    "swellDirection": "W, NW, S", 
+                                                    "wind": "E, NW", 
+                                                    "surfHeight": "flat to 3 feet", 
+                                                    "tide": "low to incoming"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "3", 
+                                            "name": "Steamer Lane",
+                                            "state": "California",
+                                            "county": "Santa Cruz County",
+                                            "country": "United States", 
+                                            "location": [36.9517, -122.0253],
+                                            "mapImage": "https://chart-1.msw.ms/maps/spot/a382d482f8bc8ca26419503fed40d67e.png",
+                                            "about": "A classic name for a classic California surf spot, Steamer Lane is geo-strategically placed to sweep up just about everything moving within or just above the surface of the Pacific Ocean and put it to some use. Because Santa Cruz faces straight south, Lighthouse Point points almost directly south, and that weird geography is the secret to Steamer Lane’s success. Swells from the west and northwest that ravage the coast north of Santa Cruz are evened out and groomed as they bend into the Monterey Bay. The same is true for the northwest winds that pound the north coast for most of the year. Because of the bend at the top of the Monterey Bay, those northwest winds blow offshore at Steamer Lane. There are few things in nature as beautiful as a 10-foot, offshore peak unloading at Steamer Lane. Steamer Lane is maybe a little too irresistible, because it is now one of the most crowded surf spots in California. At any given hour, there is probably a wider range of people surfing Steamer Lane than anywhere in the world.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "Intermediate - Advanced", 
+                                                    "level": [1, 2], 
+                                                    "description": "Intermediate-Advanced"
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Intimidating", 
+                                                    "level": 95, 
+                                                    "description": "Intense, at times nuclear and as crowded as the surfing world gets."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Heavy", 
+                                                    "level": 85, 
+                                                    "description": "Very crowded after 3pm and on weekends. Not so bad when it's giant or during school."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Perfect", 
+                                                    "level": 100, 
+                                                    "description": "One of the best right points in California."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Exhausting",
+                                                    "level": 80, 
+                                                    "description": "Expect a lot of paddling, especially when big."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Clean",
+                                                    "level": 17, 
+                                                    "description": "Mostly clean, but can be semi-dirty after significant rain."
+                                                }, 
+                                                "hazards": "Longboarders, locals, drop-ins, big surf, seals, sea otters, kelp, kayakers, getting pinned on the cliff, that big rock on the inside.", 
+                                                "access": "Park in the lot, walk down the stairs.", 
+                                                "bestSeason": "January-December", 
+                                                "bringYour": "Shortboard, Funboard, Longboard, Fish, Gun", 
+                                                "bottom": "Rock reef, kelp, a few sand patches.",
+                                                "idealConditions": {
+                                                    "swellDirection": "W, S, NW", 
+                                                    "wind": "NE, N, NW, glassy", 
+                                                    "surfHeight": "Waist high-2X overhead", 
+                                                    "tide": "Incoming, low to medium"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "4", 
+                                            "name": "The Hook",
+                                            "state": "California",
+                                            "county": "Santa Cruz County",
+                                            "country": "United States", 
+                                            "location": [36.9596, -121.9648],
+                                            "mapImage": "https://chart-4.msw.ms/maps/spot/552f46b59f1c2a344396d38bbaf17ec7ee3e6949.png",
+                                            "about": "Not a great wave, but a pretty wave, very popular with the beginner to intermediate set. The Hook can be frustrating because it's tucked well inside the bay and is inconsistent on all but the biggest swells. On bigger swells, and particularly those rare macking S swells, the Hook transforms from a mediocre wave to a good wave.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "Beginner - Intermediate", 
+                                                    "level": [0, 1], 
+                                                    "description": "Beginner-Intermediate"
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Doable", 
+                                                    "level": 70, 
+                                                    "description": "Kind of high."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Heavy", 
+                                                    "level": 80, 
+                                                    "description": "Can be high on a good day. This place is extremely popular."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Fun", 
+                                                    "level": 60, 
+                                                    "description": "Fun."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Light",
+                                                    "level": 30, 
+                                                    "description": "Not too bad."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Clean",
+                                                    "level": 30, 
+                                                    "description": "Minimal and nothing really to worry about."
+                                                }, 
+                                                "hazards": "Crowds, longboarders, kelp, sharp rocks.", 
+                                                "access": "Easy parking in the parking lot.", 
+                                                "bestSeason": "January-December", 
+                                                "bringYour": "Shortboard, Funboard, Fish, Longboard", 
+                                                "bottom": "Rock, reef",
+                                                "idealConditions": {
+                                                    "swellDirection": "W, NW, S", 
+                                                    "wind": "E, NW, glassy", 
+                                                    "surfHeight": "Waist high-overhead", 
+                                                    "tide": "Incoming to medium"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "5", 
+                                            "name": "Capitola", 
+                                            "state": "California",
+                                            "county": "Santa Cruz County",
+                                            "country": "United States",
+                                            "location": [36.9716, -121.9494],
+                                            "mapImage": "https://chart-1.msw.ms/maps/spot/a009cdcfac4bafad82b855af10fb7dcac0bcd511.png",
+                                            "about": "A soft, gentle, right-hand reef/point that is popular with beginners and longboarders, Capitola is a staple of the Santa Cruz surf scene, and has the crowds to prove it (especially in summer). There is also a shorter, slightly more powerful left off the back of the right.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "All Abilities", 
+                                                    "level": [0, 1, 2], 
+                                                    "description": "Great option for beginners, but still fun for proficient longboarders; can get hairy (like anywhere) when big."
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Welcoming", 
+                                                    "level": 8, 
+                                                    "description": "This is essentially a beginner spot when it's small, so the crowd is one big party -- however, standard surf etiquette should still be adhered to. Beginners should be careful when it's big."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Heavy", 
+                                                    "level": 80, 
+                                                    "description": "Super crowded in summer; moderately crowded in autumn."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Poor", 
+                                                    "level": 27, 
+                                                    "description": "Far from the best wave in Santa Cruz, unless you are a beginner (in which case this is where you should surf)."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Light",
+                                                    "level": 20, 
+                                                    "description": "Easy spot to surf, which is why so many beginners are here."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Clean",
+                                                    "level": 30, 
+                                                    "description": "Less clean than other spots in Santa Cruz (especially after a rain)."
+                                                }, 
+                                                "hazards": "Rocks, beginners, errant longboarders.", 
+                                                "access": "Parking is available throughout Santa Cruz, although it tends to fill up fast, especially in the summer.", 
+                                                "bestSeason": "Gets swell year round, but summer and fall tend to be best.", 
+                                                "bringYour": "Funboard, Longboard", 
+                                                "bottom": "Rocky reef and sand",
+                                                "idealConditions": {
+                                                    "swellDirection": "S, SSW, W", 
+                                                    "wind": "NW, W, Glassy", 
+                                                    "surfHeight": "Small to well overhead", 
+                                                    "tide": "Medium"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "id": "6", 
+                                            "name": "Davenport",
+                                            "state": "California",
+                                            "county": "Santa Cruz County",
+                                            "country": "United States", 
+                                            "location": [37.0245, -122.2170],
+                                            "mapImage": "https://chart-1.msw.ms/maps/spot/6e1798c3e2cb11f64a13e3e5ff1a2118.png",
+                                            "about": "Turning right on Swanton Road, there is decent surf at Davenport Landing. There's a lined-up left reef on the south end of the beach and a big right on the north end.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "All Abilities", 
+                                                    "level": [0, 1, 2], 
+                                                    "description": "Beginner-Advanced"
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Doable", 
+                                                    "level": 45, 
+                                                    "description": "Pretty laid back. But there are always a few old crusties from Santa Cruz who think their sovereignty extends this far up the coast."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Moderate", 
+                                                    "level": 60, 
+                                                    "description": "Might have it alone on a weekday morning. The weekends can get crowded."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Fun", 
+                                                    "level": 70, 
+                                                    "description": "Good."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Medium",
+                                                    "level": 40, 
+                                                    "description": "Not too bad."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Clean",
+                                                    "level": 17, 
+                                                    "description": "Mostly clean."
+                                                }, 
+                                                "hazards": "Sharks, rocks.", 
+                                                "access": "Easy, if you know where to look", 
+                                                "bestSeason": "January-December", 
+                                                "bringYour": "Shortboard, Funboard", 
+                                                "bottom": "Reef, rock",
+                                                "idealConditions": {
+                                                    "swellDirection": "W, NW, SW", 
+                                                    "wind": "N, NE, partially shadowed from the NW winds", 
+                                                    "surfHeight": "Waist high-overhead", 
+                                                    "tide": "Mid and high tide"
+                                                }
                                             }
                                         }
-                                    }, 
-                                    {
-                                        "id": "1", 
-                                        "name": "Jack's", 
-                                        "location": [36.9574, -121.9688],
-                                        "mapImage": "https://charts.metcentral.com/maps/spot/c040173130a2290d41e874240518ca73436c80bb.png",
-                                        "about": "On big winter swells and the occasional macking S swell, 38th transforms into a world-class wave. On the biggest swells, it is possible to ride a wave from First Peak Pleasure Point all the way through 38th Avenue.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "Beginner - Intermediate", 
-                                                "level": [0, 1], 
-                                                "description": "Beginner-Intermediate"
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Doable", 
-                                                "level": 70, 
-                                                "description": "Very edgy, especially when it's good."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Heavy", 
-                                                "level": 90, 
-                                                "description": "Very crowded. This place is extremely popular with everyone. Mid-week is the best call."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Perfect", 
-                                                "level": 80, 
-                                                "description": ""
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Medium",
-                                                "level": 50, 
-                                                "description": "Minimal to moderate depending on size."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Clean",
-                                                "level": 28, 
-                                                "description": "Minimal. It used to be bad at Sewer Peak but no longer."
-                                            }, 
-                                            "hazards": "Longboarder, kelp, long lulls, angry flesh eating sea otters, crowds, surfers with tattoos and bald heads.", 
-                                            "access": "Ask any local, access here is too easy. Just pull up to the cliff and park, then scramble down the numerous stairways.", 
-                                            "bestSeason": "January-December", 
-                                            "bringYour": "Shortboard, Funboard, Longboard, Fish", 
-                                            "bottom": "Rock-reef, sand, kelp",
-                                            "idealConditions": {
-                                                "swellDirection": "SSW, SW, W, NW", 
-                                                "wind": "NE, N, NW, glassy", 
-                                                "surfHeight": "Knee high-2X overhead", 
-                                                "tide": "Low tide"
+                                    ], 
+                                    "sanMateo": [
+                                        {
+                                            "id": "0", 
+                                            "name": "Pacifica / Linda Mar", 
+                                            "state": "California",
+                                            "county": "San Mateo County",
+                                            "country": "United States",
+                                            "location": [37.5977, -122.5046],
+                                            "mapImage": "https://chart-4.msw.ms/maps/spot/eac58a66fe16f273c529fb0061e71497.png",
+                                            "about": "Linda Mar is a mile-long stretch of beach between the north point and Pedro Point. Because this place is somewhat protected from swell and wind, it is mostly a beginner to intermediate wave. Linda Mar has its epic days, but for the most part, the surf ranges from poor to so-so, and the water is crowded with beginners and intermediate surfers. 'It's the poor person's Cowell's,' as one local surfer described it. Linda Mar has a reputation for being gray and gloomy, but even in the thick of the region's summer fog season, there's often an inexplicable donut of sunshine beating down on the place. Linda Mar is at the end of a big valley that funnels south and southwest winds into offshores, and the surf can be cranking there during the winter, when the rest of the coast is blown out. The same condition can exist in the summer, when that valley will turn the onshore fog winds into offshores. Linda Mar can be sunny and nice when Ocean Beach is like Moscow in winter. From north to south, the first spot at Linda Mar is called Round House. Next is Wander Inn, named for a bar that thrived in the '60s. South of Wander Inn, there is a parking lot and showers. This area is called State Park or the Pump House. South of that is The Creek, where a small, possibly toxic creek comes out to sea. At the south end of Linda Mar, The Boat Docks are lefts that break along the point in front of Dick Keating's timeless house.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "Beginner - Intermediate", 
+                                                    "level": [0, 1], 
+                                                    "description": "Great spot for a beginner or intermediate when optimal conditions align"
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Welcoming", 
+                                                    "level": 27, 
+                                                    "description": "Pleasant, mostly. Most of the surfers here are not hard-core locals but day trippers coming down from San Francisco or the greater Bay Area."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Heavy", 
+                                                    "level": 85, 
+                                                    "description": "Crowded most days, but mostly beginner to intermediate surfers."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Poor", 
+                                                    "level": 27, 
+                                                    "description": "Kinda fun."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Medium",
+                                                    "level": 40, 
+                                                    "description": "Not bad, but can be stronger if solid."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Fair",
+                                                    "level": 45, 
+                                                    "description": "Dirty in front of the creek, but cleaner over the rest of the beach."
+                                                }, 
+                                                "hazards": "Crummy weather, crowds, possible pounding on big days.", 
+                                                "access": "Easy parking in the lot. Almost too easy.", 
+                                                "bestSeason": "November-April", 
+                                                "bringYour": "Fish, Funboard, Longboard, SUP", 
+                                                "bottom": "Mostly sand mixed with boulders and rocks at the south end.",
+                                                "idealConditions": {
+                                                    "swellDirection": "W, WNW, NW", 
+                                                    "wind": "S or E (good place to go when the south winds blow)", 
+                                                    "surfHeight": "Waist high-overhead", 
+                                                    "tide": "Incoming, mid to high tide"
+                                                }
                                             }
                                         }
-                                    },
-                                    {
-                                        "id": "2", 
-                                        "name": "Cowells", 
-                                        "location": [36.9591, -122.0245],
-                                        "mapImage": "https://charts.metcentral.com/maps/spot/fcbea6334c95a229914bf5d94cd6d241.png",
-                                        "about": "Cowell's Beach is one of the best places in the world to learn how to surf. All the energy pulsing around Lighthouse Point mellows out by the time it gets to Cowell's, and the result is a long, gentle, easy wave that breaks for a very long time. Cowell's is one of the most crowded surf spots in Santa Cruz, but as most of the surfers are beginners, there is little animosity. Most of the people at Cowell's are there to learn and have fun and have a good time. Mixed in with all the learners and Banana Slugs and other flotsam and jetsam is a cadre of red-hot longboarders who can score major tip time from the staircase all the way to the beach.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "Beginner - Intermediate", 
-                                                "level": [0, 1], 
-                                                "description": "Beginner-Intermediate longboarder"
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Welcoming", 
-                                                "level": 17, 
-                                                "description": "None, all beginners."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Heavy", 
-                                                "level": 100, 
-                                                "description": "Very, very crowded on sunny days, but it's mostly beginners."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Fun", 
-                                                "level": 50, 
-                                                "description": "Fun."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Light",
-                                                "level": 17, 
-                                                "description": "Minimal"
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Clean",
-                                                "level": 17, 
-                                                "description": "Clean."
-                                            }, 
-                                            "hazards": "Getting run over by the pack or nailed by someone's longboard.", 
-                                            "access": "Parking on West Cliff Drive and by the Dream Inn.", 
-                                            "bestSeason": "Year-round", 
-                                            "bringYour": "Longboard", 
-                                            "bottom": "Sand over reef",
-                                            "idealConditions": {
-                                                "swellDirection": "W, NW, S", 
-                                                "wind": "E, NW", 
-                                                "surfHeight": "flat to 3 feet", 
-                                                "tide": "low to incoming"
+                                    ],
+                                    "orange": [
+                                        {
+                                            "id": "0", 
+                                            "name": "HB Pier", 
+                                            "state": "California",
+                                            "county": "Orange",
+                                            "country": "United States",
+                                            "location": [33.6545, -118.0036],
+                                            "mapImage": "https://chart-1.msw.ms/maps/spot/7eccfd6d0dd0de8de99b1473e2aca408.png",
+                                            "about": "Just the other side of the pier from the spot where the Huntington Hop was made famous in countless junior and world tour events is the HB Northside. The crème de la crème of the Northside is the Pier Bowl. Generally, a short, wedgy, occasionally barreling right into the pier on solid south swells with a bowled up but more elongated left running up the beach. During the winter, solid WNW swells continue to offer bowled-up rights into the Pier, while the left is a mixed bag of closeouts and open sections. The surf is serviceable most every day of the year, and as such, the Northside has ample crowd. While the Southside is typically filled with any number of traveling pros getting ready for the next contest, the Northside often entertains a saltier crowd. Up the beach gets great on combo swells, while the pier bowl is the best show this side of the pier on the daily.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "All Abilities", 
+                                                    "level": [0, 1, 2], 
+                                                    "description": "Beginner to advanced, above average at the pier."
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Doable", 
+                                                    "level": 70, 
+                                                    "description": "Can be heavy at the pier."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Moderate", 
+                                                    "level": 70, 
+                                                    "description": "Zoo near the pier, everyone is spread out elsewhere."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Fun", 
+                                                    "level": 75, 
+                                                    "description": "Pier bowl is typically better than anything happening up the beach."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Medium",
+                                                    "level": 65, 
+                                                    "description": "Pretty average most days, but can be brutal on a strong south or northwest swell with current."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Fair",
+                                                    "level": 60, 
+                                                    "description": "Not great after a rain."
+                                                }, 
+                                                "hazards": "Locals at the pier, pier pilings, current", 
+                                                "access": "Free parking on side streets, meters, beach-front pay lot.", 
+                                                "bestSeason": "January-December, but fall can be epic.", 
+                                                "bringYour": "Shortboard, Funboard, Longboard, Fish", 
+                                                "bottom": "Sand",
+                                                "idealConditions": {
+                                                    "swellDirection": "Combo of swells SSE, S, SW, with WSW, W, WNW", 
+                                                    "wind": "NE, Santa Anas, E, Northside of pier offers some protection from SE wind.", 
+                                                    "surfHeight": "Shoulder-high to 3 feet overhead", 
+                                                    "tide": "Medium"
+                                                }
                                             }
                                         }
-                                    },
-                                    {
-                                        "id": "3", 
-                                        "name": "Steamer Lane", 
-                                        "location": [36.9517, -122.0253],
-                                        "mapImage": "https://chart-1.msw.ms/maps/spot/a382d482f8bc8ca26419503fed40d67e.png",
-                                        "about": "A classic name for a classic California surf spot, Steamer Lane is geo-strategically placed to sweep up just about everything moving within or just above the surface of the Pacific Ocean and put it to some use. Because Santa Cruz faces straight south, Lighthouse Point points almost directly south, and that weird geography is the secret to Steamer Lane’s success. Swells from the west and northwest that ravage the coast north of Santa Cruz are evened out and groomed as they bend into the Monterey Bay. The same is true for the northwest winds that pound the north coast for most of the year. Because of the bend at the top of the Monterey Bay, those northwest winds blow offshore at Steamer Lane. There are few things in nature as beautiful as a 10-foot, offshore peak unloading at Steamer Lane. Steamer Lane is maybe a little too irresistible, because it is now one of the most crowded surf spots in California. At any given hour, there is probably a wider range of people surfing Steamer Lane than anywhere in the world.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "Intermediate - Advanced", 
-                                                "level": [1, 2], 
-                                                "description": "Intermediate-Advanced"
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Intimidating", 
-                                                "level": 95, 
-                                                "description": "Intense, at times nuclear and as crowded as the surfing world gets."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Heavy", 
-                                                "level": 85, 
-                                                "description": "Very crowded after 3pm and on weekends. Not so bad when it's giant or during school."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Perfect", 
-                                                "level": 100, 
-                                                "description": "One of the best right points in California."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Exhausting",
-                                                "level": 80, 
-                                                "description": "Expect a lot of paddling, especially when big."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Clean",
-                                                "level": 17, 
-                                                "description": "Mostly clean, but can be semi-dirty after significant rain."
-                                            }, 
-                                            "hazards": "Longboarders, locals, drop-ins, big surf, seals, sea otters, kelp, kayakers, getting pinned on the cliff, that big rock on the inside.", 
-                                            "access": "Park in the lot, walk down the stairs.", 
-                                            "bestSeason": "January-December", 
-                                            "bringYour": "Shortboard, Funboard, Longboard, Fish, Gun", 
-                                            "bottom": "Rock reef, kelp, a few sand patches.",
-                                            "idealConditions": {
-                                                "swellDirection": "W, S, NW", 
-                                                "wind": "NE, N, NW, glassy", 
-                                                "surfHeight": "Waist high-2X overhead", 
-                                                "tide": "Incoming, low to medium"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "id": "4", 
-                                        "name": "The Hook", 
-                                        "location": [36.9596, -121.9648],
-                                        "mapImage": "https://chart-4.msw.ms/maps/spot/552f46b59f1c2a344396d38bbaf17ec7ee3e6949.png",
-                                        "about": "Not a great wave, but a pretty wave, very popular with the beginner to intermediate set. The Hook can be frustrating because it's tucked well inside the bay and is inconsistent on all but the biggest swells. On bigger swells, and particularly those rare macking S swells, the Hook transforms from a mediocre wave to a good wave.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "Beginner - Intermediate", 
-                                                "level": [0, 1], 
-                                                "description": "Beginner-Intermediate"
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Doable", 
-                                                "level": 70, 
-                                                "description": "Kind of high."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Heavy", 
-                                                "level": 80, 
-                                                "description": "Can be high on a good day. This place is extremely popular."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Fun", 
-                                                "level": 60, 
-                                                "description": "Fun."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Light",
-                                                "level": 30, 
-                                                "description": "Not too bad."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Clean",
-                                                "level": 30, 
-                                                "description": "Minimal and nothing really to worry about."
-                                            }, 
-                                            "hazards": "Crowds, longboarders, kelp, sharp rocks.", 
-                                            "access": "Easy parking in the parking lot.", 
-                                            "bestSeason": "January-December", 
-                                            "bringYour": "Shortboard, Funboard, Fish, Longboard", 
-                                            "bottom": "Rock, reef",
-                                            "idealConditions": {
-                                                "swellDirection": "W, NW, S", 
-                                                "wind": "E, NW, glassy", 
-                                                "surfHeight": "Waist high-overhead", 
-                                                "tide": "Incoming to medium"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "id": "5", 
-                                        "name": "Capitola", 
-                                        "location": [36.9716, -121.9494],
-                                        "mapImage": "https://chart-1.msw.ms/maps/spot/a009cdcfac4bafad82b855af10fb7dcac0bcd511.png",
-                                        "about": "A soft, gentle, right-hand reef/point that is popular with beginners and longboarders, Capitola is a staple of the Santa Cruz surf scene, and has the crowds to prove it (especially in summer). There is also a shorter, slightly more powerful left off the back of the right.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "All Abilities", 
-                                                "level": [0, 1, 2], 
-                                                "description": "Great option for beginners, but still fun for proficient longboarders; can get hairy (like anywhere) when big."
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Welcoming", 
-                                                "level": 8, 
-                                                "description": "This is essentially a beginner spot when it's small, so the crowd is one big party -- however, standard surf etiquette should still be adhered to. Beginners should be careful when it's big."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Heavy", 
-                                                "level": 80, 
-                                                "description": "Super crowded in summer; moderately crowded in autumn."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Poor", 
-                                                "level": 27, 
-                                                "description": "Far from the best wave in Santa Cruz, unless you are a beginner (in which case this is where you should surf)."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Light",
-                                                "level": 20, 
-                                                "description": "Easy spot to surf, which is why so many beginners are here."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Clean",
-                                                "level": 30, 
-                                                "description": "Less clean than other spots in Santa Cruz (especially after a rain)."
-                                            }, 
-                                            "hazards": "Rocks, beginners, errant longboarders.", 
-                                            "access": "Parking is available throughout Santa Cruz, although it tends to fill up fast, especially in the summer.", 
-                                            "bestSeason": "Gets swell year round, but summer and fall tend to be best.", 
-                                            "bringYour": "Funboard, Longboard", 
-                                            "bottom": "Rocky reef and sand",
-                                            "idealConditions": {
-                                                "swellDirection": "S, SSW, W", 
-                                                "wind": "NW, W, Glassy", 
-                                                "surfHeight": "Small to well overhead", 
-                                                "tide": "Medium"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "id": "6", 
-                                        "name": "Davenport", 
-                                        "location": [37.0245, -122.2170],
-                                        "mapImage": "https://chart-1.msw.ms/maps/spot/6e1798c3e2cb11f64a13e3e5ff1a2118.png",
-                                        "about": "Turning right on Swanton Road, there is decent surf at Davenport Landing. There's a lined-up left reef on the south end of the beach and a big right on the north end.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "All Abilities", 
-                                                "level": [0, 1, 2], 
-                                                "description": "Beginner-Advanced"
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Doable", 
-                                                "level": 45, 
-                                                "description": "Pretty laid back. But there are always a few old crusties from Santa Cruz who think their sovereignty extends this far up the coast."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Moderate", 
-                                                "level": 60, 
-                                                "description": "Might have it alone on a weekday morning. The weekends can get crowded."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Fun", 
-                                                "level": 70, 
-                                                "description": "Good."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Medium",
-                                                "level": 40, 
-                                                "description": "Not too bad."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Clean",
-                                                "level": 17, 
-                                                "description": "Mostly clean."
-                                            }, 
-                                            "hazards": "Sharks, rocks.", 
-                                            "access": "Easy, if you know where to look", 
-                                            "bestSeason": "January-December", 
-                                            "bringYour": "Shortboard, Funboard", 
-                                            "bottom": "Reef, rock",
-                                            "idealConditions": {
-                                                "swellDirection": "W, NW, SW", 
-                                                "wind": "N, NE, partially shadowed from the NW winds", 
-                                                "surfHeight": "Waist high-overhead", 
-                                                "tide": "Mid and high tide"
-                                            }
-                                        }
-                                    }, 
-                                    {
-                                        "id": "7", 
-                                        "name": "Pacifica / Linda Mar", 
-                                        "location": [37.5977, -122.5046],
-                                        "mapImage": "https://chart-4.msw.ms/maps/spot/eac58a66fe16f273c529fb0061e71497.png",
-                                        "about": "Linda Mar is a mile-long stretch of beach between the north point and Pedro Point. Because this place is somewhat protected from swell and wind, it is mostly a beginner to intermediate wave. Linda Mar has its epic days, but for the most part, the surf ranges from poor to so-so, and the water is crowded with beginners and intermediate surfers. 'It's the poor person's Cowell's,' as one local surfer described it. Linda Mar has a reputation for being gray and gloomy, but even in the thick of the region's summer fog season, there's often an inexplicable donut of sunshine beating down on the place. Linda Mar is at the end of a big valley that funnels south and southwest winds into offshores, and the surf can be cranking there during the winter, when the rest of the coast is blown out. The same condition can exist in the summer, when that valley will turn the onshore fog winds into offshores. Linda Mar can be sunny and nice when Ocean Beach is like Moscow in winter. From north to south, the first spot at Linda Mar is called Round House. Next is Wander Inn, named for a bar that thrived in the '60s. South of Wander Inn, there is a parking lot and showers. This area is called State Park or the Pump House. South of that is The Creek, where a small, possibly toxic creek comes out to sea. At the south end of Linda Mar, The Boat Docks are lefts that break along the point in front of Dick Keating's timeless house.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "Beginner - Intermediate", 
-                                                "level": [0, 1], 
-                                                "description": "Great spot for a beginner or intermediate when optimal conditions align"
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Welcoming", 
-                                                "level": 27, 
-                                                "description": "Pleasant, mostly. Most of the surfers here are not hard-core locals but day trippers coming down from San Francisco or the greater Bay Area."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Heavy", 
-                                                "level": 85, 
-                                                "description": "Crowded most days, but mostly beginner to intermediate surfers."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Poor", 
-                                                "level": 27, 
-                                                "description": "Kinda fun."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Medium",
-                                                "level": 40, 
-                                                "description": "Not bad, but can be stronger if solid."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Fair",
-                                                "level": 45, 
-                                                "description": "Dirty in front of the creek, but cleaner over the rest of the beach."
-                                            }, 
-                                            "hazards": "Crummy weather, crowds, possible pounding on big days.", 
-                                            "access": "Easy parking in the lot. Almost too easy.", 
-                                            "bestSeason": "November-April", 
-                                            "bringYour": "Fish, Funboard, Longboard, SUP", 
-                                            "bottom": "Mostly sand mixed with boulders and rocks at the south end.",
-                                            "idealConditions": {
-                                                "swellDirection": "W, WNW, NW", 
-                                                "wind": "S or E (good place to go when the south winds blow)", 
-                                                "surfHeight": "Waist high-overhead", 
-                                                "tide": "Incoming, mid to high tide"
-                                            }
-                                        }
-                                    }
-                                ], 
-                                "southern": [
-                                    {
-                                        "id": "0", 
-                                        "name": "HB Pier", 
-                                        "location": [33.6545, -118.0036],
-                                        "mapImage": "https://chart-1.msw.ms/maps/spot/7eccfd6d0dd0de8de99b1473e2aca408.png",
-                                        "about": "Just the other side of the pier from the spot where the Huntington Hop was made famous in countless junior and world tour events is the HB Northside. The crème de la crème of the Northside is the Pier Bowl. Generally, a short, wedgy, occasionally barreling right into the pier on solid south swells with a bowled up but more elongated left running up the beach. During the winter, solid WNW swells continue to offer bowled-up rights into the Pier, while the left is a mixed bag of closeouts and open sections. The surf is serviceable most every day of the year, and as such, the Northside has ample crowd. While the Southside is typically filled with any number of traveling pros getting ready for the next contest, the Northside often entertains a saltier crowd. Up the beach gets great on combo swells, while the pier bowl is the best show this side of the pier on the daily.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "All Abilities", 
-                                                "level": [0, 1, 2], 
-                                                "description": "Beginner to advanced, above average at the pier."
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Doable", 
-                                                "level": 70, 
-                                                "description": "Can be heavy at the pier."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Moderate", 
-                                                "level": 70, 
-                                                "description": "Zoo near the pier, everyone is spread out elsewhere."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Fun", 
-                                                "level": 75, 
-                                                "description": "Pier bowl is typically better than anything happening up the beach."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Medium",
-                                                "level": 65, 
-                                                "description": "Pretty average most days, but can be brutal on a strong south or northwest swell with current."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Fair",
-                                                "level": 60, 
-                                                "description": "Not great after a rain."
-                                            }, 
-                                            "hazards": "Locals at the pier, pier pilings, current", 
-                                            "access": "Free parking on side streets, meters, beach-front pay lot.", 
-                                            "bestSeason": "January-December, but fall can be epic.", 
-                                            "bringYour": "Shortboard, Funboard, Longboard, Fish", 
-                                            "bottom": "Sand",
-                                            "idealConditions": {
-                                                "swellDirection": "Combo of swells SSE, S, SW, with WSW, W, WNW", 
-                                                "wind": "NE, Santa Anas, E, Northside of pier offers some protection from SE wind.", 
-                                                "surfHeight": "Shoulder-high to 3 feet overhead", 
-                                                "tide": "Medium"
-                                            }
-                                        }
-                                    }
-                                ]
+                                    ]
+                                }
                             }, 
                             "hawaii": {
-                                "oahu": [
-                                    {
-                                        "id": "0", 
-                                        "name": "Waikiki Beach", 
-                                        "location": [21.2724, -157.8285],
-                                        "mapImage": "https://chart-1.msw.ms/maps/spot/728ab60023c0007db81c1cc67c73e206ad7241c9.png",
-                                        "about": "Waikiki Beach consists of numerous spots that offer rights and lefts, as well as world-renowned crowds. It is one of the birthplaces of recreational surfing and a pillar in the quintessential Hawaiian surfing experience. Surf Waikiki and you'll share waves with people from all over the world, many just learning how to surf. While Waikiki conjures images of small, soft, rolling waves, when there's a solid Southern Hemi swell running, many of its breaks turn on enough to keep the beginners on the inside, leaving the better outside rollers for more experienced surfers.", 
-                                        "localPhotos": [],
-                                        "guide": {
-                                            "abilityLevel": {
-                                                "title": "All Abilities", 
-                                                "level": [0, 1, 2], 
-                                                "description": "All levels, but best suited for beginner to intermediate most of the time."
-                                            }, 
-                                            "localVibe": {
-                                                "title": "Welcoming", 
-                                                "level": 20, 
-                                                "description": "Usually mellow and friendly, lots of tourists."
-                                            }, 
-                                            "crowdFactor": {
-                                                "title": "Heavy", 
-                                                "level": 90, 
-                                                "description": "All the spots through Waikiki are pretty much always crowded all the time."
-                                            }, 
-                                            "spotRating": {
-                                                "title": "Fun", 
-                                                "level": 40, 
-                                                "description": "Many people surf their first and last time here. Always something to ride on the right board, but usually mellow waves."
-                                            }, 
-                                            "shoulderBurn": {
-                                                "title": "Light",
-                                                "level": 30, 
-                                                "description": "Long paddles to and from the beach, but not bad once you're out there."
-                                            }, 
-                                            "waterQuality": {
-                                                "title": "Clean",
-                                                "level": 17, 
-                                                "description": "Clean for the most part, but most of Hawaii's population lives on the south shore of Oahu. Tons of people."
-                                            }, 
-                                            "hazards": "Reef, large crowds, boards. Many first-timers that get in the way.", 
-                                            "access": "Easy. Access water to whichever spot you desire from the beach at Waikiki.", 
-                                            "bestSeason": "Summer. From around April through October.", 
-                                            "bringYour": "Shortboard, Bodyboard, Funboard, Longboard, Fish", 
-                                            "bottom": "Reef",
-                                            "idealConditions": {
-                                                "swellDirection": "Anything from the SE to SW, but usually from the S to SW.", 
-                                                "wind": "Calm or offshore from NW to E, with NE straight offshore.", 
-                                                "surfHeight": "Waist high-well overhead", 
-                                                "tide": "Medium"
+                                "name": "Hawaii", 
+                                "county": {
+                                    "oahu": [
+                                        {
+                                            "id": "0", 
+                                            "name": "Waikiki Beach",
+                                            "state": "Hawaii",
+                                            "county": "O'ahu",
+                                            "country": "United States", 
+                                            "location": [21.2724, -157.8285],
+                                            "mapImage": "https://chart-1.msw.ms/maps/spot/728ab60023c0007db81c1cc67c73e206ad7241c9.png",
+                                            "about": "Waikiki Beach consists of numerous spots that offer rights and lefts, as well as world-renowned crowds. It is one of the birthplaces of recreational surfing and a pillar in the quintessential Hawaiian surfing experience. Surf Waikiki and you'll share waves with people from all over the world, many just learning how to surf. While Waikiki conjures images of small, soft, rolling waves, when there's a solid Southern Hemi swell running, many of its breaks turn on enough to keep the beginners on the inside, leaving the better outside rollers for more experienced surfers.", 
+                                            "localPhotos": [],
+                                            "guide": {
+                                                "abilityLevel": {
+                                                    "title": "All Abilities", 
+                                                    "level": [0, 1, 2], 
+                                                    "description": "All levels, but best suited for beginner to intermediate most of the time."
+                                                }, 
+                                                "localVibe": {
+                                                    "title": "Welcoming", 
+                                                    "level": 20, 
+                                                    "description": "Usually mellow and friendly, lots of tourists."
+                                                }, 
+                                                "crowdFactor": {
+                                                    "title": "Heavy", 
+                                                    "level": 90, 
+                                                    "description": "All the spots through Waikiki are pretty much always crowded all the time."
+                                                }, 
+                                                "spotRating": {
+                                                    "title": "Fun", 
+                                                    "level": 40, 
+                                                    "description": "Many people surf their first and last time here. Always something to ride on the right board, but usually mellow waves."
+                                                }, 
+                                                "shoulderBurn": {
+                                                    "title": "Light",
+                                                    "level": 30, 
+                                                    "description": "Long paddles to and from the beach, but not bad once you're out there."
+                                                }, 
+                                                "waterQuality": {
+                                                    "title": "Clean",
+                                                    "level": 17, 
+                                                    "description": "Clean for the most part, but most of Hawaii's population lives on the south shore of Oahu. Tons of people."
+                                                }, 
+                                                "hazards": "Reef, large crowds, boards. Many first-timers that get in the way.", 
+                                                "access": "Easy. Access water to whichever spot you desire from the beach at Waikiki.", 
+                                                "bestSeason": "Summer. From around April through October.", 
+                                                "bringYour": "Shortboard, Bodyboard, Funboard, Longboard, Fish", 
+                                                "bottom": "Reef",
+                                                "idealConditions": {
+                                                    "swellDirection": "Anything from the SE to SW, but usually from the S to SW.", 
+                                                    "wind": "Calm or offshore from NW to E, with NE straight offshore.", 
+                                                    "surfHeight": "Waist high-well overhead", 
+                                                    "tide": "Medium"
+                                                }
                                             }
                                         }
-                                    }
-                                ]
+                                    ]
+                                }
                             }
                         }
                     }

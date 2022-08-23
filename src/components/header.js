@@ -1,4 +1,4 @@
-import React, {useState} from "react" 
+import React, {useState, useContext} from "react" 
 import {Link} from "react-router-dom"
 
 import Logo from "./Logo"
@@ -12,8 +12,8 @@ function Header() {
 
     const usaState = locationData[0].globe.northAmerica.country.unitedStates.state
 
-    const pleasurePoint = usaState.california.northern[0].name;
-    const waikiki = usaState.hawaii.oahu[0].name
+    const pleasurePoint = usaState.california.county.santaCruz[0].name;
+    const waikiki = usaState.hawaii.county.oahu[0].name
 
     return (
         <header>

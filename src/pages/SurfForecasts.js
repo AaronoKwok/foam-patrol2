@@ -1,19 +1,24 @@
-import React, {useState, useContext, useEffect} from "react"
-import axios from "axios"
+import React, {useState, /* , useEffect */} from "react"
+//import axios from "axios"
 
 import weatherData from "../Data/weatherData.json" 
 import tideData from "../Data/tideData.json"
 import astData from "../Data/astData.json"
 
-//import {Context} from "../Context"
+//import {Context} from "../Context" //imports context object exported from Context.js
 
 
 function SurfForecasts({loc}) {
-    console.log(loc.location)
-
-    //const {test} = useContext(Context) //test to be replaced by a forecast
+    
+    //const {testVar} = useContext(Context)//useContext hook takes the context object from Context.js and provides its data
     const [lookUpLoc, setLookUpLoc] = useState("")
     const [forecastID, setForecastID] = useState("")
+    
+    console.log(loc.guide.localVibe.description)
+    console.log(weatherData)
+    console.log(tideData)
+    console.log(astData)
+    //console.log(testVar)
 
     const [change, setChange] = useState(true)
 
@@ -32,11 +37,11 @@ function SurfForecasts({loc}) {
         setLookUpLoc("")
     }
 
-    //stormglass api
+    /* //stormglass api
     const lat = loc.location[0]; 
     const lng = loc.location[1];
     const date = new Date();
-    const hour = date.getHours();
+    const hour = date.getHours();  
     const day = date.getDate();
     const month = date.getMonth() + 1; //added 1 bc months is 0-based, so 0 in the array would be january
     const year = date.getFullYear()
@@ -46,7 +51,7 @@ function SurfForecasts({loc}) {
 
     const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
     
-    const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}`
+     const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}`
     const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&end=${end}`
     const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&start=${start}&end=${end}`
     
@@ -54,7 +59,7 @@ function SurfForecasts({loc}) {
         headers: {
             'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
         }
-    }
+    } */
 /* 
     const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
@@ -67,6 +72,7 @@ function SurfForecasts({loc}) {
                 console.log(res[0].data)
                 console.log(res[1].data)
                 console.log(res[2].data)
+                assign data to state 
             }))
     }, [change])  */
 
@@ -75,7 +81,8 @@ function SurfForecasts({loc}) {
 
     return (
         <div>
-            <p className="test" onClick={changeState}>test</p>
+            {/* <p className="test" onClick={changeState}>test</p> */}
+            
         </div>
     )
 }
@@ -83,9 +90,11 @@ function SurfForecasts({loc}) {
 export default SurfForecasts
 
 // can unfamiliar terms link to glossary
+// can limit api calls per usr using quota from meta
 
 
-           /*  <section className="fc-backscene-img">
+           /*  SEARCH BAR:
+            <section className="fc-backscene-img">
                 
                 <form onSubmit={findLoc} className="fc-backscene-form">
                     <label>
