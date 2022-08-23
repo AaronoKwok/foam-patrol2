@@ -5,7 +5,9 @@
   --des-size: 1.7em;
   --des-weight: 600;
   --course-gray: rgb(206, 206, 206);
-  --backscene-text: rgb(252, 249, 240)
+  --backscene-text: rgb(252, 249, 240);
+  --nav-height: 75px;
+  --screen-width: 85%;
 }
 
 * {
@@ -26,9 +28,9 @@ nav {
   position: fixed; 
   display: flex; 
   color: var(--black);
-  height: 75px;
+  height: var(--nav-height);
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.733);
   justify-content: space-around;
   align-items: center;
   padding: 0px 45px;
@@ -602,6 +604,22 @@ nav {
 
 }
 
+.filler {
+  height: var(--nav-height);
+}
+
+.locSet {
+  border: 1px solid var(--course-gray);
+  width: var(--screen-width);
+  margin: auto;
+  margin-top: 10px; 
+}
+
+.forecastDir {
+}
+
+
+
 
 
 
@@ -724,7 +742,7 @@ nav {
 
 .courses-pg-layout {
   position: relative;
-  width: 85%;
+  width: var(--screen-width);
   margin: auto;
   margin-top: 20px; 
 }

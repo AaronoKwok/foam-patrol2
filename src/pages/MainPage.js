@@ -26,7 +26,7 @@ function MainPage() { //to change once have a courses scroll functionality
     })
 
     return (
-        <main>
+        <main className="mainpage-width">
             <div className="mp-img-position">
                 <BackScene />
                 <section className="main-info">

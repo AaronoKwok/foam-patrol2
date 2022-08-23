@@ -82,7 +82,11 @@ function SurfForecasts({loc}) {
     return (
         <div>
             {/* <p className="test" onClick={changeState}>test</p> */}
-            
+            <div className="filler"></div>
+            <section className="locSet">
+                <p className="forecastDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
+                <p>{loc.name} Surf Report & Forecast</p>
+            </section>
         </div>
     )
 }
