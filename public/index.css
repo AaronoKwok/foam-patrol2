@@ -615,7 +615,23 @@ nav {
   margin-top: 10px; 
 }
 
-.forecastDir {
+.fcDir {
+  font-size: .95em;
+  margin: 0px; 
+}
+
+.fcTitle {
+  font-size: 2em;
+  font-weight: 500;
+  margin: 0px; 
+}
+
+.fcRating {
+  background-color: lightblue;
+  font-size: 1.05em; 
+  font-weight: 500;
+  padding: 5px;
+  padding-left: 
 }
 
 

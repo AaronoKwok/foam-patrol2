@@ -1,5 +1,5 @@
-import React, {useState, /* , useEffect */} from "react"
-//import axios from "axios"
+import React, {useState, useEffect} from "react"
+import axios from "axios"
 
 import weatherData from "../Data/weatherData.json" 
 import tideData from "../Data/tideData.json"
@@ -36,8 +36,8 @@ function SurfForecasts({loc}) {
         console.log("Searching")
         setLookUpLoc("")
     }
-
-    /* //stormglass api
+ 
+ /*  //stormglass api
     const lat = loc.location[0]; 
     const lng = loc.location[1];
     const date = new Date();
@@ -47,23 +47,25 @@ function SurfForecasts({loc}) {
     const year = date.getFullYear()
     const currentDate = `${year}-${month}-${day}`
     const start = `${currentDate} ${hour}:00`
-    const end = '2022-8-24 00:00'; //5 days ahead -- needed for astronomy
+    const end = '2022-8-29 00:00'; //5 days ahead -- needed for astronomy
 
-    const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
+    const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed,seaLevel'; 
     
-     const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}`
+    const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}`
     const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&end=${end}`
     const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&start=${start}&end=${end}`
-    
+    //const seaLvlUrl = `https://api.stormglass.io/v2/tide/sea-level/point?lat=${lat}&lng=${lng}&start=${start}&end=${end}`
+
     const headers = {
         headers: {
             'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
         }
-    } */
-/* 
+    } 
+ 
     const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
     const requestThree = axios.get(tideUrl, headers);  
+    //const requestFour = axios.get(seaLvlUrl, headers);
     
     useEffect(() => {
         console.log("effect ran")
@@ -72,9 +74,10 @@ function SurfForecasts({loc}) {
                 console.log(res[0].data)
                 console.log(res[1].data)
                 console.log(res[2].data)
-                assign data to state 
+                //console.log(res[3].data)
+                // assign data to state 
             }))
-    }, [change])  */
+    }, [])  */ 
 
    
 
@@ -84,8 +87,9 @@ function SurfForecasts({loc}) {
             {/* <p className="test" onClick={changeState}>test</p> */}
             <div className="filler"></div>
             <section className="locSet">
-                <p className="forecastDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
-                <p>{loc.name} Surf Report & Forecast</p>
+                <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
+                <p className="fcTitle">{loc.name} Surf Report & Forecast</p>
+                <p className="fcRating">FAIR</p>
             </section>
         </div>
     )
