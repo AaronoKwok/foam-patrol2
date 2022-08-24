@@ -47,10 +47,10 @@ function SurfForecasts({loc}) {
     const month = date.getMonth() + 1; //added 1 bc months is 0-based, so 0 in the array would be january
     const year = date.getFullYear()
     const currentDate = `${year}-${month}-${day}`
-    const start = `${currentDate} ${hour}:00`
+    const start = `${currentDate} ${hour-3}:00`
     console.log(currentDate)
     const end = '2022-8-28 00:00'; //5 days ahead -- needed for astronomy
-    const histEnd = `2022-8-28 ${hour}:00`;
+    const histEnd = `2022-8-28 ${hour-3}:00`;
 
     const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed,seaLevel'; 
     
@@ -93,6 +93,89 @@ function SurfForecasts({loc}) {
                 <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
                 <p className="fcTitle">{loc.name} Surf Report & Forecast</p>
                 <p className="fcRating">FAIR</p>
+                <div className="fcData">
+
+                </div>
+                <div>
+                    <p>Ideal {loc.name} Surf Conditions</p>
+                </div>
+                <div className="fcGuide">
+                    <p>{loc.name} Surf Guide</p>
+                    <p>{loc.about}</p>
+                    <div className="guide">
+                        <section className="abilitySpot">
+                            <div>
+                                <p>Ability Level</p>
+                                <p>{loc.guide.abilityLevel.title}</p>
+                                <div>
+                                    level
+                                </div>
+                                <p>{loc.guide.abilityLevel.description}</p>
+                            </div>
+                            <div>
+                                <p>Spot Rating</p>
+                                <p>{loc.guide.spotRating.title}</p>
+                                <div>
+                                    level
+                                </div>
+                                <p>{loc.guide.spotRating.description}</p>
+                            </div>
+                        </section>
+                        <section className="localShoulder">
+                            <div>
+                                <p>Local Vibe</p>
+                                <p>{loc.guide.localVibe.title}</p>
+                                <div>
+                                    level
+                                </div>
+                                <p>{loc.guide.localVibe.description}</p>
+                            </div>
+                            <div>
+                                <p>Shoulder Burn</p>
+                                <p>{loc.guide.shoulderBurn.title}</p>
+                                <div>
+                                    level
+                                </div>
+                                <p>{loc.guide.shoulderBurn.description}</p>
+                            </div>
+                        </section>
+                        <section className="crowdWater">                            
+                            <div>
+                                <p>Crowd Factor</p>
+                                <p>{loc.guide.crowdFactor.title}</p>
+                                <div>
+                                    level
+                                </div>
+                                <p>{loc.guide.crowdFactor.description}</p>
+                            </div>
+                            <div>
+                                <p>Water Quality</p>
+                                <p>{loc.guide.waterQuality.title}</p>
+                                <div>
+                                    level
+                                </div>
+                                <p>{loc.guide.waterQuality.description}</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div className="addiPoints">
+                        <section className="hazAccBest">
+                            <p>Hazards</p>
+                            <p>{loc.guide.hazards}</p>
+                            <p>Access</p>
+                            <p>{loc.guide.access}</p>
+                            <p>Best Season</p>
+                            <p>{loc.guide.bestSeason}</p>
+                        </section>
+                        <section className="bringBottom">
+                            <p>Bring Your</p>
+                            <p>{loc.guide.bringYour}</p>
+                            <p>Bottom</p>
+                            <p>{loc.guide.bottom}</p>
+                        </section>
+                    </div>
+
+                </div>
             </section>
         </div>
     )

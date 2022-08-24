@@ -631,8 +631,62 @@ nav {
   font-size: 1.05em; 
   font-weight: 500;
   padding: 5px;
-  padding-left: 
 }
+
+.fcData {
+  height: 400px; 
+  width: 100%; 
+  background-color: rgb(248, 193, 193);
+}
+
+.fcGuide {
+  margin-top: 15px; 
+  height: 800px; 
+  width: 100%; 
+  background-color: rgb(238, 238, 175);
+}
+
+.guide {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr);
+  background-color: white;
+  height: 300px;
+}
+
+.abilitySpot {
+  height: 100%; 
+  background-color: rgb(255, 158, 158);
+}
+
+.localShoulder  {
+  height: 100%; 
+  background-color: rgb(203, 255, 203); 
+}
+
+.crowdWater {
+  height: 100%; 
+  background-color: rgb(255, 255, 187);
+}
+
+.addiPoints {
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 15px; 
+  background-color: white;
+  height: 300px; 
+}
+
+.hazAccBest {
+  height: 100%; 
+  background-color: rgb(255, 220, 226);
+}
+
+.bringBottom {
+  height: 100%; 
+  background-color: rgb(255, 200, 179);
+}
+
+
 
 
 
