@@ -37,23 +37,26 @@ function SurfForecasts({loc}) {
         setLookUpLoc("")
     }
  
- /*  //stormglass api
+   //stormglass api
     const lat = loc.location[0]; 
     const lng = loc.location[1];
     const date = new Date();
+    console.log(date)
     const hour = date.getHours();  
     const day = date.getDate();
     const month = date.getMonth() + 1; //added 1 bc months is 0-based, so 0 in the array would be january
     const year = date.getFullYear()
     const currentDate = `${year}-${month}-${day}`
     const start = `${currentDate} ${hour}:00`
-    const end = '2022-8-29 00:00'; //5 days ahead -- needed for astronomy
+    console.log(currentDate)
+    const end = '2022-8-28 00:00'; //5 days ahead -- needed for astronomy
+    const histEnd = `2022-8-28 ${hour}:00`;
 
     const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed,seaLevel'; 
     
-    const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}`
-    const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&end=${end}`
-    const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&start=${start}&end=${end}`
+    const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
+    const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
+    const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
     //const seaLvlUrl = `https://api.stormglass.io/v2/tide/sea-level/point?lat=${lat}&lng=${lng}&start=${start}&end=${end}`
 
     const headers = {
@@ -62,7 +65,7 @@ function SurfForecasts({loc}) {
         }
     } 
  
-    const requestOne = axios.get(weatherUrl, headers);
+/*  const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
     const requestThree = axios.get(tideUrl, headers);  
     //const requestFour = axios.get(seaLvlUrl, headers);
@@ -77,7 +80,7 @@ function SurfForecasts({loc}) {
                 //console.log(res[3].data)
                 // assign data to state 
             }))
-    }, [])  */ 
+    }, []) */ 
 
    
 
