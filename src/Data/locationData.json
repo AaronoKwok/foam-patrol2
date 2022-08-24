@@ -27,7 +27,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "Intermediate - Advanced", 
-                                                    "level": [1, 2], 
+                                                    "level": [0, 1, 1], 
                                                     "description": "The wave itself isn't generally considered heavy, but the well-established crowd makes it better for intermediate+ surfers."
                                                 }, 
                                                 "localVibe": {
@@ -84,7 +84,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "Beginner - Intermediate", 
-                                                    "level": [0, 1], 
+                                                    "level": [1, 1, 0], 
                                                     "description": "Beginner-Intermediate"
                                                 }, 
                                                 "localVibe": {
@@ -141,7 +141,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "Beginner - Intermediate", 
-                                                    "level": [0, 1], 
+                                                    "level": [1, 1, 0], 
                                                     "description": "Beginner-Intermediate longboarder"
                                                 }, 
                                                 "localVibe": {
@@ -198,7 +198,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "Intermediate - Advanced", 
-                                                    "level": [1, 2], 
+                                                    "level": [0, 1, 1], 
                                                     "description": "Intermediate-Advanced"
                                                 }, 
                                                 "localVibe": {
@@ -255,7 +255,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "Beginner - Intermediate", 
-                                                    "level": [0, 1], 
+                                                    "level": [1, 1, 0], 
                                                     "description": "Beginner-Intermediate"
                                                 }, 
                                                 "localVibe": {
@@ -312,7 +312,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "All Abilities", 
-                                                    "level": [0, 1, 2], 
+                                                    "level": [1, 1, 1], 
                                                     "description": "Great option for beginners, but still fun for proficient longboarders; can get hairy (like anywhere) when big."
                                                 }, 
                                                 "localVibe": {
@@ -369,7 +369,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "All Abilities", 
-                                                    "level": [0, 1, 2], 
+                                                    "level": [1, 1, 1], 
                                                     "description": "Beginner-Advanced"
                                                 }, 
                                                 "localVibe": {
@@ -428,7 +428,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "Beginner - Intermediate", 
-                                                    "level": [0, 1], 
+                                                    "level": [1, 1, 0], 
                                                     "description": "Great spot for a beginner or intermediate when optimal conditions align"
                                                 }, 
                                                 "localVibe": {
@@ -487,7 +487,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "All Abilities", 
-                                                    "level": [0, 1, 2], 
+                                                    "level": [1, 1, 1], 
                                                     "description": "Beginner to advanced, above average at the pier."
                                                 }, 
                                                 "localVibe": {
@@ -551,7 +551,7 @@
                                             "guide": {
                                                 "abilityLevel": {
                                                     "title": "All Abilities", 
-                                                    "level": [0, 1, 2], 
+                                                    "level": [1, 1, 1], 
                                                     "description": "All levels, but best suited for beginner to intermediate most of the time."
                                                 }, 
                                                 "localVibe": {

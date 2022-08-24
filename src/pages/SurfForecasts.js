@@ -14,13 +14,22 @@ function SurfForecasts({loc}) {
     const [lookUpLoc, setLookUpLoc] = useState("")
     const [forecastID, setForecastID] = useState("")
     
-    console.log(loc.guide.localVibe.description)
-    console.log(weatherData)
-    console.log(tideData)
-    console.log(astData)
-    //console.log(testVar)
-
     const [change, setChange] = useState(true)
+
+    /* ability level */
+
+    function isBlue(lvl) {
+        const levelArr = loc.guide.abilityLevel.level;
+        if(levelArr[lvl]) {
+            return <div className="levelYesHighlight"></div>
+        } else {
+            return <div className="levelNoHighlight"></div>
+        }
+    }
+
+
+
+    /* end ability level */
 
     function changeState() {
         setChange(!change)
@@ -104,57 +113,68 @@ function SurfForecasts({loc}) {
                     <p>{loc.about}</p>
                     <div className="guide">
                         <section className="abilitySpot">
-                            <div>
-                                <p>Ability Level</p>
-                                <p>{loc.guide.abilityLevel.title}</p>
-                                <div>
-                                    level
+                            <div className="guideContainer">
+                                <p className="guideName">Ability Level</p>
+                                <p className="guideTitle">{loc.guide.abilityLevel.title}</p>
+                                <div className="abilityLevel">
+                                    <div className="partLevel">
+                                        {isBlue(0)}
+                                        <p className="levelText">Beg</p>
+                                    </div>
+                                    <div className="partLevel">
+                                        {isBlue(1)}
+                                        <p className="levelText">Int</p>
+                                    </div>
+                                    <div className="partLevel">
+                                        {isBlue(2)}
+                                        <p className="levelText">Adv</p>
+                                    </div>
                                 </div>
-                                <p>{loc.guide.abilityLevel.description}</p>
+                                <p className="guideDes">{loc.guide.abilityLevel.description}</p>
                             </div>
-                            <div>
-                                <p>Spot Rating</p>
-                                <p>{loc.guide.spotRating.title}</p>
+                            <div className="guideContainer">
+                                <p className="guideName">Spot Rating</p>
+                                <p className="guideTitle">{loc.guide.spotRating.title}</p>
                                 <div>
                                     level
                                 </div>
-                                <p>{loc.guide.spotRating.description}</p>
+                                <p className="guideDes">{loc.guide.spotRating.description}</p>
                             </div>
                         </section>
                         <section className="localShoulder">
-                            <div>
-                                <p>Local Vibe</p>
-                                <p>{loc.guide.localVibe.title}</p>
+                            <div className="guideContainer">
+                                <p className="guideName">Local Vibe</p>
+                                <p className="guideTitle">{loc.guide.localVibe.title}</p>
                                 <div>
                                     level
                                 </div>
-                                <p>{loc.guide.localVibe.description}</p>
+                                <p className="guideDes">{loc.guide.localVibe.description}</p>
                             </div>
-                            <div>
-                                <p>Shoulder Burn</p>
-                                <p>{loc.guide.shoulderBurn.title}</p>
+                            <div className="guideContainer">
+                                <p className="guideName">Shoulder Burn</p>
+                                <p className="guideTitle">{loc.guide.shoulderBurn.title}</p>
                                 <div>
                                     level
                                 </div>
-                                <p>{loc.guide.shoulderBurn.description}</p>
+                                <p className="guideDes">{loc.guide.shoulderBurn.description}</p>
                             </div>
                         </section>
                         <section className="crowdWater">                            
-                            <div>
-                                <p>Crowd Factor</p>
-                                <p>{loc.guide.crowdFactor.title}</p>
+                            <div className="guideContainer">
+                                <p className="guideName">Crowd Factor</p>
+                                <p className="guideTitle">{loc.guide.crowdFactor.title}</p>
                                 <div>
                                     level
                                 </div>
-                                <p>{loc.guide.crowdFactor.description}</p>
+                                <p className="guideDes">{loc.guide.crowdFactor.description}</p>
                             </div>
-                            <div>
-                                <p>Water Quality</p>
-                                <p>{loc.guide.waterQuality.title}</p>
+                            <div className="guideContainer">
+                                <p className="guideName">Water Quality</p>
+                                <p className="guideTitle">{loc.guide.waterQuality.title}</p>
                                 <div>
                                     level
                                 </div>
-                                <p>{loc.guide.waterQuality.description}</p>
+                                <p className="guideDes">{loc.guide.waterQuality.description}</p>
                             </div>
                         </section>
                     </div>

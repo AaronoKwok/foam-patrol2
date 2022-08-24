@@ -650,7 +650,68 @@ nav {
   display: grid; 
   grid-template-columns: repeat(3, 1fr);
   background-color: white;
-  height: 300px;
+}
+
+.guideContainer {
+  background-color: white;
+  padding-left: 5px;
+  height: 170px; 
+  margin-bottom: 10px;  
+}
+
+.guideName {
+  font-size: .9em;
+  font-weight: 300;
+  color: rgb(75, 75, 75);
+  margin: 0px; 
+  letter-spacing: .042em;
+}
+
+.guideTitle {
+  font-size: 1.07em; 
+  font-weight: 500;
+  margin: 0px; 
+}
+
+.abilityLevel {
+  display: flex;
+  margin: 5px 0px;
+  
+}
+
+.partLevel {
+  width: 60px; 
+  margin-right: 2px; 
+}
+
+.levelNoHighlight {
+  height: 4px; 
+  border-radius: 5px;
+  width: 100%;
+  background-color: rgb(227, 240, 253);
+}
+
+.levelYesHighlight {
+  height: 4px; 
+  border-radius: 5px;
+  width: 100%;
+  background-color: rgb(51, 56, 190);
+}
+
+.levelText {
+  display: flex; 
+  justify-content: center;
+  font-size: .74em;
+  font-weight: 500;
+  color: rgb(110, 110, 110);
+  margin: 0px;
+}
+
+.guideDes {
+  font-size: 0.85em; 
+  font-weight: 300;
+  width: 250px; 
+  letter-spacing: .042em;
 }
 
 .abilitySpot {
