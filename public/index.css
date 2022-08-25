@@ -70,7 +70,7 @@ nav {
   visibility: hidden;
   opacity: 0;
   transition: opacity .5s; z-index: 1;
-  width: 60vw; 
+  width: 50vw; 
   height: 200px; 
   background-color: rgb(255, 255, 255); 
   top: 100%;
@@ -83,6 +83,11 @@ nav {
   border: 1px solid rgb(136, 136, 136);
 }
 
+.dropdown-section.locs {
+  width: 35vw; 
+  height: 390px; 
+}
+
 .nav-dropdown:hover .dropdown-section {
   visibility: visible;
   opacity: 1; 
@@ -91,7 +96,6 @@ nav {
 .retreat-dropdown-content {
   width: 200px;
   margin-right: 20px;  
-  
 }
 
 .dropdown-title {
@@ -633,14 +637,14 @@ nav {
 }
 
 .fcGuideName {
-  color: rgb(66, 66, 66);
+  color: rgb(43, 43, 43);
   font-size: 1.4em;
   font-weight: 500;
   letter-spacing: .03em;
 }
 
 .fcGuideAbout {
-  color: rgb(110, 110, 110);
+  color: rgb(56, 56, 56);
   letter-spacing: .03em;
 }
 
@@ -664,7 +668,7 @@ nav {
 }
 
 .guideName {
-  font-size: .83em;
+  font-size: .85em;
   font-weight: 300;
   color: rgb(75, 75, 75);
   margin: 20px 0px 0px 0px;
@@ -733,7 +737,7 @@ nav {
 
 .barDesText {
   margin: 0px; 
-  font-size: .74em;
+  font-size: .7em;
   font-weight: 400;
   color: rgb(110, 110, 110);
 }
@@ -765,7 +769,7 @@ nav {
 .levelText {
   display: flex; 
   justify-content: center;
-  font-size: .74em;
+  font-size: .7em;
   font-weight: 400;
   color: rgb(110, 110, 110);
   margin: 0px; 
@@ -813,17 +817,19 @@ nav {
   font-size: 0.85em;
   letter-spacing: 0.042em;
   color: rgb(110, 110, 110);
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 .hazAccBest {
   height: 100%; 
   margin-left: 5px;
+  padding-right: 100px;
 }
 
 .bringBottom {
   height: 100%; 
   margin-left: 5px;
+  padding-right: 100px;
 }
 
 

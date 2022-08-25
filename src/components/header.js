@@ -12,16 +12,16 @@ function Header() {
 
     const usaState = locationData[0].globe.northAmerica.country.unitedStates.state
 
-    const pleasurePoint = usaState.california.county.santaCruz[0].name;
-    const jacks = usaState.california.county.santaCruz[1].name;
-    const cowells = usaState.california.county.santaCruz[2].name;
-    const steamer = usaState.california.county.santaCruz[3].name;
-    const theHook = usaState.california.county.santaCruz[4].name;
-    const capitola = usaState.california.county.santaCruz[5].name;
-    const davenport = usaState.california.county.santaCruz[6].name;
-    const pacifica = usaState.california.county.sanMateo[0].name;
-    const hbPier = usaState.california.county.orange[0].name;
-    const waikiki = usaState.hawaii.county.oahu[0].name
+    const pleasurePoint = usaState.california.county.santaCruz[0].name.toUpperCase();
+    const jacks = usaState.california.county.santaCruz[1].name.toUpperCase();
+    const cowells = usaState.california.county.santaCruz[2].name.toUpperCase();
+    const steamer = usaState.california.county.santaCruz[3].name.toUpperCase();
+    const theHook = usaState.california.county.santaCruz[4].name.toUpperCase();
+    const capitola = usaState.california.county.santaCruz[5].name.toUpperCase();
+    const davenport = usaState.california.county.santaCruz[6].name.toUpperCase();
+    const pacifica = usaState.california.county.sanMateo[0].name.toUpperCase();
+    const hbPier = usaState.california.county.orange[0].name.toUpperCase();
+    const waikiki = usaState.hawaii.county.oahu[0].name.toUpperCase();
 
 
     return (
@@ -82,38 +82,48 @@ function Header() {
 
                         <p className="nav-button">SURF FORECASTS &nbsp;<i className="arrow down"></i></p>
 
-                        <span className="dropdown-section"> 
-                            <Link to="/surfForecasts/pleasurePoint">
-                                <p>{pleasurePoint}</p>
-                            </Link>
-                            <Link to="/surfForecasts/waikiki">
-                                <p>{waikiki}</p>            
-                            </Link>
-                            <Link to="/surfForecasts/jacks">
-                                <p>{jacks}</p>
-                            </Link>
-                            <Link to="/surfForecasts/cowells">
-                                <p>{cowells}</p>
-                            </Link>
-                            <Link to="/surfForecasts/steamer">
-                                <p>{steamer}</p>
-                            </Link>
-                            <Link to="/surfForecasts/theHook">
-                                <p>{theHook}</p>
-                            </Link>
-                            <Link to="/surfForecasts/capitola">
-                                <p>{capitola}</p>
-                            </Link>
-                            <Link to="/surfForecasts/davenport">
-                                <p>{davenport}</p>
-                            </Link>
-                            <Link to="/surfForecasts/pacifica">
-                                <p>{pacifica}</p>
-                            </Link>
-                            <Link to="/surfForecasts/hbPier">
-                                <p>{hbPier}</p>
-                            </Link>
-                        </span>
+                        <section className="dropdown-section locs"> 
+                            <div className="retreat-dropdown-content">
+                                <p className="dropdown-title">CALIFORNIA</p>
+                                <hr className="hr-dropdown"/>
+
+                                <Link className="dropdown-link" to="/surfForecasts/pleasurePoint">
+                                    <p className="dropdown-info">{pleasurePoint}</p>
+                                </Link>
+                                <Link className="dropdown-link" to="/surfForecasts/jacks">
+                                    <p className="dropdown-info">{jacks}</p>
+                                </Link>
+                                <Link className="dropdown-link" to="/surfForecasts/cowells">
+                                    <p className="dropdown-info">{cowells}</p>
+                                </Link>
+                                <Link className="dropdown-link" to="/surfForecasts/steamer">
+                                    <p className="dropdown-info">{steamer}</p>
+                                </Link>
+                                <Link className="dropdown-link" to="/surfForecasts/theHook">
+                                    <p className="dropdown-info">{theHook}</p>
+                                </Link>
+                                <Link className="dropdown-link" to="/surfForecasts/capitola">
+                                    <p className="dropdown-info">{capitola}</p>
+                                </Link>
+                                <Link className="dropdown-link" to="/surfForecasts/davenport">
+                                    <p className="dropdown-info">{davenport}</p>
+                                </Link>
+                                <Link className="dropdown-link" to="/surfForecasts/pacifica">
+                                    <p className="dropdown-info">{pacifica}</p>
+                                </Link>
+                                <Link className="dropdown-link" to="/surfForecasts/hbPier">
+                                    <p className="dropdown-info">{hbPier}</p>
+                                </Link>
+                            </div>
+                            <div className="retreat-dropdown-content">
+                                <p>HAWAII</p>
+                                <hr className="hr-dropdown"/>
+
+                                <Link className="dropdown-link" to="/surfForecasts/waikiki">
+                                    <p className="dropdown-info">{waikiki}</p>            
+                                </Link>
+                            </div>
+                        </section>
 
                     </div>
 
