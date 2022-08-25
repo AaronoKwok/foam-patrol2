@@ -632,31 +632,42 @@ nav {
   background-color: rgb(248, 193, 193);
 }
 
+.fcGuideName {
+  color: rgb(66, 66, 66);
+  font-size: 1.4em;
+  font-weight: 500;
+  letter-spacing: .03em;
+}
+
+.fcGuideAbout {
+  color: rgb(110, 110, 110);
+  letter-spacing: .03em;
+}
+
 .fcGuide {
   margin-top: 15px; 
-  height: 1000px; 
+  margin-bottom: 25px;
+  height: auto; 
   width: 100%; 
-  background-color: rgb(238, 238, 175);
 }
 
 .guide {
   display: grid; 
   grid-template-columns: repeat(3, 1fr);
   background-color: white;
-  padding-top: 30px;
 }
 
 .guideContainer {
   background-color: white;
   padding-left: 5px;
-  height: 200px; 
+  height: 190px; 
 }
 
 .guideName {
   font-size: .83em;
   font-weight: 300;
   color: rgb(75, 75, 75);
-  margin: 0px; 
+  margin: 20px 0px 0px 0px;
   letter-spacing: .042em;
 }
 
@@ -762,40 +773,57 @@ nav {
 
 .guideDes {
   font-size: 0.85em; 
-  font-weight: 300;
   width: 250px; 
   letter-spacing: .042em;
+  color:rgb(110, 110, 110)
 }
 
 .abilitySpot {
   height: 100%; 
-  background-color: rgb(255, 158, 158);
 }
 
 .localShoulder  {
   height: 100%; 
-  background-color: rgb(203, 255, 203); 
 }
 
 .crowdWater {
   height: 100%; 
-  background-color: rgb(255, 255, 187);
+}
+
+.guideHr {
+  margin: 0px auto;
 }
 
 .addiPoints {
   display: grid; 
   grid-template-columns: repeat(2, 1fr);
   background-color: white;
+  margin-top: 30px;
+}
+
+.addiTitle {
+  font-size: 1.03em;
+  font-weight: 500;
+  margin: 0px; 
+  letter-spacing: 0.05em;
+  color: rgb(66, 66, 66);
+}
+
+.addiDes {
+  font-size: 0.85em;
+  letter-spacing: 0.042em;
+  color: rgb(110, 110, 110);
+  margin-top: 10px;
 }
 
 .hazAccBest {
   height: 100%; 
-  background-color: rgb(255, 220, 226);
+  margin-left: 5px;
 }
 
 .bringBottom {
   height: 100%; 
-  background-color: rgb(255, 200, 179);
+  margin-left: 5px;
 }
 
 
