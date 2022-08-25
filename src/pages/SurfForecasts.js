@@ -5,6 +5,11 @@ import weatherData from "../Data/weatherData.json"
 import tideData from "../Data/tideData.json"
 import astData from "../Data/astData.json"
 
+import surfHeightIcon from "../images/surfHeight.jpeg"
+import swellDirectionIcon from "../images/swellDirection.jpeg"
+import tideIcon from "../images/tide.jpeg"
+import windIcon from "../images/wind.jpeg"
+
 //import {Context} from "../Context" //imports context object exported from Context.js
 
 
@@ -15,6 +20,11 @@ function SurfForecasts({loc}) {
     const spotRating = loc.guide.spotRating.level
     const shoulderBurn = loc.guide.shoulderBurn.level
     const waterQuality = loc.guide.waterQuality.level
+
+    const surfHeightDes = loc.guide.idealConditions.surfHeight
+    const swellDirectionDes = loc.guide.idealConditions.swellDirection
+    const tideDes = loc.guide.idealConditions.tide
+    const windDes = loc.guide.idealConditions.wind
     
     //const {testVar} = useContext(Context)//useContext hook takes the context object from Context.js and provides its data
     const [lookUpLoc, setLookUpLoc] = useState("")
@@ -114,18 +124,48 @@ function SurfForecasts({loc}) {
     }, []) */ 
 
     return (
-        <div>
+        <div className="forecast-background">
             <div className="filler"></div>
             <section className="locSet">
-                <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
-                <p className="fcTitle">{loc.name} Surf Report & Forecast</p>
-                <p className="fcRating">FAIR</p>
-                <div className="fcData">
-                    api data here
+                <div className="top-forecast">
+                    <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
+                    <p className="fcTitle">{loc.name} Surf Report & Forecast</p>
+                    <p className="fcRating">FAIR</p>
+                    <div className="fcData">
+                        api data here
+                    </div>
                 </div>
 
-                <section>
-                    <p>Ideal {loc.name} Surf Conditions</p>
+                <section className="surfConditions">
+                    <p className="sc-Title">Ideal {loc.name} Surf Conditions</p>
+                    <div className="icon-container">
+                        <img className="sc-icon" src={swellDirectionIcon} alt=""></img>
+                        <div className="condition-container">
+                            <p className="condition-title">Swell Direction</p>
+                            <p className="condition-des">{swellDirectionDes}</p>
+                        </div>
+                    </div>
+                    <div className="icon-container">
+                        <img className="sc-icon" src={windIcon} alt=""></img>
+                        <div className="condition-container">
+                            <p className="condition-title">Wind</p>
+                            <p className="condition-des">{windDes}</p>
+                        </div>
+                    </div>
+                    <div className="icon-container">
+                        <img className="sc-icon" src={surfHeightIcon} alt=""></img>
+                        <div className="condition-container">
+                            <p className="condition-title">Surf Height</p>
+                            <p className="condition-des">{surfHeightDes}</p>
+                        </div>
+                    </div>
+                    <div className="icon-container">
+                        <img className="sc-icon" src={tideIcon} alt=""></img>
+                        <div className="condition-container">
+                            <p className="condition-title">Tide</p>
+                            <p className="condition-des">{tideDes}</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section className="fcGuide">
