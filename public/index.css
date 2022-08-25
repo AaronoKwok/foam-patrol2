@@ -667,12 +667,27 @@ nav {
   color: rgb(66, 66, 66)
 }
 
-.percentBar {
+.percentBarFirst {
   height: 4px;
-  width: 182px;
-  background-color: rgb(227, 240, 253);
+  width: 4px;
   border-radius: 5px;
   margin-top: 10px;
+}
+
+.percentBarBlue {
+  background-color: rgb(51, 56, 190);
+}
+
+.percentBarGray {
+  background-color: rgb(227, 240, 253);
+}
+
+.percentBarLastBlue {
+  background-color: rgb(51, 56, 190);
+}
+
+.percentBarLastGray {
+  background-color: rgb(227, 240, 253);
 }
 
 .barDes {

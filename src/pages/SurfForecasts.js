@@ -31,7 +31,15 @@ function SurfForecasts({loc}) {
 
     function isFilled(amount) {
         for(let i = 0; i < 100; i++) {
-
+            if(i === 0) {
+                return <div className="percentBarFirst"></div> //first 4px-width
+            } else if(i < amount - 1) {
+                return <div className="percentBarBlue"></div> //blue
+            } else if(i === 99) {
+                return <div className=""></div> //last 4px-width
+            } else {
+                return <div className="percentBarGray"></div> //gray
+            }
         }
     }
 
