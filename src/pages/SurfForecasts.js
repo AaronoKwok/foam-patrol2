@@ -9,13 +9,17 @@ import astData from "../Data/astData.json"
 
 
 function SurfForecasts({loc}) {
+
+    const localVibe = loc.guide.localVibe.level
+    const crowdFactor = loc.guide.crowdFactor.level
+    const spotRating = loc.guide.spotRating.level
+    const shoulderBurn = loc.guide.shoulderBurn.level
+    const waterQuality = loc.guide.waterQuality.level
     
     //const {testVar} = useContext(Context)//useContext hook takes the context object from Context.js and provides its data
     const [lookUpLoc, setLookUpLoc] = useState("")
     const [forecastID, setForecastID] = useState("")
     
-    const [change, setChange] = useState(true)
-
     /* ability level */
 
     function isBlue(lvl) {
@@ -29,53 +33,29 @@ function SurfForecasts({loc}) {
 
     /* percent bar */
 
-    /* function isFilled(amount) {
-        for(let i = 1; i < 101; i++) {
-            if(i === 1) {
-                return <div className="percentBarFirst"></div> //first 4px-width
-            } else if(i < amount || i < 99) {
-                return <div className="percentBarBlue"></div> //blue
-            } else if(i === 100) {
-                if(amount === 100) {
-                    return <div className="percentBarLastBlue"></div>
-                } else {
-                    return <div className="percentBarLastGray"></div> //last 4px-width
-                }                
-            } else {
-                return <div className="percentBarGray"></div> //gray
-            }
-        }
-    } */
-
     function isFilled(amount) {
         const arr = []
-        for(let i = 0; i < 101; i++) {
+        for(let i = 1; i < 101; i++) {
             arr.push(i)
         }
-        return arr.map(barPart => {
-            if(barPart === 1) {
-                return <div className="percentBarFirst"></div> //first 4px-width
-            } else if(barPart < amount || barPart < 99) {
-                return <div className="percentBarBlue"></div> //blue
-            } else if(barPart === 100) {
+        return arr.map(barSection => {
+            if(barSection === 1) {
+                return <div key={barSection} className="percentBarFirst"></div>
+            } else if(barSection < amount + 1 && barSection !== 100) {
+                return <div key={barSection} className="percentBarBlue"></div> 
+            } else if(barSection === 100) {
                 if(amount === 100) {
-                    return <div className="percentBarLastBlue"></div>
+                    return <div key={barSection} className="percentBarLastBlue"></div> 
                 } else {
-                    return <div className="percentBarLastGray"></div> //last 4px-width
+                    return <div key={barSection} className="percentBarLastGray"></div> 
                 }                
             } else {
-                return <div className="percentBarGray"></div> //gray
+                return <div key={barSection} className="percentBarGray"></div> 
             }
         })
     }
 
-    
-
     /* end percent bar */
-
-    function changeState() {
-        setChange(!change)
-    }
 
     function lookChange(event) {
         const text = event.target.value
@@ -133,12 +113,8 @@ function SurfForecasts({loc}) {
             }))
     }, []) */ 
 
-   
-
-
     return (
         <div>
-            {/* <p className="test" onClick={changeState}>test</p> */}
             <div className="filler"></div>
             <section className="locSet">
                 <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
@@ -183,7 +159,7 @@ function SurfForecasts({loc}) {
                                 <p className="guideName">Spot Rating</p>
                                 <p className="guideTitle">{loc.guide.spotRating.title}</p>
                                 <div className="barContainer">
-                                    {isFilled(loc.guide.spotRating.level)}
+                                    {isFilled(spotRating)}
                                 </div>
                                 <div className="barDes">
                                     <p className="barDesText">Poor</p>
@@ -199,8 +175,12 @@ function SurfForecasts({loc}) {
                             <div className="guideContainer">
                                 <p className="guideName">Local Vibe</p>
                                 <p className="guideTitle">{loc.guide.localVibe.title}</p>
-                                <div>
-                                    level
+                                <div className="barContainer">
+                                    {isFilled(localVibe)}
+                                </div>
+                                <div className="barDes">
+                                    <p className="barDesText">Welcoming</p>
+                                    <p className="barDesText">Intimidating</p>
                                 </div>
                                 <p className="guideDes">{loc.guide.localVibe.description}</p>
                             </div>
@@ -208,8 +188,12 @@ function SurfForecasts({loc}) {
                             <div className="guideContainer">
                                 <p className="guideName">Shoulder Burn</p>
                                 <p className="guideTitle">{loc.guide.shoulderBurn.title}</p>
-                                <div>
-                                    level
+                                <div className="barContainer">
+                                    {isFilled(shoulderBurn)}
+                                </div>
+                                <div className="barDes">
+                                    <p className="barDesText">Light</p>
+                                    <p className="barDesText">Exhausting</p>
                                 </div>
                                 <p className="guideDes">{loc.guide.shoulderBurn.description}</p>
                             </div>
@@ -221,8 +205,12 @@ function SurfForecasts({loc}) {
                             <div className="guideContainer">
                                 <p className="guideName">Crowd Factor</p>
                                 <p className="guideTitle">{loc.guide.crowdFactor.title}</p>
-                                <div>
-                                    level
+                                <div className="barContainer">
+                                    {isFilled(crowdFactor)}
+                                </div>
+                                <div className="barDes">
+                                    <p className="barDesText">Mellow</p>
+                                    <p className="barDesText">Heavy</p>
                                 </div>
                                 <p className="guideDes">{loc.guide.crowdFactor.description}</p>
                             </div>
@@ -230,8 +218,12 @@ function SurfForecasts({loc}) {
                             <div className="guideContainer">
                                 <p className="guideName">Water Quality</p>
                                 <p className="guideTitle">{loc.guide.waterQuality.title}</p>
-                                <div>
-                                    level
+                                <div className="barContainer">
+                                    {isFilled(waterQuality)}
+                                </div>
+                                <div className="barDes">
+                                    <p className="barDesText">Clean</p>
+                                    <p className="barDesText">Dirty</p>
                                 </div>
                                 <p className="guideDes">{loc.guide.waterQuality.description}</p>
                             </div>
