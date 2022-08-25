@@ -597,13 +597,6 @@ nav {
 
 /* Surf Forecast Page */
 
-.test {
-  padding-top: 75px;
-  font-size: 200px;
-  background-color: cyan;
-
-}
-
 .filler {
   height: var(--nav-height);
 }
@@ -660,7 +653,7 @@ nav {
 }
 
 .guideName {
-  font-size: .9em;
+  font-size: .85em;
   font-weight: 300;
   color: rgb(75, 75, 75);
   margin: 0px; 
@@ -671,12 +664,38 @@ nav {
   font-size: 1.07em; 
   font-weight: 500;
   margin: 0px; 
+  color: rgb(66, 66, 66)
 }
+
+.percentBar {
+  height: 4px;
+  width: 182px;
+  background-color: rgb(227, 240, 253);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.barDes {
+  display: flex;
+  width: 182px;
+  justify-content: space-between;
+  margin-bottom: 10px; 
+}
+
+.barDesText {
+  margin: 0px; 
+  font-size: .74em;
+  font-weight: 500;
+  color: rgb(110, 110, 110);
+}
+
+
+
+
 
 .abilityLevel {
   display: flex;
-  margin: 5px 0px;
-  
+  margin: 10px 0px 3px 0px;
 }
 
 .partLevel {
@@ -704,7 +723,7 @@ nav {
   font-size: .74em;
   font-weight: 500;
   color: rgb(110, 110, 110);
-  margin: 0px;
+  margin: 0px; 
 }
 
 .guideDes {
@@ -734,7 +753,6 @@ nav {
   grid-template-columns: repeat(2, 1fr);
   margin-top: 15px; 
   background-color: white;
-  height: 300px; 
 }
 
 .hazAccBest {

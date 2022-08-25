@@ -13,7 +13,16 @@ function Header() {
     const usaState = locationData[0].globe.northAmerica.country.unitedStates.state
 
     const pleasurePoint = usaState.california.county.santaCruz[0].name;
+    const jacks = usaState.california.county.santaCruz[1].name;
+    const cowells = usaState.california.county.santaCruz[2].name;
+    const steamer = usaState.california.county.santaCruz[3].name;
+    const theHook = usaState.california.county.santaCruz[4].name;
+    const capitola = usaState.california.county.santaCruz[5].name;
+    const davenport = usaState.california.county.santaCruz[6].name;
+    const pacifica = usaState.california.county.sanMateo[0].name;
+    const hbPier = usaState.california.county.orange[0].name;
     const waikiki = usaState.hawaii.county.oahu[0].name
+
 
     return (
         <header>
@@ -80,11 +89,30 @@ function Header() {
                             <Link to="/surfForecasts/waikiki">
                                 <p>{waikiki}</p>            
                             </Link>
-
-                            
-                            
-
-                            
+                            <Link to="/surfForecasts/jacks">
+                                <p>{jacks}</p>
+                            </Link>
+                            <Link to="/surfForecasts/cowells">
+                                <p>{cowells}</p>
+                            </Link>
+                            <Link to="/surfForecasts/steamer">
+                                <p>{steamer}</p>
+                            </Link>
+                            <Link to="/surfForecasts/theHook">
+                                <p>{theHook}</p>
+                            </Link>
+                            <Link to="/surfForecasts/capitola">
+                                <p>{capitola}</p>
+                            </Link>
+                            <Link to="/surfForecasts/davenport">
+                                <p>{davenport}</p>
+                            </Link>
+                            <Link to="/surfForecasts/pacifica">
+                                <p>{pacifica}</p>
+                            </Link>
+                            <Link to="/surfForecasts/hbPier">
+                                <p>{hbPier}</p>
+                            </Link>
                         </span>
 
                     </div>

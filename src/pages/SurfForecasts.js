@@ -27,9 +27,15 @@ function SurfForecasts({loc}) {
         }
     }
 
+    /* percent bar */
 
+    function isFilled(amount) {
+        for(let i = 0; i < 100; i++) {
 
-    /* end ability level */
+        }
+    }
+
+    /* end percent bar */
 
     function changeState() {
         setChange(!change)
@@ -103,16 +109,20 @@ function SurfForecasts({loc}) {
                 <p className="fcTitle">{loc.name} Surf Report & Forecast</p>
                 <p className="fcRating">FAIR</p>
                 <div className="fcData">
+                    api data here
+                </div>
 
-                </div>
-                <div>
+                <section>
                     <p>Ideal {loc.name} Surf Conditions</p>
-                </div>
-                <div className="fcGuide">
+                </section>
+
+                <section className="fcGuide">
                     <p>{loc.name} Surf Guide</p>
                     <p>{loc.about}</p>
                     <div className="guide">
+
                         <section className="abilitySpot">
+
                             <div className="guideContainer">
                                 <p className="guideName">Ability Level</p>
                                 <p className="guideTitle">{loc.guide.abilityLevel.title}</p>
@@ -132,16 +142,24 @@ function SurfForecasts({loc}) {
                                 </div>
                                 <p className="guideDes">{loc.guide.abilityLevel.description}</p>
                             </div>
+
                             <div className="guideContainer">
                                 <p className="guideName">Spot Rating</p>
                                 <p className="guideTitle">{loc.guide.spotRating.title}</p>
-                                <div>
-                                    level
+                                <div className="percentBar">
+                                    
+                                </div>
+                                <div className="barDes">
+                                    <p className="barDesText">Poor</p>
+                                    <p className="barDesText">Perfect</p>
                                 </div>
                                 <p className="guideDes">{loc.guide.spotRating.description}</p>
                             </div>
+
                         </section>
+
                         <section className="localShoulder">
+
                             <div className="guideContainer">
                                 <p className="guideName">Local Vibe</p>
                                 <p className="guideTitle">{loc.guide.localVibe.title}</p>
@@ -150,6 +168,7 @@ function SurfForecasts({loc}) {
                                 </div>
                                 <p className="guideDes">{loc.guide.localVibe.description}</p>
                             </div>
+
                             <div className="guideContainer">
                                 <p className="guideName">Shoulder Burn</p>
                                 <p className="guideTitle">{loc.guide.shoulderBurn.title}</p>
@@ -158,8 +177,11 @@ function SurfForecasts({loc}) {
                                 </div>
                                 <p className="guideDes">{loc.guide.shoulderBurn.description}</p>
                             </div>
+
                         </section>
-                        <section className="crowdWater">                            
+
+                        <section className="crowdWater">  
+
                             <div className="guideContainer">
                                 <p className="guideName">Crowd Factor</p>
                                 <p className="guideTitle">{loc.guide.crowdFactor.title}</p>
@@ -168,6 +190,7 @@ function SurfForecasts({loc}) {
                                 </div>
                                 <p className="guideDes">{loc.guide.crowdFactor.description}</p>
                             </div>
+
                             <div className="guideContainer">
                                 <p className="guideName">Water Quality</p>
                                 <p className="guideTitle">{loc.guide.waterQuality.title}</p>
@@ -176,9 +199,13 @@ function SurfForecasts({loc}) {
                                 </div>
                                 <p className="guideDes">{loc.guide.waterQuality.description}</p>
                             </div>
+
                         </section>
+
                     </div>
+
                     <div className="addiPoints">
+
                         <section className="hazAccBest">
                             <p>Hazards</p>
                             <p>{loc.guide.hazards}</p>
@@ -187,15 +214,17 @@ function SurfForecasts({loc}) {
                             <p>Best Season</p>
                             <p>{loc.guide.bestSeason}</p>
                         </section>
+
                         <section className="bringBottom">
                             <p>Bring Your</p>
                             <p>{loc.guide.bringYour}</p>
                             <p>Bottom</p>
                             <p>{loc.guide.bottom}</p>
                         </section>
+
                     </div>
 
-                </div>
+                </section> 
             </section>
         </div>
     )
