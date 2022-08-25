@@ -29,19 +29,47 @@ function SurfForecasts({loc}) {
 
     /* percent bar */
 
-    function isFilled(amount) {
-        for(let i = 0; i < 100; i++) {
-            if(i === 0) {
+    /* function isFilled(amount) {
+        for(let i = 1; i < 101; i++) {
+            if(i === 1) {
                 return <div className="percentBarFirst"></div> //first 4px-width
-            } else if(i < amount - 1) {
+            } else if(i < amount || i < 99) {
                 return <div className="percentBarBlue"></div> //blue
-            } else if(i === 99) {
-                return <div className=""></div> //last 4px-width
+            } else if(i === 100) {
+                if(amount === 100) {
+                    return <div className="percentBarLastBlue"></div>
+                } else {
+                    return <div className="percentBarLastGray"></div> //last 4px-width
+                }                
             } else {
                 return <div className="percentBarGray"></div> //gray
             }
         }
+    } */
+
+    function isFilled(amount) {
+        const arr = []
+        for(let i = 0; i < 101; i++) {
+            arr.push(i)
+        }
+        return arr.map(barPart => {
+            if(barPart === 1) {
+                return <div className="percentBarFirst"></div> //first 4px-width
+            } else if(barPart < amount || barPart < 99) {
+                return <div className="percentBarBlue"></div> //blue
+            } else if(barPart === 100) {
+                if(amount === 100) {
+                    return <div className="percentBarLastBlue"></div>
+                } else {
+                    return <div className="percentBarLastGray"></div> //last 4px-width
+                }                
+            } else {
+                return <div className="percentBarGray"></div> //gray
+            }
+        })
     }
+
+    
 
     /* end percent bar */
 
@@ -154,8 +182,8 @@ function SurfForecasts({loc}) {
                             <div className="guideContainer">
                                 <p className="guideName">Spot Rating</p>
                                 <p className="guideTitle">{loc.guide.spotRating.title}</p>
-                                <div className="percentBar">
-                                    
+                                <div className="barContainer">
+                                    {isFilled(loc.guide.spotRating.level)}
                                 </div>
                                 <div className="barDes">
                                     <p className="barDesText">Poor</p>

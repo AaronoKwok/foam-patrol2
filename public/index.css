@@ -667,27 +667,49 @@ nav {
   color: rgb(66, 66, 66)
 }
 
+.barContainer {
+  display: flex;
+}
+
 .percentBarFirst {
   height: 4px;
   width: 4px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   margin-top: 10px;
+  background-color: rgb(51, 56, 190)
 }
 
 .percentBarBlue {
   background-color: rgb(51, 56, 190);
+  height: 4px;
+  width: 1.7755102px;
+  margin-top: 10px;
 }
 
 .percentBarGray {
   background-color: rgb(227, 240, 253);
+  height: 4px; 
+  width: 1.7755102px; 
+  margin-top: 10px;
 }
 
 .percentBarLastBlue {
   background-color: rgb(51, 56, 190);
+  width: 4px;
+  height: 4px; 
+  margin-top: 10px; 
+  border-top-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
 }
 
 .percentBarLastGray {
   background-color: rgb(227, 240, 253);
+  width: 4px;
+  height: 4px; 
+  margin-top: 10px; 
+  border-top-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
 }
 
 .barDes {
