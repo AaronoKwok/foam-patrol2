@@ -12,8 +12,23 @@ import windIcon from "../images/wind.jpeg"
 
 //import {Context} from "../Context" //imports context object exported from Context.js
 
-
 function SurfForecasts({loc}) {
+
+    const airTempCel = weatherData.hours[0].airTemperature.noaa
+    const airTempFah = Math.floor(airTempCel * (9/5) + 32)
+    const cloudCover = Math.floor(weatherData.hours[0].cloudCover.noaa)
+    const waterTempCel = weatherData.hours[0].waterTemperature.meto
+    const waterTempFah = Math.floor(waterTempCel * (9/5) + 32)
+    const locMsl = loc.msl
+
+    //note sea Level is not same as a current tide level, may need algo or other api or not include
+    const tideMsl = weatherData.hours[0].seaLevel.meto
+    const tideM = locMsl + tideMsl
+    const tideF = tideM * 3.281
+    console.log(tideMsl)
+    console.log(locMsl)
+    console.log(tideM)
+    console.log(tideF)
 
     const localVibe = loc.guide.localVibe.level
     const crowdFactor = loc.guide.crowdFactor.level
@@ -88,17 +103,15 @@ function SurfForecasts({loc}) {
     const month = date.getMonth() + 1; //added 1 bc months is 0-based, so 0 in the array would be january
     const year = date.getFullYear()
     const currentDate = `${year}-${month}-${day}`
-    const start = `${currentDate} ${hour-3}:00`
+    const start = `${currentDate} ${hour}:00`
     console.log(currentDate)
-    const end = '2022-8-28 00:00'; //5 days ahead -- needed for astronomy
-    const histEnd = `2022-8-28 ${hour-3}:00`;
+    const histEnd = `2022-8-28 ${hour}:00`;
 
     const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed,seaLevel'; 
     
     const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
     const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
     const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
-    //const seaLvlUrl = `https://api.stormglass.io/v2/tide/sea-level/point?lat=${lat}&lng=${lng}&start=${start}&end=${end}`
 
     const headers = {
         headers: {
@@ -106,10 +119,9 @@ function SurfForecasts({loc}) {
         }
     } 
  
-/*  const requestOne = axios.get(weatherUrl, headers);
+    /* const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
     const requestThree = axios.get(tideUrl, headers);  
-    //const requestFour = axios.get(seaLvlUrl, headers);
     
     useEffect(() => {
         console.log("effect ran")
@@ -118,10 +130,8 @@ function SurfForecasts({loc}) {
                 console.log(res[0].data)
                 console.log(res[1].data)
                 console.log(res[2].data)
-                //console.log(res[3].data)
-                // assign data to state 
             }))
-    }, []) */ 
+    }, [])  */
 
     return (
         <div className="forecast-background">
@@ -131,9 +141,22 @@ function SurfForecasts({loc}) {
                     <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
                     <p className="fcTitle">{loc.name} Surf Report & Forecast</p>
                     <p className="fcRating">FAIR</p>
-                    <div className="fcData">
-                        api data here
-                    </div>
+
+                    <section className="fcData">
+                        <div>Tide: feet</div>
+                        <div>Wind: knots</div>
+                        <div>
+                            Swells
+                            <p>Primary: </p>
+                            <p>Secondary: </p>
+                        </div>
+                        <div>Water Temp: {waterTempFah}&#8457;</div>
+                        <div>
+                            Weather
+                            <p>Cloud Cover: {cloudCover}%</p>
+                            <p>Air Temp: {airTempFah}&#8457;</p>
+                        </div>
+                    </section>
                 </div>
 
                 <section className="surfConditions">
@@ -142,6 +165,7 @@ function SurfForecasts({loc}) {
                         <img className="sc-icon" src={swellDirectionIcon} alt=""></img>
                         <div className="condition-container">
                             <p className="condition-title">Swell Direction</p>
+                            <hr className="guideHr"/>
                             <p className="condition-des">{swellDirectionDes}</p>
                         </div>
                     </div>
@@ -149,6 +173,7 @@ function SurfForecasts({loc}) {
                         <img className="sc-icon" src={windIcon} alt=""></img>
                         <div className="condition-container">
                             <p className="condition-title">Wind</p>
+                            <hr className="guideHr"/>
                             <p className="condition-des">{windDes}</p>
                         </div>
                     </div>
@@ -156,6 +181,7 @@ function SurfForecasts({loc}) {
                         <img className="sc-icon" src={surfHeightIcon} alt=""></img>
                         <div className="condition-container">
                             <p className="condition-title">Surf Height</p>
+                            <hr className="guideHr"/>
                             <p className="condition-des">{surfHeightDes}</p>
                         </div>
                     </div>
@@ -163,6 +189,7 @@ function SurfForecasts({loc}) {
                         <img className="sc-icon" src={tideIcon} alt=""></img>
                         <div className="condition-container">
                             <p className="condition-title">Tide</p>
+                            <hr className="conditionHr"/>
                             <p className="condition-des">{tideDes}</p>
                         </div>
                     </div>
