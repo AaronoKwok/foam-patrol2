@@ -13,22 +13,21 @@ import windIcon from "../images/wind.jpeg"
 //import {Context} from "../Context" //imports context object exported from Context.js
 
 function SurfForecasts({loc}) {
-
+    console.log(loc.name)
     const airTempCel = weatherData.hours[0].airTemperature.noaa
     const airTempFah = Math.floor(airTempCel * (9/5) + 32)
     const cloudCover = Math.floor(weatherData.hours[0].cloudCover.noaa)
     const waterTempCel = weatherData.hours[0].waterTemperature.meto
     const waterTempFah = Math.floor(waterTempCel * (9/5) + 32)
     const locMsl = loc.msl
+    console.log(locMsl, "msl")
+    const nextLow = tideData.data[0].height
+    console.log(nextLow, "next low tide")
+    const tideM = tideData.data[0].height + loc.msl
+    console.log(tideM, "calc tide")
 
     //note sea Level is not same as a current tide level, may need algo or other api or not include
-    const tideMsl = weatherData.hours[0].seaLevel.meto
-    const tideM = locMsl + tideMsl
-    const tideF = tideM * 3.281
-    console.log(tideMsl)
-    console.log(locMsl)
-    console.log(tideM)
-    console.log(tideF)
+
 
     const localVibe = loc.guide.localVibe.level
     const crowdFactor = loc.guide.crowdFactor.level
@@ -40,6 +39,7 @@ function SurfForecasts({loc}) {
     const swellDirectionDes = loc.guide.idealConditions.swellDirection
     const tideDes = loc.guide.idealConditions.tide
     const windDes = loc.guide.idealConditions.wind
+
     
     //const {testVar} = useContext(Context)//useContext hook takes the context object from Context.js and provides its data
     const [lookUpLoc, setLookUpLoc] = useState("")
@@ -80,7 +80,21 @@ function SurfForecasts({loc}) {
         })
     }
 
-    /* end percent bar */
+    /* find UTC based on user timezone */ 
+
+    /* function utcStartTime() {
+        const start = new Date();
+        const hour = start.getHours();
+        const year = start.
+    }
+
+    function utcEndTime() {
+
+    } */
+
+    /* end find UTC */
+
+
 
     function lookChange(event) {
         const text = event.target.value
@@ -94,8 +108,30 @@ function SurfForecasts({loc}) {
     }
  
    //stormglass api
+   //convert local time to UTC, then call with start and end in UTC
+   //
     const lat = loc.location[0]; 
+    const tideLat = loc.tideLocation[0];
     const lng = loc.location[1];
+    const tideLng = loc.tideLocation[1];
+
+    const utcYear = (new Date()).getUTCFullYear()
+    const utcMonth = (new Date()).getUTCMonth() + 1
+    const utcDay = (new Date()).getUTCDate()
+    const utcHour = (new Date()).getUTCHours()
+    console.log(utcHour, 'hour')
+    console.log(utcMonth, 'month')
+
+    const utcDate = `${utcYear}-${utcMonth}-${utcDay} ${utcHour}:00`
+    console.log(utcDate, "utcDate")
+
+    const start = utcDate
+
+
+
+
+
+
     const date = new Date();
     console.log(date)
     const hour = date.getHours();  
@@ -103,23 +139,27 @@ function SurfForecasts({loc}) {
     const month = date.getMonth() + 1; //added 1 bc months is 0-based, so 0 in the array would be january
     const year = date.getFullYear()
     const currentDate = `${year}-${month}-${day}`
-    const start = `${currentDate} ${hour}:00`
-    console.log(currentDate)
-    const histEnd = `2022-8-28 ${hour}:00`;
+    //const start = `${currentDate} ${hour}:00`
+    //const start = currentDate
+    console.log(hour)
+    //const histEnd = `2022-8-28 ${hour}:00`;
+    const histEnd = `2022-8-28`
+
+    console.log(histEnd, "end")
 
     const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed,seaLevel'; 
     
     const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
     const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
-    const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
+    const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${start}&end=${histEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
 
     const headers = {
         headers: {
             'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
         }
-    } 
+    }  
  
-    /* const requestOne = axios.get(weatherUrl, headers);
+    const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
     const requestThree = axios.get(tideUrl, headers);  
     
@@ -131,9 +171,9 @@ function SurfForecasts({loc}) {
                 console.log(res[1].data)
                 console.log(res[2].data)
             }))
-    }, [])  */
+    }, []) 
 
-    return (
+    return ( 
         <div className="forecast-background">
             <div className="filler"></div>
             <section className="locSet">
