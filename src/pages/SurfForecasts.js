@@ -122,7 +122,7 @@ function SurfForecasts({loc}) {
     console.log(utcHour, 'hour')
     console.log(utcMonth, 'month')
 
-    const utcDate = `${utcYear}-${utcMonth}-${utcDay} ${utcHour}:00`
+    const utcDate = `${utcYear}-${utcMonth}-${utcDay} 0${utcHour}:00` // format is 0digit:00 if utc hour is less than 10
     console.log(utcDate, "utcDate")
 
     const start = utcDate
@@ -143,7 +143,7 @@ function SurfForecasts({loc}) {
     //const start = currentDate
     console.log(hour)
     //const histEnd = `2022-8-28 ${hour}:00`;
-    const histEnd = `2022-8-28`
+    const histEnd = `2022-8-28 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
 
     console.log(histEnd, "end")
 
@@ -158,7 +158,7 @@ function SurfForecasts({loc}) {
             'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
         }
     }  
- 
+ /* 
     const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
     const requestThree = axios.get(tideUrl, headers);  
@@ -171,7 +171,7 @@ function SurfForecasts({loc}) {
                 console.log(res[1].data)
                 console.log(res[2].data)
             }))
-    }, []) 
+    }, [])  */
 
     return ( 
         <div className="forecast-background">
