@@ -2061,9 +2061,37 @@ console.log(test.hours[4].time === utcDate, "/ array element does/n't matches fo
 
 function findTime() {
     const arr = test.hours
-    const er = arr.filter(hour => {
+    const filteredArr = arr.filter(hour => {
         return hour.time === utcDate
     })
-    console.log(er[0].time)
+    console.log(filteredArr[0])
+    const forecastArr = arr.filter(hour => {
+        return (hour.time === utcDate)
+    })
+    console.log(forecastArr)
+    //for 5 hours in future
 }
 findTime()
+
+//map through availble hours in hours array and give each one an index property . find the index of the 
+//the hour that matches local time converted to UTC, then make an array containing that hour, plus 
+//however many hours wanted in forecast
+
+function addID() {
+    const arrWithID = test.hours.map((hour, i) => {
+        return {
+            ...hour, 
+            ident: i
+        } 
+    })
+    const startIdent = arrWithID.filter(hour => {
+        return hour.time === utcDate
+    })
+    const range = startIdent[0].ident + 5; 
+    console.log(range) 
+    const currentWForecast = arrWithID.filter(hour => {
+        return hour.ident >= range - 5 && hour.ident < range
+    })
+    console.log(currentWForecast)
+}
+addID()
