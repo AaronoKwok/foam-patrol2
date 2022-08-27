@@ -2036,8 +2036,8 @@ const utcYear = (new Date()).getUTCFullYear()
 const utcMonth = (new Date()).getUTCMonth() + 1 //add 1 bc months are 0-indexed
 const utcDay = (new Date()).getUTCDate()
 const utcHour = (new Date()).getUTCHours()
-console.log(utcHour, 'hour')
-console.log(utcMonth, 'month')
+console.log(utcHour, 'utc hour')
+console.log(utcMonth, 'utc month')
 
 function addZeroHour() {
     return utcHour < 10 ? 0 : ""
@@ -2049,12 +2049,21 @@ function addZeroMonth() {
     return utcMonth < 10 ? 0 : ""
 }
 
-console.log(`${addZeroHour()}${utcHour}`, "hour")
-console.log(`${addZeroDay()}${utcDay}`, "day of month")
-console.log(`${addZeroMonth()}${utcMonth}`, "month")
+console.log(`${addZeroHour()}${utcHour}`, "/ utc hour with/out preceding 0")
+console.log(`${addZeroDay()}${utcDay}`, "/ utc day of month with/out preceding 0")
+console.log(`${addZeroMonth()}${utcMonth}`, "/ utc month with/out preceding 0")
 
 const utcDate = `${utcYear}-${addZeroMonth()}${utcMonth}-${utcDay}T${addZeroHour()}${utcHour}:00:00+00:00` 
 
-console.log(utcDate, "utcDate")
+console.log(utcDate, "/ utcDate")
 
-console.log(test.hours[0].time === utcDate, "array element matches formatted local time in utc")
+console.log(test.hours[4].time === utcDate, "/ array element does/n't matches formatted local time in utc")
+
+function findTime() {
+    const arr = test.hours
+    const er = arr.filter(hour => {
+        return hour.time === utcDate
+    })
+    console.log(er[0].time)
+}
+findTime()
