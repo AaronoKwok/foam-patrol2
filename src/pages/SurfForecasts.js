@@ -5,48 +5,34 @@ import weatherData from "../Data/weatherData.json"
 import tideData from "../Data/tideData.json"
 import astData from "../Data/astData.json"
 
+//images
 import surfHeightIcon from "../images/surfHeight.jpeg"
 import swellDirectionIcon from "../images/swellDirection.jpeg"
 import tideIcon from "../images/tide.jpeg"
 import windIcon from "../images/wind.jpeg"
 
-//import {Context} from "../Context" //imports context object exported from Context.js
-
 function SurfForecasts({loc}) {
+
     console.log(loc.name)
-    const airTempCel = weatherData.hours[0].airTemperature.noaa
-    const airTempFah = Math.floor(airTempCel * (9/5) + 32)
-    const cloudCover = Math.floor(weatherData.hours[0].cloudCover.noaa)
-    const waterTempCel = weatherData.hours[0].waterTemperature.meto
-    const waterTempFah = Math.floor(waterTempCel * (9/5) + 32)
-    const locMsl = loc.msl
-    console.log(locMsl, "msl")
-    const nextLow = tideData.data[0].height
-    console.log(nextLow, "next low tide")
-    const tideM = tideData.data[0].height + loc.msl
-    console.log(tideM, "calc tide")
+    const [sgWeather, setSgWeather] = useState() //set with api weather
+    const [sgAst, setSgAst] = useState("") //set with api astronomy
+    const [sgTide, setSgTide] = useState("") //set with api tide
 
-    //note sea Level is not same as a current tide level, may need algo or other api or not include
-
+    //const [lookUpLoc, setLookUpLoc] = useState("")
+    //const [forecastID, setForecastID] = useState("")
 
     const localVibe = loc.guide.localVibe.level
     const crowdFactor = loc.guide.crowdFactor.level
     const spotRating = loc.guide.spotRating.level
     const shoulderBurn = loc.guide.shoulderBurn.level
     const waterQuality = loc.guide.waterQuality.level
-
     const surfHeightDes = loc.guide.idealConditions.surfHeight
     const swellDirectionDes = loc.guide.idealConditions.swellDirection
     const tideDes = loc.guide.idealConditions.tide
     const windDes = loc.guide.idealConditions.wind
 
-    
-    //const {testVar} = useContext(Context)//useContext hook takes the context object from Context.js and provides its data
-    const [lookUpLoc, setLookUpLoc] = useState("")
-    const [forecastID, setForecastID] = useState("")
-    
-    /* ability level */
 
+    /* ability level */
     function isBlue(lvl) {
         const levelArr = loc.guide.abilityLevel.level;
         if(levelArr[lvl]) {
@@ -57,7 +43,6 @@ function SurfForecasts({loc}) {
     }
 
     /* percent bar */
-
     function isFilled(amount) {
         const arr = []
         for(let i = 1; i < 101; i++) {
@@ -82,20 +67,10 @@ function SurfForecasts({loc}) {
 
     /* find UTC based on user timezone */ 
 
-    /* function utcStartTime() {
-        const start = new Date();
-        const hour = start.getHours();
-        const year = start.
-    }
-
-    function utcEndTime() {
-
-    } */
-
     /* end find UTC */
 
 
-
+    /* //searchbar
     function lookChange(event) {
         const text = event.target.value
         setLookUpLoc(text)
@@ -105,11 +80,9 @@ function SurfForecasts({loc}) {
         event.preventDefault();   
         console.log("Searching")
         setLookUpLoc("")
-    }
+    } */
  
    //stormglass api
-   //convert local time to UTC, then call with start and end in UTC
-   //
     const lat = loc.location[0]; 
     const tideLat = loc.tideLocation[0];
     const lng = loc.location[1];
@@ -122,32 +95,29 @@ function SurfForecasts({loc}) {
     console.log(utcHour, 'hour')
     console.log(utcMonth, 'month')
 
-    const utcDate = `${utcYear}-${utcMonth}-${utcDay} 0${utcHour}:00` // format is 0digit:00 if utc hour is less than 10
+    function addZeroHour() {
+        return utcHour < 10 ? 0 : ""
+    }
+    function addZeroDay() {
+        return utcDay < 10 ? 0 : ""
+    }
+    function addZeroMonth() {
+        return utcMonth < 10 ? 0 : ""
+    }
+
+    const utcDate = `${utcYear}-${addZeroMonth()}${utcMonth}-${addZeroDay()}${utcDay}T${addZeroHour()}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
     console.log(utcDate, "utcDate")
 
-    const start = utcDate
-
-
-
-
-
-
-    const date = new Date();
-    console.log(date)
-    const hour = date.getHours();  
-    const day = date.getDate();
-    const month = date.getMonth() + 1; //added 1 bc months is 0-based, so 0 in the array would be january
-    const year = date.getFullYear()
-    const currentDate = `${year}-${month}-${day}`
-    //const start = `${currentDate} ${hour}:00`
-    //const start = currentDate
-    console.log(hour)
-    //const histEnd = `2022-8-28 ${hour}:00`;
-    const histEnd = `2022-8-28 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
-
+    //const start = utcDate //MAYBE start format is bad
+    const start = `2022-8-29 ${utcHour}:00`
+    console.log(start, "start")
+    const histEnd = `2022-8-30 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
-    const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed,seaLevel'; 
+    
+
+    //api call
+    const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
     
     const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
     const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
@@ -158,20 +128,50 @@ function SurfForecasts({loc}) {
             'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
         }
     }  
- /* 
+ 
     const requestOne = axios.get(weatherUrl, headers);
-    const requestTwo = axios.get(astronomyUrl, headers);
-    const requestThree = axios.get(tideUrl, headers);  
+    //const requestTwo = axios.get(astronomyUrl, headers);
+    //const requestThree = axios.get(tideUrl, headers);  
     
     useEffect(() => {
         console.log("effect ran")
-        axios.all([requestOne, requestTwo, requestThree])
+        axios.all([requestOne])//, requestTwo, requestThree 
             .then(axios.spread((...res) => { 
+                
+                const identsArr = res[0].data.hours.map((obj, i) => {
+                    return {
+                        "ident": i, 
+                        ...obj
+                    }
+                })
+
+                const startingHour = identsArr.filter(hour => { 
+                    return hour.time === utcDate
+                })
+                const forecastLength = startingHour[0].ident + 5 
+                const forecastArr = identsArr.filter(hour => { 
+                    return hour.ident >= forecastLength - 5 && hour.ident <= forecastLength
+                })
+                setSgWeather(forecastArr)
+
+                console.log(forecastArr)
+                //console.log(res[0]) 
+                console.log(res[0].data.meta.requestCount, "requests")
                 console.log(res[0].data)
-                console.log(res[1].data)
-                console.log(res[2].data)
+                console.log("then in effect ran")
+                //setSgAst(res[1].data)
+                //setSgTide(res[2].data)
             }))
-    }, [])  */
+
+    }, []) 
+
+    console.log(sgWeather, "state to use")
+
+    
+    
+
+
+
 
     return ( 
         <div className="forecast-background">
@@ -190,11 +190,11 @@ function SurfForecasts({loc}) {
                             <p>Primary: </p>
                             <p>Secondary: </p>
                         </div>
-                        <div>Water Temp: {waterTempFah}&#8457;</div>
+                        <div>Water Temp: &#8457;</div>
                         <div>
                             Weather
-                            <p>Cloud Cover: {cloudCover}%</p>
-                            <p>Air Temp: {airTempFah}&#8457;</p>
+                            <p>Cloud Cover: %</p>
+                            <p>Air Temp: </p>
                         </div>
                     </section>
                 </div>
