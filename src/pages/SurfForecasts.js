@@ -14,11 +14,11 @@ import windIcon from "../images/wind.jpeg"
 function SurfForecasts({loc}) {
 
     console.log(loc.name)
-    const [sgWeather, setSgWeather] = useState() //set with api weather
+    const [sgWeather, setSgWeather] = useState("to be added") //set with api weather
     const [sgAst, setSgAst] = useState("") //set with api astronomy
     const [sgTide, setSgTide] = useState("") //set with api tide
 
-    //const [lookUpLoc, setLookUpLoc] = useState("")
+    //const [lookUpLoc, setLookUpLoc] = useState("") //search bar
     //const [forecastID, setForecastID] = useState("")
 
     const localVibe = loc.guide.localVibe.level
@@ -29,7 +29,7 @@ function SurfForecasts({loc}) {
     const surfHeightDes = loc.guide.idealConditions.surfHeight
     const swellDirectionDes = loc.guide.idealConditions.swellDirection
     const tideDes = loc.guide.idealConditions.tide
-    const windDes = loc.guide.idealConditions.wind
+    const windDes = loc.guide.idealConditions.wind 
 
 
     /* ability level */
@@ -92,8 +92,12 @@ function SurfForecasts({loc}) {
     const utcMonth = (new Date()).getUTCMonth() + 1
     const utcDay = (new Date()).getUTCDate()
     const utcHour = (new Date()).getUTCHours()
-    console.log(utcHour, 'hour')
+    console.log(utcYear)
     console.log(utcMonth, 'month')
+    console.log(utcDay, "day")
+    console.log(utcHour, 'hour')
+    
+
 
     function addZeroHour() {
         return utcHour < 10 ? 0 : ""
@@ -109,9 +113,9 @@ function SurfForecasts({loc}) {
     console.log(utcDate, "utcDate")
 
     //const start = utcDate //MAYBE start format is bad
-    const start = `2022-8-29 ${utcHour}:00`
+    const start = `2022-8-29 0${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-8-30 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-8-31 00:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
     
@@ -130,37 +134,52 @@ function SurfForecasts({loc}) {
     }  
  
     const requestOne = axios.get(weatherUrl, headers);
-    //const requestTwo = axios.get(astronomyUrl, headers);
-    //const requestThree = axios.get(tideUrl, headers);  
+    const requestTwo = axios.get(astronomyUrl, headers);
+    const requestThree = axios.get(tideUrl, headers);  
     
     useEffect(() => {
         console.log("effect ran")
-        axios.all([requestOne])//, requestTwo, requestThree 
-            .then(axios.spread((...res) => { 
-                
-                const identsArr = res[0].data.hours.map((obj, i) => {
+        axios.all([requestOne, requestTwo, requestThree ])
+            .then(axios.spread((...res) => {  
+                console.log(res[2])                               
+                const weatherIdents = res[0].data.hours.map((hour, i) => {
                     return {
                         "ident": i, 
-                        ...obj
+                        ...hour
                     }
-                })
-
-                const startingHour = identsArr.filter(hour => { 
+                }) 
+                const startingHour = weatherIdents.filter(hour => { //hour to start
                     return hour.time === utcDate
                 })
-                const forecastLength = startingHour[0].ident + 5 
-                const forecastArr = identsArr.filter(hour => { 
+                const forecastLength = startingHour[0].ident + 5 //forecast length
+                const weatherForecast = weatherIdents.filter(hour => { 
                     return hour.ident >= forecastLength - 5 && hour.ident <= forecastLength
                 })
-                setSgWeather(forecastArr)
+                setSgWeather(weatherForecast)
 
-                console.log(forecastArr)
-                //console.log(res[0]) 
-                console.log(res[0].data.meta.requestCount, "requests")
-                console.log(res[0].data)
-                console.log("then in effect ran")
-                //setSgAst(res[1].data)
-                //setSgTide(res[2].data)
+                const astForecast = res[1].data.data.map((day, i) => {
+                    return {
+                        "ident": i, 
+                        ...day
+                    }
+                })
+                setSgAst(astForecast)
+
+                const tideForecast = res[2].data.data.map((tide, i) => {
+                    return {
+                        "ident": i, 
+                        ...tide
+                    }
+                })
+                setSgTide(tideForecast)
+
+
+
+                console.log(weatherForecast)
+                console.log(astForecast)
+                console.log(tideForecast)
+                console.log(res[2].data.meta.requestCount, "requests")
+                console.log("then, in effect ran")
             }))
 
     }, []) 
