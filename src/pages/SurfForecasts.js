@@ -12,12 +12,10 @@ import tideIcon from "../images/tide.jpeg"
 import windIcon from "../images/wind.jpeg"
 
 function SurfForecasts({loc}) {
-
     console.log(loc.name)
-    const [sgWeather, setSgWeather] = useState("to be added") //set with api weather
-    const [sgAst, setSgAst] = useState("") //set with api astronomy
-    const [sgTide, setSgTide] = useState("") //set with api tide
-
+    const [weatherForecast, setWeatherForecast] = useState(""); //using one forecast state instead of three to have less rerenders --> leads to 0 unable to read in forecast[0][0]
+    const [astForecast, setAstForecast] = useState("")
+    const [tideForecast, setTideForecast] = useState("")
     //const [lookUpLoc, setLookUpLoc] = useState("") //search bar
     //const [forecastID, setForecastID] = useState("")
 
@@ -92,10 +90,7 @@ function SurfForecasts({loc}) {
     const utcMonth = (new Date()).getUTCMonth() + 1
     const utcDay = (new Date()).getUTCDate()
     const utcHour = (new Date()).getUTCHours()
-    console.log(utcYear)
-    console.log(utcMonth, 'month')
-    console.log(utcDay, "day")
-    console.log(utcHour, 'hour')
+    
     
 
 
@@ -113,9 +108,9 @@ function SurfForecasts({loc}) {
     console.log(utcDate, "utcDate")
 
     //const start = utcDate //MAYBE start format is bad
-    const start = `2022-8-29 0${utcHour}:00`
+    const start = `2022-8-31 ${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-8-31 00:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-01 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
     
@@ -141,7 +136,6 @@ function SurfForecasts({loc}) {
         console.log("effect ran")
         axios.all([requestOne, requestTwo, requestThree ])
             .then(axios.spread((...res) => {  
-                console.log(res[2])                               
                 const weatherIdents = res[0].data.hours.map((hour, i) => {
                     return {
                         "ident": i, 
@@ -152,39 +146,44 @@ function SurfForecasts({loc}) {
                     return hour.time === utcDate
                 })
                 const forecastLength = startingHour[0].ident + 5 //forecast length
-                const weatherForecast = weatherIdents.filter(hour => { 
+
+                const weaForecast = weatherIdents.filter(hour => { 
                     return hour.ident >= forecastLength - 5 && hour.ident <= forecastLength
                 })
-                setSgWeather(weatherForecast)
-
+                
                 const astForecast = res[1].data.data.map((day, i) => {
                     return {
                         "ident": i, 
                         ...day
                     }
                 })
-                setSgAst(astForecast)
 
-                const tideForecast = res[2].data.data.map((tide, i) => {
+                const tidForecast = res[2].data.data.map((tide, i) => {
                     return {
                         "ident": i, 
                         ...tide
                     }
                 })
-                setSgTide(tideForecast)
-
-
-
-                console.log(weatherForecast)
+                console.log(weaForecast)
                 console.log(astForecast)
-                console.log(tideForecast)
+                console.log(tidForecast)
+                setWeatherForecast(weatherForecast)
+                
+                
                 console.log(res[2].data.meta.requestCount, "requests")
                 console.log("then, in effect ran")
             }))
 
-    }, []) 
+    }, [])  
 
-    console.log(sgWeather, "state to use")
+    useEffect(() => {
+        console.log("weather forecast state changed")
+        console.log(weatherForecast)
+        const tester = weatherForecast[0]
+        console.log(tester)
+    }, [weatherForecast])
+
+    
 
     
     
