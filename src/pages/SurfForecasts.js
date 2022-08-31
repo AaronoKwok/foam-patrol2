@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
 
-import weatherData from "../Data/weatherData.json" 
+/* import weatherData from "../Data/weatherData.json" 
 import tideData from "../Data/tideData.json"
-import astData from "../Data/astData.json"
+import astData from "../Data/astData.json" */
 
 //images
 import surfHeightIcon from "../images/surfHeight.jpeg"
@@ -13,9 +13,9 @@ import windIcon from "../images/wind.jpeg"
 
 function SurfForecasts({loc}) {
     console.log(loc.name)
-    const [weatherForecast, setWeatherForecast] = useState(""); //using one forecast state instead of three to have less rerenders --> leads to 0 unable to read in forecast[0][0]
-    const [astForecast, setAstForecast] = useState("")
-    const [tideForecast, setTideForecast] = useState("")
+    const [weatherForecast, setWeatherForecast] = useState([1,2]); //using one forecast state instead of three to have less rerenders --> leads to 0 unable to read in forecast[0][0]
+    //const [astForecast, setAstForecast] = useState("")
+    //const [tideForecast, setTideForecast] = useState("")
     //const [lookUpLoc, setLookUpLoc] = useState("") //search bar
     //const [forecastID, setForecastID] = useState("")
 
@@ -168,13 +168,14 @@ function SurfForecasts({loc}) {
                 console.log(astForecast)
                 console.log(tidForecast)
                 setWeatherForecast(weatherForecast)
+                console.log(weatherForecast)
                 
                 
                 console.log(res[2].data.meta.requestCount, "requests")
                 console.log("then, in effect ran")
             }))
 
-    }, [])  
+    }, [requestOne, requestTwo, requestThree, weatherUrl, headers, astronomyUrl, tideUrl, lat, lng, weatherParams, start, histEnd, tideLat, tideLng, utcDate, weatherForecast])  //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
 
     useEffect(() => {
         console.log("weather forecast state changed")
@@ -182,6 +183,8 @@ function SurfForecasts({loc}) {
         const tester = weatherForecast[0]
         console.log(tester)
     }, [weatherForecast])
+
+    console.log(weatherForecast)
 
     
 
@@ -201,7 +204,7 @@ function SurfForecasts({loc}) {
                     <p className="fcRating">FAIR</p>
 
                     <section className="fcData">
-                        <div>Tide: feet</div>
+                        <div>Tide: {weatherForecast.length}feet</div>
                         <div>Wind: knots</div>
                         <div>
                             Swells
