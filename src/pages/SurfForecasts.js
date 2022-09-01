@@ -15,7 +15,7 @@ function SurfForecasts({loc}) {
     const refresh = loc.location //used in useEffect so that it gets new data on location change
     console.log(loc.name)
     //airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed
-    const loading = "..."
+    const loading = 3
 
     //weather states
     const [airTemp, setAirTemp] = useState(loading)
@@ -225,30 +225,34 @@ function SurfForecasts({loc}) {
                     <section className="fcData">
                         <div className="first-data-row">
                             <div className="data-box">
-                                <p>Surf Height</p>
-                                <p>{waveHeight}ft</p>
+                                <p className="type-name">Surf Height</p>
+                                <p className="current-data-point">{waveHeight} ft</p>
                                 <p>body height</p>
                             </div>
                             <div className="data-box">
-                                <p>Tide</p>
-                                <p>{tideType}</p>
-                                <p>{tideHeight}ft at {nextTideTime}</p>
+                                <p className="type-name">Tide</p>
+                                <p className="current-data-point">{tideType}</p>
+                                <p>{tideHeight} ft at {nextTideTime}</p>
                             </div>
                             <div className="data-box">
-                                <p>Wind</p>
-                                <p>{windSpeed}kts with {gust}mph gusts</p>
-                                <p>{windLetters} {windDirection}&#176;</p>
+                                <p className="type-name">Wind</p>
+                                <p className="current-data-point">{windSpeed} kts</p>
+                                <p>with {gust}mph gusts</p>
+                                <p>{windLetters} ({windDirection}&#176;)</p>
                             </div>
                             <div className="data-box">
-                                <p>Swells</p>
-                                <p>Primary: {swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
-                                <p>Secondary: {secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
+                                <p className="type-name">Swells</p>
+                                <p>Primary: {swellHeight} ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
+                                <p>Secondary: {secondarySwellHeight} ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
                             </div>
-                            <div className="data-box">Water Temp: {waterTemperature}&#8457;</div>
                             <div className="data-box">
-                                <p>Weather</p>
-                                <p>Cloud Cover: {cloudCover}%</p>
-                                <p>Air Temp: {airTemp}&#8457;</p>
+                                <p className="type-name">Water Temp</p>
+                                <p className="current-data-point">{waterTemperature} &#8457;</p>
+                            </div>
+                            <div className="data-box">
+                                <p className="type-name">Weather</p>
+                                <p className="current-data-point">{cloudCover}%</p>
+                                <p className="current-data-point">{airTemp} &#8457;</p>
                             </div>
                         </div>
                         <div className="forecast-row">
