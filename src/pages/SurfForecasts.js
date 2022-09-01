@@ -12,8 +12,18 @@ import tideIcon from "../images/tide.jpeg"
 import windIcon from "../images/wind.jpeg"
 
 function SurfForecasts({loc}) {
+    const refresh = loc.location //used in useEffect so that it gets new data on location change
     console.log(loc.name)
-    const [weatherForecast, setWeatherForecast] = useState([1,2]); //using one forecast state instead of three to have less rerenders --> leads to 0 unable to read in forecast[0][0]
+    //airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed
+    const loading = "..."
+    const [airTemp, setAirTemp] = useState(loading)
+    const [cloudCover, setCloudCover] = useState(loading)
+    const []
+
+    //const [weatherForecast, setWeatherForecast] = useState([1, 2]); 
+    
+    
+    //using one forecast state instead of three to have less rerenders --> leads to 0 unable to read in forecast[0][0]
     //const [astForecast, setAstForecast] = useState("")
     //const [tideForecast, setTideForecast] = useState("")
     //const [lookUpLoc, setLookUpLoc] = useState("") //search bar
@@ -90,9 +100,6 @@ function SurfForecasts({loc}) {
     const utcMonth = (new Date()).getUTCMonth() + 1
     const utcDay = (new Date()).getUTCDate()
     const utcHour = (new Date()).getUTCHours()
-    
-    
-
 
     function addZeroHour() {
         return utcHour < 10 ? 0 : ""
@@ -108,12 +115,10 @@ function SurfForecasts({loc}) {
     console.log(utcDate, "utcDate")
 
     //const start = utcDate //MAYBE start format is bad
-    const start = `2022-8-31 ${utcHour}:00`
+    const start = `2022-9-01 0${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-01 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-02 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
-
-    
 
     //api call
     const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
@@ -128,7 +133,7 @@ function SurfForecasts({loc}) {
         }
     }  
  
-    const requestOne = axios.get(weatherUrl, headers);
+    /* const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
     const requestThree = axios.get(tideUrl, headers);  
     
@@ -167,30 +172,12 @@ function SurfForecasts({loc}) {
                 console.log(weaForecast)
                 console.log(astForecast)
                 console.log(tidForecast)
-                setWeatherForecast(weatherForecast)
-                console.log(weatherForecast)
+                setAirTemp(weaForecast[0].airTemperature.noaa)
                 
                 
                 console.log(res[2].data.meta.requestCount, "requests")
-                console.log("then, in effect ran")
             }))
-
-    }, [requestOne, requestTwo, requestThree, weatherUrl, headers, astronomyUrl, tideUrl, lat, lng, weatherParams, start, histEnd, tideLat, tideLng, utcDate, weatherForecast])  //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
-
-    useEffect(() => {
-        console.log("weather forecast state changed")
-        console.log(weatherForecast)
-        const tester = weatherForecast[0]
-        console.log(tester)
-    }, [weatherForecast])
-
-    console.log(weatherForecast)
-
-    
-
-    
-    
-
+    }, [refresh]) */  //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
 
 
 
@@ -204,7 +191,7 @@ function SurfForecasts({loc}) {
                     <p className="fcRating">FAIR</p>
 
                     <section className="fcData">
-                        <div>Tide: {weatherForecast.length}feet</div>
+                        <div>Tide: feet</div>
                         <div>Wind: knots</div>
                         <div>
                             Swells
@@ -215,7 +202,7 @@ function SurfForecasts({loc}) {
                         <div>
                             Weather
                             <p>Cloud Cover: %</p>
-                            <p>Air Temp: </p>
+                            <p>Air Temp: {airTemp}&#8457;</p>
                         </div>
                     </section>
                 </div>
