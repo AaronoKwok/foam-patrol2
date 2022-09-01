@@ -226,33 +226,39 @@ function SurfForecasts({loc}) {
                         <div className="first-data-row">
                             <div className="data-box">
                                 <p className="type-name">Surf Height</p>
-                                <p className="current-data-point">{waveHeight} ft</p>
-                                <p>body height</p>
+                                <hr className="data-hr"/>
+                                <p className="current-data-point">{waveHeight}<span className="data-span">ft</span></p>
+                                <p className="data-description">Thigh to waist</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Tide</p>
-                                <p className="current-data-point">{tideType}</p>
-                                <p>{tideHeight} ft at {nextTideTime}</p>
+                                <hr  className="data-hr"/>
+                                <p className="current-data-point">{tideType}<span className="data-span">ft</span></p>
+                                <p className="data-description">{tideHeight} ft at {nextTideTime}</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Wind</p>
-                                <p className="current-data-point">{windSpeed} kts</p>
-                                <p>with {gust}mph gusts</p>
-                                <p>{windLetters} ({windDirection}&#176;)</p>
+                                <hr  className="data-hr"/>
+                                <p className="current-data-point">{windSpeed}<span className="data-span">kts</span></p>
+                                <p className="data-description">{windLetters} ({windDirection}&#176;)</p>
+                                <p className="data-description">with {gust} kt gusts</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Swells</p>
-                                <p>Primary: {swellHeight} ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
-                                <p>Secondary: {secondarySwellHeight} ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
+                                <hr  className="data-hr"/>
+                                <p className="data-description">{swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
+                                <p className="data-description">{secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Water Temp</p>
-                                <p className="current-data-point">{waterTemperature} &#8457;</p>
+                                <hr  className="data-hr"/>
+                                <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Weather</p>
+                                <hr  className="data-hr"/>
                                 <p className="current-data-point">{cloudCover}%</p>
-                                <p className="current-data-point">{airTemp} &#8457;</p>
+                                <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
                             </div>
                         </div>
                         <div className="forecast-row">
