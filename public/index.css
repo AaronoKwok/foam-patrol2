@@ -274,10 +274,6 @@ nav {
   margin-right: 3%;
 }
 
-
-
-
-
 /* Main Page rotating background image */
 
 .background {
@@ -640,11 +636,47 @@ nav {
   padding: 5px;
 }
 
+/* current coditions */
+
 .fcData {
   height: 600px; 
   width: 100%; 
   background-color: rgb(193, 248, 236);
 }
+
+.first-data-row {
+  display: flex; 
+  justify-content: space-between;
+}
+
+.data-box {
+  border: 1px solid gray; 
+  background-color: white;
+  padding: 10px; 
+}
+
+
+/* forcast Data */
+
+.forecast-row {
+  background-color: rgb(250, 211, 206);
+  height: 300px; 
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Ideal Conditions */
 

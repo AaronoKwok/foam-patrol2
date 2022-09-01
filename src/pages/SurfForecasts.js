@@ -16,9 +16,41 @@ function SurfForecasts({loc}) {
     console.log(loc.name)
     //airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed
     const loading = "..."
+
+    //weather states
     const [airTemp, setAirTemp] = useState(loading)
     const [cloudCover, setCloudCover] = useState(loading)
-    const []
+    const [gust, setGust] = useState(loading)
+    const [precipitation, setPrecipitation] = useState(loading)
+    const [swellDirection, setSwellDirection] = useState(loading)
+    const [swellLetters, setSwellLetters] = useState(loading)
+    const [swellHeight, setSwellHeight] = useState(loading)
+    const [swellPeriod, setSwellPeriod] = useState(loading)
+    const [secondarySwellPeriod, setSecondarySwellPeriod] = useState(loading)
+    const [secondarySwellDirection, setSecondarySwellDirection] = useState(loading)
+    const [secondarySwellLetters, setSecondarySwellLetters] = useState(loading)
+    const [secondarySwellHeight, setSecondarySwellHeight] = useState(loading)
+    const [waterTemperature, setWaterTemperature] = useState(loading)
+    const [wavePeriod, setWavePeriod] = useState(loading)
+    const [waveHeight, setWaveHeight] = useState(loading)
+    const [windLetters, setWindLetters] = useState(loading)
+    const [windDirection, setWindDirection] = useState(loading)
+    const [windSpeed, setWindSpeed] = useState(loading)
+
+    //astronomy states
+    const [firstLight, setFirstLight] = useState(loading)
+    const [sunrise, setSunrise] = useState(loading)
+    const [sunset, setSunset] = useState(loading)
+    const [lastLight, setLastLight] = useState(loading)
+
+    //tide states 
+    const [nextTideTime, setNextTideTime] = useState(loading)
+    const [tideHeight, setTideHeight] = useState(loading)
+    const [tideType, setTideType] = useState(loading)
+
+
+
+
 
     //const [weatherForecast, setWeatherForecast] = useState([1, 2]); 
     
@@ -191,18 +223,36 @@ function SurfForecasts({loc}) {
                     <p className="fcRating">FAIR</p>
 
                     <section className="fcData">
-                        <div>Tide: feet</div>
-                        <div>Wind: knots</div>
-                        <div>
-                            Swells
-                            <p>Primary: </p>
-                            <p>Secondary: </p>
+                        <div className="first-data-row">
+                            <div className="data-box">
+                                <p>Surf Height</p>
+                                <p>{waveHeight}ft</p>
+                                <p>body height</p>
+                            </div>
+                            <div className="data-box">
+                                <p>Tide</p>
+                                <p>{tideType}</p>
+                                <p>{tideHeight}ft at {nextTideTime}</p>
+                            </div>
+                            <div className="data-box">
+                                <p>Wind</p>
+                                <p>{windSpeed}kts with {gust}mph gusts</p>
+                                <p>{windLetters} {windDirection}&#176;</p>
+                            </div>
+                            <div className="data-box">
+                                <p>Swells</p>
+                                <p>Primary: {swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
+                                <p>Secondary: {secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
+                            </div>
+                            <div className="data-box">Water Temp: {waterTemperature}&#8457;</div>
+                            <div className="data-box">
+                                <p>Weather</p>
+                                <p>Cloud Cover: {cloudCover}%</p>
+                                <p>Air Temp: {airTemp}&#8457;</p>
+                            </div>
                         </div>
-                        <div>Water Temp: &#8457;</div>
-                        <div>
-                            Weather
-                            <p>Cloud Cover: %</p>
-                            <p>Air Temp: {airTemp}&#8457;</p>
+                        <div className="forecast-row">
+
                         </div>
                     </section>
                 </div>
