@@ -167,11 +167,11 @@ function SurfForecasts({loc}) {
  
     /* const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
-    const requestThree = axios.get(tideUrl, headers);  
+    const requestThree = axios.get(tideUrl, headers); */  
     
     useEffect(() => {
         console.log("effect ran")
-        axios.all([requestOne, requestTwo, requestThree ])
+        axios.all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => {  
                 const weatherIdents = res[0].data.hours.map((hour, i) => {
                     return {
@@ -184,32 +184,36 @@ function SurfForecasts({loc}) {
                 })
                 const forecastLength = startingHour[0].ident + 5 //forecast length
 
-                const weaForecast = weatherIdents.filter(hour => { 
+                const weatherForecast = weatherIdents.filter(hour => { 
                     return hour.ident >= forecastLength - 5 && hour.ident <= forecastLength
                 })
                 
-                const astForecast = res[1].data.data.map((day, i) => {
+                const astronomyForecast = res[1].data.data.map((day, i) => {
                     return {
                         "ident": i, 
                         ...day
                     }
                 })
 
-                const tidForecast = res[2].data.data.map((tide, i) => {
+                const tideForecast = res[2].data.data.map((tide, i) => {
                     return {
                         "ident": i, 
                         ...tide
                     }
                 })
-                console.log(weaForecast)
-                console.log(astForecast)
-                console.log(tidForecast)
-                setAirTemp(Math.floor((weaForecast[0].airTemperature.noaa) * (9/5) + 32))
+                console.log(weatherForecast)
+                console.log(astronomyForecast)
+                console.log(tideForecast)
+                setAirTemp(Math.floor((weatherForecast[0].airTemperature.noaa) * (9/5) + 32))
+                setTideHeight(((loc.msl + tideForecast[0].height) * 3.281).toString().slice(0, 3)) 
+                setNextTideTime(tideForecast[0].time)
+                const capTide = tideForecast[0].type
+                setTideType(capTide[0].toUpperCase() + capTide.substring(1))
                 
                 
                 console.log(res[2].data.meta.requestCount, "requests")
             }))
-    }, [refresh]) */   //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
+    }, [])  //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
 
 
 
@@ -235,8 +239,8 @@ function SurfForecasts({loc}) {
                                 <p className="type-name">Tide</p>
                                 <hr className="data-hr"/>
                                 <hr className="data-hr-two"/>
-                                <p className="current-data-point">{tideType}<span className="data-span">ft</span></p>
-                                <p className="data-description">{tideHeight} ft at {nextTideTime}</p>
+                                <p className="current-data-point">{tideHeight}<span className="data-span">ft</span></p>
+                                <p className="data-description">{tideType}  at {nextTideTime}</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Wind</p>
