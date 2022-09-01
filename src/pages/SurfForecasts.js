@@ -147,9 +147,9 @@ function SurfForecasts({loc}) {
     console.log(utcDate, "utcDate")
 
     //const start = utcDate //MAYBE start format is bad
-    const start = `2022-9-01 0${utcHour}:00`
+    const start = `2022-9-01 ${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-02 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-02 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
     //api call
@@ -204,12 +204,12 @@ function SurfForecasts({loc}) {
                 console.log(weaForecast)
                 console.log(astForecast)
                 console.log(tidForecast)
-                setAirTemp(weaForecast[0].airTemperature.noaa)
+                setAirTemp(Math.floor((weaForecast[0].airTemperature.noaa) * (9/5) + 32))
                 
                 
                 console.log(res[2].data.meta.requestCount, "requests")
             }))
-    }, [refresh]) */  //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
+    }, [refresh]) */   //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
 
 
 
@@ -227,36 +227,42 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Surf Height</p>
                                 <hr className="data-hr"/>
+                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{waveHeight}<span className="data-span">ft</span></p>
                                 <p className="data-description">Thigh to waist</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Tide</p>
-                                <hr  className="data-hr"/>
+                                <hr className="data-hr"/>
+                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{tideType}<span className="data-span">ft</span></p>
                                 <p className="data-description">{tideHeight} ft at {nextTideTime}</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Wind</p>
-                                <hr  className="data-hr"/>
+                                <hr className="data-hr"/>
+                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{windSpeed}<span className="data-span">kts</span></p>
                                 <p className="data-description">{windLetters} ({windDirection}&#176;)</p>
                                 <p className="data-description">with {gust} kt gusts</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Swells</p>
-                                <hr  className="data-hr"/>
+                                <hr className="data-hr"/>
+                                <hr className="data-hr-two"/>
                                 <p className="data-description">{swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
                                 <p className="data-description">{secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Water Temp</p>
-                                <hr  className="data-hr"/>
+                                <hr className="data-hr"/>
+                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Weather</p>
-                                <hr  className="data-hr"/>
+                                <hr className="data-hr"/>
+                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{cloudCover}%</p>
                                 <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
                             </div>

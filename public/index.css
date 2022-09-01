@@ -665,9 +665,15 @@ nav {
 }
 
 .data-hr {
-  margin: 0px auto 6px auto;
+  margin: 0px auto 1px auto;
   width: 99%;
-  border: 0.2px solid rgb(21, 57, 158);
+  border: 0.2px solid rgb(84, 142, 146);
+}
+
+.data-hr-two {
+  margin: 0px auto 4px auto;
+  width: 99%;
+  border: 0.2px solid rgb(84, 142, 146);
 }
 
 .current-data-point {
