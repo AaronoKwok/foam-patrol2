@@ -359,8 +359,7 @@ nav {
 }
 
 .main-info {
-  height: 340px; 
-  background-color: rgb(206, 120, 120);
+  height: 300px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -398,11 +397,10 @@ nav {
 /* MainPage Retreats */
 
 .browse-retreats {
-  margin-bottom: 30px;  
+  margin-bottom: 45px; 
 }
 
 .retreats-p {
-  padding-top: 20px;
   font-size: 2em;
   font-weight: var(--des-weight);
   text-align: center;
@@ -412,7 +410,7 @@ nav {
 }
 
 .main-hr {
-  margin: 5px auto 10px auto; 
+  margin: 5px auto 15px auto; 
   width: 85%;
   background-color: rgb(172, 172, 172); 
 }
@@ -420,20 +418,24 @@ nav {
 .retreats-layout {
   display: flex; 
   justify-content: center;
-  background-color: rgb(188, 202, 188); 
 }
 
 /* retreat component */
 
 .retreat {
+  position: relative;
   min-width: 250px;
   max-width: 250px;
-  margin: 5px; 
-  border-radius: 10px;  
+  margin: 10px 5px 5px 5px; 
+  border-radius: 10px; 
+  padding-top: 10px; 
+  padding-bottom: 10px;  
 }
 
 .retreat:hover {
   box-shadow: 0px 2px 5px 0px rgb(170, 170, 170); 
+  background-color: rgb(240, 252, 252); 
+  cursor: pointer; 
 }
 
 .retreat-img {
@@ -449,8 +451,8 @@ nav {
 .retreat-location {
   position: absolute;
   left: 45px; 
-  top: 60px;
-  padding: 3px; 
+  top: 55px;
+  padding: 2px 3px; 
   width: 160px; 
   letter-spacing: 0.25em;
   text-align: center;
@@ -462,21 +464,21 @@ nav {
 }
 
 .retreat-description {
-  margin: auto; 
+  margin: 15px auto 0px auto; 
   text-align: center;
   color: black;
   width: 240px; 
   border-radius: 15px; 
   letter-spacing: 0.035em;
   font-size: 1.1em; 
-  background-color: rgb(138, 138, 255);
+  padding: 0px 8px; 
 }
 
 
 /* MainPage Courses */
 
 .browse-courses { 
-  height: 550px;
+  margin-bottom: 40px; 
 }
 
 .courses-p {
@@ -491,7 +493,7 @@ nav {
 .courses-layout {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 30px;
 } 
 
 .courses-link {
@@ -528,6 +530,11 @@ nav {
   background-color: rgb(241, 246, 247);
   margin: 0px 12px; 
   border-radius: 20px;   
+}
+
+.course:hover {
+  box-shadow: 0px 2.5px 6px 0px rgb(170, 170, 170); 
+  cursor: pointer; 
 }
 
 .course-image {
