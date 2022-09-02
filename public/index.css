@@ -360,10 +360,11 @@ nav {
 
 .main-info {
   height: 340px; 
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(206, 120, 120);
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .main-info-paragraph {
@@ -397,9 +398,7 @@ nav {
 /* MainPage Retreats */
 
 .browse-retreats {
-  height: 550px; 
-  background-color: rgb(168, 211, 211);
-  border-radius: 25px;
+  margin-bottom: 30px;  
 }
 
 .retreats-p {
@@ -407,23 +406,34 @@ nav {
   font-size: 2em;
   font-weight: var(--des-weight);
   text-align: center;
-  color: white;
+  color: black;
   letter-spacing: 0.1em;
+  margin: 5px 0px 0px 0px; 
+}
+
+.main-hr {
+  margin: 5px auto 10px auto; 
+  width: 85%;
+  background-color: rgb(172, 172, 172); 
 }
 
 .retreats-layout {
   display: flex; 
   justify-content: center;
+  background-color: rgb(188, 202, 188); 
 }
 
 /* retreat component */
 
 .retreat {
-  position: relative;
-  height: 400px; 
   min-width: 250px;
   max-width: 250px;
-  margin: 15px; 
+  margin: 5px; 
+  border-radius: 10px;  
+}
+
+.retreat:hover {
+  box-shadow: 0px 2px 5px 0px rgb(170, 170, 170); 
 }
 
 .retreat-img {
@@ -432,40 +442,34 @@ nav {
   height: 230px; 
   width: 230px;
   object-fit: cover;
-  border: 7px double white;
+  /* border: 3px solid white; */
   border-radius: 50%;
 }
 
 .retreat-location {
   position: absolute;
-  left: 50px; 
-  top: 55px;
-  width: 150px; 
-  letter-spacing: 0.3em;
+  left: 45px; 
+  top: 60px;
+  padding: 3px; 
+  width: 160px; 
+  letter-spacing: 0.25em;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  background-color: white;
-  color: rgb(30, 97, 173); 
+  font-weight: 600;
+  background-color: rgb(30, 97, 173);
+  color: white; 
   border-radius: 5px; 
 }
 
-.retreat-location:hover {
-  background-color: rgb(30, 97, 173); 
-  color: white;
-}
-
 .retreat-description {
-  display: block; 
-  margin: auto;
+  margin: auto; 
   text-align: center;
-  margin-top: 20px; 
   color: black;
-  width: 230px; 
-  background-color: white;
-  padding: 10px; 
+  width: 240px; 
   border-radius: 15px; 
-  letter-spacing: 0.03em;
+  letter-spacing: 0.035em;
+  font-size: 1.1em; 
+  background-color: rgb(138, 138, 255);
 }
 
 
@@ -481,6 +485,7 @@ nav {
   font-weight: var(--des-weight);
   text-align: center;
   letter-spacing: 0.1em;
+  margin: 5px 0px 0px 0px;
 }
 
 .courses-layout {

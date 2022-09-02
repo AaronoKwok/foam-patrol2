@@ -43,7 +43,8 @@ function MainPage() { //to change once have a courses scroll functionality
             {/* <hr className="line-break"/> */}
 
             <section className="browse-retreats">
-                <p className="retreats-p">Plan Your Next Retreat!</p>
+                <p className="retreats-p">Surf Trips</p>
+                <hr className="main-hr"/>
                 <div className="retreats-layout">
                     {retreats}
                 </div>
@@ -52,6 +53,7 @@ function MainPage() { //to change once have a courses scroll functionality
             
             <section className="browse-courses">
                 <p className="courses-p">Discover our Online Surf Courses</p>
+                <hr className="main-hr" />
                 <div className="courses-layout">
                     {courses}
                 </div>
