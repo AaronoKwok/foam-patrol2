@@ -44,6 +44,7 @@ function SurfForecasts({loc}) {
     const [lastLight, setLastLight] = useState(loading)
 
     //tide states 
+    const [calcTide, setCalcTide] = useState(loading)
     const [nextTideTime, setNextTideTime] = useState(loading)
     const [tideHeight, setTideHeight] = useState(loading)
     const [tideType, setTideType] = useState(loading)
@@ -142,6 +143,32 @@ function SurfForecasts({loc}) {
         }
     }
 
+    /* ampm start */
+
+    function ampm(nextTideTime) {
+        if (nextTideTime === loading || nextTideTime === false) {
+            return loading
+        } else {
+            console.log("lol")
+            const toUTC = new Date(nextTideTime)
+            const localTimeStr = toUTC.toString()
+            const timeArr = localTimeStr.split(" ")
+            const snipArr = timeArr.slice(1, 5)
+            const joinTimeArr = snipArr.join(" ")
+            const newTimeStr = new Date(joinTimeArr)
+            const hrs = newTimeStr.getHours()
+            const mins = newTimeStr.getMinutes()
+            
+            if (hrs > 12) {
+                return `${hrs - 12}:${mins}pm`
+            } else {
+                return `${hrs}:${mins}am`
+            }
+        }
+    }
+
+    /* ampm end */
+
     /* find UTC based on user timezone */ 
 
     /* end find UTC */
@@ -184,9 +211,9 @@ function SurfForecasts({loc}) {
     console.log(utcDate, "utcDate")
 
     //const start = utcDate //MAYBE start format is bad
-    const start = `2022-9-02 ${utcHour}:00`
+    const start = `2022-9-02 0${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-03 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-03 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
     //api call
@@ -248,14 +275,18 @@ function SurfForecasts({loc}) {
                 setTideType(capTide[0].toUpperCase() + capTide.substring(1))
                 setWindLetters(findDegreeLetters(weatherForecast[0].windDirection.sg))
                 setWindDirection(Math.floor(weatherForecast[0].windDirection.sg))
+                setWindSpeed(Math.floor((weatherForecast[0].windSpeed.sg) * 1.944))
+                setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
+
+                setNextTideTime(tideForecast[0].time)
 
                 
                 
                 
                 console.log(res[2].data.meta.requestCount, "requests")
             }))
-    }, []) */  //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
-
+    }, [loc.name])  */ //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
+    //get forecast on location name change for now...
 
 
     return ( 
@@ -272,21 +303,18 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Surf Height</p>
                                 <hr className="data-hr"/>
-                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{waveHeight}<span className="data-span">ft</span></p>
                                 <p className="data-description">Thigh to waist</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Tide</p>
                                 <hr className="data-hr"/>
-                                <hr className="data-hr-two"/>
-                                <p className="current-data-point">{tideHeight}<span className="data-span">ft</span></p>
-                                <p className="data-description">{tideType}  at {nextTideTime}</p>
+                                <p className="current-data-point">{calcTide}<span className="data-span">ft</span></p>
+                                <p className="data-description">{tideType} tide {tideHeight}ft at {ampm(nextTideTime)}</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Wind</p>
                                 <hr className="data-hr"/>
-                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{windSpeed}<span className="data-span">kts</span></p>
                                 <p className="data-description">{windLetters} ({windDirection}&#176;)</p>
                                 <p className="data-description">with {gust} kt gusts</p>
@@ -294,20 +322,17 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Swells</p>
                                 <hr className="data-hr"/>
-                                <hr className="data-hr-two"/>
                                 <p className="data-description">{swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
                                 <p className="data-description">{secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Water Temp</p>
                                 <hr className="data-hr"/>
-                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Weather</p>
                                 <hr className="data-hr"/>
-                                <hr className="data-hr-two"/>
                                 <p className="current-data-point">{cloudCover}%</p>
                                 <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
                             </div>
