@@ -31,7 +31,7 @@ function SurfForecasts({loc}) {
     const [secondarySwellLetters, setSecondarySwellLetters] = useState(loading)
     const [secondarySwellHeight, setSecondarySwellHeight] = useState(loading)
     const [waterTemperature, setWaterTemperature] = useState(loading)
-    const [wavePeriod, setWavePeriod] = useState(loading)
+    //const [wavePeriod, setWavePeriod] = useState(loading)
     const [waveHeight, setWaveHeight] = useState(loading)
     const [windLetters, setWindLetters] = useState(loading)
     const [windDirection, setWindDirection] = useState(loading)
@@ -160,14 +160,37 @@ function SurfForecasts({loc}) {
             const mins = newTimeStr.getMinutes()
             
             if (hrs > 12) {
-                return `${hrs - 12}:${mins}pm`
+                if (mins < 10) {
+                    return `${hrs - 12}:0${mins}pm`
+                } else {
+                    return `${hrs - 12}:${mins}pm`
+                }
             } else {
-                return `${hrs}:${mins}am`
+                if (mins < 10) {
+                    return `${hrs}:0${mins}am`
+                } else {
+                    return `${hrs}:${mins}am`
+                }
             }
         }
     }
 
-    /* ampm end */
+    /* clear/rainy function */
+
+    function findSky(cover, rain) {
+        return "hi"
+    }
+
+
+    /* end clear/rainy function */
+
+
+
+
+
+
+
+
 
     /* find UTC based on user timezone */ 
 
@@ -211,9 +234,9 @@ function SurfForecasts({loc}) {
     console.log(utcDate, "utcDate")
 
     //const start = utcDate //MAYBE start format is bad
-    const start = `2022-9-02 0${utcHour}:00`
+    const start = `2022-9-02 ${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-03 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-03 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
     //api call
@@ -231,7 +254,7 @@ function SurfForecasts({loc}) {
  
     /* const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
-    const requestThree = axios.get(tideUrl, headers);  
+    const requestThree = axios.get(tideUrl, headers);   
     
     useEffect(() => {
         console.log("effect ran")
@@ -246,10 +269,10 @@ function SurfForecasts({loc}) {
                 const startingHour = weatherIdents.filter(hour => { //hour to start
                     return hour.time === utcDate
                 })
-                const forecastLength = startingHour[0].ident + 5 //forecast length
 
+                const weatherForecastLength = startingHour[0].ident + 5 //forecast length
                 const weatherForecast = weatherIdents.filter(hour => { 
-                    return hour.ident >= forecastLength - 5 && hour.ident <= forecastLength
+                    return hour.ident >= weatherForecastLength - 5 && hour.ident <= weatherForecastLength
                 })
                 
                 const astronomyForecast = res[1].data.data.map((day, i) => {
@@ -268,17 +291,33 @@ function SurfForecasts({loc}) {
                 console.log(weatherForecast)
                 console.log(astronomyForecast)
                 console.log(tideForecast)
-                setAirTemp(Math.floor((weatherForecast[0].airTemperature.noaa) * (9/5) + 32))
+                setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                 setTideHeight(((loc.msl + tideForecast[0].height) * 3.281).toString().slice(0, 3)) 
                 setNextTideTime(tideForecast[0].time)
                 const capTide = tideForecast[0].type
-                setTideType(capTide[0].toUpperCase() + capTide.substring(1))
+                    setTideType(capTide[0].toUpperCase() + capTide.substring(1))
                 setWindLetters(findDegreeLetters(weatherForecast[0].windDirection.sg))
                 setWindDirection(Math.floor(weatherForecast[0].windDirection.sg))
                 setWindSpeed(Math.floor((weatherForecast[0].windSpeed.sg) * 1.944))
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
-
                 setNextTideTime(tideForecast[0].time)
+                setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
+                setCloudCover(weatherForecast[0].cloudCover.sg)
+                setPrecipitation(weatherForecast[0].precipitation.sg)
+                setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
+                setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
+                setSwellHeight(Math.floor(weatherForecast[0].swellHeight.sg * 3.281))
+                setSwellPeriod(Math.floor(weatherForecast[0].swellPeriod.sg))
+                setSecondarySwellDirection(Math.floor(weatherForecast[0].secondarySwellDirection.sg))
+                setSecondarySwellLetters(findDegreeLetters(weatherForecast[0].secondarySwellDirection.sg))
+                setSecondarySwellHeight(Math.floor(weatherForecast[0].secondarySwellHeight.sg))
+                setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
+                setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+                setFirstLight(astronomyForecast[0].civilDawn)
+                setSunrise(astronomyForecast[0].sunrise)
+                setSunset(astronomyForecast[0].sunset)
+                setLastLight(astronomyForecast[0].civilDusk)
+
 
                 
                 
@@ -303,7 +342,7 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Surf Height</p>
                                 <hr className="data-hr"/>
-                                <p className="current-data-point">{waveHeight}<span className="data-span">ft</span></p>
+                                <p className="current-data-point">{`${waveHeight-3}-${waveHeight - 2}`}<span className="data-span">ft</span></p>
                                 <p className="data-description">Thigh to waist</p>
                             </div>
                             <div className="data-box">
@@ -328,17 +367,26 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Water Temp</p>
                                 <hr className="data-hr"/>
+                                <div></div>
                                 <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Weather</p>
                                 <hr className="data-hr"/>
-                                <p className="current-data-point">{cloudCover}%</p>
+                                <div>
+                                <p className="current-data-point">{findSky(cloudCover, precipitation)}</p>
                                 <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
+                                </div>
                             </div>
                         </div>
-                        <div className="forecast-row">
 
+                        <div className="forecast-row">
+                            <div className="data-box">
+                                <p className="data-description">First Light: {ampm(firstLight)}</p>
+                                <p className="data-description">Sunrise: {ampm(sunrise)}</p>
+                                <p className="data-description">Sunset: {ampm(sunset)}</p>
+                                <p className="data-description">Last Light: {ampm(lastLight)}</p>
+                            </div>
                         </div>
                     </section>
                 </div>
