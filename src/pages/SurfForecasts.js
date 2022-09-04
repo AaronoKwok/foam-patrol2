@@ -234,9 +234,9 @@ function SurfForecasts({loc}) {
     console.log(utcDate, "utcDate")
 
     //const start = utcDate //MAYBE start format is bad
-    const start = `2022-9-02 ${utcHour}:00`
+    const start = `2022-9-03 0${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-03 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-04 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
     //api call
@@ -324,7 +324,7 @@ function SurfForecasts({loc}) {
                 
                 console.log(res[2].data.meta.requestCount, "requests")
             }))
-    }, [loc.name])  */ //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
+    }, [loc.name]) */  //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
     //get forecast on location name change for now...
 
 
@@ -361,8 +361,14 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Swells</p>
                                 <hr className="data-hr"/>
-                                <p className="data-description">{swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
-                                <p className="data-description">{secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
+                                <div className="swell-dot">
+                                    <div className="primary-dot"></div>
+                                    <p className="data-description">{swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
+                                </div>
+                                <div className="swell-dot-two">
+                                    <div className="secondary-dot"></div>
+                                    <p className="data-description">{secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
+                                </div>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Water Temp</p>

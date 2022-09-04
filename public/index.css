@@ -682,10 +682,32 @@ nav {
   border: 0.2px solid rgb(84, 142, 146);
 }
 
-.data-hr-two {
-  margin: 0px auto 4px auto;
-  width: 99%;
-  border: 0.2px solid rgb(84, 142, 146);
+.swell-dot {
+  display: flex; 
+  align-items: center;
+  margin: 5px 0px 0px 0px; 
+}
+
+.swell-dot-two {
+  display: flex; 
+  align-items: center;
+  margin: 0px; 
+}
+
+.primary-dot {
+  height: .5em; 
+  width: .5em; 
+  border-radius: 50%; 
+  background-color: rgb(16, 35, 139); 
+  margin-right: 3px; 
+}
+
+.secondary-dot {
+  height: .5em; 
+  width: .5em; 
+  border-radius: 50%; 
+  background-color: rgb(235, 138, 48); 
+  margin-right: 3px; 
 }
 
 .current-data-point {
