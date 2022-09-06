@@ -15,7 +15,7 @@ function SurfForecasts({loc}) {
     const refresh = loc.location //used in useEffect so that it gets new data on location change
     console.log(loc.name)
     //airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed
-    const loading = 3
+    const loading = 6
 
     //weather states
     const [airTemp, setAirTemp] = useState(loading)
@@ -146,7 +146,7 @@ function SurfForecasts({loc}) {
     /* ampm start */
 
     function ampm(nextTideTime) {
-        if (nextTideTime === loading || nextTideTime === false) {
+        if (nextTideTime === loading) {
             return loading
         } else {
             console.log("lol")
@@ -181,15 +181,49 @@ function SurfForecasts({loc}) {
         return "hi"
     }
 
+    /* determine wave height */
 
-    /* end clear/rainy function */
+    function determineHeight(height) {
+        if (height === "loading") {
+            return loading
+        } else if (height <= 2) {
+            return "0-1"
+        } else if (height === 3) {
+            return "1-2"
+        } else if (height === 4) {
+            return "2-3"
+        } else if (height === 5) {
+            return "3-4"
+        } else if (height === 6) {
+            return "4-5"
+        } else if (height > 6) {
+            return `${height - 2}-${height - 1}`
+        }
+    }
 
+    /* determine waveheight words*/
 
+    function determineHeightWord(height) {
+        if (height === "loading") {
+            return loading
+        } else if (height <= 2) {
+            return "Flat to ankle"
+        } else if (height === 3) {
+            return "Ankle to knee"
+        } else if (height === 4) {
+            return "Knee to thigh"
+        } else if (height === 5) {
+            return "Thigh to chest"
+        } else if (height === 6) {
+            return "Chest to head"
+        } else if (height > 6 && height < 8) {
+            return `Chest to ${(height) - 6}ft overhead`
+        } else if (height >= 8) {
+            return `+${(height) - 6}ft overhead`
+        }
+    }
 
-
-
-
-
+    /* end determine waveheight words */
 
 
     /* find UTC based on user timezone */ 
@@ -234,9 +268,9 @@ function SurfForecasts({loc}) {
     console.log(utcDate, "utcDate")
 
     //const start = utcDate //MAYBE start format is bad
-    const start = `2022-9-03 0${utcHour}:00`
+    const start = `2022-9-06 ${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-04 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-07 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
     //api call
@@ -310,7 +344,7 @@ function SurfForecasts({loc}) {
                 setSwellPeriod(Math.floor(weatherForecast[0].swellPeriod.sg))
                 setSecondarySwellDirection(Math.floor(weatherForecast[0].secondarySwellDirection.sg))
                 setSecondarySwellLetters(findDegreeLetters(weatherForecast[0].secondarySwellDirection.sg))
-                setSecondarySwellHeight(Math.floor(weatherForecast[0].secondarySwellHeight.sg))
+                setSecondarySwellHeight(Math.ceil(weatherForecast[0].secondarySwellHeight.sg))
                 setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
                 setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
                 setFirstLight(astronomyForecast[0].civilDawn)
@@ -342,8 +376,8 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Surf Height</p>
                                 <hr className="data-hr"/>
-                                <p className="current-data-point">{`${waveHeight-3}-${waveHeight - 2}`}<span className="data-span">ft</span></p>
-                                <p className="data-description">Thigh to waist</p>
+                                <p className="current-data-point">{determineHeight(waveHeight)}<span className="data-span">ft</span></p>
+                                <p className="data-description">{determineHeightWord(waveHeight)}</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Tide</p>
@@ -387,7 +421,7 @@ function SurfForecasts({loc}) {
                         </div>
 
                         <div className="forecast-row">
-                            <div className="data-box">
+                            <div className="forecast-data-box">
                                 <p className="data-description">First Light: {ampm(firstLight)}</p>
                                 <p className="data-description">Sunrise: {ampm(sunrise)}</p>
                                 <p className="data-description">Sunset: {ampm(sunset)}</p>
