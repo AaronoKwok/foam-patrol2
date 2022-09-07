@@ -295,7 +295,8 @@ function SurfForecasts({loc}) {
         const requestTwo = axios.get(astronomyUrl, headers);
         const requestThree = axios.get(tideUrl, headers); 
 
-        axios.all([requestOne, requestTwo, requestThree])
+        axios
+            .all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => {  
                 console.log(res[0])
                 console.log(res[1])
@@ -336,36 +337,35 @@ function SurfForecasts({loc}) {
                 console.log(astronomyForecast)
                 console.log(tideForecast)
 
-                setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
-                setTideHeight(((loc.msl + tideForecast[tideForecast.length - 1].height) * 3.281).toFixed(1)) 
-                setNextTideTime(tideForecast[tideForecast.length - 1].time)
                 const capTide = tideForecast[tideForecast.length - 1].type
-                    setTideType(capTide[0].toUpperCase() + capTide.substring(1))
-                setWindLetters(findDegreeLetters(weatherForecast[0].windDirection.sg))
-                setWindDirection(Math.floor(weatherForecast[0].windDirection.sg))
-                setWindSpeed(Math.floor((weatherForecast[0].windSpeed.sg) * 1.944))
-                setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
-                setNextTideTime(tideForecast[tideForecast.length - 1].time)
-                setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
+
+                setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                 setCloudCover(weatherForecast[0].cloudCover.sg)
+                setFirstLight(astronomyForecast[0].civilDawn)
+                setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
+                setLastLight(astronomyForecast[0].civilDusk)
+                setNextTideTime(tideForecast[tideForecast.length - 1].time)
                 setPrecipitation(weatherForecast[0].precipitation.sg)
                 setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
                 setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
-                setSwellHeight(Math.floor(weatherForecast[0].swellHeight.sg * 3.281))
+                setSwellHeight((weatherForecast[0].swellHeight.sg * 3.281).toFixed(1))
                 setSwellPeriod(Math.floor(weatherForecast[0].swellPeriod.sg))
                 setSecondarySwellDirection(Math.floor(weatherForecast[0].secondarySwellDirection.sg))
                 setSecondarySwellLetters(findDegreeLetters(weatherForecast[0].secondarySwellDirection.sg))
-                setSecondarySwellHeight(Math.ceil(weatherForecast[0].secondarySwellHeight.sg))
+                setSecondarySwellHeight((weatherForecast[0].secondarySwellHeight.sg).toFixed(1))
                 setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
-                setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
-                
-                setVisibility(weatherForecast[0].visibility.sg)
-                setFirstLight(astronomyForecast[0].civilDawn)
                 setSunrise(astronomyForecast[0].sunrise)
                 setSunset(astronomyForecast[0].sunset)
-                setLastLight(astronomyForecast[0].civilDusk)
+                setTideHeight(((loc.msl + tideForecast[tideForecast.length - 1].height) * 3.281).toFixed(1)) 
+                setTideType(capTide[0].toUpperCase() + capTide.substring(1))
+                setVisibility(weatherForecast[0].visibility.sg)
+                setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+                setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
+                setWindLetters(findDegreeLetters(weatherForecast[0].windDirection.sg))
+                setWindDirection(Math.floor(weatherForecast[0].windDirection.sg))
+                setWindSpeed(Math.floor((weatherForecast[0].windSpeed.sg) * 1.944))
 
-                console.log(res[2].data.meta.requestCount, "requests")
+                console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
             }))
             .catch((error) => {
                 console.log(error)
