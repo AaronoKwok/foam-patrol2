@@ -266,11 +266,15 @@ function SurfForecasts({loc}) {
 
     const utcDate = `${utcYear}-${addZeroMonth()}${utcMonth}-${addZeroDay()}${utcDay}T${addZeroHour()}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
     console.log(utcDate, "utcDate")
+    console.log(utcYear, "utcYear")
 
-    //const start = utcDate //MAYBE start format is bad
-    const start = `2022-9-06 ${utcHour}:00`
+    const utcStart = `${utcYear}-${utcMonth}-${addZeroDay()}${utcDay} ${addZeroHour()}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
+
+
+    const start = utcStart //MAYBE start format is bad
+    //const start = `2022-9-06 ${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-07 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-08 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
     //api call
@@ -286,7 +290,7 @@ function SurfForecasts({loc}) {
         }
     }  
  
-    /* const requestOne = axios.get(weatherUrl, headers);
+    /*const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
     const requestThree = axios.get(tideUrl, headers);   
     
@@ -326,7 +330,7 @@ function SurfForecasts({loc}) {
                 console.log(astronomyForecast)
                 console.log(tideForecast)
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
-                setTideHeight(((loc.msl + tideForecast[0].height) * 3.281).toString().slice(0, 3)) 
+                setTideHeight(((loc.msl + tideForecast[0].height) * 3.281).toFixed(1)) 
                 setNextTideTime(tideForecast[0].time)
                 const capTide = tideForecast[0].type
                     setTideType(capTide[0].toUpperCase() + capTide.substring(1))
@@ -358,9 +362,15 @@ function SurfForecasts({loc}) {
                 
                 console.log(res[2].data.meta.requestCount, "requests")
             }))
-    }, [loc.name]) */  //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
+            .catch((error) => {
+                console.log(error)
+            })
+    }, [loc.name])  */      //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
     //get forecast on location name change for now...
 
+    useEffect(() => {
+        console.log("test useeffect ran")
+    }, [])
 
     return ( 
         <div className="forecast-background">
