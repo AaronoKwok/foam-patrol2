@@ -254,35 +254,121 @@ function SurfForecasts({loc}) {
     const utcDay = (new Date()).getUTCDate()
     const utcHour = (new Date()).getUTCHours()
 
-    function addZeroHour() {
-        return utcHour < 10 ? 0 : ""
-    }
-    function addZeroDay() {
-        return utcDay < 10 ? 0 : ""
-    }
-    function addZeroMonth() {
-        return utcMonth < 10 ? 0 : ""
+    function addZero(num) {
+        return num < 10 ? 0 : ""
     }
 
-    const utcDate = `${utcYear}-${addZeroMonth()}${utcMonth}-${addZeroDay()}${utcDay}T${addZeroHour()}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
+    const utcDate = `${utcYear}-${addZero(utcMonth)}${utcMonth}-${addZero(utcDay)}${utcDay}T${addZero(utcHour)}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
     console.log(utcDate, "utcDate")
     console.log(utcYear, "utcYear")
 
-    const utcStart = `${utcYear}-${utcMonth}-${addZeroDay()}${utcDay} ${addZeroHour()}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
+    const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
 
+    const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
+    console.log(tideStart, "tide start")
+    const tideEnd = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay + 1} 00:00`//utcDate + 1 may cause error at end of month
+    console.log(tideEnd, "tide end")
 
-    const start = utcStart //MAYBE start format is bad
-    //const start = `2022-9-06 ${utcHour}:00`
+    const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
+    //const start = `2022-9-07 ${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-08 0${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    const histEnd = `2022-9-08 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end")
 
+    //state change function 
+    function getData() {
+        console.log("retrieving data...")
+
+        const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
+        const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
+        const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
+        const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}&end=${tideEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
+        const headers = {
+            headers: {
+                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+            }
+        } 
+        const requestOne = axios.get(weatherUrl, headers);
+        const requestTwo = axios.get(astronomyUrl, headers);
+        const requestThree = axios.get(tideUrl, headers); 
+
+        axios.all([requestOne, requestTwo, requestThree])
+            .then(axios.spread((...res) => {  
+                const weatherIdents = res[0].data.hours.map((hour, i) => {
+                    return {
+                        "ident": i, 
+                        ...hour
+                    }
+                }) 
+                
+                const startingHour = weatherIdents.filter(hour => { //hour to start
+                    return hour.time === utcDate
+                })
+
+                const weatherForecastLength = startingHour[0].ident + 5 //forecast length
+                
+                const weatherForecast = weatherIdents.filter(hour => { 
+                    return hour.ident >= weatherForecastLength - 5 && hour.ident <= weatherForecastLength
+                })
+                
+                const astronomyForecast = res[1].data.data.map((day, i) => {
+                    return {
+                        "ident": i, 
+                        ...day
+                    }
+                })
+
+                const tideForecast = res[2].data.data.map((tide, i) => {
+                    return {
+                        "ident": i, 
+                        ...tide
+                    }
+                })
+
+                console.log(weatherForecast)
+                console.log(astronomyForecast)
+                console.log(tideForecast)
+
+                setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
+                setTideHeight(((loc.msl + tideForecast[0].height) * 3.281).toFixed(1)) 
+                setNextTideTime(tideForecast[0].time)
+                const capTide = tideForecast[0].type
+                    setTideType(capTide[0].toUpperCase() + capTide.substring(1))
+                setWindLetters(findDegreeLetters(weatherForecast[0].windDirection.sg))
+                setWindDirection(Math.floor(weatherForecast[0].windDirection.sg))
+                setWindSpeed(Math.floor((weatherForecast[0].windSpeed.sg) * 1.944))
+                setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
+                setNextTideTime(tideForecast[0].time)
+                setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
+                setCloudCover(weatherForecast[0].cloudCover.sg)
+                setPrecipitation(weatherForecast[0].precipitation.sg)
+                setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
+                setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
+                setSwellHeight(Math.floor(weatherForecast[0].swellHeight.sg * 3.281))
+                setSwellPeriod(Math.floor(weatherForecast[0].swellPeriod.sg))
+                setSecondarySwellDirection(Math.floor(weatherForecast[0].secondarySwellDirection.sg))
+                setSecondarySwellLetters(findDegreeLetters(weatherForecast[0].secondarySwellDirection.sg))
+                setSecondarySwellHeight(Math.ceil(weatherForecast[0].secondarySwellHeight.sg))
+                setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
+                setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+                setFirstLight(astronomyForecast[0].civilDawn)
+                setSunrise(astronomyForecast[0].sunrise)
+                setSunset(astronomyForecast[0].sunset)
+                setLastLight(astronomyForecast[0].civilDusk)
+
+                console.log(res[2].data.meta.requestCount, "requests")
+            }))
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
     //api call
-    const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
+    /* const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
     
     const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
     const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
-    const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${start}&end=${histEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
+    const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}&end=${tideEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
 
     const headers = {
         headers: {
@@ -290,13 +376,21 @@ function SurfForecasts({loc}) {
         }
     }  
  
-    /*const requestOne = axios.get(weatherUrl, headers);
+    /* const requestOne = axios.get(weatherUrl, headers);
     const requestTwo = axios.get(astronomyUrl, headers);
-    const requestThree = axios.get(tideUrl, headers);   
+    const requestThree = axios.get(tideUrl, headers); */   
     
     useEffect(() => {
         console.log("effect ran")
-        axios.all([requestOne, requestTwo, requestThree])
+        //getData() 
+        
+        /* 
+            Place api call and state changes outside of useEffect 
+            to avoid recalling api on each state change as state 
+            changes trigger rerenders and thus useEffect, repeatedly
+        */
+
+        /* axios.all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => {  
                 const weatherIdents = res[0].data.hours.map((hour, i) => {
                     return {
@@ -329,6 +423,7 @@ function SurfForecasts({loc}) {
                 console.log(weatherForecast)
                 console.log(astronomyForecast)
                 console.log(tideForecast)
+
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                 setTideHeight(((loc.msl + tideForecast[0].height) * 3.281).toFixed(1)) 
                 setNextTideTime(tideForecast[0].time)
@@ -356,20 +451,20 @@ function SurfForecasts({loc}) {
                 setSunset(astronomyForecast[0].sunset)
                 setLastLight(astronomyForecast[0].civilDusk)
 
-
-                
-                
-                
                 console.log(res[2].data.meta.requestCount, "requests")
             }))
             .catch((error) => {
                 console.log(error)
-            })
-    }, [loc.name])  */      //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
+            }) */
+    }, [loc.name]) //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
     //get forecast on location name change for now...
 
+    function testFunction() {
+        console.log("outside function called in useEffect executed")
+    }
     useEffect(() => {
         console.log("test useeffect ran")
+        testFunction()
     }, [])
 
     return ( 

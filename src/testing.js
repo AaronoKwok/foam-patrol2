@@ -69,11 +69,31 @@ console.log(utcTime)
     const histEnd = `2022-9-07 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
     console.log(histEnd, "end") */
 
-    const msl = 0.862;
+    /* const msl = 0.862;
     const height = -1.106749669359218
     console.log((msl + height) * 3.321)
     console.log(((msl + height) * 3.281).toString().slice(0, 3))
     console.log(((msl + height) * 3.281).toFixed(1))
     console.log(3.45432.toFixed(1))
     console.log(3.45432.toString().slice(0, 3))
-    
+     */
+
+    /* For Tide Start and End
+     */
+    const utcYear = new Date().getUTCFullYear()
+    console.log(utcYear)
+    const utcDate = new Date().getUTCDate()
+    console.log(utcDate)
+    const utcMonth = new Date().getUTCMonth()
+    console.log(utcMonth + 1)
+    const utcHour = new Date().getUTCHours()
+    console.log(utcHour)
+
+    function addZero(num) {
+        return num < 10 ? 0 : ""
+    }
+
+    const tideStart = `${utcYear}-${utcMonth + 1}-${addZero(utcDate)}${utcDate} 00:00`
+    console.log(tideStart)
+
+   
