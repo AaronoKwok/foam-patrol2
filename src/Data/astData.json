@@ -1,116 +1,100 @@
 {
-    "data": [
-        {
-            "astronomicalDawn": "2022-08-25T12:02:45+00:00",
-            "astronomicalDusk": "2022-08-26T04:22:08+00:00",
-            "civilDawn": "2022-08-25T13:08:28+00:00",
-            "civilDusk": "2022-08-26T03:16:25+00:00",
-            "moonFraction": 0.0381176610819553,
-            "moonPhase": {
-                "closest": {
-                    "text": "New moon",
-                    "time": "2022-08-27T07:19:00+00:00",
-                    "value": 1
+    "data": {
+        "data": [
+            {
+                "astronomicalDawn": "2022-09-08T12:16:50+00:00",
+                "astronomicalDusk": "2022-09-09T03:57:12+00:00",
+                "civilDawn": "2022-09-08T13:19:37+00:00",
+                "civilDusk": "2022-09-09T02:54:25+00:00",
+                "moonFraction": 0.9223126548319172,
+                "moonPhase": {
+                    "closest": {
+                        "text": "Full moon",
+                        "time": "2022-09-10T13:43:00+00:00",
+                        "value": 0.5
+                    },
+                    "current": {
+                        "text": "Waxing gibbous",
+                        "time": "2022-09-07T22:00:00+00:00",
+                        "value": 0.41008836974266494
+                    }
                 },
-                "current": {
-                    "text": "Waning crescent",
-                    "time": "2022-08-25T11:00:00+00:00",
-                    "value": 0.9374522501621603
-                }
+                "moonrise": "2022-09-07T00:32:26+00:00",
+                "moonset": "2022-09-07T10:13:11+00:00",
+                "nauticalDawn": "2022-09-08T12:48:39+00:00",
+                "nauticalDusk": "2022-09-09T03:25:23+00:00",
+                "sunrise": "2022-09-08T13:45:51+00:00",
+                "sunset": "2022-09-09T02:28:10+00:00",
+                "time": "2022-09-07T22:00:00+00:00"
             },
-            "moonrise": "2022-08-25T11:43:38+00:00",
-            "moonset": "2022-08-25T01:52:05+00:00",
-            "nauticalDawn": "2022-08-25T12:36:18+00:00",
-            "nauticalDusk": "2022-08-26T03:48:35+00:00",
-            "sunrise": "2022-08-25T13:35:25+00:00",
-            "sunset": "2022-08-26T02:49:27+00:00",
-            "time": "2022-08-25T11:00:00+00:00"
-        },
-        {
-            "astronomicalDawn": "2022-08-26T12:03:52+00:00",
-            "astronomicalDusk": "2022-08-27T04:20:27+00:00",
-            "civilDawn": "2022-08-26T13:09:21+00:00",
-            "civilDusk": "2022-08-27T03:14:58+00:00",
-            "moonFraction": 0.010934667384070562,
-            "moonPhase": {
-                "closest": {
-                    "text": "New moon",
-                    "time": "2022-08-27T10:38:00+00:00",
-                    "value": 1
+            {
+                "astronomicalDawn": "2022-09-09T12:17:50+00:00",
+                "astronomicalDusk": "2022-09-10T03:55:30+00:00",
+                "civilDawn": "2022-09-09T13:20:27+00:00",
+                "civilDusk": "2022-09-10T02:52:52+00:00",
+                "moonFraction": 0.9720302591409719,
+                "moonPhase": {
+                    "closest": {
+                        "text": "Full moon",
+                        "time": "2022-09-10T11:54:00+00:00",
+                        "value": 0.5
+                    },
+                    "current": {
+                        "text": "Waxing gibbous",
+                        "time": "2022-09-08T22:00:00+00:00",
+                        "value": 0.4465140203644383
+                    }
                 },
-                "current": {
-                    "text": "Waning crescent",
-                    "time": "2022-08-26T11:00:00+00:00",
-                    "value": 0.9666537051415917
-                }
-            },
-            "moonrise": "2022-08-26T12:44:57+00:00",
-            "moonset": "2022-08-26T02:26:15+00:00",
-            "nauticalDawn": "2022-08-26T12:37:17+00:00",
-            "nauticalDusk": "2022-08-27T03:47:03+00:00",
-            "sunrise": "2022-08-26T13:36:15+00:00",
-            "sunset": "2022-08-27T02:48:05+00:00",
-            "time": "2022-08-26T11:00:00+00:00"
-        },
-        {
-            "astronomicalDawn": "2022-08-27T12:04:59+00:00",
-            "astronomicalDusk": "2022-08-28T04:18:46+00:00",
-            "civilDawn": "2022-08-27T13:10:14+00:00",
-            "civilDusk": "2022-08-28T03:13:31+00:00",
-            "moonFraction": 0.0017320445945494534,
-            "moonPhase": {
-                "closest": {
-                    "text": "New moon",
-                    "time": "2022-08-27T01:36:00+00:00",
-                    "value": 0
-                },
-                "current": {
-                    "text": "Waxing crescent",
-                    "time": "2022-08-27T11:00:00+00:00",
-                    "value": 0.01325119702508587
-                }
-            },
-            "moonrise": "2022-08-27T13:46:30+00:00",
-            "moonset": "2022-08-27T02:56:08+00:00",
-            "nauticalDawn": "2022-08-27T12:38:16+00:00",
-            "nauticalDusk": "2022-08-28T03:45:30+00:00",
-            "sunrise": "2022-08-27T13:37:04+00:00",
-            "sunset": "2022-08-28T02:46:41+00:00",
-            "time": "2022-08-27T11:00:00+00:00"
-        },
-        {
-            "astronomicalDawn": "2022-08-28T12:06:06+00:00",
-            "astronomicalDusk": "2022-08-29T04:17:05+00:00",
-            "civilDawn": "2022-08-28T13:11:07+00:00",
-            "civilDusk": "2022-08-29T03:12:04+00:00",
-            "moonFraction": 0.012092662063317217,
-            "moonPhase": {
-                "closest": {
-                    "text": "New moon",
-                    "time": "2022-08-27T10:08:00+00:00",
-                    "value": 0
-                },
-                "current": {
-                    "text": "Waxing crescent",
-                    "time": "2022-08-28T11:00:00+00:00",
-                    "value": 0.035074403084707495
-                }
-            },
-            "moonrise": "2022-08-28T14:47:57+00:00",
-            "moonset": "2022-08-28T03:22:58+00:00",
-            "nauticalDawn": "2022-08-28T12:39:14+00:00",
-            "nauticalDusk": "2022-08-29T03:43:57+00:00",
-            "sunrise": "2022-08-28T13:37:54+00:00",
-            "sunset": "2022-08-29T02:45:17+00:00",
-            "time": "2022-08-28T11:00:00+00:00"
+                "moonrise": "2022-09-08T01:18:48+00:00",
+                "moonset": "2022-09-08T11:28:47+00:00",
+                "nauticalDawn": "2022-09-09T12:49:32+00:00",
+                "nauticalDusk": "2022-09-10T03:23:47+00:00",
+                "sunrise": "2022-09-09T13:46:39+00:00",
+                "sunset": "2022-09-10T02:26:40+00:00",
+                "time": "2022-09-08T22:00:00+00:00"
+            }
+        ],
+        "meta": {
+            "cost": 1,
+            "dailyQuota": 1000,
+            "lat": 36.9553,
+            "lng": -121.9712,
+            "requestCount": 266,
+            "start": "2022-09-07 22:00"
         }
-    ],
-    "meta": {
-        "cost": 1,
-        "dailyQuota": 1000,
-        "lat": 37.0245,
-        "lng": -122.217,
-        "requestCount": 2,
-        "start": "2022-08-25 11:00"
-    }
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+        "content-length": "465",
+        "content-type": "application/json"
+    },
+    "config": {
+        "transitional": {
+            "silentJSONParsing": true,
+            "forcedJSONParsing": true,
+            "clarifyTimeoutError": false
+        },
+        "transformRequest": [
+            null
+        ],
+        "transformResponse": [
+            null
+        ],
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "env": {
+            "FormData": null
+        },
+        "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Authorization": "62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002"
+        },
+        "method": "get",
+        "url": "https://api.stormglass.io/v2/astronomy/point?lat=36.9553&lng=-121.9712&start=2022-9-07 22:00&end=2022-9-08 22:00"
+    },
+    "request": {}
 }

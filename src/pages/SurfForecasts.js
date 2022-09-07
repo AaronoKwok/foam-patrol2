@@ -10,12 +10,17 @@ import surfHeightIcon from "../images/surfHeight.jpeg"
 import swellDirectionIcon from "../images/swellDirection.jpeg"
 import tideIcon from "../images/tide.jpeg"
 import windIcon from "../images/wind.jpeg"
+import seaIcon from "../images/seaIcon.svg"
+
+//weather svgs
+import clearDAY from "../images/weather/clearDAY.svg"
+
 
 function SurfForecasts({loc}) {
     const refresh = loc.location //used in useEffect so that it gets new data on location change
     console.log(loc.name)
     //airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed
-    const loading = 6
+    const loading = "..."
 
     //weather states
     const [airTemp, setAirTemp] = useState(loading)
@@ -31,11 +36,11 @@ function SurfForecasts({loc}) {
     const [secondarySwellLetters, setSecondarySwellLetters] = useState(loading)
     const [secondarySwellHeight, setSecondarySwellHeight] = useState(loading)
     const [waterTemperature, setWaterTemperature] = useState(loading)
-    //const [wavePeriod, setWavePeriod] = useState(loading)
     const [waveHeight, setWaveHeight] = useState(loading)
     const [windLetters, setWindLetters] = useState(loading)
     const [windDirection, setWindDirection] = useState(loading)
     const [windSpeed, setWindSpeed] = useState(loading)
+    const [visibility, setVisibility] = useState(loading)
 
     //astronomy states
     const [firstLight, setFirstLight] = useState(loading)
@@ -49,19 +54,7 @@ function SurfForecasts({loc}) {
     const [tideHeight, setTideHeight] = useState(loading)
     const [tideType, setTideType] = useState(loading)
 
-
-
-
-
-    //const [weatherForecast, setWeatherForecast] = useState([1, 2]); 
-    
-    
-    //using one forecast state instead of three to have less rerenders --> leads to 0 unable to read in forecast[0][0]
-    //const [astForecast, setAstForecast] = useState("")
-    //const [tideForecast, setTideForecast] = useState("")
-    //const [lookUpLoc, setLookUpLoc] = useState("") //search bar
-    //const [forecastID, setForecastID] = useState("")
-
+    //location variables 
     const localVibe = loc.guide.localVibe.level
     const crowdFactor = loc.guide.crowdFactor.level
     const spotRating = loc.guide.spotRating.level
@@ -149,7 +142,7 @@ function SurfForecasts({loc}) {
         if (nextTideTime === loading) {
             return loading
         } else {
-            console.log("lol")
+            console.log("ampm ran")
             const toUTC = new Date(nextTideTime)
             const localTimeStr = toUTC.toString()
             const timeArr = localTimeStr.split(" ")
@@ -177,8 +170,18 @@ function SurfForecasts({loc}) {
 
     /* clear/rainy function */
 
-    function findSky(cover, rain) {
-        return "hi"
+    function findSky(cloudCover, precipitation, visibility) { //rain in mm/h, clouds in decimal
+        if (cloudCover === loading) {
+            return undefined
+        }
+        const sunny = 0.30;
+        const partlyCloudy = 0.70
+        const cloudy = 0.95
+        const overcast = 1
+
+
+
+        return clearDAY
     }
 
     /* determine wave height */
@@ -279,7 +282,7 @@ function SurfForecasts({loc}) {
     function getData() {
         console.log("retrieving data...")
 
-        const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
+        const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
         const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}&end=${tideEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
@@ -294,6 +297,10 @@ function SurfForecasts({loc}) {
 
         axios.all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => {  
+                console.log(res[0])
+                console.log(res[1])
+                console.log(res[2])
+
                 const weatherIdents = res[0].data.hours.map((hour, i) => {
                     return {
                         "ident": i, 
@@ -330,15 +337,15 @@ function SurfForecasts({loc}) {
                 console.log(tideForecast)
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
-                setTideHeight(((loc.msl + tideForecast[0].height) * 3.281).toFixed(1)) 
-                setNextTideTime(tideForecast[0].time)
-                const capTide = tideForecast[0].type
+                setTideHeight(((loc.msl + tideForecast[tideForecast.length - 1].height) * 3.281).toFixed(1)) 
+                setNextTideTime(tideForecast[tideForecast.length - 1].time)
+                const capTide = tideForecast[tideForecast.length - 1].type
                     setTideType(capTide[0].toUpperCase() + capTide.substring(1))
                 setWindLetters(findDegreeLetters(weatherForecast[0].windDirection.sg))
                 setWindDirection(Math.floor(weatherForecast[0].windDirection.sg))
                 setWindSpeed(Math.floor((weatherForecast[0].windSpeed.sg) * 1.944))
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
-                setNextTideTime(tideForecast[0].time)
+                setNextTideTime(tideForecast[tideForecast.length - 1].time)
                 setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
                 setCloudCover(weatherForecast[0].cloudCover.sg)
                 setPrecipitation(weatherForecast[0].precipitation.sg)
@@ -351,6 +358,8 @@ function SurfForecasts({loc}) {
                 setSecondarySwellHeight(Math.ceil(weatherForecast[0].secondarySwellHeight.sg))
                 setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
                 setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+                
+                setVisibility(weatherForecast[0].visibility.sg)
                 setFirstLight(astronomyForecast[0].civilDawn)
                 setSunrise(astronomyForecast[0].sunrise)
                 setSunset(astronomyForecast[0].sunset)
@@ -363,109 +372,24 @@ function SurfForecasts({loc}) {
             })
     }
 
-    //api call
-    /* const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed'; 
-    
-    const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
-    const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
-    const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}&end=${tideEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
-
-    const headers = {
-        headers: {
-            'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
-        }
-    }  
- 
-    /* const requestOne = axios.get(weatherUrl, headers);
-    const requestTwo = axios.get(astronomyUrl, headers);
-    const requestThree = axios.get(tideUrl, headers); */   
-    
     useEffect(() => {
         console.log("effect ran")
-        //getData() 
-        
+        //getData() //turn off when editing
+
         /* 
             Place api call and state changes outside of useEffect 
             to avoid recalling api on each state change as state 
             changes trigger rerenders and thus useEffect, repeatedly
         */
 
-        /* axios.all([requestOne, requestTwo, requestThree])
-            .then(axios.spread((...res) => {  
-                const weatherIdents = res[0].data.hours.map((hour, i) => {
-                    return {
-                        "ident": i, 
-                        ...hour
-                    }
-                }) 
-                const startingHour = weatherIdents.filter(hour => { //hour to start
-                    return hour.time === utcDate
-                })
-
-                const weatherForecastLength = startingHour[0].ident + 5 //forecast length
-                const weatherForecast = weatherIdents.filter(hour => { 
-                    return hour.ident >= weatherForecastLength - 5 && hour.ident <= weatherForecastLength
-                })
-                
-                const astronomyForecast = res[1].data.data.map((day, i) => {
-                    return {
-                        "ident": i, 
-                        ...day
-                    }
-                })
-
-                const tideForecast = res[2].data.data.map((tide, i) => {
-                    return {
-                        "ident": i, 
-                        ...tide
-                    }
-                })
-                console.log(weatherForecast)
-                console.log(astronomyForecast)
-                console.log(tideForecast)
-
-                setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
-                setTideHeight(((loc.msl + tideForecast[0].height) * 3.281).toFixed(1)) 
-                setNextTideTime(tideForecast[0].time)
-                const capTide = tideForecast[0].type
-                    setTideType(capTide[0].toUpperCase() + capTide.substring(1))
-                setWindLetters(findDegreeLetters(weatherForecast[0].windDirection.sg))
-                setWindDirection(Math.floor(weatherForecast[0].windDirection.sg))
-                setWindSpeed(Math.floor((weatherForecast[0].windSpeed.sg) * 1.944))
-                setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
-                setNextTideTime(tideForecast[0].time)
-                setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
-                setCloudCover(weatherForecast[0].cloudCover.sg)
-                setPrecipitation(weatherForecast[0].precipitation.sg)
-                setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
-                setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
-                setSwellHeight(Math.floor(weatherForecast[0].swellHeight.sg * 3.281))
-                setSwellPeriod(Math.floor(weatherForecast[0].swellPeriod.sg))
-                setSecondarySwellDirection(Math.floor(weatherForecast[0].secondarySwellDirection.sg))
-                setSecondarySwellLetters(findDegreeLetters(weatherForecast[0].secondarySwellDirection.sg))
-                setSecondarySwellHeight(Math.ceil(weatherForecast[0].secondarySwellHeight.sg))
-                setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
-                setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
-                setFirstLight(astronomyForecast[0].civilDawn)
-                setSunrise(astronomyForecast[0].sunrise)
-                setSunset(astronomyForecast[0].sunset)
-                setLastLight(astronomyForecast[0].civilDusk)
-
-                console.log(res[2].data.meta.requestCount, "requests")
-            }))
-            .catch((error) => {
-                console.log(error)
-            }) */
-    }, [loc.name]) //NOTE: //when using this optimization, make sure the array includes all values from the component scope (such as state and prosps) taht change over time and that are used by the effect. Otherwise, your code will reference stale values from previous renders
-    //get forecast on location name change for now...
-
-    function testFunction() {
-        console.log("outside function called in useEffect executed")
-    }
-    useEffect(() => {
-        console.log("test useeffect ran")
-        testFunction()
-    }, [])
+    }, [refresh]) //get forecast on location name change for now...
+    /* 
+        //NOTE: //when using dependency array as an optimization, 
+        make sure the array includes all values from the component 
+        scope (such as state and prosps) taht change over time and 
+        that are used by the effect. Otherwise, your code will 
+        reference stale values from previous renders
+    */
 
     return ( 
         <div className="forecast-background">
@@ -512,15 +436,17 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Water Temp</p>
                                 <hr className="data-hr"/>
-                                <div></div>
-                                <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
+                                <div className="icon-data-box">
+                                    <img className="weather-icon" src={seaIcon} alt="" />
+                                    <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
+                                </div>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Weather</p>
                                 <hr className="data-hr"/>
-                                <div>
-                                <p className="current-data-point">{findSky(cloudCover, precipitation)}</p>
-                                <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
+                                <div className="icon-data-box">
+                                    <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility)} alt=""/>
+                                    <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
                                 </div>
                             </div>
                         </div>
@@ -709,5 +635,5 @@ export default SurfForecasts
                     <br />
                     <input className="find-break" type="submit" value="Find a Break" />
                 </form>
-            </section> */
+            </section> */ 
 

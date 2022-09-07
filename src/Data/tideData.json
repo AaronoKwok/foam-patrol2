@@ -1,81 +1,77 @@
 {
-    "data": [
-        {
-            "height": -1.4598239753204425,
-            "time": "2022-08-25T13:51:00+00:00",
-            "type": "low"
-        },
-        {
-            "height": 0.921804309800518,
-            "time": "2022-08-25T20:20:00+00:00",
-            "type": "high"
-        },
-        {
-            "height": -0.5199634507150586,
-            "time": "2022-08-26T01:45:00+00:00",
-            "type": "low"
-        },
-        {
-            "height": 1.2407094302112793,
-            "time": "2022-08-26T07:16:00+00:00",
-            "type": "high"
-        },
-        {
-            "height": -1.4730627464030992,
-            "time": "2022-08-26T14:25:00+00:00",
-            "type": "low"
-        },
-        {
-            "height": 0.9504843401382612,
-            "time": "2022-08-26T20:55:00+00:00",
-            "type": "high"
-        },
-        {
-            "height": -0.6161308183277527,
-            "time": "2022-08-27T02:27:00+00:00",
-            "type": "low"
-        },
-        {
-            "height": 1.2565921803482654,
-            "time": "2022-08-27T07:56:00+00:00",
-            "type": "high"
-        },
-        {
-            "height": -1.4640842628368724,
-            "time": "2022-08-27T14:57:00+00:00",
-            "type": "low"
-        },
-        {
-            "height": 0.9678210075503241,
-            "time": "2022-08-27T21:25:00+00:00",
-            "type": "high"
-        },
-        {
-            "height": -0.7095482339257031,
-            "time": "2022-08-28T03:08:00+00:00",
-            "type": "low"
-        },
-        {
-            "height": 1.2466386735923758,
-            "time": "2022-08-28T08:35:00+00:00",
-            "type": "high"
+    "data": {
+        "data": [
+            {
+                "height": 0.9064904758032637,
+                "time": "2022-09-07T02:41:00+00:00",
+                "type": "high"
+            },
+            {
+                "height": -1.1067496693783678,
+                "time": "2022-09-07T10:01:00+00:00",
+                "type": "low"
+            },
+            {
+                "height": 0.4253368571497535,
+                "time": "2022-09-07T16:41:00+00:00",
+                "type": "high"
+            },
+            {
+                "height": -0.22334339271685916,
+                "time": "2022-09-07T21:39:00+00:00",
+                "type": "low"
+            }
+        ],
+        "meta": {
+            "cost": 1,
+            "dailyQuota": 1000,
+            "datum": "MSL",
+            "end": "2022-09-08 00:00",
+            "lat": 36.6763,
+            "lng": -121.827,
+            "requestCount": 265,
+            "start": "2022-09-07 00:00",
+            "station": {
+                "distance": 9,
+                "lat": 36.61,
+                "lng": -121.89,
+                "name": "monterey harbor",
+                "source": "sg"
+            }
         }
-    ],
-    "meta": {
-        "cost": 1,
-        "dailyQuota": 1000,
-        "datum": "MSL",
-        "end": "2022-08-28 11:00",
-        "lat": 37.0245,
-        "lng": -122.217,
-        "requestCount": 3,
-        "start": "2022-08-25 11:00",
-        "station": {
-            "distance": 52,
-            "lat": 37.465,
-            "lng": -122.023,
-            "name": "coyote creek, ca",
-            "source": "noaa"
-        }
-    }
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+        "content-length": "303",
+        "content-type": "application/json"
+    },
+    "config": {
+        "transitional": {
+            "silentJSONParsing": true,
+            "forcedJSONParsing": true,
+            "clarifyTimeoutError": false
+        },
+        "transformRequest": [
+            null
+        ],
+        "transformResponse": [
+            null
+        ],
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "env": {
+            "FormData": null
+        },
+        "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Authorization": "62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002"
+        },
+        "method": "get",
+        "url": "https://api.stormglass.io/v2/tide/extremes/point?lat=36.6763&lng=-121.827&start=2022-9-07 00:00&end=2022-9-08 00:00"
+    },
+    "request": {}
 }
