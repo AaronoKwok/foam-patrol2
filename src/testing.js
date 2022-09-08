@@ -79,7 +79,7 @@ console.log(utcTime)
      */
 
     /* For Tide Start and End
-     */
+     
     const utcYear = new Date().getUTCFullYear()
     console.log(utcYear)
     const utcDate = new Date().getUTCDate()
@@ -96,4 +96,39 @@ console.log(utcTime)
     const tideStart = `${utcYear}-${utcMonth + 1}-${addZero(utcDate)}${utcDate} 00:00`
     console.log(tideStart)
 
-   
+   */
+
+//Reduce method
+
+const arr = [1, 2, 3, 4]
+const add = arr.reduce((a, b) => {
+    return a + b
+})
+//console.log(add)
+
+const arrr = [
+    {"num": 1, "id": 0}, 
+    {"num": 5, "id": 1}, 
+    {"num": 10, "id": 2}
+]
+
+const addd = arrr.reduce((a, b) => {
+    console.log(a.num + b.num)
+    return a["num"] + b["num"]
+})
+//console.log(typeof addd)
+//does not work bc once arrr[0] and arrr[1] are
+//added, reduce cannot find a.num in their result
+
+//can make arr of values from data
+
+function makeArr(arr) {
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i].num)
+    }
+    return newArr
+}
+
+//console.log(makeArr(arrr))
+

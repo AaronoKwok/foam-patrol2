@@ -381,7 +381,6 @@ function SurfForecasts({loc}) {
             to avoid recalling api on each state change as state 
             changes trigger rerenders and thus useEffect, repeatedly
         */
-
     }, [refresh]) //get forecast on location name change for now...
     /* 
         //NOTE: //when using dependency array as an optimization, 
@@ -419,7 +418,7 @@ function SurfForecasts({loc}) {
                                 <hr className="data-hr"/>
                                 <p className="current-data-point">{windSpeed}<span className="data-span">kts</span></p>
                                 <p className="data-description">{windLetters} ({windDirection}&#176;)</p>
-                                <p className="data-description">with {gust} kt gusts</p>
+                                <p className="data-description">with {gust}kt gusts</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Swells</p>
