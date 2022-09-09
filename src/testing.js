@@ -124,9 +124,7 @@ function findTimeObj(arr) {
     }
     return `${time} exceeds provided times`
 }
-//console.log(findTimeObj(arrr))
-const correctTime = findTimeObj(arrr)
-console.log(correctTime)
-console.log(correctTime.id * 12)
+console.log(findTimeObj(arrr))
 
-const uh = [1, 2, 3, 4, 5]; 
+
+

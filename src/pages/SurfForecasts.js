@@ -65,6 +65,43 @@ function SurfForecasts({loc}) {
     const tideDes = loc.guide.idealConditions.tide
     const windDes = loc.guide.idealConditions.wind 
 
+    const lat = loc.location[0]; 
+    const tideLat = loc.tideLocation[0];
+    const lng = loc.location[1];
+    const tideLng = loc.tideLocation[1];
+
+    const utcYear = (new Date()).getUTCFullYear()
+    const utcMonth = (new Date()).getUTCMonth() + 1
+    const utcDay = (new Date()).getUTCDate()
+    const utcHour = (new Date()).getUTCHours()
+
+    function addZero(num) {
+        if (num === 9) {
+            return "0"
+        } else if (num < 10) {
+            return 0
+        }
+        return ""
+    }
+
+    //utcDate is local time in utc in ISO 8601 format (YYYY-MM-DDTHH:mm:ss.sssZ)
+    const utcDate = `${utcYear}-${addZero(utcMonth)}${utcMonth}-${addZero(utcDay)}${utcDay}T${addZero(utcHour)}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
+    console.log(utcDate, "utcDate")
+    console.log(Date.parse(utcDate))
+
+    const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
+
+    const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
+    console.log(tideStart, "tide start")
+
+    //const tideEnd = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay + 1} 00:00`//utcDate + 1 may cause error at end of month
+    //console.log(tideEnd, "tide end")
+
+    const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
+    console.log(start, "start")
+
+    //const histEnd = `2022-9-10 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    //console.log(histEnd, "end")
 
     /* ability level */
     function isBlue(lvl) {
@@ -137,7 +174,6 @@ function SurfForecasts({loc}) {
     }
 
     /* ampm start */
-
     function ampm(nextTideTime) {
         if (nextTideTime === loading) {
             return loading
@@ -166,6 +202,23 @@ function SurfForecasts({loc}) {
                 }
             }
         }
+    }
+
+    /* find time in tide */
+    /* 
+        next high tide: use findTimeObj() to find next tide in tideForecast using times 
+        converted to ms using Date.parse() for ISO 8601 times in returned forecast and 
+        for utcDate which is local time in utc
+    */
+    const parsedUTCDate = Date.parse(utcDate);
+    function findTimeObj(forecast) {
+        const localTimeToUTC = parsedUTCDate;
+        for (let i = 0; i < forecast.length; i++) {
+            if (Date.parse(forecast[i].time) - localTimeToUTC >= 0) {
+                return forecast[i]
+            }
+        }
+        return "time exceeds forecast's limit"
     }
 
     /* clear/rainy function */
@@ -247,43 +300,6 @@ function SurfForecasts({loc}) {
     } */
  
    //stormglass api
-    const lat = loc.location[0]; 
-    const tideLat = loc.tideLocation[0];
-    const lng = loc.location[1];
-    const tideLng = loc.tideLocation[1];
-
-    const utcYear = (new Date()).getUTCFullYear()
-    const utcMonth = (new Date()).getUTCMonth() + 1
-    const utcDay = (new Date()).getUTCDate()
-    const utcHour = (new Date()).getUTCHours()
-
-    function addZero(num) {
-        if (num === 9) {
-            return "0"
-        } else if (num < 10) {
-            return 0
-        }
-        return ""
-    }
-
-    //utcDate is local time in utc in ISO 8601 format (YYYY-MM-DDTHH:mm:ss.sssZ)
-    const utcDate = `${utcYear}-${addZero(utcMonth)}${utcMonth}-${addZero(utcDay)}${utcDay}T${addZero(utcHour)}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
-    console.log(utcDate, "utcDate")
-
-    const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
-
-    const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
-    console.log(tideStart, "tide start")
-
-    //const tideEnd = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay + 1} 00:00`//utcDate + 1 may cause error at end of month
-    //console.log(tideEnd, "tide end")
-
-    const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
-    console.log(start, "start")
-
-    //const histEnd = `2022-9-10 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
-    //console.log(histEnd, "end")
-
     //state change function 
     function getData() {
         console.log("retrieving data...")
@@ -314,16 +330,13 @@ function SurfForecasts({loc}) {
                         ...hour
                     }
                 }) 
-                console.log("weather forecast with ids", weatherIdents)
                 
                 const startingHour = weatherIdents.filter(hour => { //finds hour obj in weatherIdents array that has a time that matches utcDate declared above
                     return hour.time === utcDate
                 }) //starting hour should be 0 bc I called api with start time as local time
-                console.log("weather start hour", startingHour) //startingHour[0].ident = 0
 
                 const additionalHours = 4;
                 const weatherForecastLastId = startingHour[0].ident + additionalHours //weather forecast length in hours (5), zero included
-                console.log("weatherForecastLength", weatherForecastLastId) //starting hour ident value + 4
 
                 const weatherForecast = weatherIdents.filter(hour => { //filters hours from weatherIdents that are between the first and last desired weather hours 
                     return hour.ident >= weatherForecastLastId - additionalHours && hour.ident <= weatherForecastLastId
@@ -343,18 +356,25 @@ function SurfForecasts({loc}) {
                     }
                 })
 
+                const nextTideHour = findTimeObj(tideForecast)
+                console.log(nextTideHour)
+                const idAfterNextTideHour = nextTideHour.ident + 1
+                console.log(tideForecast[idAfterNextTideHour])
+
                 console.log(weatherForecast)
                 console.log(astronomyForecast)
                 console.log(tideForecast)
 
-                const capTide = tideForecast[tideForecast.length - 1].type
+                const capTide = nextTideHour.type
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                 setCloudCover(weatherForecast[0].cloudCover.sg)
                 setFirstLight(astronomyForecast[0].civilDawn)
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
                 setLastLight(astronomyForecast[0].civilDusk)
-                setNextTideTime(tideForecast[tideForecast.length - 1].time)
+                
+                setNextTideTime(nextTideHour.time) //call findTimeObj declared globally
+                
                 setPrecipitation(weatherForecast[0].precipitation.sg)
                 setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
                 setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
@@ -366,8 +386,11 @@ function SurfForecasts({loc}) {
                 setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
                 setSunrise(astronomyForecast[0].sunrise)
                 setSunset(astronomyForecast[0].sunset)
-                setTideHeight(((loc.msl + tideForecast[tideForecast.length - 1].height) * 3.281).toFixed(1)) 
+                
+                setTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1)) 
+                
                 setTideType(capTide[0].toUpperCase() + capTide.substring(1))
+                
                 setVisibility(weatherForecast[0].visibility.sg)
                 setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
                 setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
@@ -384,7 +407,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        getData() //turn off when editing
+        //getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
