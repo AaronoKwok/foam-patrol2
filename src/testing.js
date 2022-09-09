@@ -107,28 +107,42 @@ const add = arr.reduce((a, b) => {
 //console.log(add)
 
 const arrr = [
-    {"num": 1, "id": 0}, 
-    {"num": 5, "id": 1}, 
-    {"num": 10, "id": 2}
+    {"num": 13, "id": 0}, //1.3b
+    {"num": 20, "id": 1}, //2b
+    {"num": 30, "id": 2}, //3b
+    {"num": 50, "id": 3}, //5b
+    {"num": 90, "id": 4}, //9b
+    {"num": 140, "id": 5} //14b
 ]
-
-const addd = arrr.reduce((a, b) => {
-    console.log(a.num + b.num)
-    return a["num"] + b["num"]
-})
-//console.log(typeof addd)
-//does not work bc once arrr[0] and arrr[1] are
-//added, reduce cannot find a.num in their result
-
-//can make arr of values from data
-
-function makeArr(arr) {
-    let newArr = []
+console.log(arrr.length)
+const time = 140; //1.3b 
+function margin(arr) {
+    let margin = 1110; // 100b //should be value larger than largest time in data array
     for (let i = 0; i < arr.length; i++) {
-        newArr.push(arr[i].num)
+        console.log("")
+        console.log("loop index:", i)
+        console.log("margin:", margin)
+        console.log("time", time)
+        console.log("obj.num-time = 0:", arr[i].num - time === 0)   
+        console.log(arr[i], (arr[i].num - time) <= margin, (arr[i].num - time > 0))
+        if ((arr[i].num - time === 0)) {
+            console.log("final margin:", arr[i].num)  
+            margin = arr[i].num
+            return margin
+        } else if ((arr[i].num - time) < margin && (arr[i].num - time > 0)) { //checking if array obj num value minus time is less than margin is not necessary
+            console.log(i+1 === arr.length)
+            if ((i + 1) !== arr.length) { //next arr element is not last in array
+                if (arr[i+1].num - time > arr[i].num - time) {
+                    console.log(arr[i+1].num - time, ">", arr[i].num - time)
+                    return margin = arr[i].num 
+                }  
+            } else { // arr element is last in array
+                console.log("next num:", arr[i].num)
+                return margin = arr[i].num
+            }
+        }
     }
-    return newArr
+    return `${time} exceeds/is too low for provided times or is negative`
 }
-
-//console.log(makeArr(arrr))
+console.log(margin(arrr))
 
