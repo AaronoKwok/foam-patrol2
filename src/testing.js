@@ -109,40 +109,23 @@ const add = arr.reduce((a, b) => {
 const arrr = [
     {"num": 13, "id": 0}, //1.3b
     {"num": 20, "id": 1}, //2b
-    {"num": 30, "id": 2}, //3b
+    {"num": 21, "id": 2}, //3b
     {"num": 50, "id": 3}, //5b
     {"num": 90, "id": 4}, //9b
     {"num": 140, "id": 5} //14b
 ]
-console.log(arrr.length)
-const time = 140; //1.3b 
-function margin(arr) {
-    let margin = 1110; // 100b //should be value larger than largest time in data array
+const time = 90; //1.3b 
+function findTimeObj(arr) {
     for (let i = 0; i < arr.length; i++) {
-        console.log("")
-        console.log("loop index:", i)
-        console.log("margin:", margin)
-        console.log("time", time)
-        console.log("obj.num-time = 0:", arr[i].num - time === 0)   
-        console.log(arr[i], (arr[i].num - time) <= margin, (arr[i].num - time > 0))
-        if ((arr[i].num - time === 0)) {
-            console.log("final margin:", arr[i].num)  
-            margin = arr[i].num
-            return margin
-        } else if ((arr[i].num - time) < margin && (arr[i].num - time > 0)) { //checking if array obj num value minus time is less than margin is not necessary
-            console.log(i+1 === arr.length)
-            if ((i + 1) !== arr.length) { //next arr element is not last in array
-                if (arr[i+1].num - time > arr[i].num - time) {
-                    console.log(arr[i+1].num - time, ">", arr[i].num - time)
-                    return margin = arr[i].num 
-                }  
-            } else { // arr element is last in array
-                console.log("next num:", arr[i].num)
-                return margin = arr[i].num
-            }
+        console.log(i, (arr[i].num - time >= 0))
+        if (arr[i].num - time >= 0) {
+            return arr[i] 
         }
     }
-    return `${time} exceeds/is too low for provided times or is negative`
+    return `${time} exceeds provided times`
 }
-console.log(margin(arrr))
+//console.log(findTimeObj(arrr))
+const correctTime = findTimeObj(arrr)
+console.log(correctTime)
+console.log(correctTime.id * 12)
 
