@@ -129,3 +129,4 @@ const correctTime = findTimeObj(arrr)
 console.log(correctTime)
 console.log(correctTime.id * 12)
 
+const uh = [1, 2, 3, 4, 5]; 

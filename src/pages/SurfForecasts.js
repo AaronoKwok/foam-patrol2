@@ -258,34 +258,40 @@ function SurfForecasts({loc}) {
     const utcHour = (new Date()).getUTCHours()
 
     function addZero(num) {
-        return num < 10 ? 0 : ""
+        if (num === 9) {
+            return "0"
+        } else if (num < 10) {
+            return 0
+        }
+        return ""
     }
 
+    //utcDate is local time in utc in ISO 8601 format (YYYY-MM-DDTHH:mm:ss.sssZ)
     const utcDate = `${utcYear}-${addZero(utcMonth)}${utcMonth}-${addZero(utcDay)}${utcDay}T${addZero(utcHour)}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
     console.log(utcDate, "utcDate")
-    console.log(utcYear, "utcYear")
 
     const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
 
     const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
     console.log(tideStart, "tide start")
-    const tideEnd = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay + 1} 00:00`//utcDate + 1 may cause error at end of month
-    console.log(tideEnd, "tide end")
+
+    //const tideEnd = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay + 1} 00:00`//utcDate + 1 may cause error at end of month
+    //console.log(tideEnd, "tide end")
 
     const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
-    //const start = `2022-9-07 ${utcHour}:00`
     console.log(start, "start")
-    const histEnd = `2022-9-08 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
-    console.log(histEnd, "end")
+
+    //const histEnd = `2022-9-10 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
+    //console.log(histEnd, "end")
 
     //state change function 
     function getData() {
         console.log("retrieving data...")
 
         const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
-        const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}&end=${histEnd}`
-        const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}&end=${histEnd}`
-        const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}&end=${tideEnd}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
+        const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}`
+        const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}`
+        const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         const headers = {
             headers: {
                 'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
@@ -302,21 +308,25 @@ function SurfForecasts({loc}) {
                 console.log(res[1])
                 console.log(res[2])
 
-                const weatherIdents = res[0].data.hours.map((hour, i) => {
+                const weatherIdents = res[0].data.hours.map((hour, i) => { //adds and ident to each hour returned in weather
                     return {
                         "ident": i, 
                         ...hour
                     }
                 }) 
+                console.log("weather forecast with ids", weatherIdents)
                 
-                const startingHour = weatherIdents.filter(hour => { //hour to start
+                const startingHour = weatherIdents.filter(hour => { //finds hour obj in weatherIdents array that has a time that matches utcDate declared above
                     return hour.time === utcDate
-                })
+                }) //starting hour should be 0 bc I called api with start time as local time
+                console.log("weather start hour", startingHour) //startingHour[0].ident = 0
 
-                const weatherForecastLength = startingHour[0].ident + 5 //forecast length
-                
-                const weatherForecast = weatherIdents.filter(hour => { 
-                    return hour.ident >= weatherForecastLength - 5 && hour.ident <= weatherForecastLength
+                const additionalHours = 4;
+                const weatherForecastLastId = startingHour[0].ident + additionalHours //weather forecast length in hours (5), zero included
+                console.log("weatherForecastLength", weatherForecastLastId) //starting hour ident value + 4
+
+                const weatherForecast = weatherIdents.filter(hour => { //filters hours from weatherIdents that are between the first and last desired weather hours 
+                    return hour.ident >= weatherForecastLastId - additionalHours && hour.ident <= weatherForecastLastId
                 })
                 
                 const astronomyForecast = res[1].data.data.map((day, i) => {
@@ -374,7 +384,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        //getData() //turn off when editing
+        getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
