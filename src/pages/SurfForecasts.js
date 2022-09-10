@@ -356,10 +356,21 @@ function SurfForecasts({loc}) {
                     }
                 })
 
+                function bugfix() {
+                    /* 
+                        if Date.parse(utcDate) > nextTideHour's Date.parse(time) {
+
+                        } 
+                    */
+                }
+
                 const nextTideHour = findTimeObj(tideForecast)
                 console.log(nextTideHour)
                 const idAfterNextTideHour = nextTideHour.ident + 1
                 console.log(tideForecast[idAfterNextTideHour])
+                console.log(Date.parse(utcDate), "local to utc")
+                console.log(Date.parse(nextTideHour.time), "nextTide")
+                console.log(Date.parse(tideForecast[idAfterNextTideHour].time), "nextnexttide")
 
                 console.log(weatherForecast)
                 console.log(astronomyForecast)
@@ -407,7 +418,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        //getData() //turn off when editing
+        getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
