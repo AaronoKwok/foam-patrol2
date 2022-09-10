@@ -221,6 +221,22 @@ function SurfForecasts({loc}) {
         return "time exceeds forecast's limit"
     }
 
+    /* find correct tide time */
+    function correctTideTime(tideArray) {
+        const nextHour = findTimeObj(tideArray)
+        if (Date.parse(nextHour.time) < Date.now()) {
+            return tideArray[nextHour.ident + 1]
+        } else {
+            return nextHour
+        }
+    }
+
+    /* calc current tide height */
+    function calcTideHeight(nextTide, tideArray) {
+        //tide changes every 6hrs and 12.5 min = to 22,350,000ms
+    }
+    
+
     /* clear/rainy function */
 
     function findSky(cloudCover, precipitation, visibility) { //rain in mm/h, clouds in decimal
@@ -356,18 +372,7 @@ function SurfForecasts({loc}) {
                     }
                 })
 
-                function correctTideTime() {
-                    const nextHour = findTimeObj(tideForecast); 
-                    console.log(Date.parse(nextHour.time), "next tide")
-                    console.log(Date.now(), "current time")
-                    if (Date.parse(nextHour.time) < Date.now()) {
-                        return tideForecast[nextHour.ident + 1]
-                    } else {
-                        return nextHour
-                    }
-                }
-
-                const nextTideHour = correctTideTime();
+                const nextTideHour = correctTideTime(tideForecast);
                 const capTide = nextTideHour.type
                 
                 console.log(weatherForecast)
@@ -375,6 +380,9 @@ function SurfForecasts({loc}) {
                 console.log(tideForecast)
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
+
+                setCalcTide(calcTideHeight(nextTideHour, tideForecast))
+
                 setCloudCover(weatherForecast[0].cloudCover.sg)
                 setFirstLight(astronomyForecast[0].civilDawn)
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
@@ -409,7 +417,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        getData() //turn off when editing
+        //getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
