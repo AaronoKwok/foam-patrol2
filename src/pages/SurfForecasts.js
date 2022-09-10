@@ -356,36 +356,30 @@ function SurfForecasts({loc}) {
                     }
                 })
 
-                function bugfix() {
-                    /* 
-                        if Date.parse(utcDate) > nextTideHour's Date.parse(time) {
-
-                        } 
-                    */
+                function correctTideTime() {
+                    const nextHour = findTimeObj(tideForecast); 
+                    console.log(Date.parse(nextHour.time), "next tide")
+                    console.log(Date.now(), "current time")
+                    if (Date.parse(nextHour.time) < Date.now()) {
+                        return tideForecast[nextHour.ident + 1]
+                    } else {
+                        return nextHour
+                    }
                 }
 
-                const nextTideHour = findTimeObj(tideForecast)
-                console.log(nextTideHour)
-                const idAfterNextTideHour = nextTideHour.ident + 1
-                console.log(tideForecast[idAfterNextTideHour])
-                console.log(Date.parse(utcDate), "local to utc")
-                console.log(Date.parse(nextTideHour.time), "nextTide")
-                console.log(Date.parse(tideForecast[idAfterNextTideHour].time), "nextnexttide")
-
+                const nextTideHour = correctTideTime();
+                const capTide = nextTideHour.type
+                
                 console.log(weatherForecast)
                 console.log(astronomyForecast)
                 console.log(tideForecast)
-
-                const capTide = nextTideHour.type
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                 setCloudCover(weatherForecast[0].cloudCover.sg)
                 setFirstLight(astronomyForecast[0].civilDawn)
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
                 setLastLight(astronomyForecast[0].civilDusk)
-                
                 setNextTideTime(nextTideHour.time) //call findTimeObj declared globally
-                
                 setPrecipitation(weatherForecast[0].precipitation.sg)
                 setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
                 setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
@@ -397,11 +391,8 @@ function SurfForecasts({loc}) {
                 setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
                 setSunrise(astronomyForecast[0].sunrise)
                 setSunset(astronomyForecast[0].sunset)
-                
                 setTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1)) 
-                
                 setTideType(capTide[0].toUpperCase() + capTide.substring(1))
-                
                 setVisibility(weatherForecast[0].visibility.sg)
                 setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
                 setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))

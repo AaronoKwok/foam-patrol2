@@ -127,6 +127,11 @@ function findTimeObj(arr) {
 console.log(findTimeObj(arrr))
 
 
+const old = Date.now(); 
+const now = Date.now() + 345671; 
+
+console.log(old < now)
+console.log(old, now)
 
 
 
