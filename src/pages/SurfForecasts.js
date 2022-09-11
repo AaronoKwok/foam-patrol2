@@ -234,6 +234,28 @@ function SurfForecasts({loc}) {
     /* calc current tide height */
     function calcTideHeight(nextTide, tideArray) {
         //tide changes every 6hrs and 12.5 min = to 22,350,000ms
+        //need tide height from last hour and tide height of next hour
+            //tideArray[nextTide.ident - 1].height + loc.msl * 3.281 //previous height
+            //nextTide.height + loc.msl * 3.281 //next height
+        // Date.parse(prev time)
+        // Date.parse(next time)
+        //find difference between prev/next time
+        //find height difference between prev/next tide
+        //for both height and time, divide by number of desired intervals
+        //create array of objects {time: time in ms, height}
+        //based on time, find next obj in array and return height
+            //if next tide is low, subtract height increment
+            //if next tide is high, add height increment
+            //add time in ms based on difference divided by desired interval
+            //return obj.height
+        console.log((tideArray[nextTide.ident - 1].height + loc.msl) * 3.281, "prev tide height")
+        console.log((nextTide.height + loc.msl) * 3.281, "next tide height")
+        console.log((tideArray[nextTide.ident - 1].time), "prev tide time")
+        console.log(Date.parse(tideArray[nextTide.ident - 1].time), "prev tide time")
+        console.log(Date.parse(nextTide.time), "next tide time")
+        console.log(Date.now(), "current time")
+        console.log((Date.parse(nextTide.time) - Date.parse(tideArray[nextTide.ident - 1].time)), "difference between times")
+        function tideDifference
     }
     
 
