@@ -255,7 +255,23 @@ function SurfForecasts({loc}) {
         console.log(Date.parse(nextTide.time), "next tide time")
         console.log(Date.now(), "current time")
         console.log((Date.parse(nextTide.time) - Date.parse(tideArray[nextTide.ident - 1].time)), "difference between times")
-        function tideDifference
+        function tideDifference() {
+            const prevTide = (tideArray[nextTide.ident - 1].height + loc.msl) * 3.281; 
+            const followTide = (nextTide.height + loc.msl) * 3.281;
+            if (prevTide < 0) {
+                return followTide - prevTide
+            } else if (followTide < 0) {
+                return prevTide - followTide
+            } else if (prevTide < followTide) {
+                return followTide - prevTide
+            } else {
+                return prevTide - followTide
+            }
+        }
+        console.log(tideDifference(), "difference between tides")
+        console.log(((Date.parse(nextTide.time) - Date.parse(tideArray[nextTide.ident - 1].time)) / 60), "time diff divided by 60") //interval / 60 =~ 10 min intervals
+        console.log(tideDifference() / 60, "height diff / 60, like time")
+        //change height on interval
     }
     
 
@@ -439,7 +455,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        //getData() //turn off when editing
+        getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
