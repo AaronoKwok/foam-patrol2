@@ -265,9 +265,9 @@ function SurfForecasts({loc}) {
 
             function minOrAdd() {
                 if (prevTideType === "low") {
-                    return tideChange + heightInterval
+                    return tideChange += heightInterval
                 } else {
-                    return tideChange - heightInterval
+                    return tideChange -= heightInterval
                 }
             } 
             
@@ -275,22 +275,24 @@ function SurfForecasts({loc}) {
                 timeHeightArr.push({
                     ident: i, 
                     tide: minOrAdd(), 
-                    time: timeChange + timeInterval
+                    time: timeChange += timeInterval
                 })
             }
             return timeHeightArr
         }
 
-        function correctTime(timeHeightArr) {
-            for (let i = 0; i < timeHeightArr; i++) {
+        function currentTideHeight(timeHeightArr) {
+            console.log(timeHeightArr.length)
+            for (let i = 0; i < timeHeightArr.length; i++) {
                 if (timeHeightArr[i].time - currentTime >= 0) {
-                    return (timeHeightArr[i].time).toFixed(1)
+                    return timeHeightArr[i].tide.toFixed(1)
                 }
             }
+            return "N/A"
         }
         console.log(timeHeight())
-        console.log(correctTime(timeHeight()))
-        return correctTime(timeHeight())
+        console.log(currentTideHeight(timeHeight()))
+        return currentTideHeight(timeHeight())
 
          // currently returns an object which can't be displayed as screen
     }
