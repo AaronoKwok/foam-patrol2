@@ -88,8 +88,6 @@ function SurfForecasts({loc}) {
 
     //utcDate is local time in utc in ISO 8601 format (YYYY-MM-DDTHH:mm:ss.sssZ)
     const utcDate = `${utcYear}-${addZero(utcMonth)}${utcMonth}-${addZero(utcDay)}${utcDay}T${addZero(utcHour)}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
-    console.log(utcDate, "utcDate")
-    console.log(Date.parse(utcDate))
 
     const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
 
@@ -180,7 +178,6 @@ function SurfForecasts({loc}) {
         if (nextTideTime === loading) {
             return loading
         } else {
-            console.log("ampm ran")
             const toUTC = new Date(nextTideTime)
             const localTimeStr = toUTC.toString()
             const timeArr = localTimeStr.split(" ")
@@ -214,11 +211,9 @@ function SurfForecasts({loc}) {
         converted to ms using Date.parse() for ISO 8601 times in returned forecast and 
         for utcDate which is local time in utc
     */
-    const parsedUTCDate = Date.parse(utcDate);
     function correctTideTime(forecast) {
-        const localTimeToUTC = parsedUTCDate;
         for (let i = 0; i < forecast.length; i++) {
-            if (Date.parse(forecast[i].time) - localTimeToUTC >= 0) {
+            if (Date.parse(forecast[i].time) - Date.now() >= 0) {
                 return forecast[i]
             }
         }
@@ -278,9 +273,9 @@ function SurfForecasts({loc}) {
             for (let i = 0; i < timeHeightArr.length; i++) {
                 if (timeHeightArr[i].time - currentTime >= 0) {
                     return timeHeightArr[i].tide.toFixed(1)
-                }
+                } 
             }
-            return "N/A"
+            return timeHeightArr[timeHeightArr.length - 1].tide.toFixed(1)
         }
         return currentTideHeight(timeHeight())
 
@@ -289,7 +284,6 @@ function SurfForecasts({loc}) {
 
     /* tide up or down image */
     function upOrDown(tide) {
-        console.log(tide, "up/odwn")
         if (tide === "High") {
             return up
         } else if (tide === "Low") {
@@ -343,9 +337,9 @@ function SurfForecasts({loc}) {
         } else if (height === 3) {
             return "Ankle to knee"
         } else if (height === 4) {
-            return "Knee to thigh"
+            return "Knee to waist"
         } else if (height === 5) {
-            return "Thigh to chest"
+            return "Waist to chest"
         } else if (height === 6) {
             return "Chest to head"
         } else if (height > 6 && height < 8) {
@@ -380,7 +374,7 @@ function SurfForecasts({loc}) {
     function getData() {
         console.log("retrieving data...")
 
-        const weatherParams = 'airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
+        const weatherParams = 'seaLevel,airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
         const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}`
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
