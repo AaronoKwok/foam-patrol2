@@ -11,6 +11,8 @@ import swellDirectionIcon from "../images/swellDirection.jpeg"
 import tideIcon from "../images/tide.jpeg"
 import windIcon from "../images/wind.jpeg"
 import seaIcon from "../images/seaIcon.svg"
+import up from "../images/up.jpeg"
+import down from "../images/down.jpeg"
 
 //weather svgs
 import clearDAY from "../images/weather/clearDAY.svg"
@@ -245,7 +247,7 @@ function SurfForecasts({loc}) {
         }
 
         const tideHeightDifference = tideDifference()
-        const interval = 30
+        const interval = 60
         const timeInterval = timeDifference / interval
         const heightInterval = tideHeightDifference / interval
         
@@ -273,7 +275,6 @@ function SurfForecasts({loc}) {
         }
 
         function currentTideHeight(timeHeightArr) {
-            console.log(timeHeightArr.length)
             for (let i = 0; i < timeHeightArr.length; i++) {
                 if (timeHeightArr[i].time - currentTime >= 0) {
                     return timeHeightArr[i].tide.toFixed(1)
@@ -281,14 +282,21 @@ function SurfForecasts({loc}) {
             }
             return "N/A"
         }
-        console.log(timeHeight())
         return currentTideHeight(timeHeight())
 
          // currently returns an object which can't be displayed as screen
     }
 
+    /* tide up or down image */
+    function upOrDown(tide) {
+        console.log(tide, "up/odwn")
+        if (tide === "High") {
+            return up
+        } else if (tide === "Low") {
+            return down
+        }
+    }
     
-
     /* clear/rainy function */
 
     function findSky(cloudCover, precipitation, visibility) { //rain in mm/h, clouds in decimal
@@ -504,7 +512,7 @@ function SurfForecasts({loc}) {
                             <div className="data-box">
                                 <p className="type-name">Tide</p>
                                 <hr className="data-hr"/>
-                                <p className="current-data-point">{calcTide}<span className="data-span">ft</span></p>
+                                <p className="current-data-point">{calcTide}<span className="data-span">ft</span><span><img className="up-down-arrow" src={upOrDown(tideType)} alt =""/></span></p>
                                 <p className="data-description">{tideType} tide {tideHeight}ft at {ampm(nextTideTime)}</p>
                             </div>
                             <div className="data-box">
