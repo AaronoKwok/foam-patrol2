@@ -100,7 +100,7 @@ console.log(utcTime)
 
 //Reduce method
 
-const arr = [1, 2, 3, 4]
+/* const arr = [1, 2, 3, 4]
 const add = arr.reduce((a, b) => {
     return a + b
 })
@@ -131,7 +131,11 @@ const old = Date.now();
 const now = Date.now() + 345671; 
 
 console.log(old < now)
-console.log(old, now)
+console.log(old, now) */
+
+const arr = []
+arr.push({id: 1, "height": 233455})
+console.log(arr)
 
 
 

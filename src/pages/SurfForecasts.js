@@ -233,46 +233,68 @@ function SurfForecasts({loc}) {
 
     /* calc current tide height */
     function calcTideHeight(nextTide, tideArray) {
-        //tide changes every 6hrs and 12.5 min = to 22,350,000ms
-        //need tide height from last hour and tide height of next hour
-            //tideArray[nextTide.ident - 1].height + loc.msl * 3.281 //previous height
-            //nextTide.height + loc.msl * 3.281 //next height
-        // Date.parse(prev time)
-        // Date.parse(next time)
-        //find difference between prev/next time
-        //find height difference between prev/next tide
-        //for both height and time, divide by number of desired intervals
-        //create array of objects {time: time in ms, height}
-        //based on time, find next obj in array and return height
-            //if next tide is low, subtract height increment
-            //if next tide is high, add height increment
-            //add time in ms based on difference divided by desired interval
-            //return obj.height
-        console.log((tideArray[nextTide.ident - 1].height + loc.msl) * 3.281, "prev tide height")
-        console.log((nextTide.height + loc.msl) * 3.281, "next tide height")
-        console.log((tideArray[nextTide.ident - 1].time), "prev tide time")
-        console.log(Date.parse(tideArray[nextTide.ident - 1].time), "prev tide time")
-        console.log(Date.parse(nextTide.time), "next tide time")
-        console.log(Date.now(), "current time")
-        console.log((Date.parse(nextTide.time) - Date.parse(tideArray[nextTide.ident - 1].time)), "difference between times")
+        const prevTideHeight = (tideArray[nextTide.ident - 1].height + loc.msl) * 3.281
+        const prevTideType = tideArray[nextTide.ident - 1].type
+        const nextTideHeight = (nextTide.height + loc.msl) * 3.281
+        const prevTideTime = Date.parse(tideArray[nextTide.ident - 1].time)
+        const nextTideTime = Date.parse(nextTide.time)
+        const currentTime = Date.now()
+        const timeDifference = Date.parse(nextTide.time) - Date.parse(tideArray[nextTide.ident - 1].time)
+
         function tideDifference() {
-            const prevTide = (tideArray[nextTide.ident - 1].height + loc.msl) * 3.281; 
-            const followTide = (nextTide.height + loc.msl) * 3.281;
-            if (prevTide < 0) {
-                return followTide - prevTide
-            } else if (followTide < 0) {
-                return prevTide - followTide
-            } else if (prevTide < followTide) {
-                return followTide - prevTide
+            if (prevTideHeight < 0) {
+                return nextTideHeight - prevTideHeight
+            } else if (nextTideHeight < 0) {
+                return prevTideHeight - nextTideHeight
+            } else if (prevTideHeight < nextTideHeight) {
+                return nextTideHeight - prevTideHeight
             } else {
-                return prevTide - followTide
+                return prevTideHeight - nextTideHeight
             }
         }
-        console.log(tideDifference(), "difference between tides")
-        console.log(((Date.parse(nextTide.time) - Date.parse(tideArray[nextTide.ident - 1].time)) / 60), "time diff divided by 60") //interval / 60 =~ 10 min intervals
-        console.log(tideDifference() / 60, "height diff / 60, like time")
-        //change height on interval
+
+        const tideHeightDifference = tideDifference()
+        const interval = 60
+        const timeInterval = timeDifference / interval
+        const heightInterval = tideHeightDifference / interval
+        
+        function timeHeight() {
+            const timeHeightArr = [];
+            let timeChange = prevTideTime
+            let tideChange = prevTideHeight
+
+            function minOrAdd() {
+                if (prevTideType === "low") {
+                    return tideChange + heightInterval
+                } else {
+                    return tideChange - heightInterval
+                }
+            } 
+            
+            for (let i = 0; i < interval; i++) {
+                timeHeightArr.push({
+                    ident: i, 
+                    tide: minOrAdd(), 
+                    time: timeChange + timeInterval
+                })
+            }
+            return timeHeightArr
+        }
+
+        function correctTime(timeHeightArr) {
+            for (let i = 0; i < timeHeightArr; i++) {
+                if (timeHeightArr[i].time - currentTime >= 0) {
+                    return (timeHeightArr[i].time).toFixed(1)
+                }
+            }
+        }
+        console.log(timeHeight())
+        console.log(correctTime(timeHeight()))
+        return correctTime(timeHeight())
+
+         // currently returns an object which can't be displayed as screen
     }
+
     
 
     /* clear/rainy function */
@@ -420,7 +442,8 @@ function SurfForecasts({loc}) {
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
 
                 setCalcTide(calcTideHeight(nextTideHour, tideForecast))
-
+                //console.log(calcTideHeight(nextTideHour, tideForecast))
+                console.log('test')
                 setCloudCover(weatherForecast[0].cloudCover.sg)
                 setFirstLight(astronomyForecast[0].civilDawn)
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
