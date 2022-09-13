@@ -185,9 +185,11 @@ function SurfForecasts({loc}) {
             const snipArr = timeArr.slice(1, 5)
             const joinTimeArr = snipArr.join(" ")
             const newTimeStr = new Date(joinTimeArr)
-            const hrs = newTimeStr.getHours()
+            let hrs = newTimeStr.getHours()
             const mins = newTimeStr.getMinutes()
-            
+            if (hrs === 0) {
+                hrs = 12
+            } //note, else is optional in js
             if (hrs > 12) {
                 if (mins < 10) {
                     return `${hrs - 12}:0${mins}pm`
@@ -206,12 +208,12 @@ function SurfForecasts({loc}) {
 
     /* find time in tide */
     /* 
-        next high tide: use findTimeObj() to find next tide in tideForecast using times 
+        next high tide: use correctTideTime() to find next tide in tideForecast using times 
         converted to ms using Date.parse() for ISO 8601 times in returned forecast and 
         for utcDate which is local time in utc
     */
     const parsedUTCDate = Date.parse(utcDate);
-    function findTimeObj(forecast) {
+    function correctTideTime(forecast) {
         const localTimeToUTC = parsedUTCDate;
         for (let i = 0; i < forecast.length; i++) {
             if (Date.parse(forecast[i].time) - localTimeToUTC >= 0) {
@@ -221,23 +223,12 @@ function SurfForecasts({loc}) {
         return "time exceeds forecast's limit"
     }
 
-    /* find correct tide time */
-    function correctTideTime(tideArray) {
-        const nextHour = findTimeObj(tideArray)
-        if (Date.parse(nextHour.time) < Date.now()) {
-            return tideArray[nextHour.ident + 1]
-        } else {
-            return nextHour
-        }
-    }
-
     /* calc current tide height */
     function calcTideHeight(nextTide, tideArray) {
         const prevTideHeight = (tideArray[nextTide.ident - 1].height + loc.msl) * 3.281
         const prevTideType = tideArray[nextTide.ident - 1].type
         const nextTideHeight = (nextTide.height + loc.msl) * 3.281
         const prevTideTime = Date.parse(tideArray[nextTide.ident - 1].time)
-        const nextTideTime = Date.parse(nextTide.time)
         const currentTime = Date.now()
         const timeDifference = Date.parse(nextTide.time) - Date.parse(tideArray[nextTide.ident - 1].time)
 
@@ -254,7 +245,7 @@ function SurfForecasts({loc}) {
         }
 
         const tideHeightDifference = tideDifference()
-        const interval = 60
+        const interval = 30
         const timeInterval = timeDifference / interval
         const heightInterval = tideHeightDifference / interval
         
@@ -291,7 +282,6 @@ function SurfForecasts({loc}) {
             return "N/A"
         }
         console.log(timeHeight())
-        console.log(currentTideHeight(timeHeight()))
         return currentTideHeight(timeHeight())
 
          // currently returns an object which can't be displayed as screen
@@ -444,13 +434,11 @@ function SurfForecasts({loc}) {
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
 
                 setCalcTide(calcTideHeight(nextTideHour, tideForecast))
-                //console.log(calcTideHeight(nextTideHour, tideForecast))
-                console.log('test')
                 setCloudCover(weatherForecast[0].cloudCover.sg)
                 setFirstLight(astronomyForecast[0].civilDawn)
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
                 setLastLight(astronomyForecast[0].civilDusk)
-                setNextTideTime(nextTideHour.time) //call findTimeObj declared globally
+                setNextTideTime(nextTideHour.time) 
                 setPrecipitation(weatherForecast[0].precipitation.sg)
                 setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
                 setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
