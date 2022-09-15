@@ -92,7 +92,47 @@ function SurfForecasts({loc}) {
     const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
 
     //const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
-    const tideStart = `2022-9-14 23:17`
+    //const tideStart = `2022-9-15 00:01`
+
+    function tideStart() {
+        const offset = loc.timezoneOffset / 60
+        const date = new Date()
+        const localTime = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours() - offset, date.getUTCMinutes(), date.getUTCSeconds())
+        const timeString = new Date(localTime).toUTCString()
+        const timeArr = timeString.split(" ")
+        const hrMinArr = timeArr[4].split(":")
+        function determineMonth(month) {
+            if (month === "Jan") {
+                return 1
+            } else if (month === "Feb") {
+                return 2
+            } else if (month === "Mar") {
+                return 3
+            } else if (month === "Apr") {
+                return 4
+            } else if (month === "May") {
+                return 5
+            } else if (month === "Jun") {
+                return 6
+            } else if (month === "Jul") {
+                return 7
+            } else if (month === "Aug") {
+                return 8
+            } else if (month === "Sep") {
+                return 9
+            } else if (month === "Oct") {
+                return 10
+            } else if (month === "Nov") {
+                return 11
+            } else {
+                return 12
+            }
+        }   
+    
+        return `${timeArr[3]}-${determineMonth(timeArr[2])}-${timeArr[1]} ${hrMinArr[0]}:${hrMinArr[1]}`
+    
+    }
+
     /* 
         change tideStart variable name to utc something
         place ms offset in location data
@@ -101,7 +141,7 @@ function SurfForecasts({loc}) {
         return new tide start with timezone offset
             should include unincluded times in old timestart now
      */
-    console.log(tideStart, "tide start")
+    console.log(tideStart(), "tide start")
 
     //const tideEnd = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay + 1} 00:00`//utcDate + 1 may cause error at end of month
     //console.log(tideEnd, "tide end")
@@ -393,7 +433,7 @@ function SurfForecasts({loc}) {
         const weatherParams = 'seaLevel,airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
         const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}`
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}`
-        const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
+        const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart()}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         const headers = {
             headers: {
                 'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'

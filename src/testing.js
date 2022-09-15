@@ -150,6 +150,46 @@ const test = Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCD
 console.log(test)
 //console.log(new Date(test).toString())
 console.log(new Date(test).toUTCString().split(" "))
+
+function tideStart() {
+    const offset = new Date().getTimezoneOffset()
+    const date = new Date()
+    const localTime = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours() - offset / 60, date.getUTCMinutes(), date.getUTCSeconds())
+    const timeString = new Date(localTime).toUTCString()
+    const timeArr = timeString.split(" ")
+    const hrMinArr = timeArr[4].split(":")
+    function determineMonth(month) {
+        if (month === "Jan") {
+            return 1
+        } else if (month === "Feb") {
+            return 2
+        } else if (month === "Mar") {
+            return 3
+        } else if (month === "Apr") {
+            return 4
+        } else if (month === "May") {
+            return 5
+        } else if (month === "Jun") {
+            return 6
+        } else if (month === "Jul") {
+            return 7
+        } else if (month === "Aug") {
+            return 8
+        } else if (month === "Sep") {
+            return 9
+        } else if (month === "Oct") {
+            return 10
+        } else if (month === "Nov") {
+            return 11
+        } else {
+            return 12
+        }
+    }   
+
+    return `${timeArr[3]}-${determineMonth(timeArr[2])}-${timeArr[1]} ${hrMinArr[0]}:${hrMinArr[1]}`
+
+}
+console.log(tideStart())
   
 
 
