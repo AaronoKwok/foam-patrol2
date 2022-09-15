@@ -92,6 +92,15 @@ function SurfForecasts({loc}) {
     const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
 
     const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
+    //tideStart = `2022-9-14 00:00`
+    /* 
+        change tideStart variable name to utc something
+        place ms offset in location data
+        subtract offset from tideStart
+        convert to string split, then remove wanted parts then join
+        return new tide start with timezone offset
+            should include unincluded times in old timestart now
+     */
     console.log(tideStart, "tide start")
 
     //const tideEnd = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay + 1} 00:00`//utcDate + 1 may cause error at end of month
@@ -178,6 +187,7 @@ function SurfForecasts({loc}) {
         if (nextTideTime === loading) {
             return loading
         } else {
+            console.log(nextTideTime)
             const toUTC = new Date(nextTideTime)
             const localTimeStr = toUTC.toString()
             const timeArr = localTimeStr.split(" ")
@@ -212,8 +222,10 @@ function SurfForecasts({loc}) {
         for utcDate which is local time in utc
     */
     function correctTideTime(forecast) {
+        console.log(forecast, "correctTideTime forecase")
         for (let i = 0; i < forecast.length; i++) {
             if (Date.parse(forecast[i].time) - Date.now() >= 0) {
+                console.log(forecast[i])
                 return forecast[i]
             }
         }
@@ -223,6 +235,10 @@ function SurfForecasts({loc}) {
     /* calc current tide height */
     function calcTideHeight(nextTide, tideArray) {
         const prevTideHeight = (tideArray[nextTide.ident - 1].height + loc.msl) * 3.281
+        /* 
+            if nextTide is the first obj tideforecast, nextTide.ident - 1 won't exist
+            - can fix by changing tide start time
+        */
         const prevTideType = tideArray[nextTide.ident - 1].type
         const nextTideHeight = (nextTide.height + loc.msl) * 3.281
         const prevTideTime = Date.parse(tideArray[nextTide.ident - 1].time)
@@ -470,7 +486,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        getData() //turn off when editing
+        //getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 

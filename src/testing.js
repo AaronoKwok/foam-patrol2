@@ -133,7 +133,22 @@ const now = Date.now() + 345671;
 console.log(old < now)
 console.log(old, now) */
 
-console.log((1663043436000-1663043068000)/1000/60)
+
+
+//const offset = new Date().getTimezoneOffset()
+//const timezoneOffset = offset / 60
+const local = new Date() 
+console.log(local, "utc time")
+const utc = new Date(Date.UTC(local.getFullYear(), local.getMonth(), local.getDate(), local.getHours(), local.getMinutes(), local.getSeconds()))
+console.log(utc, "local time")
+console.log(Date.UTC(local.getFullYear(), local.getMonth(), local.getDate(), local.getHours(), local.getMinutes(), local.getSeconds()), "local ms")
+console.log(Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDate(), local.getUTCHours(), local.getUTCMinutes(), local.getUTCSeconds()), "utc ms")
+console.log(Date.now(), "utc ms, no change") //same as utc ms but cant change
+console.log(utc.getTime(), "local ms, no change") //same as local ms above but can't change values
+
+const test = Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDate(), local.getUTCHours() - 7, local.getUTCMinutes(), local.getUTCSeconds())
+console.log(new Date(test))
+
 
 
 
