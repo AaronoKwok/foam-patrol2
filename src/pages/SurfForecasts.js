@@ -91,8 +91,8 @@ function SurfForecasts({loc}) {
 
     const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
 
-    const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
-    //tideStart = `2022-9-14 00:00`
+    //const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
+    const tideStart = `2022-9-14 23:17`
     /* 
         change tideStart variable name to utc something
         place ms offset in location data
@@ -486,7 +486,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        //getData() //turn off when editing
+        getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
