@@ -133,9 +133,7 @@ const now = Date.now() + 345671;
 console.log(old < now)
 console.log(old, now) */
 
-
-
-const offset = new Date().getTimezoneOffset()
+/* const offset = new Date().getTimezoneOffset()
 const timezoneOffset = (offset / 60) 
 const local = new Date() 
 console.log(local, "utc time")
@@ -149,9 +147,9 @@ console.log(Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDa
 const test = Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDate(), local.getUTCHours() - timezoneOffset, local.getUTCMinutes(), local.getUTCSeconds())
 console.log(test)
 //console.log(new Date(test).toString())
-console.log(new Date(test).toUTCString().split(" "))
+console.log(new Date(test).toUTCString().split(" ")) */
 
-function tideStart() {
+/* function tideStart() {
     const offset = new Date().getTimezoneOffset()
     const date = new Date()
     const localTime = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours() - offset / 60, date.getUTCMinutes(), date.getUTCSeconds())
@@ -189,8 +187,33 @@ function tideStart() {
     return `${timeArr[3]}-${determineMonth(timeArr[2])}-${timeArr[1]} ${hrMinArr[0]}:${hrMinArr[1]}`
 
 }
-console.log(tideStart())
-  
+console.log(tideStart()) */
+
+const ms = new Date().getTime()
+console.log(ms)
+const testt = new Date("2022-09-07T22:00:00+00:00") //ISO time from first/last light
+console.log(testt.getTime())
+
+const cloudCover = 5.67;
+const precipitation = 0; 
+const visibility = 24.13; 
+const firstLight = "2022-09-15T13:27:04+00:00"; 
+const lastLight = "2022-09-16T02:46:10+00:00"; 
+function findSky(clouds, rain, visible, light, dark) { //rain in mm/h, clouds in decimal, lights time converted to ms
+    /* if (clouds === loading) {
+        return undefined
+    } */
+    const sunny = 0.30;
+    const partlyCloudy = 0.70
+    const cloudy = 0.95
+    const overcast = 1
+
+
+
+    return "clearDAY"
+}
+console.log(findSky(cloudCover, precipitation, visibility, firstLight, lastLight))
+
 
 
 

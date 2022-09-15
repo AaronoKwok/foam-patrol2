@@ -89,10 +89,7 @@ function SurfForecasts({loc}) {
     //utcDate is local time in utc in ISO 8601 format (YYYY-MM-DDTHH:mm:ss.sssZ)
     const utcDate = `${utcYear}-${addZero(utcMonth)}${utcMonth}-${addZero(utcDay)}${utcDay}T${addZero(utcHour)}${utcHour}:00:00+00:00`  // format is 0digit:00 if utc hour is less than 10
 
-    const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10
-
-    //const tideStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} 00:00`
-    //const tideStart = `2022-9-15 00:01`
+    const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10;;; utc from local time
 
     function tideStart() {
         const offset = loc.timezoneOffset / 60
@@ -101,6 +98,7 @@ function SurfForecasts({loc}) {
         const timeString = new Date(localTime).toUTCString()
         const timeArr = timeString.split(" ")
         const hrMinArr = timeArr[4].split(":")
+
         function determineMonth(month) {
             if (month === "Jan") {
                 return 1
@@ -128,29 +126,12 @@ function SurfForecasts({loc}) {
                 return 12
             }
         }   
-    
         return `${timeArr[3]}-${determineMonth(timeArr[2])}-${timeArr[1]} ${hrMinArr[0]}:${hrMinArr[1]}`
-    
     }
 
-    /* 
-        change tideStart variable name to utc something
-        place ms offset in location data
-        subtract offset from tideStart
-        convert to string split, then remove wanted parts then join
-        return new tide start with timezone offset
-            should include unincluded times in old timestart now
-     */
     console.log(tideStart(), "tide start")
-
-    //const tideEnd = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay + 1} 00:00`//utcDate + 1 may cause error at end of month
-    //console.log(tideEnd, "tide end")
-
     const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
     console.log(start, "start")
-
-    //const histEnd = `2022-9-10 ${utcHour}:00` //time format is 00:00, need 0 if hour is less than 10
-    //console.log(histEnd, "end")
 
     /* ability level */
     function isBlue(lvl) {
@@ -223,11 +204,11 @@ function SurfForecasts({loc}) {
     }
 
     /* ampm start */
-    function ampm(nextTideTime) {
+    /* function ampm(nextTideTime) {
         if (nextTideTime === loading) {
             return loading
         } else {
-            console.log(nextTideTime)
+            console.log(nextTideTime, "nextTideTime")
             const toUTC = new Date(nextTideTime)
             const localTimeStr = toUTC.toString()
             const timeArr = localTimeStr.split(" ")
@@ -235,10 +216,18 @@ function SurfForecasts({loc}) {
             const joinTimeArr = snipArr.join(" ")
             const newTimeStr = new Date(joinTimeArr)
             let hrs = newTimeStr.getHours()
+            console.log(hrs, "tide hrs")
             const mins = newTimeStr.getMinutes()
             if (hrs === 0) {
                 hrs = 12
             } //note, else is optional in js
+            if (hrs === 12) {
+                if (mins < 10) {
+                    return `${hrs}:0${mins}pm`
+                } else {
+                    return `${hrs}:${mins}pm`
+                }
+            }
             if (hrs > 12) {
                 if (mins < 10) {
                     return `${hrs - 12}:0${mins}pm`
@@ -250,6 +239,91 @@ function SurfForecasts({loc}) {
                     return `${hrs}:0${mins}am`
                 } else {
                     return `${hrs}:${mins}am`
+                }
+            }
+        }
+    } */
+
+    function determineTideTime(nextTideTime) {
+        if (nextTideTime === loading) {
+            return loading
+        }  else {
+            const iso = new Date(nextTideTime)
+            let offset = loc.timezoneOffset / 60;
+            if (loc.state === "Hawaii") {
+                offset -= 2
+            }
+            const localTime = Date.UTC(iso.getUTCFullYear(), iso.getUTCMonth(), iso.getUTCDate(), iso.getUTCHours() - offset, iso.getUTCMinutes(), iso.getUTCSeconds())
+            const newStr = new Date(localTime).toUTCString()
+            const splitStr = newStr.split(" ")
+            const hrMin = splitStr[4].split(":")
+            let hr = hrMin[0]
+            const min = hrMin[1]
+            if (hr === 0) {
+                hr = 12
+            }
+            if (hr < 12) {
+               hr = hr.slice(1)
+            }
+            if (hr === 12) {
+                if (min < 10) {
+                    return `${hr}:0${min}pm`
+                } else {
+                    return `${hr}:${min}pm`
+                }
+            }
+            if (hr > 12) {
+                if (min < 10) {
+                    return `${hr - 12}:0${min}pm`
+                } else {
+                    return `${hr - 12}:${min}pm`
+                }
+            } else {
+                if (min < 10) {
+                    return `${hr}:0${min}am`
+                } else {
+                    return `${hr}:${min}am`
+                }
+            }
+        }
+    }
+
+    function ampm(nextTideTime) {
+        if (nextTideTime === loading) {
+            return loading
+        }  else {
+            const iso = new Date(nextTideTime)
+            const offset = loc.timezoneOffset / 60; 
+            const localTime = Date.UTC(iso.getUTCFullYear(), iso.getUTCMonth(), iso.getUTCDate(), iso.getUTCHours() - offset, iso.getUTCMinutes(), iso.getUTCSeconds())
+            const newStr = new Date(localTime).toUTCString()
+            const splitStr = newStr.split(" ")
+            const hrMin = splitStr[4].split(":")
+            let hr = hrMin[0]
+            const min = hrMin[1]
+            if (hr === 0) {
+                hr = 12
+            }
+            if (hr < 12) {
+               hr = hr.slice(1)
+            }
+            if (hr === 12) {
+                if (min < 10) {
+                    return `${hr}:0${min}pm`
+                } else {
+                    return `${hr}:${min}pm`
+                }
+            }
+            if (hr > 12) {
+                if (min < 10) {
+                    return `${hr - 12}:0${min}pm`
+                } else {
+                    return `${hr - 12}:${min}pm`
+                }
+            } else {
+                if (min < 10) {
+                    return `${hr}:0${min}am`
+                } else {
+                    return `${hr}:${min}am`
                 }
             }
         }
@@ -349,8 +423,8 @@ function SurfForecasts({loc}) {
     
     /* clear/rainy function */
 
-    function findSky(cloudCover, precipitation, visibility) { //rain in mm/h, clouds in decimal
-        if (cloudCover === loading) {
+    function findSky(clouds, rain, visible, light, dark) { //rain in mm/h, clouds in decimal, lights time converted to ms
+        if (clouds === loading) {
             return undefined
         }
         const sunny = 0.30;
@@ -431,8 +505,8 @@ function SurfForecasts({loc}) {
         console.log("retrieving data...")
 
         const weatherParams = 'seaLevel,airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
-        const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${start}`
-        const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${start}`
+        const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${tideStart()}`
+        const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart()}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart()}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         const headers = {
             headers: {
@@ -486,17 +560,22 @@ function SurfForecasts({loc}) {
                 const capTide = nextTideHour.type
                 
                 console.log(weatherForecast)
+                console.log(weatherForecast[0], "used")
                 console.log(astronomyForecast)
                 console.log(tideForecast)
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
 
                 setCalcTide(calcTideHeight(nextTideHour, tideForecast))
+                
                 setCloudCover(weatherForecast[0].cloudCover.sg)
+                
                 setFirstLight(astronomyForecast[0].civilDawn)
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
+                
                 setLastLight(astronomyForecast[0].civilDusk)
                 setNextTideTime(nextTideHour.time) 
+                
                 setPrecipitation(weatherForecast[0].precipitation.sg)
                 setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
                 setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
@@ -510,6 +589,7 @@ function SurfForecasts({loc}) {
                 setSunset(astronomyForecast[0].sunset)
                 setTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1)) 
                 setTideType(capTide[0].toUpperCase() + capTide.substring(1))
+                
                 setVisibility(weatherForecast[0].visibility.sg)
                 setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
                 setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
@@ -563,7 +643,7 @@ function SurfForecasts({loc}) {
                                 <p className="type-name">Tide</p>
                                 <hr className="data-hr"/>
                                 <p className="current-data-point">{calcTide}<span className="data-span">ft</span><span><img className="up-down-arrow" src={upOrDown(tideType)} alt =""/></span></p>
-                                <p className="data-description">{tideType} tide {tideHeight}ft at {ampm(nextTideTime)}</p>
+                                <p className="data-description">{tideType} tide {tideHeight}ft at {determineTideTime(nextTideTime)}</p>
                             </div>
                             <div className="data-box">
                                 <p className="type-name">Wind</p>
@@ -596,7 +676,7 @@ function SurfForecasts({loc}) {
                                 <p className="type-name">Weather</p>
                                 <hr className="data-hr"/>
                                 <div className="icon-data-box">
-                                    <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility)} alt=""/>
+                                    <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt=""/>
                                     <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
                                 </div>
                             </div>
