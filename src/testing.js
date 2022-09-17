@@ -189,30 +189,156 @@ console.log(new Date(test).toUTCString().split(" ")) */
 }
 console.log(tideStart()) */
 
-const ms = new Date().getTime()
-console.log(ms)
-const testt = new Date("2022-09-07T22:00:00+00:00") //ISO time from first/last light
-console.log(testt.getTime())
+const cloudCover = 20;
+const precipitation = 8.9; 
+const visibility = 7.14; 
+const firstLight = new Date("2022-09-16T13:26:14+00:00").getTime(); 
+const lastLight = new Date("2022-09-17T02:42:00+00:00").getTime(); 
 
-const cloudCover = 5.67;
-const precipitation = 0; 
-const visibility = 24.13; 
-const firstLight = "2022-09-15T13:27:04+00:00"; 
-const lastLight = "2022-09-16T02:46:10+00:00"; 
-function findSky(clouds, rain, visible, light, dark) { //rain in mm/h, clouds in decimal, lights time converted to ms
+function findSky(clouds, rain, visible, light, dark) { 
     /* if (clouds === loading) {
-        return undefined
+        return loading
     } */
-    const sunny = 0.30;
-    const partlyCloudy = 0.70
-    const cloudy = 0.95
-    const overcast = 1
+    const currentMs = Date.now()
+    if (currentMs > light && currentMs < dark) {
+        if (clouds < 30) {
+            if (rain > 0 && rain < 0.5) {
+                return "dayBriefShower"
+            } else if (visible < 1) {
+                return "fogHaze"
+            } else if (visible >= 1 && visible < 2) {
+                return "mist"
+            } else if  (visible >= 2 && visible < 5) {
+                return "fogHaze"
+            } else {
+                return "dayClear"
+            }
+        } else if (clouds >= 30 && clouds < 70) {
+            if (rain > 0 && rain < 0.5) {
+                return "dayBriefShower"
+            } else if (rain >= 0.5 && rain < 4) {
+                return "dayShowers"
+            } else if (rain > 4 && rain < 8) {
+                return "moderateRain"
+            } else if (rain >= 8) {
+                return "heavyRain" 
+            } else {
+                return "mist"
+            }
+        } else if (clouds >= 70 && clouds < 95) {
+            if (rain > 0 && rain < 0.5) {
+                return "dayLightRain"
+            } else if (rain >= 0.5 && rain < 4) {
+                return "dayShowers"
+            } else if (rain > 4 && rain < 8) {
+                return "moderateRain"
+            } else if (rain >= 8) {
+                return "heavyRain" 
+            } else {
+                return "dayMostlyCloudy"
+            }
+        } else if (clouds >= 95) {
+            if (rain > 0 && rain < 0.5) {
+                return "dayLightRain"
+            } else if (rain >= 0.5 && rain < 4) {
+                return "dayShowers"
+            } else if (rain > 4 && rain < 8) {
+                return "moderateRain"
+            } else if (rain >= 8) {
+                return "heavyRain" 
+            } else {
+                return "dayOvercastCloudy"
+            }
+        }
+    } else {
+        if (clouds < 30) {
+            if (rain > 0 && rain < 0.5) {
+                return "nightBriefShower"
+            } else if (visible < 1) {
+                return "fogHaze"
+            } else if (visible >= 1 && visible < 2) {
+                return "mist"
+            } else if  (visible >= 2 && visible < 5) {
+                return "fogHaze"
+            } else {
+                return "nightClear"
+            }
+        } else if (clouds >= 30 && clouds < 70) {
+            if (rain > 0 && rain < 0.5) {
+                return "nightBriefShower"
+            } else if (rain >= 0.5 && rain < 4) {
+                return "nightLightShower"
+            } else if (rain > 4 && rain < 8) {
+                return "moderateRain"
+            } else if (rain >= 8) {
+                return "heavyRain" 
+            } else {
+                return "mist"
+            }
+        } else if (clouds >= 70 && clouds < 95) {
+            if (rain > 0 && rain < 0.5) {
+                return "nightLightRain"
+            } else if (rain >= 0.5 && rain < 4) {
+                return "nightLightShower"
+            } else if (rain > 4 && rain < 8) {
+                return "moderateRain"
+            } else if (rain >= 8) {
+                return "heavyRain" 
+            } else {
+                return "nightMostlyCloudy"
+            }
+        } else if (clouds >= 95) {
+            if (rain > 0 && rain < 0.5) {
+                return "nightLightRain"
+            } else if (rain >= 0.5 && rain < 4) {
+                return "nightLightShower"
+            } else if (rain > 4 && rain < 8) {
+                return "moderateRain"
+            } else if (rain >= 8) {
+                return "heavyRain" 
+            } else {
+                return "nightOvercastCloudy"
+            }
+        }
+    }
+    
+    /*
+    clouds: 
+        clear 30%
+        partly cloudy 70%
+        cloudy 95%
+        overcast 100%
+    rain: 
+        light <0.5mm
+        moderate <4mm
+        heavy <8mm
+        very heavy >8mm
+    visibility: 
+        fog <1km
+        mist 1-2km
+        haze 2-5km
+        clear >5km
+    */
+
 
 
 
     return "clearDAY"
 }
 console.log(findSky(cloudCover, precipitation, visibility, firstLight, lastLight))
+
+/* 
+    clearDay
+    clearNight
+    partlyCloudyDay
+    partlyCloudyNight
+    cloudyDay
+    cloudyNight
+    overcastDay
+    overcastNight
+
+
+*/
 
 
 

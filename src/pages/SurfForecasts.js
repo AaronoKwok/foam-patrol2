@@ -1,10 +1,6 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
 
-/* import weatherData from "../Data/weatherData.json" 
-import tideData from "../Data/tideData.json"
-import astData from "../Data/astData.json" */
-
 //images
 import surfHeightIcon from "../images/surfHeight.jpeg"
 import swellDirectionIcon from "../images/swellDirection.jpeg"
@@ -15,7 +11,21 @@ import up from "../images/up.jpeg"
 import down from "../images/down.jpeg"
 
 //weather svgs
-import clearDAY from "../images/weather/clearDAY.svg"
+import dayClear from "../images/dayClear.svg"
+import dayBriefShower from "../images/dayBriefShower.svg"
+import dayLightRain from "../images/dayLightRain.svg" 
+//import dayMostlyCloudy from "..images/dayMostlyCloudy.svg" 
+//import dayOvercastCloudy from "..images/dayOvercastCloudy.svg"
+//import dayShowers from "..images/dayShowers.svg" 
+//import fogHaze from "..images/fogHaze.svg"
+//import heavyRain from "..images/heavyRain.svg" 
+//import mist from "..images/mist.svg" 
+//import moderateRain from "..images/moderateRain.svg" 
+//import nightClear from "..images/nightClear.svg" 
+//import nightLightRain from "..images/nightLightRain.svg" 
+//import nightLightShower from "..images/nightLightShower.svg" 
+//import nightMostlyCloudy from "..images/nightMostlyCloudy.svg"
+//import nightOvercastCloudy from "..images/nightOvercastCloudy.svg"  
 
 
 function SurfForecasts({loc}) {
@@ -91,20 +101,29 @@ function SurfForecasts({loc}) {
 
     const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10;;; utc from local time
 
-    /* function localStartString() {
+    function localStartString() {
         const date = new Date()
         const localTime = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours() - 12, date.getUTCMinutes(), date.getUTCSeconds())
-        const timeString = new Date(localTime).toLocaleString('en-US', {timeZone: 'PST'})
+        const timeString = new Date(localTime).toLocaleString('en-UK', {timeZone: loc.timezone})
         return timeString
     }
-
+    
     function tideStart(timeString) {
+        const splitArr = timeString.split(" ")
+        const date = splitArr[0].slice(0, -1)
+        const dateArr = date.split("/")
+        function dateMonth() {
+            if (dateArr[1][0] === "0") {
+                return dateArr[1][1]
+            }
+        }
+        const callDate = `${dateArr[2]}-${dateMonth()}-${dateArr[0]}`
+        const time = splitArr[1].slice(0, -3)
+        return `${callDate} ${time}`
+    }
 
-    } */
-
-    //console.log(tideStart(localStartString()), "tide start")
     //2022-9-15 23:06 tide start
-    const tideStart = "2022-9-15 12:00"
+    //const tideStart = "2022-9-16 00:42"
     const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
     console.log(start, "start")
 
@@ -184,8 +203,11 @@ function SurfForecasts({loc}) {
         if (time === loading) {
             return loading
         }  else {
-            console.log(zone)
-            return new Date(time).toLocaleTimeString('en-US', {timeZone: zone})
+            const long = new Date(time).toLocaleTimeString('en-US', {timeZone: zone})
+            const longArr = long.split(" ")
+            const timeStr = longArr[0].slice(0, -3)
+            const aOrp = longArr[1].toLowerCase()
+            return `${timeStr}${aOrp}`
         }
     }
 
@@ -283,22 +305,118 @@ function SurfForecasts({loc}) {
     
     /* clear/rainy function */
 
-    function findSky(clouds, rain, visible, light, dark) { //rain in mm/h, clouds in decimal, lights time converted to ms
+    /* function findSky(clouds, rain, visible, light, dark) { 
+        //return dayClear
         if (clouds === loading) {
-            return undefined
+            return loading
         }
-        const sunny = 0.30;
-        const partlyCloudy = 0.70
-        const cloudy = 0.95
-        const overcast = 1
+        const currentMs = Date.now()
+        if (currentMs > light && currentMs < dark) {
+            if (clouds < 30) {
+                if (rain > 0 && rain < 0.5) {
+                    return dayBriefShower
+                } else if (visible < 1) {
+                    return fogHaze
+                } else if (visible >= 1 && visible < 2) {
+                    return mist
+                } else if  (visible >= 2 && visible < 5) {
+                    return fogHaze
+                } else {
+                    return dayClear
+                }
+            } else if (clouds >= 30 && clouds < 70) {
+                if (rain > 0 && rain < 0.5) {
+                    return dayBriefShower
+                } else if (rain >= 0.5 && rain < 4) {
+                    return dayShowers
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain 
+                } else {
+                    return mist
+                }
+            } else if (clouds >= 70 && clouds < 95) {
+                if (rain > 0 && rain < 0.5) {
+                    return dayLightRain
+                } else if (rain >= 0.5 && rain < 4) {
+                    return dayShowers
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain 
+                } else {
+                    return dayMostlyCloudy
+                }
+            } else if (clouds >= 95) {
+                if (rain > 0 && rain < 0.5) {
+                    return dayLightRain
+                } else if (rain >= 0.5 && rain < 4) {
+                    return dayShowers
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain 
+                } else {
+                    return dayOvercastCloudy
+                }
+            }
+        } else {
+            if (clouds < 30) {
+                if (rain > 0 && rain < 0.5) {
+                    return nightLightShower
+                } else if (visible < 1) {
+                    return fogHaze
+                } else if (visible >= 1 && visible < 2) {
+                    return mist
+                } else if  (visible >= 2 && visible < 5) {
+                    return fogHaze
+                } else {
+                    return nightClear
+                }
+            } else if (clouds >= 30 && clouds < 70) {
+                if (rain > 0 && rain < 0.5) {
+                    return nightLightShower
+                } else if (rain >= 0.5 && rain < 4) {
+                    return nightLightShower
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain
+                } else {
+                    return mist
+                }
+            } else if (clouds >= 70 && clouds < 95) {
+                if (rain > 0 && rain < 0.5) {
+                    return nightLightRain
+                } else if (rain >= 0.5 && rain < 4) {
+                    return nightLightShower
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain
+                } else {
+                    return nightMostlyCloudy
+                }
+            } else if (clouds >= 95) {
+                if (rain > 0 && rain < 0.5) {
+                    return nightLightRain
+                } else if (rain >= 0.5 && rain < 4) {
+                    return nightLightShower
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain 
+                } else {
+                    return nightOvercastCloudy
+                }
+            }
+        }
+    } */
 
-
-
-        return clearDAY
-    }
+    //console.log(findSky(cloudCover, precipitation, visibility, firstLight, lastLight))
 
     /* determine wave height */
-
     function determineHeight(height) {
         if (height === "loading") {
             return loading
@@ -318,7 +436,6 @@ function SurfForecasts({loc}) {
     }
 
     /* determine waveheight words*/
-
     function determineHeightWord(height) {
         if (height === "loading") {
             return loading
@@ -339,14 +456,6 @@ function SurfForecasts({loc}) {
         }
     }
 
-    /* end determine waveheight words */
-
-
-    /* find UTC based on user timezone */ 
-
-    /* end find UTC */
-
-
     /* //searchbar
     function lookChange(event) {
         const text = event.target.value
@@ -365,9 +474,9 @@ function SurfForecasts({loc}) {
         console.log("retrieving data...")
 
         const weatherParams = 'seaLevel,airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
-        const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${tideStart}`
-        const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart}`
-        const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
+        const weatherUrl = `https://api.stormglass.io/v2/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${tideStart(localStartString())}`
+        const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString())}`
+        const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString())}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         const headers = {
             headers: {
                 'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
@@ -422,6 +531,7 @@ function SurfForecasts({loc}) {
                 console.log(weatherForecast)
                 console.log(weatherForecast[0], "used")
                 console.log(astronomyForecast)
+                console.log(astronomyForecast[0], "ast used")
                 console.log(tideForecast)
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
@@ -466,7 +576,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        getData() //turn off when editing
+        //getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
@@ -536,7 +646,7 @@ function SurfForecasts({loc}) {
                                 <p className="type-name">Weather</p>
                                 <hr className="data-hr"/>
                                 <div className="icon-data-box">
-                                    <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt=""/>
+                                    <img className="weather-icon" src={dayBriefShower} alt=""/>
                                     <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
                                 </div>
                             </div>
