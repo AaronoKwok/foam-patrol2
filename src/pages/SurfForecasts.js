@@ -10,22 +10,22 @@ import seaIcon from "../images/seaIcon.svg"
 import up from "../images/up.jpeg"
 import down from "../images/down.jpeg"
 
-//weather svgs
-import dayClear from "../images/dayClear.svg"
-import dayBriefShower from "../images/dayBriefShower.svg"
-import dayLightRain from "../images/dayLightRain.svg" 
-//import dayMostlyCloudy from "..images/dayMostlyCloudy.svg" 
-//import dayOvercastCloudy from "..images/dayOvercastCloudy.svg"
-//import dayShowers from "..images/dayShowers.svg" 
-//import fogHaze from "..images/fogHaze.svg"
-//import heavyRain from "..images/heavyRain.svg" 
-//import mist from "..images/mist.svg" 
-//import moderateRain from "..images/moderateRain.svg" 
-//import nightClear from "..images/nightClear.svg" 
-//import nightLightRain from "..images/nightLightRain.svg" 
-//import nightLightShower from "..images/nightLightShower.svg" 
-//import nightMostlyCloudy from "..images/nightMostlyCloudy.svg"
-//import nightOvercastCloudy from "..images/nightOvercastCloudy.svg"  
+//weather 
+import dayClear from "../images/dayClear.jpeg"
+import dayBriefShower from "../images/dayBriefShower.jpeg"
+import dayLightRain from "../images/dayLightRain.jpeg" 
+import dayMostlyCloudy from "../images/dayMostlyCloudy.jpeg"
+import dayOvercastCloudy from "../images/dayOvercastCloudy.jpeg"
+import dayShowers from "../images/dayShowers.jpeg"
+import fogHaze from "../images/fogHaze.jpeg"
+import heavyRain from "../images/heavyRain.jpeg"
+import mist from "../images/mist.jpeg"
+import moderateRain from "../images/moderateRain.jpeg"
+import nightClear from "../images/nightClear.jpeg"
+import nightLightRain from "../images/nightLightRain.jpeg"
+import nightLightShower from "../images/nightLightShower.jpeg"
+import nightMostlyCloudy from "../images/nightMostlyCloudy.jpeg"
+import nightOvercastCloudy from "../images/nightOvercastCloudy.jpeg"
 
 
 function SurfForecasts({loc}) {
@@ -119,6 +119,7 @@ function SurfForecasts({loc}) {
         }
         const callDate = `${dateArr[2]}-${dateMonth()}-${dateArr[0]}`
         const time = splitArr[1].slice(0, -3)
+        console.log(`${callDate} ${time}`, "tide start")
         return `${callDate} ${time}`
     }
 
@@ -305,15 +306,21 @@ function SurfForecasts({loc}) {
     
     /* clear/rainy function */
 
-    /* function findSky(clouds, rain, visible, light, dark) { 
+    function findSky(clouds, rain, visible, light, dark) { 
         //return dayClear
         if (clouds === loading) {
             return loading
         }
         const currentMs = Date.now()
-        if (currentMs > light && currentMs < dark) {
+        const startDay = new Date(light).getTime()
+        const endDay = new Date(dark).getTime()
+        console.log(clouds, "findSky clouds")
+        console.log(rain, "findSky rain")
+        console.log(visible, "findSky visible")
+        
+        if (currentMs > startDay && currentMs < endDay) {
             if (clouds < 30) {
-                if (rain > 0 && rain < 0.5) {
+                if (rain > 0.1 && rain < 0.5) {
                     return dayBriefShower
                 } else if (visible < 1) {
                     return fogHaze
@@ -325,7 +332,7 @@ function SurfForecasts({loc}) {
                     return dayClear
                 }
             } else if (clouds >= 30 && clouds < 70) {
-                if (rain > 0 && rain < 0.5) {
+                if (rain > 0.1 && rain < 0.5) {
                     return dayBriefShower
                 } else if (rain >= 0.5 && rain < 4) {
                     return dayShowers
@@ -337,7 +344,7 @@ function SurfForecasts({loc}) {
                     return mist
                 }
             } else if (clouds >= 70 && clouds < 95) {
-                if (rain > 0 && rain < 0.5) {
+                if (rain > 0.1 && rain < 0.5) {
                     return dayLightRain
                 } else if (rain >= 0.5 && rain < 4) {
                     return dayShowers
@@ -349,7 +356,7 @@ function SurfForecasts({loc}) {
                     return dayMostlyCloudy
                 }
             } else if (clouds >= 95) {
-                if (rain > 0 && rain < 0.5) {
+                if (rain > 0.1 && rain < 0.5) {
                     return dayLightRain
                 } else if (rain >= 0.5 && rain < 4) {
                     return dayShowers
@@ -363,7 +370,7 @@ function SurfForecasts({loc}) {
             }
         } else {
             if (clouds < 30) {
-                if (rain > 0 && rain < 0.5) {
+                if (rain > 0.1 && rain < 0.5) {
                     return nightLightShower
                 } else if (visible < 1) {
                     return fogHaze
@@ -375,7 +382,7 @@ function SurfForecasts({loc}) {
                     return nightClear
                 }
             } else if (clouds >= 30 && clouds < 70) {
-                if (rain > 0 && rain < 0.5) {
+                if (rain > 0.1 && rain < 0.5) {
                     return nightLightShower
                 } else if (rain >= 0.5 && rain < 4) {
                     return nightLightShower
@@ -387,7 +394,7 @@ function SurfForecasts({loc}) {
                     return mist
                 }
             } else if (clouds >= 70 && clouds < 95) {
-                if (rain > 0 && rain < 0.5) {
+                if (rain > 0.1 && rain < 0.5) {
                     return nightLightRain
                 } else if (rain >= 0.5 && rain < 4) {
                     return nightLightShower
@@ -399,7 +406,7 @@ function SurfForecasts({loc}) {
                     return nightMostlyCloudy
                 }
             } else if (clouds >= 95) {
-                if (rain > 0 && rain < 0.5) {
+                if (rain > 0.1 && rain < 0.5) {
                     return nightLightRain
                 } else if (rain >= 0.5 && rain < 4) {
                     return nightLightShower
@@ -412,9 +419,7 @@ function SurfForecasts({loc}) {
                 }
             }
         }
-    } */
-
-    //console.log(findSky(cloudCover, precipitation, visibility, firstLight, lastLight))
+    }
 
     /* determine wave height */
     function determineHeight(height) {
@@ -474,7 +479,7 @@ function SurfForecasts({loc}) {
         console.log("retrieving data...")
 
         const weatherParams = 'seaLevel,airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
-        const weatherUrl = `https://api.stormglass.io/v2/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${tideStart(localStartString())}`
+        const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}` //`https://api.stormglass.io/v2/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${tideStart(localStartString())}`
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString())}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString())}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         const headers = {
@@ -482,16 +487,21 @@ function SurfForecasts({loc}) {
                 'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
             }
         } 
-        const requestOne = axios.get(weatherUrl, headers);
+        
+        const requestOne = axios.get(weatherUrl, {
+            headers: {
+                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+            }
+        });
         const requestTwo = axios.get(astronomyUrl, headers);
         const requestThree = axios.get(tideUrl, headers); 
 
         axios
             .all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => {  
-                console.log(res[0])
-                console.log(res[1])
-                console.log(res[2])
+                console.log(res[0], "weather")
+                console.log(res[1], "ast")
+                console.log(res[2], "tide")
 
                 const weatherIdents = res[0].data.hours.map((hour, i) => { //adds and ident to each hour returned in weather
                     return {
@@ -529,10 +539,15 @@ function SurfForecasts({loc}) {
                 const capTide = nextTideHour.type
                 
                 console.log(weatherForecast)
-                console.log(weatherForecast[0], "used")
-                console.log(astronomyForecast)
-                console.log(astronomyForecast[0], "ast used")
-                console.log(tideForecast)
+                console.log(weatherForecast[0], "weather hour used")
+                console.log(astronomyForecast, "ast forecast")
+                console.log(astronomyForecast[0], "ast day used")
+                console.log(new Date(weatherForecast[0].time).toLocaleString('en-US', {timeZone: "PST"}), "current local weather hour")
+                console.log(weatherForecast[0].precipitation.sg, "precipitation")
+                console.log(weatherForecast[0].cloudCover.sg, "cloud cover")
+                console.log(weatherForecast[0].visibility.sg, "visibility")
+
+                console.log(tideForecast, "tide forecast")
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
 
@@ -638,7 +653,7 @@ function SurfForecasts({loc}) {
                                 <p className="type-name">Water Temp</p>
                                 <hr className="data-hr"/>
                                 <div className="icon-data-box">
-                                    <img className="weather-icon" src={seaIcon} alt="" />
+                                    <img className="sea-icon" src={seaIcon} alt="" />
                                     <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
                                 </div>
                             </div>
@@ -646,7 +661,7 @@ function SurfForecasts({loc}) {
                                 <p className="type-name">Weather</p>
                                 <hr className="data-hr"/>
                                 <div className="icon-data-box">
-                                    <img className="weather-icon" src={dayBriefShower} alt=""/>
+                                    <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt=""/>
                                     <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
                                 </div>
                             </div>

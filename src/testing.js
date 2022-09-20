@@ -189,16 +189,16 @@ console.log(new Date(test).toUTCString().split(" ")) */
 }
 console.log(tideStart()) */
 
-const cloudCover = 20;
+/* const cloudCover = 20;
 const precipitation = 8.9; 
 const visibility = 7.14; 
 const firstLight = new Date("2022-09-16T13:26:14+00:00").getTime(); 
 const lastLight = new Date("2022-09-17T02:42:00+00:00").getTime(); 
 
 function findSky(clouds, rain, visible, light, dark) { 
-    /* if (clouds === loading) {
+    if (clouds === loading) {
         return loading
-    } */
+    }
     const currentMs = Date.now()
     if (currentMs > light && currentMs < dark) {
         if (clouds < 30) {
@@ -302,7 +302,7 @@ function findSky(clouds, rain, visible, light, dark) {
         }
     }
     
-    /*
+    
     clouds: 
         clear 30%
         partly cloudy 70%
@@ -318,28 +318,13 @@ function findSky(clouds, rain, visible, light, dark) {
         mist 1-2km
         haze 2-5km
         clear >5km
-    */
-
-
-
-
+   
     return "clearDAY"
 }
 console.log(findSky(cloudCover, precipitation, visibility, firstLight, lastLight))
+ */
 
-/* 
-    clearDay
-    clearNight
-    partlyCloudyDay
-    partlyCloudyNight
-    cloudyDay
-    cloudyNight
-    overcastDay
-    overcastNight
-
-
-*/
-
+ console.log(new Date("2022-09-20T02:37:20+00:00").getTime())
 
 
 

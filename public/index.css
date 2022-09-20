@@ -721,8 +721,14 @@ nav {
 
 }
 
+.sea-icon {
+  margin-right: 5px;
+}
+
 .weather-icon {
   margin-right: 5px; 
+  margin-top: 7px;
+  height: 25px;
 }
 
 .data-span {
