@@ -42,13 +42,13 @@ function Header() {
                                 <p className="dropdown-title">MAIN COACHING RETREATS</p>
                                 <hr className="hr-dropdown"/> 
 
-                                <Link className="dropdown-link" to="/costarica-retreat">
+                                <Link className="dropdown-link" to="/surfRetreats/costarica-retreat">
                                     <p className="dropdown-info">COSTA RICA | 7 DAYS</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/nicaragua-retreat">
+                                <Link className="dropdown-link" to="/surfRetreats/nicaragua-retreat">
                                     <p className="dropdown-info">NICARAGUA | 7 DAYS</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/bali-retreat">
+                                <Link className="dropdown-link" to="/surfRetreats/bali-retreat">
                                     <p className="dropdown-info">BALI | 10 DAYS</p>
                                 </Link> 
                             </div>
@@ -57,10 +57,10 @@ function Header() {
                                 <p className="dropdown-title">INTERMEDIATE ONLY TRIPS</p>
                                 <hr className="hr-dropdown"/>
                                 
-                                <Link className="dropdown-link" to="/maldives-retreat">
+                                <Link className="dropdown-link" to="/surfRetreats/maldives-retreat">
                                     <p className="dropdown-info">MALDIVES | OCTOBER</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/mentawais-retreat">
+                                <Link className="dropdown-link" to="/surfRetreats/mentawais-retreat">
                                     <p className="dropdown-info">MENTAWAIS | NOVEMBER</p>
                                 </Link> 
                             </div>
@@ -69,7 +69,7 @@ function Header() {
                                 <p className="dropdown-title">MORE INFO</p>
                                 <hr className="hr-dropdown"/>
 
-                                <Link className="dropdown-link" to="/surf-trip-calendar">
+                                <Link className="dropdown-link" to="/surfRetreats/surf-trip-calendar">
                                     <p className="dropdown-info">SURF TRIP CALENDAR</p>
                                 </Link>
                             </div>
@@ -127,7 +127,7 @@ function Header() {
 
                     </div>
 
-                    <div className="nav-dropdown">
+                    {/* <div className="nav-dropdown">
             
                         <p className="nav-button">PRODUCTS &nbsp;<i className="arrow down"></i></p>
 
@@ -136,7 +136,7 @@ function Header() {
                             
                         </span>
 
-                    </div>
+                    </div> */}
 
                     <div className="nav-dropdown">
                         <p className="nav-button">ABOUT &nbsp;<i className="arrow down"></i></p>

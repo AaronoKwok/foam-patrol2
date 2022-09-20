@@ -609,7 +609,7 @@ function SurfForecasts({loc}) {
 
     return ( 
         <div className="forecast-background">
-            <div className="filler"></div>
+            <div className="filler"></div> {/* used to makes space between footer and header */}
             <section className="locSet">
                 <div className="top-forecast">
                     <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>

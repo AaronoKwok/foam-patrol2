@@ -723,12 +723,13 @@ nav {
 
 .sea-icon {
   margin-right: 5px;
+  margin-bottom: 4px; 
 }
 
 .weather-icon {
   margin-right: 5px; 
   margin-top: 7px;
-  height: 25px;
+  height: 22px;
 }
 
 .data-span {
@@ -1471,5 +1472,16 @@ nav {
   left: 270px; 
   top: 100px; 
   color: rgb(87, 87, 87)
+}
+
+/* Retreat Pages */
+
+.retreat-page {
+  height: 400px; 
+  background-color: blue; 
+}
+
+.retreat-page-test {
+  font-size: 50px; 
 }
 
