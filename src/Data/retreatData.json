@@ -1,33 +1,34 @@
 [
     {
         "id": 0, 
-        "cost": "", 
+        "cost": "$3,280", 
         "location": "COSTA RICA", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/158A3596-1600x1200.jpg", 
         "title": "", 
         "description": "Surf a pristine 7 km long beach break surrounded by some of the lushest rainforests on earth.",
-        "backgroundTitle": "", 
-        "backgroundDes": "", 
+        "backgroundTitle": "Nosora, Costa Rica", 
+        "backgroundDes": "7-Day surf coaching retreat",
+        "backgroundImg": "https://barefootsurftravel.com/wp-content/uploads/2017/08/IMG_4183Small-1.jpg",  
         "loc": {
-            "title": "",
-            "titleDes": "",
-            "description": "", 
+            "title": "Costa Rica",
+            "titleDes": "7-day surf coaching camp in Nosara",
+            "description": "Welcome to the ultimate tropical surfing experience in playa Guiones. Imagine yourself surfing a pristine 7 km long beach break surrounded by some of the lushest rainforest hills on earth. We’ve created one of the best surf coaching camps in Costa Rica.", 
             "bullets": [
-                "", 
-                "", 
-                "", 
-                "", 
-                ""
+                "Consistent, quality surf for beginners & intermediates", 
+                "Plenty of safe, sand bottom waves breaking over 7 km of majestic beach", 
+                "Fascinating jungle with sloths, monkeys, colorful birds & more", 
+                "Gorgeous, private bungalow set in a tropical garden for you to rest easy", 
+                "Central location: walk 6 minutes to waves, amazing restaurants & cafes"
             ], 
             "img": ""
         }, 
-        "typicalDayDes": "", 
+        "typicalDayDes": "Wake up in your gorgeous bungalow and watch a family of howler monkeys pass overhead as you head for a swim in the beautiful salt water pool. Grab a surfboard and walk 5 minutes through the thick jungle to Guiones beach for your personalized surf class after a fresh, organic breakfast. Back home, a professional surf coach analyzes your surfing videos, helping you quickly improve your technique while you sip on a fresh smoothie. After your afternoon restorative yoga session, you feel relaxed and grateful, and you finish the day by grabbing a bicycle and riding through beautiful Nosara at sunset, amazed by its incredible biodiversity.", 
         "typicalDayImg": "", 
-        "map": "", 
+        "map": "https://barefootsurftravel.com/wp-content/uploads/2018/07/InfoMapNosara-2000x1376.jpg", 
         "liveAt": [
             {
-                "destination": "", 
-                "description": ""
+                "destination": "Guiones beach in Nosara, Costa Rica", 
+                "description": "The paradisiac surf town of Nosara is the perfect location to provide one of the best surf coaching camps. Guiones Beach is a magical 7km long white-sand beach that provides perfect, forgiving waves for beginner and intermediate surf lessons. It has many breaks so surfers of all levels have the space to find waves and learn to surf safely."
             }
         ], 
         "discoverDestination": [
@@ -35,193 +36,214 @@
             ""
         ],
         "lifeStyle": {
-            "testimony": "", 
+            "testimony": "Guiones is the definition of a tropical, surfing paradise village. The remote, small town has a very relaxed vibe based around surfing and yoga.", 
             "quoted": "", 
             "points": [
-                "",
-                "", 
-                "", 
-                "", 
-                ""
+                "You travel by yourself, with friends, or as a couple",
+                "You want to surf white-sand beaches with quality waves and warm water", 
+                "You love delicious, healthy food and cafes", 
+                "Average traveller age: 25 – 55"
             ]
         }, 
         "accommodations": {
-            "accommodationDes": "", 
-            "accommodationPoints": [
-                "", 
-                "", 
-                "", 
-                "", 
-                ""
+            "des": "Welcome to your Costa Rican home: a gorgeous private bungalow set in a flourishing garden. From your own terrace, feel rejuvenated, surrounded by the region’s unique fauna. Whether you want to go surfing, head to a restaurant, a café or a surf shop, you won’t need to walk more than 5 minutes!", 
+            "points": [
+                "Chic, exclusive bungalows with private terrace", 
+                "Large rooms with AC & comfortable beds", 
+                "Central location: minutes from the beach, restaurants & cafes", 
+                "Access to free bicycles to explore Nosara", 
+                "Large saltwater pool set in a beautiful garden", 
+                "Great social areas & wifi"
             ]
         },
         "surfInfo": {
-            "overview": "", 
-            "typical": "", 
+            "overview": "The area offers perfect waves for both beginners and intermediates. Nosara is one of the most consistent surf beaches on earth, offering waves year-round. Spots North and South of Guiones offer something different for more advanced surfers, with point breaks and heavier beach breaks.", 
+            "typical": "The “small wave season”, with waves usually from knee to chest high, goes from November to March. The months of April until October offer waves that vary from chest high to overhead. With the abundance of spots along the coast, it’s possible to find great waves for your level almost every day of the year. Water is tropical, no need for wetsuits.", 
             "season": {
-                "swell": "", 
-                "bigger": ""
+                "swell": "May to November", 
+                "bigger": "December to July"
             }, 
             "day": {
-                "waves": "", 
-                "winds": ""
+                "waves": "2-4", 
+                "winds": "Offshore/No wind from 6am to 10am & at sunset"
             }, 
             "temp": {
-                "airTemp": "", 
-                "rain": ""
+                "airTemp": [24, 32], 
+                "rain": "July to November"
             }, 
-            "skillLvl": [], 
-            "surfSpots": ""
+            "skillLvl": [1, 1, 0], 
+            "surfSpots": [
+                "Guiones Beach", 
+                "Ostional Beach", 
+                "Pelada Beach", 
+                "Garza Beach"
+            ]
         }
     }, 
     {
         "id": 1, 
-        "cost": "", 
+        "cost": "$2,850", 
         "location": "NICARAGUA", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/IMG_3715.jpg", 
         "title": "", 
         "description": "Enjoy an exclusive villa for our groups of 12 surfers with panoramic views of the Pacific.",
-        "backgroundTitle": "", 
-        "backgroundDes": "", 
+        "backgroundTitle": "Nicaragua", 
+        "backgroundDes": "7-Day surf coaching retreat",
+        "backgroundImg": "https://barefootsurftravel.com/wp-content/uploads/2019/08/CASA-MIKONOS-37.jpg",  
         "loc": {
-            "title": "",
-            "titleDes": "",
-            "description": "", 
+            "title": "Nicaragua",
+            "titleDes": "7-day surf camp in San Juan del Sur",
+            "description": "We believe that you should experience an authentic surf journey. During this week, you will get the chance to dive deep into the world of surfing, like no other place on earth.", 
             "bullets": [
-                "", 
-                "", 
-                "", 
-                "", 
-                ""
+                "Exclusive villa for our groups of 12 surfers, with panoramic views on the Pacific", 
+                "Some of the world’s most consistent quality waves for beginners & intermediates", 
+                "Walk to cafes, restaurants and beach bars", 
+                "330+ days of “offshore” wind, creating extremely fun and clean waves", 
+                "Learn to surf with members of the National Surf Team"
             ], 
             "img": ""
         }, 
         "typicalDayDes": "", 
         "typicalDayImg": "", 
-        "map": "", 
+        "map": "https://barefootsurftravel.com/wp-content/uploads/2019/09/InfoMapNica2-2000x1376.jpg", 
         "liveAt": [
             {
-                "destination": "", 
-                "description": ""
+                "destination": "San Juan del Sur, Nicaragua", 
+                "description": "Every day is a new adventure around San Juan del Sur. Explore these amazing surf beaches:"
             }
         ], 
         "discoverDestination": [
-            "", 
-            ""
+            "Maderas beach", 
+            "Hermosa beach", 
+            "Remanzo beach", 
+            "Possibility of surfing other beaches, depending on surf conditions"
         ],
         "lifeStyle": {
-            "testimony": "", 
+            "testimony": "San Juan del Sur is the perfect village to get immersed in the surf lifestyle with its beach bars, great food, breathtaking sunsets and tons of things to do.", 
             "quoted": "", 
             "points": [
-                "",
-                "", 
-                "", 
-                "", 
-                ""
+                "You are a lone traveller, travelling with friends, or as a couple",
+                "You’re looking for tropical weather & surf beaches with sand bottom", 
+                "You enjoy having access to great restaurants, cafes and beach bars", 
+                "Average traveller age: 25 – 55"
             ]
         }, 
         "accommodations": {
-            "accommodationDes": "", 
-            "accommodationPoints": [
-                "", 
-                "", 
-                "", 
-                "", 
-                ""
+            "des": "You will be living in a luxurious 7-bedroom villa, exclusive for our group of 12 surfers. Picture yourself switching off your phone, giving in to the simple life surrounded by lush tropical forest and the ocean.", 
+            "points": [
+                "Exclusive villa for 12 surfers only", 
+                "Spacious & chic rooms for 1, 2 or 3 travellers maximum", 
+                "10-minute walk to San Juan del Sur’s cafes, restaurants & beach bars", 
+                "Large infinity pool overlooking the Pacific", 
+                "Spacious common areas, kitchen, air conditioning & Wifi"
             ]
         },
         "surfInfo": {
-            "overview": "", 
-            "typical": "", 
+            "overview": "If you wish to maximize your experience by surfing quality waves, San Juan del Sur is where you want to be. The beaches are a dream playground for beginner and intermediate surfers. This is one of the few (if not only) places in the world that almost guarantees both good waves and offshore winds for more than 300 days of the year. In addition to uncrowded and consistent surf conditions, you can feel safe knowing that you are gliding above a sandy ocean floor.", 
+            "typical": "Every day, you will benefit from our team’s local knowledge and surf the optimal surf spot according to the daily conditions. We consistently find great waves for beginners and intermediates, thanks to the many surf spots surrounding the village. Waves are usually between 2 – 4 feet high from December to April, and 3 – 6 feet high outside those months. Wave size and power strongly depend on the surf spots. Our surf guides will make sure to take you to the best spot for your level.", 
             "season": {
-                "swell": "", 
-                "bigger": ""
+                "swell": "May to November", 
+                "bigger": "October to December"
             }, 
             "day": {
-                "waves": "", 
-                "winds": ""
+                "waves": "3", 
+                "winds": "Offshore all day"
             }, 
             "temp": {
-                "airTemp": "", 
-                "rain": ""
+                "airTemp": [24, 32], 
+                "rain": "July to November"
             }, 
-            "skillLvl": [], 
-            "surfSpots": ""
+            "skillLvl": [1, 1, 0], 
+            "surfSpots": [
+                "Remanzo Beach", 
+                "Maderas Beach", 
+                "Hermosa Beach"
+            ]
         }
     }, 
     {
         "id": 2, 
-        "cost": "", 
+        "cost": "$3,650", 
         "location": "BALI", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2017/05/Villa-Lembongan.jpg", 
         "title": "", 
         "description": "Ride turquoise waves in a tropical paradise on this Indonesian journey across two amazing islands.",
-        "backgroundTitle": "", 
-        "backgroundDes": "", 
+        "backgroundTitle": "Bali & Lembongan", 
+        "backgroundDes": "10-Day surf coaching camp",
+        "backgroundImg": "https://barefootsurftravel.com/wp-content/uploads/2019/08/AGU4628.jpg",  
         "loc": {
-            "title": "",
-            "titleDes": "",
-            "description": "", 
+            "title": "Bali, Indonesia",
+            "titleDes": "10-Day, Nusa Lembongan & Bali surf camp",
+            "description": "Welcome to our Nusa Lembongan & Bali surf camp. Have you ever dreamed of surfing perfect, turquoise waves in a tropical paradise? Your dream will come true on this Indonesian journey across two amazing islands.", 
             "bullets": [
-                "", 
-                "", 
-                "", 
-                "", 
-                ""
+                "World-Class surf breaks for all levels of surfers", 
+                "Internationally recognized restaurants & cafes", 
+                "Snorkelling and stand up paddleboard in crystal clear waters", 
+                "Live in a quiet yoga and surf coaching retreat", 
+                "Inspiring Hindu culture"
             ], 
             "img": ""
         }, 
-        "typicalDayDes": "", 
+        "typicalDayDes": "Start your day in our luxurious private villa on top of a cliff, enjoying panoramic views of the crystal-clear waters of Nusa Lembongan. After breakfast, you and your fellow travelers are picked up by boat by the welcoming surf coaches and taken to your surfing spot. You feel the incredible sensation of sliding on turquoise waves and notice the vibrant colors of the reef beneath your surfboard. Back at the villa, your Barefoot surf guide analyzes and discusses your surf photos and videos, and you are more motivated than before you started. At night, you and your friends enjoy freshly caught fish at your local surf coach’s family restaurant, right on the beach.", 
         "typicalDayImg": "", 
-        "map": "", 
+        "map": "https://barefootsurftravel.com/wp-content/uploads/2015/05/InfoMapBali3-2000x1200.jpg", 
         "liveAt": [
             {
-                "destination": "", 
-                "description": ""
+                "destination": "Canggu", 
+                "description": "You will be living in Canggu for the first part of our Bali Surf Camp. Canggu is one of these places with a special energy to it. Its bohemian vibe, breathtaking rice fields, inspiring culture and quality surf breaks combine to create a unique surf trip experience."
+            }, 
+            {
+                "destination": "Lembongan", 
+                "description": "When you step foot on this 8km² island, you will probably think you are dreaming. Nusa Lembongan is the definition of a paradise surf island. It has crystal clear waters, white sand beaches, a very mellow vibe and friendly, authentic people."
             }
         ], 
         "discoverDestination": [
-            "", 
-            ""
+            "Cliff jumping in Nusa Ceningan", 
+            "Snorkeling boat trip on the coasts of Nusa Penida"
         ],
         "lifeStyle": {
             "testimony": "", 
             "quoted": "", 
             "points": [
-                "",
-                "", 
-                "", 
-                "", 
-                ""
+                "You are a lone traveller or travelling between friends, or as a couple",
+                "You would like to get immersed into surfing’s lifestyle", 
+                "You enjoy having access to world-class restaurants", 
+                "Average traveller age: 25 – 55 years old"
             ]
         }, 
         "accommodations": {
-            "accommodationDes": "", 
-            "accommodationPoints": [
-                "", 
-                "", 
-                "", 
-                "", 
-                ""
+            "des": "On both the islands of Bali and Nusa Lembongan, you will be living in gorgeous private villas, exclusive for your surf group. This sets a “home” vibe like no other: travelers become close friends and share unforgettable moments together. You will always be within walkable distance to the surf beaches, restaurants, cafes and main attractions.", 
+            "points": [
+                "Exclusive accommodation in private beach villas", 
+                "Best locations, near & on the beach", 
+                "Walking distance to restaurants, cafes & beach bars", 
+                "Breathtaking ocean view in Nusa Lembongan", 
+                "Chic interiors, pools & chilling areas", 
+                "Welcome dinner"
             ]
         },
         "surfInfo": {
-            "overview": "", 
-            "typical": "", 
+            "overview": "Indonesia is arguably the best place on earth to surf. No other country can match the number of surf spots on these islands, nor the quality of the waves. While Bali is famous for its expert, world-class surf breaks, it also offers great surf spots to learn and progress. On our Bali Surf Camp, our surf guides will bring you to fun surf spots so you can practice surfing safely according to your surf level.", 
+            "typical": "Being a small island, there is always a surf spot that works (it’s always offshore somewhere!), and that’s exactly why we’re here. Barefoot guides will ensure to provide you with all the advice that you need to find the best waves for your skill level. There are waves practically year round on the island. Ideal months for a surf trip in Bali is between April and October, in order to avoid the rainy season.", 
             "season": {
-                "swell": "", 
-                "bigger": ""
+                "swell": "All the time!", 
+                "bigger": "May to October"
             }, 
             "day": {
-                "waves": "", 
-                "winds": ""
+                "waves": "3-5", 
+                "winds": "Offshore all day on the woth-west coast, during swell season"
             }, 
             "temp": {
-                "airTemp": "", 
-                "rain": ""
+                "airTemp": [24, 34], 
+                "rain": "December to March"
             }, 
-            "skillLvl": [], 
-            "surfSpots": ""
+            "skillLvl": [1, 1, 0], 
+            "surfSpots": [
+                "Kuta Beach", 
+                "Oldmans Beach", 
+                "Bingin Beach", 
+                "Nusa Lembongan Beach"
+            ]
         }
     },
     {
@@ -232,7 +254,8 @@
         "title": "", 
         "description": "Uncrowded blissful waves, a secluded location hundreds of kilometres South of Male.",
         "backgroundTitle": "", 
-        "backgroundDes": "", 
+        "backgroundDes": "",
+        "backgroundImg": "",  
         "loc": {
             "title": "",
             "titleDes": "",
@@ -271,8 +294,8 @@
             ]
         }, 
         "accommodations": {
-            "accommodationDes": "", 
-            "accommodationPoints": [
+            "des": "", 
+            "points": [
                 "", 
                 "", 
                 "", 
@@ -307,7 +330,8 @@
         "title": "", 
         "description": "Carve secluded tropical island waves that deliver the absolute perfection you dream about.",
         "backgroundTitle": "", 
-        "backgroundDes": "", 
+        "backgroundDes": "",
+        "backgroundImg": "",  
         "loc": {
             "title": "",
             "titleDes": "",
@@ -346,8 +370,8 @@
             ]
         }, 
         "accommodations": {
-            "accommodationDes": "", 
-            "accommodationPoints": [
+            "des": "", 
+            "points": [
                 "", 
                 "", 
                 "", 
