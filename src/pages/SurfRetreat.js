@@ -1,4 +1,3 @@
-//import src from "*.avif"
 import React from "react"
 
 function SurfRetreat({retreat}) {

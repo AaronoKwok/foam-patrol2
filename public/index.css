@@ -542,8 +542,8 @@ nav {
   width: 100%;
   object-fit: cover;
   overflow: hidden;
-  border-top-left-radius: 20px; 
-  border-top-right-radius: 20px;
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px;
 }
 
 .is-free {
@@ -1478,7 +1478,7 @@ nav {
 
 .retreat-page {
   height: 400px; 
-  background-color: blue; 
+  background-color: white; 
 }
 
 .retreat-page-test {

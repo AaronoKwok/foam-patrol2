@@ -6,8 +6,73 @@
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/158A3596-1600x1200.jpg", 
         "title": "", 
         "description": "Surf a pristine 7 km long beach break surrounded by some of the lushest rainforests on earth.",
-        "classNameImg": "", 
-        "classNameDes": ""
+        "backgroundTitle": "", 
+        "backgroundDes": "", 
+        "loc": {
+            "title": "",
+            "titleDes": "",
+            "description": "", 
+            "bullets": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "img": ""
+        }, 
+        "typicalDayDes": "", 
+        "typicalDayImg": "", 
+        "map": "", 
+        "liveAt": [
+            {
+                "destination": "", 
+                "description": ""
+            }
+        ], 
+        "discoverDestination": [
+            "", 
+            ""
+        ],
+        "lifeStyle": {
+            "testimony": "", 
+            "quoted": "", 
+            "points": [
+                "",
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        }, 
+        "accommodations": {
+            "accommodationDes": "", 
+            "accommodationPoints": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        },
+        "surfInfo": {
+            "overview": "", 
+            "typical": "", 
+            "season": {
+                "swell": "", 
+                "bigger": ""
+            }, 
+            "day": {
+                "waves": "", 
+                "winds": ""
+            }, 
+            "temp": {
+                "airTemp": "", 
+                "rain": ""
+            }, 
+            "skillLvl": [], 
+            "surfSpots": ""
+        }
     }, 
     {
         "id": 1, 
@@ -16,8 +81,73 @@
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/IMG_3715.jpg", 
         "title": "", 
         "description": "Enjoy an exclusive villa for our groups of 12 surfers with panoramic views of the Pacific.",
-        "classNameImg": "", 
-        "classNameDes": ""
+        "backgroundTitle": "", 
+        "backgroundDes": "", 
+        "loc": {
+            "title": "",
+            "titleDes": "",
+            "description": "", 
+            "bullets": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "img": ""
+        }, 
+        "typicalDayDes": "", 
+        "typicalDayImg": "", 
+        "map": "", 
+        "liveAt": [
+            {
+                "destination": "", 
+                "description": ""
+            }
+        ], 
+        "discoverDestination": [
+            "", 
+            ""
+        ],
+        "lifeStyle": {
+            "testimony": "", 
+            "quoted": "", 
+            "points": [
+                "",
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        }, 
+        "accommodations": {
+            "accommodationDes": "", 
+            "accommodationPoints": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        },
+        "surfInfo": {
+            "overview": "", 
+            "typical": "", 
+            "season": {
+                "swell": "", 
+                "bigger": ""
+            }, 
+            "day": {
+                "waves": "", 
+                "winds": ""
+            }, 
+            "temp": {
+                "airTemp": "", 
+                "rain": ""
+            }, 
+            "skillLvl": [], 
+            "surfSpots": ""
+        }
     }, 
     {
         "id": 2, 
@@ -26,27 +156,222 @@
         "img": "https://barefootsurftravel.com/wp-content/uploads/2017/05/Villa-Lembongan.jpg", 
         "title": "", 
         "description": "Ride turquoise waves in a tropical paradise on this Indonesian journey across two amazing islands.",
-        "classNameImg": "", 
-        "classNameDes": ""
-    }, 
+        "backgroundTitle": "", 
+        "backgroundDes": "", 
+        "loc": {
+            "title": "",
+            "titleDes": "",
+            "description": "", 
+            "bullets": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "img": ""
+        }, 
+        "typicalDayDes": "", 
+        "typicalDayImg": "", 
+        "map": "", 
+        "liveAt": [
+            {
+                "destination": "", 
+                "description": ""
+            }
+        ], 
+        "discoverDestination": [
+            "", 
+            ""
+        ],
+        "lifeStyle": {
+            "testimony": "", 
+            "quoted": "", 
+            "points": [
+                "",
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        }, 
+        "accommodations": {
+            "accommodationDes": "", 
+            "accommodationPoints": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        },
+        "surfInfo": {
+            "overview": "", 
+            "typical": "", 
+            "season": {
+                "swell": "", 
+                "bigger": ""
+            }, 
+            "day": {
+                "waves": "", 
+                "winds": ""
+            }, 
+            "temp": {
+                "airTemp": "", 
+                "rain": ""
+            }, 
+            "skillLvl": [], 
+            "surfSpots": ""
+        }
+    },
     {
         "id": 3, 
-        "cost": "", 
-        "location": "MENTAWAI", 
-        "img": "https://barefootsurftravel.com/wp-content/uploads/2018/12/Beng2s-take-off.jpg", 
-        "title": "", 
-        "description": "Carve secluded tropical island waves that deliver the absolute perfection you dream about.",
-        "classNameImg": "", 
-        "classNameDes": ""
-    }, 
-    {
-        "id": 4, 
         "cost": "", 
         "location": "MALDIVES", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2020/01/handy19-0266-2.jpg", 
         "title": "", 
         "description": "Uncrowded blissful waves, a secluded location hundreds of kilometres South of Male.",
-        "classNameImg": "", 
-        "classNameDes": ""
+        "backgroundTitle": "", 
+        "backgroundDes": "", 
+        "loc": {
+            "title": "",
+            "titleDes": "",
+            "description": "", 
+            "bullets": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "img": ""
+        }, 
+        "typicalDayDes": "", 
+        "typicalDayImg": "", 
+        "map": "", 
+        "liveAt": [
+            {
+                "destination": "", 
+                "description": ""
+            }
+        ], 
+        "discoverDestination": [
+            "", 
+            ""
+        ],
+        "lifeStyle": {
+            "testimony": "", 
+            "quoted": "", 
+            "points": [
+                "",
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        }, 
+        "accommodations": {
+            "accommodationDes": "", 
+            "accommodationPoints": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        },
+        "surfInfo": {
+            "overview": "", 
+            "typical": "", 
+            "season": {
+                "swell": "", 
+                "bigger": ""
+            }, 
+            "day": {
+                "waves": "", 
+                "winds": ""
+            }, 
+            "temp": {
+                "airTemp": "", 
+                "rain": ""
+            }, 
+            "skillLvl": [], 
+            "surfSpots": ""
+        }
+    },
+    {
+        "id": 4, 
+        "cost": "", 
+        "location": "MENTAWAI", 
+        "img": "https://barefootsurftravel.com/wp-content/uploads/2018/12/Beng2s-take-off.jpg", 
+        "title": "", 
+        "description": "Carve secluded tropical island waves that deliver the absolute perfection you dream about.",
+        "backgroundTitle": "", 
+        "backgroundDes": "", 
+        "loc": {
+            "title": "",
+            "titleDes": "",
+            "description": "", 
+            "bullets": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ], 
+            "img": ""
+        }, 
+        "typicalDayDes": "", 
+        "typicalDayImg": "", 
+        "map": "", 
+        "liveAt": [
+            {
+                "destination": "", 
+                "description": ""
+            }
+        ], 
+        "discoverDestination": [
+            "", 
+            ""
+        ],
+        "lifeStyle": {
+            "testimony": "", 
+            "quoted": "", 
+            "points": [
+                "",
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        }, 
+        "accommodations": {
+            "accommodationDes": "", 
+            "accommodationPoints": [
+                "", 
+                "", 
+                "", 
+                "", 
+                ""
+            ]
+        },
+        "surfInfo": {
+            "overview": "", 
+            "typical": "", 
+            "season": {
+                "swell": "", 
+                "bigger": ""
+            }, 
+            "day": {
+                "waves": "", 
+                "winds": ""
+            }, 
+            "temp": {
+                "airTemp": "", 
+                "rain": ""
+            }, 
+            "skillLvl": [], 
+            "surfSpots": ""
+        }
     }
 ]
