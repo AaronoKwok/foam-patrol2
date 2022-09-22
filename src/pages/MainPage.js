@@ -26,7 +26,7 @@ function MainPage() { //to change once have a courses scroll functionality
     })
 
     return (
-        <main className="mainpage-width">
+        <main>
             <div className="mp-img-position">
                 <BackScene />
                 <section className="main-info">
@@ -40,29 +40,38 @@ function MainPage() { //to change once have a courses scroll functionality
                 </section>
             </div>
 
-            {/* <hr className="line-break"/> */}
+            <div className="mainpage-width">
 
-            <section className="browse-retreats">
-                <p className="retreats-p">Surf Trips</p>
-                <hr className="main-hr"/>
-                <div className="retreats-layout">
-                    {retreats}
-                </div>
-            </section> 
-            {/* <hr className="line-break"/> */}
+                <section className="browse-retreats">
+                    <p className="retreats-p">Surf Trips</p>
+                    <hr className="main-hr"/>
+                    <div className="retreats-layout">
+                        {retreats}
+                    </div>
+                </section> 
+
+                <section className="browse-forecasts"> 
+                    <p className="retreats-p">NorCal & Hawaii Current Conditions</p>
+                    <hr className="main-hr"/>
+                    <div className="retreats-layout">
+                        <p>placeholder</p>
+                        <p>placeholder</p>
+                        <p>placeholder</p>
+                        <p>placeholder</p>
+                        <p>placeholder</p>
+                    </div>
+                </section>
+                
+                <section className="browse-courses">
+                    <p className="courses-p">Discover our Online Surf Courses</p>
+                    <hr className="main-hr" />
+                    <div className="courses-layout">
+                        {courses}
+                    </div>
+                    <Link className="courses-link" to="/onlineCourses">Go to more courses...</Link>
+                </section>
+            </div>
             
-            <section className="browse-courses">
-                <p className="courses-p">Discover our Online Surf Courses</p>
-                <hr className="main-hr" />
-                <div className="courses-layout">
-                    {courses}
-                </div>
-                <Link className="courses-link" to="/onlineCourses">Go to more courses...</Link>
-            </section>
-
-            <section> 
-
-            </section>
 
         </main>
     )

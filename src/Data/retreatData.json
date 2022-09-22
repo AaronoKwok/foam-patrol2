@@ -1,6 +1,7 @@
 [
     { 
         "id": 0, 
+        "link": "/surfRetreats/costarica-retreat",
         "cost": "$3,280", 
         "location": "COSTA RICA", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/158A3596-1600x1200.jpg", 
@@ -81,7 +82,8 @@
         }
     }, 
     {
-        "id": 1, 
+        "id": 1,
+        "link": "/surfRetreats/nicaragua-retreat", 
         "cost": "$2,850", 
         "location": "NICARAGUA", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/IMG_3715.jpg", 
@@ -163,6 +165,7 @@
     }, 
     {
         "id": 2, 
+        "link": "/surfRetreats/bali-retreat",
         "cost": "$3,650", 
         "location": "BALI", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2017/05/Villa-Lembongan.jpg", 
@@ -248,6 +251,7 @@
     },
     {
         "id": 3, 
+        "link": "/surfRetreats/intermediate/maldives-retreat",
         "cost": "", 
         "location": "MALDIVES", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2020/01/handy19-0266-2.jpg", 
@@ -255,7 +259,8 @@
         "description": "Uncrowded blissful waves, a secluded location hundreds of kilometres South of Male."
     },
     {
-        "id": 4, 
+        "id": 4,
+        "link": "/surfRetreats/intermediate/mentawais-retreat", 
         "cost": "", 
         "location": "MENTAWAI", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/12/Beng2s-take-off.jpg", 

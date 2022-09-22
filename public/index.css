@@ -276,6 +276,11 @@ nav {
 
 /* Main Page rotating background image */
 
+.mainpage-width {
+  width: var(--screen-width); 
+  margin: auto; 
+}
+
 .background {
   position: relative;
 }
@@ -394,6 +399,22 @@ nav {
   border: 0.7px solid rgba(128, 128, 128, 0.5);
 }
 
+/* Mainpage Forecast */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* MainPage Retreats */
 
 .browse-retreats {
@@ -404,14 +425,14 @@ nav {
   font-size: 2em;
   font-weight: var(--des-weight);
   text-align: center;
-  color: black;
+  color: rgb(58, 58, 58);
   letter-spacing: 0.1em;
   margin: 5px 0px 0px 0px; 
 }
 
 .main-hr {
   margin: 5px auto 15px auto; 
-  width: 85%;
+  width: 100%;
   background-color: rgb(172, 172, 172); 
 }
 
@@ -424,8 +445,8 @@ nav {
 
 .retreat {
   position: relative;
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 230px;
+  max-width: 230px;
   margin: 10px 5px 5px 5px; 
   border-radius: 10px; 
   padding-top: 10px; 
@@ -433,28 +454,33 @@ nav {
 }
 
 .retreat:hover {
-  box-shadow: 0px 2px 5px 0px rgb(170, 170, 170); 
-  background-color: rgb(240, 252, 252); 
+  box-shadow: 0px 3px 7px 0px rgb(155, 155, 155); 
+  background-color: rgb(245, 252, 252); 
   cursor: pointer; 
+}
+
+.retreat:active {
+  box-shadow: none;
+  background-color: white;
+  cursor: grabbing; 
 }
 
 .retreat-img {
   display: block; 
   margin: auto; 
-  height: 230px; 
-  width: 230px;
+  height: 220px; 
+  width: 220px;
   object-fit: cover;
-  /* border: 3px solid white; */
   border-radius: 50%;
 }
 
 .retreat-location {
   position: absolute;
-  left: 45px; 
-  top: 55px;
+  left: 40px; 
+  top: 50px;
   padding: 2px 3px; 
-  width: 160px; 
-  letter-spacing: 0.25em;
+  width: 150px; 
+  letter-spacing: 0.23em;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -467,13 +493,15 @@ nav {
   margin: 15px auto 0px auto; 
   text-align: center;
   color: black;
-  width: 240px; 
-  border-radius: 15px; 
-  letter-spacing: 0.035em;
-  font-size: 1.1em; 
+  width: 100%; 
+  font-size: 1em; 
+  font-family: 'Montserrat', sans-serif;
   padding: 0px 8px; 
 }
 
+.main-page-retreat:hover {
+  text-decoration: none
+}
 
 /* MainPage Courses */
 
@@ -484,6 +512,7 @@ nav {
 .courses-p {
   padding-top: 20px;
   font-size: 2em;
+  color: rgb(58, 58, 58);
   font-weight: var(--des-weight);
   text-align: center;
   letter-spacing: 0.1em;
