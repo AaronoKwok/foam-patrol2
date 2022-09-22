@@ -4,6 +4,7 @@ import {Routes, Route} from "react-router-dom"
 import SurfForecasts from "./pages/SurfForecasts"
 //import Shop from "./pages/Shop"
 import SurfRetreat from "./pages/SurfRetreat"
+import IntRetreat from "./pages/IntRetreat"
 import SurfCalendar from "./pages/SurfCalendar"
 import OnlineCourses from "./pages/OnlineCourses"
 import Header from "./components/header"
@@ -39,7 +40,7 @@ function App() {
     const waikiki = usaState.hawaii.county.oahu[0];
 
     return (
-        <div>
+        <div> 
             <Header /> 
            
             <Routes>
@@ -49,8 +50,8 @@ function App() {
                     <Route path="/surfRetreats/costarica-retreat" element={<SurfRetreat retreat={costaRica} />} />
                     <Route path="/surfRetreats/nicaragua-retreat" element={<SurfRetreat retreat={nicaragua} />} />
                     <Route path="/surfRetreats/bali-retreat" element={<SurfRetreat retreat={bali} /> }/>
-                    <Route path="/surfRetreats/intermediate/maldives-retreat" element={<SurfRetreat retreat={maldives} />} />
-                    <Route path="/surfRetreats/intermediate/mentawais-retreat" element={<SurfRetreat retreat={mentawais} />} />
+                    <Route path="/surfRetreats/intermediate/maldives-retreat" element={<IntRetreat retreat={maldives} />} />
+                    <Route path="/surfRetreats/intermediate/mentawais-retreat" element={<IntRetreat retreat={mentawais} />} />
                     <Route path="/surfRetreats/surf-trip-calendar" element={<SurfCalendar />} />
                 </Route>
                 
