@@ -57,10 +57,10 @@ function Header() {
                                 <p className="dropdown-title">INTERMEDIATE ONLY TRIPS</p>
                                 <hr className="hr-dropdown"/>
                                 
-                                <Link className="dropdown-link" to="/surfRetreats/maldives-retreat">
+                                <Link className="dropdown-link" to="/surfRetreats/intermediate/maldives-retreat">
                                     <p className="dropdown-info">MALDIVES | OCTOBER</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/surfRetreats/mentawais-retreat">
+                                <Link className="dropdown-link" to="/surfRetreats/intermediate/mentawais-retreat">
                                     <p className="dropdown-info">MENTAWAIS | NOVEMBER</p>
                                 </Link> 
                             </div>

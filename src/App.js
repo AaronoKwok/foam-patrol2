@@ -12,6 +12,7 @@ import Footer from "./components/Footer"
 
 import retreatData from "./Data/retreatData.json"
 import locationData from "./Data/locationData.json"
+import intRetreatData from "./Data/intermediateRetreat.json"
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
     const costaRica = retreatData[0]
     const nicaragua = retreatData[1]
     const bali = retreatData[2]
-    const maldives = retreatData[3]
-    const mentawais = retreatData[4]
+    const maldives = intRetreatData[0]
+    const mentawais = intRetreatData[1]
 
     //forecasts
     const usaState = locationData[0].globe.northAmerica.country.unitedStates.state
@@ -48,8 +49,8 @@ function App() {
                     <Route path="/surfRetreats/costarica-retreat" element={<SurfRetreat retreat={costaRica} />} />
                     <Route path="/surfRetreats/nicaragua-retreat" element={<SurfRetreat retreat={nicaragua} />} />
                     <Route path="/surfRetreats/bali-retreat" element={<SurfRetreat retreat={bali} /> }/>
-                    <Route path="/surfRetreats/maldives-retreat" element={<SurfRetreat retreat={maldives} />} />
-                    <Route path="/surfRetreats/mentawais-retreat" element={<SurfRetreat retreat={mentawais} />} />
+                    <Route path="/surfRetreats/intermediate/maldives-retreat" element={<SurfRetreat retreat={maldives} />} />
+                    <Route path="/surfRetreats/intermediate/mentawais-retreat" element={<SurfRetreat retreat={mentawais} />} />
                     <Route path="/surfRetreats/surf-trip-calendar" element={<SurfCalendar />} />
                 </Route>
                 

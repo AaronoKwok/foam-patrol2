@@ -99,7 +99,7 @@ function OnlineCourses() {
                     </div>
                 </div>
             </div>
-        
+         
             <div className="courses-pg-layout">
                 <p className="all-surf-header">{numberCourses} Surfing Courses</p>
                 <hr className="hr-surf-header"/>
@@ -128,12 +128,19 @@ function OnlineCourses() {
                     </select>
                 </p>
 
-                {isGrid === true && <div className="courses-in-grid">
-                    {specifiedCourses}
-                </div>}
-                {isGrid === false && <div className="courses-in-list">
-                    {specifiedCourses}
-                </div>}
+                {
+                    isGrid === true && 
+                        <div className="courses-in-grid">
+                            {specifiedCourses}
+                        </div>
+                }
+
+                {
+                    isGrid === false && 
+                        <div className="courses-in-list">
+                            {specifiedCourses}
+                        </div>
+                }
 
                 
             </div>
