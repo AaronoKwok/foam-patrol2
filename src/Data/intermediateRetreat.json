@@ -1,12 +1,206 @@
 [
     {
         "id": 0, 
-        "cost": "", 
-        "location": "Maldives"
+        "cost": "$6,800", 
+        "location": "Maldives",
+        "imgs": {
+            "background": "https://barefootsurftravel.com/wp-content/uploads/2020/01/day-1-blue-bowls-8-1-1500x900.jpg", 
+            "map": "https://barefootsurftravel.com/wp-content/uploads/2020/02/InfoMapMaldives-1500x900.jpg"
+        },  
+        "where": {
+            "title": "Maldives surf coaching retreat, Southern Atolls", 
+            "imgTitle": "10-Day surf retreat",
+            "subtitle": "Enjoy the world’s most playful waves for 10 days", 
+            "des": "The Maldives is home to what many intermediate surfers would qualify as “the most enjoyable waves on earth.” This surf coaching retreat takes place in the remote & unspoiled Southern Atolls, the final frontier of the Maldives.", 
+            "points": [
+                "Uncrowded waves: secluded location hundreds of kilometres South of Male", 
+                "12+ world-class, fun & user-friendly tropical waves", 
+                "Highest quality of surf coaching in the Maldives: 4 guides for 10 surfers max", 
+                "Largest amount of wave options in the Maldives with South, East & West exposure", 
+                "Beautiful 36-meter charter boat designed to chase perfect waves"
+            ]
+        }, 
+        "typical": {
+            "des": "You wake up in your private room in the beautiful surf boat, exclusive to your small group of intermediate surfers. The view outside is breathtaking: white sand beaches, palm trees, crystal-clear lagoons, and perfect fun-sized waves. You surf for 3 hours, taking turns on long peeling waves with just a few of your new friends out. Back on the boat, you watch surfing videos of your session with your surf coach to know how to improve your cutbacks and bottom turns. After lunch, you go for a quick snorkel around the mind-blowing coral reefs. Later you go for an epic sunset surf session and catch the best wave of your life. Your day ends surrounded by great people with a delicious Maldivian beach BBQ and a few cold drinks."
+        }, 
+        "waves": {
+            "des": "The Gaafu Dhaalu area (Southern Atolls) is the most southern section of the Maldives, making it much harder to access. Only a few surf charters operate in this secluded and idyllic location. Not only is this area usually less crowded, but it also picks up more swell directions than any other Atoll in the Maldives with exposure to the South, East & West. If there is one place where you can find never-ending playful waves without many surfers out, this is it!", 
+            "spots": [
+                "Castaways", 
+                "Tiger Stripes (Rockets)", 
+                "Five Islands (Gani Point)", 
+                "Love Charms"
+            ], 
+            "note": "These are all waves that our surf coaching team could take you to, when your level fits the conditions.",
+            "intNote": "Just as if being uncrowded and remarkably consistent during the surf season is not enough, the most significant perk of the Southern Atolls is perhaps the fantastic variety of waves. Whether you are looking for your first barrel, long rippable walls or softer, never-ending shoulders to ride on a funboard, this area has it all.", 
+            "int": [
+                "Airports (Kaededhdhoo)", 
+                "Blue Bowls", 
+                "Two Ways (Booga Reef)", 
+                "Khoodoo", 
+                "Antiques", 
+                "Viligili Right"
+            ]
+        }, 
+        "stay": {
+            "method": "The Surf Boat",
+            "des": "Explore the Southern Atolls in style & comfort. You will be living on a chic 36-meter boat built from fine tropical timber and custom-designed to chase waves. This massive boat has plenty of different social areas, hang out spots and relaxing spaces for each surfer in our small group of 10.", 
+            "points": [
+                "Large lounge saloon with comfortable sofas & armchairs", 
+                "Bar serving cocktails & cold beers, with happy hour", 
+                "Large sundeck, indoor and outside dining areas", 
+                "Access to fishing & snorkelling equipment", 
+                "Wifi"
+            ], 
+            "rooms": {
+                "des": "The boat’s 10.5-meter wide beam delivers a stable hull and very spacious cabins. With a total of 11 spacious and comfortable cabins, each surfer will have plenty of privacy in their own room.", 
+                "points": [
+                    "Private, comfortable room for every guest", 
+                    "Air-conditioning", 
+                    "Hot showers", 
+                    "En-suite bathrooms in each cabin"
+                ]
+            }, 
+            "meals": {
+                "des": "Three sumptuous all-you-can-eat meals per day are included, with unlimited snacks when you are hungry. The food is a mixture of Maldivian, Sri Lankan and Western dishes. The chefs can adjust to suit special diets when required.", 
+                "points": [
+                    "3 delicious all you can eat meals", 
+                    "Unlimited mineral water", 
+                    "Unlimited tea and coffee", 
+                    "Alcohol beverages available for purchase on the boat", 
+                    "Maldivian Specialty Beach BBQ (when weather permits)"
+                ], 
+                "note": "Typical meals are a banquet of five different dishes with daily variations, including fresh fish and tuna dishes, curries, pasta dishes, vegetables and salads, with dessert. Meat dishes are also provided. Breakfasts include tea, coffee, fruit, juice, toasts, cereal, eggs and pancakes."
+            }, 
+            "included": {
+                "surf": [
+                    "Unlimited boat transfers to all the surf spots around", 
+                    "2 Experienced surf guides for subgroups of 5 surfers (best ratio in the Maldives)", 
+                    "Technical analysis of your surfing footage each evening (see how we coach surfing)", 
+                    "Essential tips for every spot’s particularities", 
+                    "An extra small boat (Dinghy) to explore more waves around", 
+                    "All your surf photos & videos (bring hard drive or iPhone for videos)"
+                ], 
+                "accommodation": [
+                    "Chic 36-meter boat specifically designed to chase waves", 
+                    "Private, comfortable room for every guest", 
+                    "Air conditioning, hot showers & Wifi", 
+                    "En-suite bathrooms in each cabin", 
+                    "Plenty of common areas: large lounge, bar, sundeck, dining areas, etc."
+                ], 
+                "lifestyle": [
+                    "Domestic flights from Male to KDM (round trip)", 
+                    "Maldivian Green Tax (full length of trip)", 
+                    "3 healthy and delicious meals per day, plus snacks (all you can eat)", 
+                    "Unlimited mineral water, tea & coffee", 
+                    "Maldivian Specialty Beach BBQ (if weather permits)", 
+                    "Fishing & Snorkeling equipment"
+                ]
+            }
+        }
     }, 
     {
         "id": 0, 
-        "cost": "", 
-        "location": "Mentaiwais"
+        "cost": "$4,700", 
+        "location": "Mentaiwais",
+        "imgs": {
+            "background": "https://barefootsurftravel.com/wp-content/uploads/2018/12/Beng2s-take-off.jpg", 
+            "map": "https://barefootsurftravel.com/wp-content/uploads/2018/12/InfoMapMentawai-1-2000x1100.jpg"
+        },  
+        "where": {
+            "title": "Mentawai surf coaching retreat, Indonesia", 
+            "imgTitle": "10-Day surf retreat",
+            "subtitle": "Surf some of the worlds best waves for 10 days", 
+            "des": "Ask any surfer: If you could go on a surf trip anywhere on the planet, where would you go? There is no doubt that the Mentawais would be one of the most popular answers. These secluded tropical islands deliver the absolute perfection that surfers dream about all their lives.", 
+            "points": [
+                "A mind-blowing selection of 15+ world class breaks", 
+                "Experience perfection: from flawless barrels to world-class playful waves", 
+                "Unlimited fast boats to surf, all healthy & delicious meals, & a gorgeous resort", 
+                "Location: live on a hill with panoramic ocean views, a 2-minute walk to amazing waves", 
+                "Highest quality of surf coaching in the Mentawais: 4 guides for 8 surfers max"
+            ]
+        }, 
+        "typical": {
+            "des": "From your balcony set on top of a hill in a lush, tropical rainforest, you drink a coffee while observing the flawless turquoise waves peeling right out front. You feel the excitement of starting your day in a true surf mecca. A team of dedicated surf guides takes you to ride some of the best waves of your life. You take boat rides to some of the 15+ world-class spots around and you enjoy two long surf sessions in uncrowded, tropical waves. You come back home incapable of wiping the grin off of your face. You sit with your 3 surfing friends on the huge custom-made leather lounges, relaxing with a cold beer. Your trained coach puts all your surfing pictures and videos on the television, and makes sure you enjoy every session even more by helping you to bring your skills to the next level."
+        }, 
+        "waves": {
+            "des": "The Mentawai islands is probably the most wave-rich location on earth. There isn’t any other destination that offers as many perfect waves within 45 minutes of each other. By looking at the map, it’s easy to see that no matter the swell or wind direction, this incredible wave selection will provide unforgettable rides. With its variety of reef breaks, point breaks, secluded bays, rights and lefts, we will find the perfect waves for you.", 
+            "spots": [
+                "Kandui", 
+                "Hideaways", 
+                "Riffles", 
+                "E-bay", 
+                "Bankvault"
+            ], 
+            "note": "These are all waves that our surf coaching team could take you to, when your level fits the conditions. These spots are all reachable in less than a 25-minute boat ride.",
+            "intNote": "As a “beginner-to-intermediate” surf coaching company, we know you are probably not looking for 12 feet grinders breaking over extremely shallow reef. That is why we are here. We chose the Nyang-Nyang location because it is also loaded with easier and safer waves (but still world-class!). On any given day, clean, shoulder-to-head high waves are almost guaranteed to peel flawlessly.", 
+            "int": [
+                "Beng Beng", 
+                "Pitstops", 
+                "Nipussi", 
+                "4 Bobs", 
+                "A Frames", 
+                "Burger World"
+            ]
+        }, 
+        "stay": {
+            "method": "Location",
+            "des": "You will be living on Nyang Nyang, a small 5km-long tropical island only populated by a few local villages. The paradisiac island is covered by dense, lush rainforest with stunning hills and vegetation.\n Your room is set on a hill, right on top of pristine white sand beaches and turquoise waters. There is no denying it, every night you enjoy the best sunset views in the Mentawais.\n From your home, walk 2 minutes to Pitstops, which could quite possibly be the most fun wave you’ve ever surfed! If there’s a reasonable swell coming from the west during your trip, you will wake up more excited than children on Christmas day. E-bay is a perfect left barrel that peels down the line and is just a short paddle from your resort.", 
+            "points": [
+                "Spacious front yard and garden with panoramic views on the waves", 
+                "Huge, stylish common lounge, dining table & custom-made leather sofas", 
+                "Driftwood bar with a great selection of beers & spirits", 
+                "Full height windows & views on the Indian Ocean", 
+                "Wi-Fi"
+            ], 
+            "rooms": {
+                "des": "Experience the Mentawai dream in comfort and style. You will live in a stunning resort made from hardwoods, stone walls and giant windows that provide breathtaking views on the ocean.", 
+                "points": [
+                    "Two surfers per room (separate beds)", 
+                    "1 X Private Bungalow for 4 (two story)", 
+                    "All linen & towels", 
+                    "Carved log wood showers & hot water", 
+                    "Air-Conditioning & Fans"
+                ]
+            }, 
+            "meals": {
+                "des": "The food is so good that many travellers joke about coming back just for it! All three healthy meals are included every day, plus snacks & home-baked treats.", 
+                "points": [
+                    "Curries, ayam bakar, beef, chicken", 
+                    "Locally-caught seafood", 
+                    "Homestyle cooking", 
+                    "Can accommodate for your special diet requests"
+                ], 
+                "note": "Unlimited snacks and mineral water provided"
+            }, 
+            "included": {
+                "surf": [
+                    "Unlimited boat transfers to all the surf spots around", 
+                    "2 Experienced surf guides for 4 surfers (best ratio in the Mentawai)", 
+                    "Important tips for every spot’s particularities", 
+                    "A fleet of quality fast boats with surf racks, comfortable seating & tinted windows", 
+                    "80 or 120hp Yamaha engines on boats designed for Mentawai sea conditions", 
+                    "All your surf photos & videos (bring hard drive or iPhone for videos)"
+                ], 
+                "accommodation": [
+                    "Gorgeous resort with quality accommodations & ocean views", 
+                    "2 travelers per room or 1 X two-story bungalow for 4", 
+                    "Clean, air-conditioned rooms", 
+                    "Custom-made wooden furniture & leather lounges", 
+                    "Spacious front yard with common areas with hammocks", 
+                    "Entertainment: music system, hundreds of surf movies & big screen tv", 
+                    "Wi-Fi"
+                ], 
+                "lifestyle": [
+                    "Private fast boat to and from the Mentawai", 
+                    "Government surfer fee", 
+                    "3 healthy and delicious meals per day, plus snacks", 
+                    "Soft drinks, juice, tea & coffee", 
+                    "Transfers from Padang Airport to Padang hotel & to boat harbor", 
+                    "Boats for fishing & touring", 
+                    "Use of SUP boards, fishing equipment & snorkeling equipment"
+                ]
+            }
+        }
     }
 ]

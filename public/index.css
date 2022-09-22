@@ -1473,7 +1473,7 @@ nav {
 
 .retreat-backscene-text {
   position: absolute; 
-  bottom: 220px; 
+  top: 28vh; 
   width: 100%; 
   color: rgb(13, 62, 102); 
   text-align: center;
