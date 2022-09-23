@@ -80,6 +80,7 @@ function OnlineCourses() {
 
     const specifiedCourses = availableCourses.map((course) => {
             return <OnlineCourse course={course} grid={isGrid} key={course.id}/>
+            
     })
 
     return (

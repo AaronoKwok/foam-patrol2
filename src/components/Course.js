@@ -1,5 +1,7 @@
 import React from "react"  
 
+import {Link} from "react-router-dom"
+
 function Course({courseName}) {
 
     function level() {
@@ -14,13 +16,16 @@ function Course({courseName}) {
     }
 
     return (
-        <section className="course">
-            <img className="course-image" src={courseName.img} alt=""/>
-            {courseName.free && <div className="is-free">Free Access</div>}
-            {level()}
-            <p className="learn">Learn {courseName.preposition}</p>
-            <p className="title">{courseName.title}</p>
-        </section>
+        <Link to={courseName.link}>
+            <section className="course">
+                <img className="course-image" src={courseName.img} alt=""/>
+                {courseName.free && <div className="is-free">Free Access</div>}
+                {level()}
+                <p className="learn">Learn {courseName.preposition}</p>
+                <p className="title">{courseName.title}</p>
+            </section>
+        </Link>
+        
     )
 }
 

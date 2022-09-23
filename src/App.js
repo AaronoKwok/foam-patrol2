@@ -5,6 +5,7 @@ import SurfForecasts from "./pages/SurfForecasts"
 //import Shop from "./pages/Shop"
 import SurfRetreat from "./pages/SurfRetreat"
 import IntRetreat from "./pages/IntRetreat"
+import ChosenCourse from "./pages/ChosenCourse"
 import SurfCalendar from "./pages/SurfCalendar"
 import OnlineCourses from "./pages/OnlineCourses"
 import Header from "./components/header"
@@ -14,6 +15,7 @@ import Footer from "./components/Footer"
 import retreatData from "./Data/retreatData.json"
 import locationData from "./Data/locationData.json"
 import intRetreatData from "./Data/intermediateRetreat.json"
+import courseData from "./Data/courseData.json"
 
 
 function App() {
@@ -39,6 +41,34 @@ function App() {
     const hbPier = usaState.california.county.orange[0]
     const waikiki = usaState.hawaii.county.oahu[0];
 
+    //courses
+    const duckDive = courseData[0]
+    const generateSpeed = courseData[1]
+    const paddleEfficient = courseData[2]
+    const popUp = courseData[3]
+    const pushThrough = courseData[4]
+    const betterWave = courseData[5]
+    const otherCourse = courseData[6]
+    const tips = courseData[7]
+    const beginners = courseData[8]
+    const turtleRoll = courseData[9]
+    const turnWhite = courseData[10]
+    const footwork = courseData[11]
+    const angle = courseData[12]
+    const readWave = courseData[13]
+    const stance = courseData[14]
+    const etiquette = courseData[15]
+    const intermediates = courseData[16]
+    const position = courseData[17]
+    const crossStep = courseData[18]
+    const bottomTurn = courseData[19]
+    const cutback = courseData[20]
+    const topTurn = courseData[21]
+    const sally = courseData[22]
+    const michelle = courseData[23]
+
+
+
     return (
         <div> 
             <Header /> 
@@ -55,7 +85,7 @@ function App() {
                     <Route path="/surfRetreats/surf-trip-calendar" element={<SurfCalendar />} />
                 </Route>
                 
-                <Route path="/surfForecasts">
+                <Route path="/surfForecasts" >
                     <Route path="/surfForecasts/pleasurePoint" element={<SurfForecasts loc={pleasurePoint}/>} />
                     <Route path="/surfForecasts/waikiki" element={<SurfForecasts loc={waikiki}/>} />
                     <Route path="/surfForecasts/jacks" element={<SurfForecasts loc={jacks}/>} />
@@ -68,7 +98,35 @@ function App() {
                     <Route path="/surfForecasts/hbPier" element={<SurfForecasts loc={hbPier}/>} />
                 </Route> 
                 {/* <Route path="/shop" element={<Shop />} /> */}
-                <Route path="onlineCourses" element={<OnlineCourses />} />
+
+                <Route path="/onlineCourses" element={<OnlineCourses />} />  
+
+                <Route path="/onlineCourses"> {/* originally had <Route path="/onlineCourses" element={<OnlineCourse />} />, but the "element={<OnlineCourse />}" would override the elements in the nested routes, so I made another route with the OnlineCourses element above */}
+                    <Route path="/onlineCourses/duckDive" element={<ChosenCourse course={duckDive}/>} />
+                    <Route path="/onlineCourses/generateSpeed" element={<ChosenCourse course={generateSpeed}/>} />
+                    <Route path="/onlineCourses/paddleEfficiently" element={<ChosenCourse course={paddleEfficient}/>} />
+                    <Route path="/onlineCourses/popUp" element={<ChosenCourse course={popUp}/>} />
+                    <Route path="/onlineCourses/pushThrough" element={<ChosenCourse course={pushThrough}/>} />
+                    <Route path="/onlineCourses/catchBetterWaves" element={<ChosenCourse course={betterWave}/>} />
+                    <Route path="/onlineCourses/allOthers" element={<ChosenCourse course={otherCourse}/>} />
+                    <Route path="/onlineCourses/learningTips" element={<ChosenCourse course={tips}/>} />
+                    <Route path="/onlineCourses/surfboardsForBeginners" element={<ChosenCourse course={beginners}/>} />
+                    <Route path="/onlineCourses/turtleRoll" element={<ChosenCourse course={turtleRoll}/>} />
+                    <Route path="/onlineCourses/turningInTheWhiteWater" element={<ChosenCourse course={turnWhite}/>} />
+                    <Route path="/onlineCourses/footwork" element={<ChosenCourse course={footwork}/>} />
+                    <Route path="/onlineCourses/anglingTheTakeoff" element={<ChosenCourse course={angle}/>} />
+                    <Route path="/onlineCourses/readingWaves" element={<ChosenCourse course={readWave}/>} />
+                    <Route path="/onlineCourses/stance" element={<ChosenCourse course={stance}/>} />
+                    <Route path="/onlineCourses/etiquette" element={<ChosenCourse course={etiquette}/>} />
+                    <Route path="/onlineCourses/surfboardsForIntermediates" element={<ChosenCourse course={intermediates}/>} />
+                    <Route path="/onlineCourses/positioningForWaves" element={<ChosenCourse course={position}/>} />
+                    <Route path="/onlineCourses/crossStep" element={<ChosenCourse course={crossStep}/>} />
+                    <Route path="/onlineCourses/bottomTurn" element={<ChosenCourse course={bottomTurn}/>} />
+                    <Route path="/onlineCourses/cutback" element={<ChosenCourse course={cutback}/>} />
+                    <Route path="/onlineCourses/topTurn" element={<ChosenCourse course={topTurn}/>} />
+                    <Route path="/onlineCourses/yogaWithSally" element={<ChosenCourse course={sally}/>} />
+                    <Route path="/onlineCourses/fitnessMobilityWithMichelle" element={<ChosenCourse course={michelle}/>} />
+                </Route>
             </Routes>
 
             <Footer />
