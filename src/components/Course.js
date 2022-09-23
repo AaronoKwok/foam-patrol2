@@ -16,7 +16,7 @@ function Course({courseName}) {
     }
 
     return (
-        <Link to={courseName.link}>
+        <Link className="link-hover" to={courseName.link}>
             <section className="course">
                 <img className="course-image" src={courseName.img} alt=""/>
                 {courseName.free && <div className="is-free">Free Access</div>}

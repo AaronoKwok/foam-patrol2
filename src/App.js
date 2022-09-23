@@ -1,5 +1,5 @@
-import React from "react"
-import {Routes, Route} from "react-router-dom" 
+import React, {useEffect} from "react"
+import {Routes, Route, useLocation} from "react-router-dom" 
 
 import SurfForecasts from "./pages/SurfForecasts"
 //import Shop from "./pages/Shop"
@@ -19,6 +19,13 @@ import courseData from "./Data/courseData.json"
 
 
 function App() {
+
+    //need method to have each page start at top when loaded
+    //note, below does not work for going back, only foward
+    const location = useLocation(); 
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, [location])
 
     //retreats 
     const costaRica = retreatData[0]
@@ -66,8 +73,6 @@ function App() {
     const topTurn = courseData[21]
     const sally = courseData[22]
     const michelle = courseData[23]
-
-
 
     return (
         <div> 

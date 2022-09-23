@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 function Retreat({retreat}) {
     return (
-        <Link className="main-page-retreat" to={retreat.link}>
+        <Link className="link-hover" to={retreat.link}>
             <section className="retreat">
                 <img className="retreat-img" src={retreat.img} alt="" />
                 <p className="retreat-location">{retreat.location}</p>

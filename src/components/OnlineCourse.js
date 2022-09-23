@@ -8,7 +8,7 @@ function OnlineCourse({course, grid}) {
     const pay = course.free ? "free" : "premium";
     console.log(`${course.link}`) 
     return (
-        <Link to={course.link}> {/* encompass grid/lined course element here */}
+        <Link className="link-hover" to={course.link}> {/* encompass grid/lined course element here */}
             <section>
                 {
                     grid ? 
