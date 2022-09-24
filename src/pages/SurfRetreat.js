@@ -4,6 +4,22 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
 
 function SurfRetreat({retreat}) {
+
+    function makePoint(array) {
+        return array.map((bullet, index) => {
+            return  <p><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
+        })
+    }
+
+
+
+
+
+
+
+
+
+
     return (
         <div className="retreat-page">
             <div className="retreat-bg-img-position">

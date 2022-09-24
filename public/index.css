@@ -288,7 +288,7 @@ nav {
 
 .background-image {
   width: 100%;
-  height: 70vh;
+  height: 70vh; /* add media query for different sized webpages. setting to 500ish pixels workd for emma sized screen, but need different size for larger screen */
   overflow: hidden;
   object-fit: cover;
   object-position: 0% 55%;
@@ -1555,4 +1555,12 @@ nav {
 
 .retreat-map {
   height: 400px; 
+}
+
+/* media queries */
+
+@media screen and (max-height: 600px) {
+  .background-image {
+    height: 500px
+  }
 }
