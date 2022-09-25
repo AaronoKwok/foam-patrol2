@@ -2,6 +2,9 @@
     { 
         "id": 0, 
         "link": "/surfRetreats/costarica-retreat",
+        "whereImg": "https://barefootsurftravel.com/wp-content/uploads/2018/07/IMG_3776-1500x1050.jpg", 
+        "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2018/06/Level-1600x800.jpg", 
+        "accImg": "https://barefootsurftravel.com/wp-content/uploads/2018/06/deluxe2-2-1200x1000.jpg", 
         "cost": "$3,280", 
         "location": "COSTA RICA", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/158A3596-1600x1200.jpg", 
@@ -33,8 +36,8 @@
             }
         ], 
         "discoverDestination": [
-            "", 
-            ""
+            "Forrest Hille", 
+            "Calle Florida"
         ],
         "lifeStyle": {
             "testimony": "Guiones is the definition of a tropical, surfing paradise village. The remote, small town has a very relaxed vibe based around surfing and yoga.", 
@@ -84,6 +87,9 @@
     {
         "id": 1,
         "link": "/surfRetreats/nicaragua-retreat", 
+        "whereImg": "https://barefootsurftravel.com/wp-content/uploads/2017/03/3K2A3410-1600x800.jpg", 
+        "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2015/04/3K2A3457-1200x1000.jpg", 
+        "accImg": "https://barefootsurftravel.com/wp-content/uploads/2017/10/3K2A4652-800x800.jpg", 
         "cost": "$2,850", 
         "location": "NICARAGUA", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/07/IMG_3715.jpg", 
@@ -111,7 +117,7 @@
         "liveAt": [
             {
                 "destination": "San Juan del Sur, Nicaragua", 
-                "description": "Every day is a new adventure around San Juan del Sur. Explore these amazing surf beaches:"
+                "description": "Every day is a new adventure around San Juan del Sur. There are spots here that we encourage intermediates and more advanced surfers to try. Also, when you come back from the breaks, local cafes and some restaurants are only a 5 minute walk away!"
             }
         ], 
         "discoverDestination": [
@@ -166,6 +172,9 @@
     {
         "id": 2, 
         "link": "/surfRetreats/bali-retreat",
+        "whereImg": "https://barefootsurftravel.com/wp-content/uploads/2015/05/DJI_0093-700x840.jpeg", 
+        "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2018/09/DSCF4935-1200x675.jpg", 
+        "accImg": "https://barefootsurftravel.com/wp-content/uploads/2015/05/K2A8361-1600x933.jpg", 
         "cost": "$3,650", 
         "location": "BALI", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2017/05/Villa-Lembongan.jpg", 
@@ -252,6 +261,9 @@
     {
         "id": 3, 
         "link": "/surfRetreats/intermediate/maldives-retreat",
+        "whereImg": "", 
+        "typicalImg": "", 
+        
         "cost": "", 
         "location": "MALDIVES", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2020/01/handy19-0266-2.jpg", 
@@ -261,6 +273,9 @@
     {
         "id": 4,
         "link": "/surfRetreats/intermediate/mentawais-retreat", 
+        "whereImg": "", 
+        "typicalImg": "", 
+        
         "cost": "", 
         "location": "MENTAWAI", 
         "img": "https://barefootsurftravel.com/wp-content/uploads/2018/12/Beng2s-take-off.jpg", 
