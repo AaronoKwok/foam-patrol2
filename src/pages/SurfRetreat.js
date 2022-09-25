@@ -12,10 +12,9 @@ function SurfRetreat({retreat}) {
 
     function makePoints(array) {
         return array.map((bullet, index) => {
-            return  <p><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
+            return  <p className="info-space"><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
         })
     }
-
 
 
 
@@ -84,33 +83,49 @@ function SurfRetreat({retreat}) {
                     
                 </section>
 
-                <section>
-                    <p className="retreat-header">Surf Information</p>
-                    <p>Surf Overview</p>
-                    <p>{retreat.surfInfo.overview}</p>
-                    <p>Surf Conditions</p>
-                    <p>{retreat.surfInfo.typical}</p>
-                    <div>
-                        <p>Swell Season: {retreat.surfInfo.season.swell}</p>
-                        <p>Larger Waves: {retreat.surfInfo.season.bigger}</p>
+                <section className="holder">
+                    <div className="info-left">
+                            <p className="retreat-header">Surf Information</p>
+                            <p className="destination">Surf Overview</p>
+                            <p className="des-des">{retreat.surfInfo.overview}</p>
+                            <p className="destination">Surf Conditions</p>
+                            <p className="des-des">{retreat.surfInfo.typical}</p>
                     </div>
-                    <div>
-                        <p>Waves: {retreat.surfInfo.day.waves}</p>
-                        <p>Winds: {retreat.surfInfo.day.winds}</p>
-                    </div>
-                    <div>
-                        <p>Air Temp: {retreat.surfInfo.temp.airTemp}</p>
-                        <p>Rainy Season: {retreat.surfInfo.temp.rain}</p>
-                    </div>
-                    <div>
-                        <p>Skill Level: include func()</p>
-                    </div>
-                    <div>
-                        <p>Surf Spots:</p>
-                        <div className="main-info-bullets">
-                            {makePoints(surfPoints)}
+                    
+                    <section className="info-diagram">
+                        <div className="info-swell info-spec">
+                            <p className="info-title">SEASON</p>
+                            <div className="info-info">
+                                <p>Swell Season: {retreat.surfInfo.season.swell}</p>
+                                <p>Larger Waves: {retreat.surfInfo.season.bigger}</p> 
+                            </div>
                         </div>
-                    </div>
+                        <div className="info-waves info-spec">
+                            <p className="info-title">TYPICAL DAY</p>
+                            <div className="info-info">
+                                <p>Waves: {retreat.surfInfo.day.waves}</p>
+                                <p>Winds: {retreat.surfInfo.day.winds}</p>
+                            </div>
+                        </div>
+                        <div className="info-temp info-spec">
+                            <p className="info-title">TEMPERATURE</p>
+                            <div className="info-info">
+                                <p>Air Temp: {retreat.surfInfo.temp.airTemp}</p>
+                                <p>Rainy Season: {retreat.surfInfo.temp.rain}</p>
+                            </div>  
+                        </div>
+                        <div className="info-skill info-spec">
+                            <p className="info-title">SKILL LEVEL</p>
+                            <p className="info-info">{retreat.surfInfo.skillLvl}</p>
+                        </div>
+                        <div className="info-spots info-spec">
+                            <p className="info-title">SURF SPOTS</p>
+                            <div className="info-info">
+                                {makePoints(surfPoints)}
+                            </div>
+                        </div>
+                    </section>
+                    
                 </section>
                 
             </div>

@@ -3,7 +3,7 @@
         "id": 0, 
         "link": "/surfRetreats/costarica-retreat",
         "whereImg": "https://barefootsurftravel.com/wp-content/uploads/2018/07/IMG_3776-1500x1050.jpg", 
-        "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2018/06/Level-1600x800.jpg", 
+        "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2015/05/3K2A0240-800x933.jpeg", 
         "accImg": "https://barefootsurftravel.com/wp-content/uploads/2018/06/deluxe2-2-1200x1000.jpg", 
         "cost": "$3,280", 
         "location": "COSTA RICA", 
@@ -75,7 +75,7 @@
                 "airTemp": [24, 32], 
                 "rain": "July to November"
             }, 
-            "skillLvl": [1, 1, 0], 
+            "skillLvl": "Beginner/Intermediate", 
             "surfSpots": [
                 "Guiones Beach", 
                 "Ostional Beach", 
@@ -88,7 +88,7 @@
         "id": 1,
         "link": "/surfRetreats/nicaragua-retreat", 
         "whereImg": "https://barefootsurftravel.com/wp-content/uploads/2017/03/3K2A3410-1600x800.jpg", 
-        "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2015/04/3K2A3457-1200x1000.jpg", 
+        "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2015/05/DJI_0084-1600x700.jpeg", 
         "accImg": "https://barefootsurftravel.com/wp-content/uploads/2017/10/3K2A4652-800x800.jpg", 
         "cost": "$2,850", 
         "location": "NICARAGUA", 
@@ -161,7 +161,7 @@
                 "airTemp": [24, 32], 
                 "rain": "July to November"
             }, 
-            "skillLvl": [1, 1, 0], 
+            "skillLvl": "Beginner/Intermediate", 
             "surfSpots": [
                 "Remanzo Beach", 
                 "Maderas Beach", 
@@ -249,7 +249,7 @@
                 "airTemp": [24, 34], 
                 "rain": "December to March"
             }, 
-            "skillLvl": [1, 1, 0], 
+            "skillLvl": "Beginner/Intermediate", 
             "surfSpots": [
                 "Kuta Beach", 
                 "Oldmans Beach", 
