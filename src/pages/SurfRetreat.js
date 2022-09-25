@@ -16,7 +16,13 @@ function SurfRetreat({retreat}) {
         })
     }
 
-
+    function tempRange() {
+        const tempArr = retreat.surfInfo.temp.airTemp
+        function getF(cel) {
+            return Math.floor(((cel * (9/5)) + 32))
+        }
+        return `${getF(tempArr[0])}-${getF(tempArr[1])}`
+    }
 
     return (
         <div>
@@ -96,27 +102,27 @@ function SurfRetreat({retreat}) {
                         <div className="info-swell info-spec">
                             <p className="info-title">SEASON</p>
                             <div className="info-info">
-                                <p>Swell Season: {retreat.surfInfo.season.swell}</p>
-                                <p>Larger Waves: {retreat.surfInfo.season.bigger}</p> 
+                                <p className="info-pair"><span className="info-span">Swell Season: </span>{retreat.surfInfo.season.swell}</p>
+                                <p className="info-pair"><span className="info-span">Larger Waves: </span>{retreat.surfInfo.season.bigger}</p> 
                             </div>
                         </div>
                         <div className="info-waves info-spec">
                             <p className="info-title">TYPICAL DAY</p>
                             <div className="info-info">
-                                <p>Waves: {retreat.surfInfo.day.waves}</p>
-                                <p>Winds: {retreat.surfInfo.day.winds}</p>
+                                <p className="info-pair"><span className="info-span">Waves: </span>{retreat.surfInfo.day.waves} ft</p>
+                                <p className="info-pair"><span className="info-span">Winds: </span>{retreat.surfInfo.day.winds}</p>
                             </div>
                         </div>
                         <div className="info-temp info-spec">
                             <p className="info-title">TEMPERATURE</p>
                             <div className="info-info">
-                                <p>Air Temp: {retreat.surfInfo.temp.airTemp}</p>
-                                <p>Rainy Season: {retreat.surfInfo.temp.rain}</p>
+                                <p className="info-pair"><span className="info-span">Air Temp: </span>{tempRange()}&#176;f</p>
+                                <p className="info-pair"><span className="info-span">Rainy Season: </span>{retreat.surfInfo.temp.rain}</p>
                             </div>  
                         </div>
                         <div className="info-skill info-spec">
                             <p className="info-title">SKILL LEVEL</p>
-                            <p className="info-info">{retreat.surfInfo.skillLvl}</p>
+                            <p className="info-lvl">{retreat.surfInfo.skillLvl}</p>
                         </div>
                         <div className="info-spots info-spec">
                             <p className="info-title">SURF SPOTS</p>
