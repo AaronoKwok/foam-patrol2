@@ -19,15 +19,14 @@
             "description": "Welcome to the ultimate tropical surfing experience in playa Guiones. Imagine yourself surfing a pristine 7 km long beach break surrounded by some of the lushest rainforest hills on earth. We’ve created one of the best surf coaching camps in Costa Rica.", 
             "bullets": [
                 "Consistent, quality surf for beginners & intermediates", 
-                "Plenty of safe, sand bottom waves breaking over 7 km of majestic beach", 
+                "Plenty of safe, sand bottom waves breaking over 7 km of beach", 
                 "Fascinating jungle with sloths, monkeys, colorful birds & more", 
                 "Gorgeous, private bungalow set in a tropical garden for you to rest easy", 
                 "Central location: walk 6 minutes to waves, amazing restaurants & cafes"
             ], 
             "img": ""
         }, 
-        "typicalDayDes": "Wake up in your gorgeous bungalow and watch a family of howler monkeys pass overhead as you head for a swim in the beautiful salt water pool. Grab a surfboard and walk 5 minutes through the thick jungle to Guiones beach for your personalized surf class after a fresh, organic breakfast. Back home, a professional surf coach analyzes your surfing videos, helping you quickly improve your technique while you sip on a fresh smoothie. After your afternoon restorative yoga session, you feel relaxed and grateful, and you finish the day by grabbing a bicycle and riding through beautiful Nosara at sunset, amazed by its incredible biodiversity.", 
-        "typicalDayImg": "", 
+        "typicalDayDes": "Wake up in your gorgeous bungalow and watch a family of howler monkeys pass overhead as you head for a swim in the beautiful salt water pool. Grab a surfboard and walk 5 minutes through the thick jungle to Guiones beach for your personalized surf class after a fresh, organic breakfast. Back home, a professional surf coach analyzes your surfing videos, helping you quickly improve your technique while you sip on a fresh smoothie. After your afternoon restorative yoga session, you feel relaxed and grateful, and you finish the day by grabbing a bicycle and riding through beautiful Nosara at sunset, amazed by its incredible biodiversity.",  
         "map": "https://barefootsurftravel.com/wp-content/uploads/2018/07/InfoMapNosara-2000x1376.jpg", 
         "liveAt": [
             {
@@ -111,8 +110,7 @@
             ], 
             "img": ""
         }, 
-        "typicalDayDes": "", 
-        "typicalDayImg": "", 
+        "typicalDayDes": "You wake up in your private room in the beautiful surf bungalow, exclusive to your small group of intermediate surfers. The view outside is breathtaking: white sand beaches, palm trees, crystal-clear lagoons, and perfect fun-sized waves. You surf for 3 hours, taking turns on long peeling waves with just a few of your new friends out. Back on the coast, you watch surfing videos of your session with your surf coach to know how to improve your cutbacks and bottom turns. After lunch, you go for a quick snorkel around the mind-blowing coral reefs. Later you go for an epic sunset surf session and catch the best wave of your life. Your day ends surrounded by great people with a delicious Nicaraguan beach BBQ and a few cold drinks.",  
         "map": "https://barefootsurftravel.com/wp-content/uploads/2019/09/InfoMapNica2-2000x1376.jpg", 
         "liveAt": [
             {
@@ -196,8 +194,7 @@
             ], 
             "img": ""
         }, 
-        "typicalDayDes": "Start your day in our luxurious private villa on top of a cliff, enjoying panoramic views of the crystal-clear waters of Nusa Lembongan. After breakfast, you and your fellow travelers are picked up by boat by the welcoming surf coaches and taken to your surfing spot. You feel the incredible sensation of sliding on turquoise waves and notice the vibrant colors of the reef beneath your surfboard. Back at the villa, your Barefoot surf guide analyzes and discusses your surf photos and videos, and you are more motivated than before you started. At night, you and your friends enjoy freshly caught fish at your local surf coach’s family restaurant, right on the beach.", 
-        "typicalDayImg": "", 
+        "typicalDayDes": "Start your day in our luxurious private villa on top of a cliff, enjoying panoramic views of the crystal-clear waters of Nusa Lembongan. After breakfast, you and your fellow travelers are picked up by boat by the welcoming surf coaches and taken to your surfing spot. You feel the incredible sensation of sliding on turquoise waves and notice the vibrant colors of the reef beneath your surfboard. Back at the villa, your Barefoot surf guide analyzes and discusses your surf photos and videos, and you are more motivated than before you started. At night, you and your friends enjoy freshly caught fish at your local surf coach’s family restaurant, right on the beach.",  
         "map": "https://barefootsurftravel.com/wp-content/uploads/2015/05/InfoMapBali3-2000x1200.jpg", 
         "liveAt": [
             {
@@ -243,7 +240,7 @@
             }, 
             "day": {
                 "waves": "3-5", 
-                "winds": "Offshore all day on the woth-west coast, during swell season"
+                "winds": "Offshore all day on the Woth-west coast, during swell season"
             }, 
             "temp": {
                 "airTemp": [24, 34], 

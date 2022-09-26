@@ -1575,14 +1575,14 @@ nav {
   font-family: 'Montserrat', 'sans-serif';
 }
 
-.img-left {
+.right-img {
   margin-left: 25px; 
   max-height: 600px; 
   border-radius: 10px;
   max-width: 55%;
 }
 
-.right-img {
+.left-img {
   margin-right: 25px;
   max-height: 600px;
   max-width: 55%; 
@@ -1641,7 +1641,7 @@ nav {
 }
 
 .info-space {
-  margin: 0px; 
+  margin: 5px; 
 }
 
 .info-title {
@@ -1668,6 +1668,10 @@ nav {
 
 .info-span {
   font-weight: 500; 
+}
+
+.int-meals-note {
+  margin-top: 10px; 
 }
 
 

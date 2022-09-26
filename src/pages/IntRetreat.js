@@ -17,7 +17,7 @@ function IntRetreat({retreat}) {
 
     function makePoints(array) {
         return array.map((bullet, index) => {
-            return  <p><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
+            return  <p className="info-space"><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
         })
     }
 
@@ -35,64 +35,107 @@ function IntRetreat({retreat}) {
                     </div>
                 </div>
             </div>
-            <section>
-                <p>Where:</p>
-                <p>{retreat.where.title}</p>
-                <p>{retreat.where.subtitle}</p>
-                <p>{retreat.where.des}</p>
-                <div className="main-info-bullets">
-                    {makePoints(wherePoints)}
-                </div>
-            </section>
-            <section>
-                <p>{retreat.typical.des}</p>
-            </section>
-            <section>
-                <p>Intermediate to Advanced Spots</p>
-                <p>{retreat.waves.des}</p>
-                <div className="main-info-bullets">
-                    {makePoints(spots)}
-                </div>
-                <p>{retreat.waves.note}</p>
-                <p>Intermediate Spots</p>
-                <p>{retreat.waves.intNote}</p>
-                <div className="main-info-bullets">
-                    {makePoints(intermediate)}
-                </div>
-            </section>
-            <section>
-                <p>{retreat.stay.method}</p>
-                <p>{retreat.stay.des}</p>
-                <div className="main-info-bullets">
-                    {makePoints(stay)}
-                </div>
-                <p>Rooms:</p>
-                <p>{retreat.stay.rooms.des}</p>
-                <div className="main-info-bullets">
-                    {makePoints(rooms)}
-                </div>
-                <p>Meals:</p>
-                <p>{retreat.stay.meals.des}</p>
-                <div className="main-info-bullets">
-                    {makePoints(meals)}
-                </div>
-                <p>{retreat.stay.meals.note}</p>
-            </section>
-            <p>Included:</p>
-            <section>
-                <p>Surf</p>
-                <div className="main-info-bullets">
-                    {makePoints(included)}
-                </div>
-                <p>Accommodation</p>
-                <div className="main-info-bullets">
-                    {makePoints(accommodation)}
-                </div>
-                <p>Lifestyle</p>
-                <div className="main-info-bullets">
-                    {makePoints(lifestyle)}
-                </div>
-            </section>
+
+            <div className="retreat-width">
+
+                <section className="holder">
+                    <div>
+                        <p className="retreat-header">{retreat.where.title}</p>
+                        <p>{retreat.where.des}</p>
+                        <div className="main-info-bullets">
+                            {makePoints(wherePoints)}
+                        </div> 
+                    </div>
+                    <img className="right-img" src={retreat.imgs.where} alt=""/>
+                </section>
+
+                <section className="holder">
+                    <img className="left-img" src={retreat.imgs.typical} alt=""/>
+                    <div>
+                        <p className="retreat-header">A Typical Day</p>
+                        <p>{retreat.typical.des}</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div className="holder">
+                        <div>
+                            <p className="retreat-header">Intermediate to Advanced Spots</p>
+                            <p>{retreat.waves.des}</p>
+                            <div className="main-info-bullets">
+                                {makePoints(spots)}
+                            </div> 
+                        </div>
+                        <img className="right-img" src={retreat.imgs.advanced} alt="" />
+                    </div>
+
+                    <div className="holder">
+                        <img className="left-img" src={retreat.imgs.intermediate} alt="" />
+                        <div>
+                            <p className="retreat-header">Intermediate Spots</p>
+                            <p>{retreat.waves.intNote}</p>
+                            <div className="main-info-bullets">
+                                {makePoints(intermediate)}
+                            </div> 
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div className="holder">
+                        <div>
+                            <p className="retreat-header">{retreat.stay.method}</p>
+                            <p>{retreat.stay.des}</p>
+                            <div className="main-info-bullets">
+                                {makePoints(stay)}
+                            </div>
+                        </div>
+                        <img className="right-img" src={retreat.imgs.accommodation} alt=""/>
+                    </div>
+                    
+                    <div className="holder">
+                        <img className="left-img" src={retreat.imgs.room} alt="" />
+                        <div>
+                            <p className="retreat-header">Rooms</p>
+                            <p>{retreat.stay.rooms.des}</p>
+                            <div className="main-info-bullets">
+                                {makePoints(rooms)}
+                            </div> 
+                        </div>
+                    </div>
+
+                    <div className="holder">
+                        <div>
+                            <p className="retreat-header">Meals</p> 
+                            <p>{retreat.stay.meals.des}</p>
+                            <div className="main-info-bullets">
+                                {makePoints(meals)}
+                            </div>
+                            <p className="int-meals-note">{retreat.stay.meals.note}</p>
+                        </div>
+                        <img className="right-img" src={retreat.imgs.meals} alt="" />
+                    </div>
+
+                </section>
+
+                <section>
+                    <p className="retreat-header">Included</p>
+                    <p>Surf</p>
+                    <div className="main-info-bullets">
+                        {makePoints(included)}
+                    </div>
+                    <p>Accommodation</p>
+                    <div className="main-info-bullets">
+                        {makePoints(accommodation)}
+                    </div>
+                    <p>Lifestyle</p>
+                    <div className="main-info-bullets">
+                        {makePoints(lifestyle)}
+                    </div>
+                </section>
+
+            </div>
+            
         </div>
     )
 }

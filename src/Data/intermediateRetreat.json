@@ -5,7 +5,14 @@
         "location": "Maldives",
         "imgs": {
             "background": "https://barefootsurftravel.com/wp-content/uploads/2020/01/day-1-blue-bowls-8-1-1500x900.jpg", 
-            "map": "https://barefootsurftravel.com/wp-content/uploads/2020/02/InfoMapMaldives-1500x900.jpg"
+            "map": "https://barefootsurftravel.com/wp-content/uploads/2020/02/InfoMapMaldives-1500x900.jpg", 
+            "where": "https://barefootsurftravel.com/wp-content/uploads/2018/11/AGU0822-1500x900.jpg", 
+            "typical": "https://barefootsurftravel.com/wp-content/uploads/2020/01/MG_0102-2000x1200.jpg", 
+            "accommodation": "https://barefootsurftravel.com/wp-content/uploads/2020/01/MG_0093-2000x1200.jpg", 
+            "meals": "https://barefootsurftravel.com/wp-content/uploads/2020/01/Handy19-0182-1500x1300.jpg",
+            "room": "https://barefootsurftravel.com/wp-content/uploads/2020/01/Handy19-0412-1500x900.jpg",
+            "advanced": "https://barefootsurftravel.com/wp-content/uploads/2020/01/G0330343-2-1500x900.jpg", 
+            "intermediate": "https://barefootsurftravel.com/wp-content/uploads/2020/01/day-1-blue-bowls-52-1500x1000.jpg"
         },  
         "where": {
             "title": "Maldives surf coaching retreat, Southern Atolls", 
@@ -104,8 +111,15 @@
         "cost": "$4,700", 
         "location": "Mentaiwais",
         "imgs": {
-            "background": "https://barefootsurftravel.com/wp-content/uploads/2018/12/Beng2s-take-off.jpg", 
-            "map": "https://barefootsurftravel.com/wp-content/uploads/2018/12/InfoMapMentawai-1-2000x1100.jpg"
+            "background": "https://barefootsurftravel.com/wp-content/uploads/2018/11/K2A3358-2000x1200.jpg", 
+            "map": "https://barefootsurftravel.com/wp-content/uploads/2018/12/InfoMapMentawai-1-2000x1100.jpg", 
+            "where": "https://barefootsurftravel.com/wp-content/uploads/2018/12/mattyhannon-298.jpg", 
+            "typical": "https://barefootsurftravel.com/wp-content/uploads/2018/11/AGU0903-1500x1100.jpg", 
+            "accommodation": "https://barefootsurftravel.com/wp-content/uploads/2018/11/JWB_6794-Edit-Edit-1200x1000.jpg", 
+            "meals": "https://barefootsurftravel.com/wp-content/uploads/2018/11/K2A2335-1500x1100.jpg",
+            "room": "https://barefootsurftravel.com/wp-content/uploads/2018/11/JOHNBARTON-PHM-ACCOM-6-1200x800.jpg",
+            "advanced": "https://barefootsurftravel.com/wp-content/uploads/2018/11/AGU1143-1500x1100.jpg", 
+            "intermediate": "https://barefootsurftravel.com/wp-content/uploads/2018/12/mattyhannon-14-1500x900.jpg"
         },  
         "where": {
             "title": "Mentawai surf coaching retreat, Indonesia", 
@@ -171,7 +185,7 @@
                     "Homestyle cooking", 
                     "Can accommodate for your special diet requests"
                 ], 
-                "note": "Unlimited snacks and mineral water provided"
+                "note": "Unlimited snacks and mineral water are provided"
             }, 
             "included": {
                 "surf": [

@@ -45,11 +45,11 @@ function SurfRetreat({retreat}) {
                             {makePoints(wherePoints)}
                         </div>
                     </div>
-                    <img className="img-left" src={retreat.whereImg} alt=""/>
+                    <img className="right-img" src={retreat.whereImg} alt=""/>
                 </section>
 
                 <section className="holder">
-                    <img className="right-img" src={retreat.typicalImg} alt=""/>
+                    <img className="left-img" src={retreat.typicalImg} alt=""/>
                     <div>
                         <p className="retreat-header">A Typical Day </p>
                         <p>{retreat.typicalDayDes}</p> 
@@ -74,11 +74,11 @@ function SurfRetreat({retreat}) {
                         </div>
                     </div>
                     
-                    <img className="img-left" src={retreat.map} alt=""/>
+                    <img className="right-img" src={retreat.map} alt=""/>
                 </section>
 
                 <section className="holder">
-                    <img className="right-img" src={retreat.accImg} alt=""></img>
+                    <img className="left-img" src={retreat.accImg} alt=""></img>
                     <div>
                         <p className="retreat-header">Accommodations</p>
                         <p>{retreat.accommodations.des}</p>
