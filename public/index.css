@@ -1674,6 +1674,38 @@ nav {
   margin-top: 10px; 
 }
 
+.included {
+  text-align: center;
+  margin-top: 15px; 
+  margin-bottom: 5px; 
+}
+
+.included-holder {
+  display: flex; 
+  margin-bottom: 45px; 
+  justify-content: center;
+}
+
+.included-header {
+  font-size: 1.25em; 
+  font-family: 'Montserrat', 'sans-serif'; 
+  font-weight: 500;
+}
+
+.included-con {
+  width: 33%;
+}
+
+.included-hr {
+  width: 90%;
+  margin: auto; 
+  border: 0.5px solid rgb(153, 153, 153); 
+}
+
+.bullet-info {
+  margin-top: 10px; 
+}
+
 
 
 

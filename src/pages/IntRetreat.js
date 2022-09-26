@@ -17,7 +17,7 @@ function IntRetreat({retreat}) {
 
     function makePoints(array) {
         return array.map((bullet, index) => {
-            return  <p className="info-space"><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
+            return  <p className="info-space" ><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
         })
     }
 
@@ -119,19 +119,33 @@ function IntRetreat({retreat}) {
                 </section>
 
                 <section>
-                    <p className="retreat-header">Included</p>
-                    <p>Surf</p>
-                    <div className="main-info-bullets">
-                        {makePoints(included)}
+                    <p className="retreat-header included">Included</p>
+                    <div className="included-holder">
+                        <div className="included-con">
+                            <p className="included included-header">Surf</p>
+                            <hr className="included-hr"/>
+                            <div className="main-info-bullets bullet-info">
+                                {makePoints(included)}
+                            </div>
+                        </div>
+
+                        <div className="included-con">
+                            <p className="included included-header">Accommodation</p>
+                            <hr className="included-hr"/>
+                            <div className="main-info-bullets bullet-info">
+                                {makePoints(accommodation)}
+                            </div>
+                        </div>
+
+                        <div className="included-con">
+                            <p className="included included-header">Lifestyle</p>
+                            <hr className="included-hr"/>
+                            <div className="main-info-bullets bullet-info">
+                                {makePoints(lifestyle)}
+                            </div>
+                        </div>
                     </div>
-                    <p>Accommodation</p>
-                    <div className="main-info-bullets">
-                        {makePoints(accommodation)}
-                    </div>
-                    <p>Lifestyle</p>
-                    <div className="main-info-bullets">
-                        {makePoints(lifestyle)}
-                    </div>
+                    
                 </section>
 
             </div>
