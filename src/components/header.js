@@ -147,13 +147,13 @@ function Header() {
                                 <p className="dropdown-title">OUR COMPANY</p>
                                 <hr className="hr-dropdown"/>
 
-                                <Link className="dropdown-link" to="/team">
+                                <Link className="dropdown-link" to="/about/team">
                                     <p className="dropdown-info">TEAM</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/what-we-do">
+                                <Link className="dropdown-link" to="/about/what-we-do">
                                     <p className="dropdown-info">WHAT WE DO</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/social-resonsibility">
+                                <Link className="dropdown-link" to="/about/social-responsibility">
                                     <p className="dropdown-info">SOCIAL RESPONSIBILITY</p>
                                 </Link>
                             </div>
@@ -162,13 +162,13 @@ function Header() {
                                 <p className="dropdown-title">SURFING</p>
                                 <hr className="hr-dropdown"/>
 
-                                <Link className="dropdown-link" to="/is-this-trip-for-me">
+                                <Link className="dropdown-link" to="/about/is-this-trip-for-me">
                                     <p className="dropdown-info">IS THIS TRIP FOR ME?</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/surfing-level">
+                                <Link className="dropdown-link" to="/about/surfing-level">
                                     <p className="dropdown-info">WHAT IS MY SURF LEVEL?</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/how-we-coach">
+                                <Link className="dropdown-link" to="/about/how-we-coach">
                                     <p className="dropdown-info">HOW DO WE COACH SURFING?</p>
                                 </Link>
                             </div>
@@ -177,13 +177,13 @@ function Header() {
                                 <p className="dropdown-title">RESOURCES</p>
                                 <hr className="hr-dropdown"/>
 
-                                <Link className="dropdown-link" to="/contact-us">
+                                <Link className="dropdown-link" to="/about/contact-us">
                                     <p className="dropdown-info">CONTACT US</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/reservation-policy">
+                                <Link className="dropdown-link" to="/about/reservation-policy">
                                     <p className="dropdown-info">RESERVATION POLICY</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/faq">
+                                <Link className="dropdown-link" to="/about/faq">
                                     <p className="dropdown-info">FAQ</p>
                                 </Link>
                             </div>
