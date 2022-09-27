@@ -31,7 +31,7 @@ function SurfRetreat({retreat}) {
                 <div className="retreat-backscene-text">
                     <div className="retreat-backscene-title">
                         <p className="retreat-title">{retreat.backgroundTitle}</p>
-                        <p className="retreat-backscene-subtitle">{retreat.backgroundDes}</p>
+                        <p className="retreat-backscene-subtitle">{retreat.backgroundDes} | Cost: {retreat.cost}</p>
                     </div>
                 </div>
             </div>

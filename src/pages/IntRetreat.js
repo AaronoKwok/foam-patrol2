@@ -21,8 +21,6 @@ function IntRetreat({retreat}) {
         })
     }
 
-
-
     return (
         <div className="retreat-page">
             <div className="retreat-bg-img-position">
@@ -30,8 +28,7 @@ function IntRetreat({retreat}) {
                 <div className="retreat-backscene-text">
                     <div className="retreat-backscene-title">
                         <p className="retreat-title">{retreat.location}</p>
-                        <p className="retreat-backscene-subtitle">{retreat.where.imgTitle}</p>
-
+                        <p className="retreat-backscene-subtitle">{retreat.where.imgTitle} | Cost: {retreat.cost}</p>
                     </div>
                 </div>
             </div>

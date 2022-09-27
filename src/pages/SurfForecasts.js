@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react"
+import {useLocation} from "react-router-dom"
 import axios from "axios"
 
 //images
@@ -31,8 +32,9 @@ import nightOvercastCloudy from "../images/nightOvercastCloudy.jpeg"
 function SurfForecasts({loc}) {
     const refresh = loc.location //used in useEffect so that it gets new data on location change
     console.log(loc.name)
-    //airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,wavePeriod,waveHeight,windDirection,windSpeed
     const loading = "..."
+
+    const [loaded, setLoaded] = useState(false)
 
     //weather states
     const [airTemp, setAirTemp] = useState(loading)
@@ -123,10 +125,8 @@ function SurfForecasts({loc}) {
         return `${callDate} ${time}`
     }
 
-    //2022-9-15 23:06 tide start
-    //const tideStart = "2022-9-16 00:42"
     const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
-    console.log(start, "start")
+    console.log(start, "utcStart")
 
     /* ability level */
     function isBlue(lvl) {
@@ -582,6 +582,8 @@ function SurfForecasts({loc}) {
                 setWindDirection(Math.floor(weatherForecast[0].windDirection.sg))
                 setWindSpeed(Math.floor((weatherForecast[0].windSpeed.sg) * 1.944))
 
+                setLoaded(true)
+
                 console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
             }))
             .catch((error) => {
@@ -591,7 +593,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        //getData() //turn off when editing
+        getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
@@ -607,108 +609,132 @@ function SurfForecasts({loc}) {
         reference stale values from previous renders
     */
 
+    const location = useLocation()
+    useEffect(() => {
+        setLoaded(false)
+    }, [location])
+
     return ( 
         <div className="forecast-background">
             <div className="filler"></div> {/* used to makes space between footer and header */}
+            
             <section className="locSet">
+
                 <div className="top-forecast">
                     <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
                     <p className="fcTitle">{loc.name} Surf Report & Forecast</p>
                     <p className="fcRating">FAIR</p>
 
-                    <section className="fcData">
-                        <div className="first-data-row">
-                            <div className="data-box">
-                                <p className="type-name">Surf Height</p>
-                                <hr className="data-hr"/>
-                                <p className="current-data-point">{determineHeight(waveHeight)}<span className="data-span">ft</span></p>
-                                <p className="data-description">{determineHeightWord(waveHeight)}</p>
+                    {
+                        !loaded && 
+                            <div className="forecast-load">
+                                <p className="loading-text">Loading...</p>
                             </div>
-                            <div className="data-box">
-                                <p className="type-name">Tide</p>
-                                <hr className="data-hr"/>
-                                <p className="current-data-point">{calcTide}<span className="data-span">ft</span><span><img className="up-down-arrow" src={upOrDown(tideType)} alt =""/></span></p>
-                                <p className="data-description">{tideType} tide {tideHeight}ft at {ampm(nextTideTime, loc.timezone)}</p>
-                            </div>
-                            <div className="data-box">
-                                <p className="type-name">Wind</p>
-                                <hr className="data-hr"/>
-                                <p className="current-data-point">{windSpeed}<span className="data-span">kts</span></p>
-                                <p className="data-description">{windLetters} ({windDirection}&#176;)</p>
-                                <p className="data-description">with {gust}kt gusts</p>
-                            </div>
-                            <div className="data-box">
-                                <p className="type-name">Swells</p>
-                                <hr className="data-hr"/>
-                                <div className="swell-dot">
-                                    <div className="primary-dot"></div>
-                                    <p className="data-description">{swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
-                                </div>
-                                <div className="swell-dot-two">
-                                    <div className="secondary-dot"></div>
-                                    <p className="data-description">{secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
-                                </div>
-                            </div>
-                            <div className="data-box">
-                                <p className="type-name">Water Temp</p>
-                                <hr className="data-hr"/>
-                                <div className="icon-data-box">
-                                    <img className="sea-icon" src={seaIcon} alt="" />
-                                    <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
-                                </div>
-                            </div>
-                            <div className="data-box">
-                                <p className="type-name">Weather</p>
-                                <hr className="data-hr"/>
-                                <div className="icon-data-box">
-                                    <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt=""/>
-                                    <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
-                                </div>
-                            </div>
-                        </div>
+                    }
 
-                        <div className="forecast-row">
-                            <div className="forecast-data-box">
-                                <p className="data-description">First Light: {ampm(firstLight, loc.timezone)}</p>
-                                <p className="data-description">Sunrise: {ampm(sunrise, loc.timezone)}</p>
-                                <p className="data-description">Sunset: {ampm(sunset, loc.timezone)}</p>
-                                <p className="data-description">Last Light: {ampm(lastLight, loc.timezone)}</p>
+                    {
+                        loaded &&
+                            <section className="fcData">
+                            <div className="first-data-row">
+                                <div className="data-box">
+                                    <p className="type-name">Surf Height</p>
+                                    <hr className="data-hr"/>
+                                    <p className="current-data-point">{determineHeight(waveHeight)}<span className="data-span">ft</span></p>
+                                    <p className="data-description">{determineHeightWord(waveHeight)}</p>
+                                </div>
+                                <div className="data-box">
+                                    <p className="type-name">Tide</p>
+                                    <hr className="data-hr"/>
+                                    <p className="current-data-point">{calcTide}<span className="data-span">ft</span><span><img className="up-down-arrow" src={upOrDown(tideType)} alt =""/></span></p>
+                                    <p className="data-description">{tideType} tide {tideHeight}ft at {ampm(nextTideTime, loc.timezone)}</p>
+                                </div>
+                                <div className="data-box">
+                                    <p className="type-name">Wind</p>
+                                    <hr className="data-hr"/>
+                                    <p className="current-data-point">{windSpeed}<span className="data-span">kts</span></p>
+                                    <p className="data-description">{windLetters} ({windDirection}&#176;)</p>
+                                    <p className="data-description">with {gust}kt gusts</p>
+                                </div>
+                                <div className="data-box">
+                                    <p className="type-name">Swells</p>
+                                    <hr className="data-hr"/>
+                                    <div className="swell-dot">
+                                        <div className="primary-dot"></div>
+                                        <p className="data-description">{swellHeight}ft at {swellPeriod}s {swellLetters} {swellDirection}&#176;</p>
+                                    </div>
+                                    <div className="swell-dot-two">
+                                        <div className="secondary-dot"></div>
+                                        <p className="data-description">{secondarySwellHeight}ft at {secondarySwellPeriod}s {secondarySwellLetters} {secondarySwellDirection}&#176;</p>
+                                    </div>
+                                </div>
+                                <div className="data-box">
+                                    <p className="type-name">Water Temp</p>
+                                    <hr className="data-hr"/>
+                                    <div className="icon-data-box">
+                                        <img className="sea-icon" src={seaIcon} alt="" />
+                                        <p className="current-data-point">{waterTemperature}<span className="data-span">&#176;f</span></p>
+                                    </div>
+                                </div>
+                                <div className="data-box">
+                                    <p className="type-name">Weather</p>
+                                    <hr className="data-hr"/>
+                                    <div className="icon-data-box">
+                                        <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt=""/>
+                                        <p className="current-data-point">{airTemp}<span className="data-span">&#176;f</span></p>
+                                    </div>
+                                </div>
+                                <div className="data-box">
+                                    <p className="type-name">Sunlight</p>
+                                    <hr className="data-hr"/>
+                                    <div className="time-data-box">
+                                        <p className="data-description">First Light: {ampm(firstLight, loc.timezone)}</p>
+                                        <p className="data-description">Sunrise: {ampm(sunrise, loc.timezone)}</p>
+                                        <p className="data-description">Sunset: {ampm(sunset, loc.timezone)}</p>
+                                        <p className="data-description">Last Light: {ampm(lastLight, loc.timezone)}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </section>
+
+                            {/* <div className="forecast-row"> 
+                                <div className="forecast-data-box">
+                                    <p className="data-description">First Light: {ampm(firstLight, loc.timezone)}</p>
+                                    <p className="data-description">Sunrise: {ampm(sunrise, loc.timezone)}</p>
+                                    <p className="data-description">Sunset: {ampm(sunset, loc.timezone)}</p>
+                                    <p className="data-description">Last Light: {ampm(lastLight, loc.timezone)}</p>
+                                </div>
+                            </div> */}
+                        </section>
+                    }
+  
                 </div>
 
                 <section className="surfConditions">
                     <p className="sc-Title">Ideal {loc.name} Surf Conditions</p>
                     <div className="icon-container">
                         <img className="sc-icon" src={swellDirectionIcon} alt=""></img>
-                        <div className="condition-container">
+                        <div >
                             <p className="condition-title">Swell Direction</p>
-                            <hr className="guideHr"/>
                             <p className="condition-des">{swellDirectionDes}</p>
                         </div>
                     </div>
                     <div className="icon-container">
                         <img className="sc-icon" src={windIcon} alt=""></img>
-                        <div className="condition-container">
+                        <div >
                             <p className="condition-title">Wind</p>
-                            <hr className="guideHr"/>
                             <p className="condition-des">{windDes}</p>
                         </div>
                     </div>
                     <div className="icon-container">
                         <img className="sc-icon" src={surfHeightIcon} alt=""></img>
-                        <div className="condition-container">
+                        <div >
                             <p className="condition-title">Surf Height</p>
-                            <hr className="guideHr"/>
                             <p className="condition-des">{surfHeightDes}</p>
                         </div>
                     </div>
                     <div className="icon-container">
                         <img className="sc-icon" src={tideIcon} alt=""></img>
-                        <div className="condition-container">
+                        <div >
                             <p className="condition-title">Tide</p>
-                            <hr className="conditionHr"/>
                             <p className="condition-des">{tideDes}</p>
                         </div>
                     </div>
@@ -806,8 +832,6 @@ function SurfForecasts({loc}) {
                             </div>
                         </section>
                     </div>
-
-                    <hr className="guideHr"/>
 
                     <div className="addiPoints">
 

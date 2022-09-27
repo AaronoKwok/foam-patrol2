@@ -653,6 +653,21 @@ nav {
 
 /* Surf Forecast Page */
 
+.forecast-load {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  height: 180px; 
+  background-color: rgb(234, 246, 250); 
+  text-align: center;
+}
+
+.loading-text {
+  letter-spacing: 0.1em;
+  font-weight: 400; 
+  font-size: 1.5em; 
+}
+
 .forecast-background {
   background-color: rgb(244, 250, 255);
   padding-bottom: 10px; /* to connect bg to footer */
@@ -687,10 +702,12 @@ nav {
 }
 
 .fcRating {
-  background-color: lightblue;
+  color: white; 
+  letter-spacing: 0.1em;
+  background-color: rgb(52, 204, 52);
   font-size: 1.05em; 
   font-weight: 500;
-  padding: 5px;
+  padding: 3px 0px 3px 5px;
 }
 
 /* current coditions */
@@ -703,13 +720,12 @@ nav {
   display: flex; 
   justify-content: start;
   margin-bottom: 20px; 
-
 }
 
 .data-box {
   background-color: white;
-  margin-right: 30px; 
-  min-width: 150px;
+  margin-right: 20px; 
+  width: 16.667%;
 }
 
 .type-name {
@@ -729,7 +745,7 @@ nav {
 .swell-dot {
   display: flex; 
   align-items: center;
-  margin: 5px 0px 0px 0px; 
+  margin-top: 7px; 
 }
 
 .swell-dot-two {
@@ -739,17 +755,17 @@ nav {
 }
 
 .primary-dot {
-  height: .5em; 
-  width: .5em; 
-  border-radius: 50%; 
+  height: 8px; 
+  width: 8px; 
+  border-radius: 10px; 
   background-color: rgb(16, 35, 139); 
   margin-right: 3px; 
 }
 
 .secondary-dot {
-  height: .5em; 
-  width: .5em; 
-  border-radius: 50%; 
+  height: 8px; 
+  width: 8px; 
+  border-radius: 10px; 
   background-color: rgb(235, 138, 48); 
   margin-right: 3px; 
 }
@@ -762,7 +778,10 @@ nav {
 
 .icon-data-box {
   display: flex; 
+}
 
+.time-data-box {
+  margin-top: 7px;
 }
 
 .sea-icon {
@@ -807,14 +826,14 @@ nav {
   width: 100%;
 }
 
-.forecast-data-box {
+/* .forecast-data-box {
   position: absolute; 
   top: 20px; 
   left: 20px; 
   background-color: white;
   margin-right: 30px; 
   min-width: 150px;
-}
+} */
 
 
 
@@ -834,7 +853,6 @@ nav {
 
 .surfConditions {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-top: 20px;
   min-height: 120px; 
@@ -854,6 +872,7 @@ nav {
   line-height: 1.2;
   margin-right: 20px;
   margin-bottom: 0px; 
+  margin-top: 15px;
 }
 
 .sc-icon {
@@ -863,13 +882,9 @@ nav {
 
 .icon-container {
   display: flex;
-  align-items: center;
   margin: 15px 20px 15px 0px;
   max-height: 100%;
-}
-
-.condition-container {
-  width: 150px;
+  width: 25%;
 }
 
 .condition-title {
@@ -878,11 +893,6 @@ nav {
   margin: 0px;
   letter-spacing: .05em; 
   color: rgb(66, 66, 66)
-}
-
-.conditionHr {
-  margin: 0px auto;
-  border: 0.3px solid rgb(201, 201, 201);
 }
 
 .condition-des {
@@ -1056,8 +1066,8 @@ nav {
 }
 
 .guideHr {
-  margin: 0px auto;
-  width: 99%;
+  margin: 0px; 
+  width: 100%;
   border: 0.3px solid rgb(201, 201, 201);
 }
 

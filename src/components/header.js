@@ -66,7 +66,7 @@ function Header() {
                             </div>
 
                             <div className="retreat-dropdown-content">
-                                <p className="dropdown-title">MORE INFO</p>
+                                <p className="dropdown-title">MORE TRIP INFO</p>
                                 <hr className="hr-dropdown"/>
 
                                 <Link className="dropdown-link" to="/surfRetreats/surf-trip-calendar">
