@@ -6,7 +6,7 @@
   --des-weight: 600;
   --course-gray: rgb(206, 206, 206);
   --backscene-text: rgb(252, 249, 240);
-  --nav-height: 75px;
+  --nav-height: 65px;
   --screen-width: 85%;
   --course-radius: 10px;
   --retreat-spacing: 0.05em;
@@ -32,7 +32,7 @@ nav {
   color: var(--black);
   height: var(--nav-height);
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.733);
+  background-color: rgb(255, 255, 255);
   justify-content: space-around;
   align-items: center;
   padding: 0px 45px;
@@ -42,7 +42,7 @@ nav {
 
 .white-in-nav {
   width: 700px;
-  height: 75px;
+  height: var(--nav-height);
   font-size: .70em;
   font-weight: bold; 
   display: flex;
@@ -1360,9 +1360,7 @@ nav {
 .oc-card {
   position: relative; 
   height: 320px; 
-  width: 280px;
-  max-width: 280px; 
-  min-width: 200px; 
+  width: 280px; 
   background-color: rgb(255, 255, 255); 
   border: .5px solid rgb(209, 209, 209); 
   border-radius: 5px; 
@@ -1456,7 +1454,7 @@ nav {
   position: relative;
   background-color: white; 
   height: 150px; 
-  min-width: 800px;
+  width: 100%;
   margin: 5px 0px 15px 0px; 
   border: .5px solid rgb(209, 209, 209);
   border-radius: 5px; 
@@ -1878,6 +1876,14 @@ nav {
   .background-image {
     height: 500px
   }
+
+  .oc-backscene {
+    height: 500px
+  }
+
+  .whatDoBack {
+    height: 500px; 
+  }
 }
 
 @media screen and (min-width: 1441px) {
@@ -1894,10 +1900,50 @@ nav {
   .team-members {
     grid-template-columns: repeat(3, 33.33333%);
   }
+
+  .retreats-layout {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .courses-layout {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .course {
+    margin-bottom: 24px
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .courses-in-grid {
+    grid-template-columns: repeat(3, 33.33333%);
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .team-members {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .retreats-layout {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .courses-layout {
+    display: grid; 
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .course {
+    margin-bottom: 24px; 
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .courses-in-grid {
     grid-template-columns: repeat(2, 50%);
   }
 }
