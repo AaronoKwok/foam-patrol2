@@ -153,9 +153,6 @@ function Header() {
                                 <Link className="dropdown-link" to="/about/what-we-do">
                                     <p className="dropdown-info">WHAT WE DO</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/about/social-responsibility">
-                                    <p className="dropdown-info">SOCIAL RESPONSIBILITY</p>
-                                </Link>
                             </div>
 
                             <div className="retreat-dropdown-content">
@@ -168,9 +165,6 @@ function Header() {
                                 <Link className="dropdown-link" to="/about/surfing-level">
                                     <p className="dropdown-info">WHAT IS MY SURF LEVEL?</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/about/how-we-coach">
-                                    <p className="dropdown-info">HOW DO WE COACH SURFING?</p>
-                                </Link>
                             </div>
 
                             <div className="retreat-dropdown-content">
@@ -179,9 +173,6 @@ function Header() {
 
                                 <Link className="dropdown-link" to="/about/contact-us">
                                     <p className="dropdown-info">CONTACT US</p>
-                                </Link>
-                                <Link className="dropdown-link" to="/about/reservation-policy">
-                                    <p className="dropdown-info">RESERVATION POLICY</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/about/faq">
                                     <p className="dropdown-info">FAQ</p>

@@ -27,50 +27,59 @@ function Team() {
             <section className="team-members">
                 <div className="team-person">
                     <img className="team-portrait" src={elmo} alt=""/>
-                    <p className="person-name">Elmo</p>
-                    <p className="person-role">Co-Founder</p>
+                    <div className="person-tab">
+                        <p className="person-name">Elmo</p>
+                        <p className="person-role">Co-Founder</p> 
+                    </div>
                 </div>
                 <div className="team-person">
                     <img className="team-portrait" src={cookieMon} alt=""/>
-                    <p className="person-name">Cookie Monster</p>
-                    <p className="person-role">Co-Founder</p>
-                    <p className="person-des"></p>
+                    <div className="person-tab">
+                        <p className="person-name">Cookie Monster</p>
+                        <p className="person-role">Co-Founder</p>
+                    </div>
                 </div>
                 <div className="team-person">
                     <img className="team-portrait" src={bigBird} alt=""/>
-                    <p className="person-name">Big Bird</p>
-                    <p className="person-role">General Manager</p>
-                    <p className="person-des"></p>
+                    <div className="person-tab">
+                        <p className="person-name">Big Bird</p>
+                        <p className="person-role">General Manager</p>
+                    </div>
                 </div>
                 <div className="team-person">
                     <img className="team-portrait" src={ernie} alt=""/>
-                    <p className="person-name">Ernie</p>
-                    <p className="person-role">Head Surf Coach</p>
-                    <p className="person-des"></p>
+                    <div className="person-tab">
+                        <p className="person-name">Ernie</p>
+                        <p className="person-role">Head Surf Coach</p>  
+                    </div>
                 </div>
                 <div className="team-person">
                     <img className="team-portrait" src={oscar} alt=""/>
-                    <p className="person-name">Oscar</p>
-                    <p className="person-role">Head Surf Coach</p>
-                    <p className="person-des"></p>
+                    <div className="person-tab">
+                        <p className="person-name">Oscar</p>
+                        <p className="person-role">Head Surf Coach</p>  
+                    </div>
                 </div>
                 <div className="team-person">
                     <img className="team-portrait" src={countVon} alt=""/>
-                    <p className="person-name">Count Von Count</p>
-                    <p className="person-role">Surf Travel Director</p>
-                    <p className="person-des"></p>
+                    <div className="person-tab">
+                        <p className="person-name">Count Von Count</p>
+                        <p className="person-role">Surf Travel Director</p> 
+                    </div>
                 </div>
                 <div className="team-person">
                     <img className="team-portrait" src={dorothy} alt=""/>
-                    <p className="person-name">Dorothy</p>
-                    <p className="person-role">Surf Coach - Costa Rica</p>
-                    <p className="person-des"></p>
+                    <div className="person-tab">
+                        <p className="person-name">Dorothy</p>
+                        <p className="person-role">Surf Coach - Costa Rica</p>  
+                    </div>
                 </div>
                 <div className="team-person">
                     <img className="team-portrait" src={bert} alt=""/>
-                    <p className="person-name">Bert</p>
-                    <p className="person-role">Surf Coach - Bali</p>
-                    <p className="person-des"></p>
+                    <div className="person-tab">
+                        <p className="person-name">Bert</p>
+                        <p className="person-role">Surf Coach - Bali</p>  
+                    </div>
                 </div>
             </section>            
         </div>

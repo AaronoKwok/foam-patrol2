@@ -13,12 +13,9 @@ import MainPage from "./pages/MainPage"
 import Footer from "./components/Footer"
 import Team from "./pages/Team"
 import WhatDo from "./pages/WhatDo" 
-import Social from "./pages/Social"  
 import IsForMe from "./pages/IsForMe" 
 import SurfLevel from "./pages/SurfLevel" 
-import Coach from "./pages/Coach"  
 import Contact from "./pages/Contact"  
-import Reservation from "./pages/Reservation" 
 import Faq from "./pages/Faq" 
 
 import retreatData from "./Data/retreatData.json"
@@ -145,12 +142,9 @@ function App() {
                 <Route path="/about">
                     <Route path="/about/team" element={<Team />} />
                     <Route path="/about/what-we-do" element={<WhatDo />} />
-                    <Route path="/about/social-responsibility" element={<Social />} />
                     <Route path="/about/is-this-trip-for-me" element={<IsForMe />} />
                     <Route path="/about/surfing-level" element={<SurfLevel />} />
-                    <Route path="/about/how-we-coach" element={<Coach />} />
                     <Route path="/about/contact-us" element={<Contact />} />
-                    <Route path="/about/reservation-policy" element={<Reservation />} />
                     <Route path="/about/faq" element={<Faq />} />
                 </Route>
 
