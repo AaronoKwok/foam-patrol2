@@ -1,4 +1,5 @@
 import React from "react" 
+import {Link} from "react-router-dom"
 
 import onePercent from "../images/one-percent.png"
 import githubSVG from "../images/github.svg"
@@ -14,13 +15,12 @@ function Footer() {
             <section className="footer-mid">
                 <div>
                     <p className="footer-surf">Surfing</p>
-                    <p><a className="footer-surf-questions" href="#">What's my surfing level?</a></p> 
-                    <p><a className="footer-surf-questions" href="#">Is this surf trip for me?</a></p>
-                    <p><a className="footer-surf-questions" href="#">How do we coach surfing?</a></p>
+                    <Link className="footer-surf-questions" to="/about/is-this-trip-for-me"><p>What's my surfing level?</p></Link> 
+                    <Link className="footer-surf-questions" to="/about/surfing-level"><p className="footer-second">Is this surf trip for me?</p></Link>
                 </div>
-                <div>
+                {/* <div>
                     <p>Trip Advisor</p>
-                </div>
+                </div> */}
                 <div>
                     <p className="footer-socials">Socials</p>
                     <div className="footer-socials-background">

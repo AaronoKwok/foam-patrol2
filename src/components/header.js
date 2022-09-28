@@ -191,7 +191,7 @@ function Header() {
 
                     {/* <button onClick={changeAesthetic}></button>  */}
 
-                <div>add tripad</div>
+                {/* <div>add tripad</div> */}
 
                 <div className="socials">
                     <a className="gh" target="_blank" href="https://github.com/AaronoKwok" rel="noreferrer"><img src={githubSVG} alt=""></img></a>

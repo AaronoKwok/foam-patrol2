@@ -244,8 +244,9 @@ nav {
 .footer-surf-questions:visited {
   color: white;
 }
-.footer-surf-questions:hover {
-  border: none;
+
+.footer-second {
+  margin-top: -10px;
 }
 
 .footer-socials {
@@ -1840,6 +1841,45 @@ nav {
   margin-bottom: 30px; 
 }
 
+/* is for me */
+
+.is-me-holder {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  align-items: start;
+  text-align: center;
+}
+
+.is-me-img {
+  width: 90px; 
+}
+
+.is-me-head {
+  margin-bottom: 5px; 
+}
+
+.is-me-section {
+  margin: 10px; 
+  width: 33%;
+}
+
+.is-me-sub {
+  margin: 0px;
+  margin-bottom: 10px; 
+  font-size: 1.2em;
+}
+
+.is-me-text {
+  text-align: left;
+}
+
+
+
+/* surf level */
+
+
+
 
 
 
@@ -1946,5 +1986,15 @@ nav {
 @media screen and (max-width: 1050px) {
   .courses-in-grid {
     grid-template-columns: repeat(2, 50%);
+  }
+
+  .is-me-holder {
+    display: block;
+  }
+
+  .is-me-section {
+    width: 100%; 
+    margin: 0px; 
+    margin-bottom: 30px; 
   }
 }
