@@ -60,7 +60,7 @@ nav {
   cursor: pointer;
   transition: all .1s ease;
   padding: 5px;
-  margin: 0px; 
+  margin: 0px;
 }
 
 .nav-dropdown {
@@ -184,11 +184,12 @@ nav {
 .logo {
   cursor: pointer;
   margin-left: 10px;
+  height: 90%;
+  margin-bottom: 4px;
 }
 
 .logo-spacing {
-  margin: -5px; 
-  padding: 0px; 
+  margin-bottom: -5px;
 }
 
 .travel {

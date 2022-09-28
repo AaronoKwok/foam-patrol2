@@ -9,7 +9,6 @@ import authentic from "../images/authentic.jpeg"
 import stress from "../images/stress.jpeg"
 import atmosphere from "../images/atmosphere.jpeg"
 import breathtake from "../images/breathtake.jpeg"
-import Retreat from "../components/Retreat"
 
 function WhatDo() {
     return (
