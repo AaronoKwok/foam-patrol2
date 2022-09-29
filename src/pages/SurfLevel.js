@@ -1,7 +1,6 @@
 import React from "react" 
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
+import {iconList} from "../utils"
 
 import surfLevel from "../images/mysurfLevel.jpeg"
 import begIcon from "../images/beg.jpeg"
@@ -58,12 +57,6 @@ function SurfLevel() {
         "Depending on your level, you could learn to do floaters, re-entries (snaps) or roundhouse cutbacks"
     ]
 
-    function makePoints(arr) {
-        return arr.map((bullet, index) => {
-            return  <p className="info-space"><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
-        })
-    }
-
     return (
         <div>
             <div className="filler"></div>
@@ -87,19 +80,19 @@ function SurfLevel() {
                         <p className="level-title">Level 1.1: Beginner</p>
                         <p className="level-quote">"I never tried surfing before but I know how to swim."</p>
                         <p className="level-focus">What you will focus on: </p>
-                        {makePoints(beg)}
+                        {iconList(beg)}
                     </div>
                     <div className="level-section">
                         <p className="level-title">Level 1.2: Beginner with limited experience</p>
                         <p className="level-quote">"I've tried surfing before, only a few times. I still struggle with the basics: paddling & popping up."</p>
                         <p className="level-focus">What you could focus on:</p>
-                        {makePoints(limEx)}
+                        {iconList(limEx)}
                     </div>
                     <div className="level-section">
                         <p className="level-title">Level 1.3: Beginner with experience</p>
                         <p className="level-quote">"With assistance, I'm able to stand up and go straight on a wave, with decent control."</p>
                         <p className="level-focus">What you could focus on:</p>
-                        {makePoints(exp)}
+                        {iconList(exp)}
                     </div>
                 </section>
 
@@ -112,13 +105,13 @@ function SurfLevel() {
                         <p className="level-title">Level 2.1: Intermediate</p>
                         <p className="level-quote">"In waves that are waist to shoulder high, I can paddle past the break, catch green waves by myself and go left & right on the face of the wave. I want to have more control on my surfboard, do basic turns and change direction."</p>
                         <p className="level-focus">What you could focus on:</p>
-                        {makePoints(interm)}
+                        {iconList(interm)}
                     </div>
                     <div className="level-section">
                         <p className="level-title">Level 2.2: Intermediate transitioning into advanced</p>
                         <p className="level-quote">"I have good control on my surfboard and can turn to change direction. I want to practice cutbacks, generating speed, bottom turns, and more."</p>
                         <p className="level-focus">What you could focus on:</p>
-                        {makePoints(intAdv)}
+                        {iconList(intAdv)}
                     </div>
                 </section>
 

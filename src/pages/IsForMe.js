@@ -1,7 +1,6 @@
 import React from 'react' 
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
+import {iconList} from "../utils"  //utils is a library of functions
 
 import age from "../images/travelerAge.jpeg"
 import level from "../images/surfLevel.jpeg"
@@ -27,12 +26,6 @@ function IsForMe() {
         "Yes, we have couples traveling with us. We have limited private rooms on our trips, so we recommend contacting us prior to booking for room availabilities."
     ]
 
-    function makePoints(arr) {
-        return arr.map((bullet, index) => {
-            return  <p className="info-space"><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
-        })
-    }
-
     return (
         <div>
             <div className="filler"></div>
@@ -46,19 +39,19 @@ function IsForMe() {
                     <img className="is-me-img" src={age} alt="" />
                     <p className="retreat-header is-me-head">Traveler Age</p>
                     <p className="is-me-sub">Am I too young / too old for this trip?</p>
-                    <div className="is-me-text">{makePoints(ageArr)}</div>
+                    <div className="is-me-text">{iconList(ageArr)}</div>
                 </div>
                 <div className="is-me-section">
                     <img className="is-me-img" src={level} alt="" />
                     <p className="retreat-header is-me-head">Surf Level</p>
                     <p className="is-me-sub">What surf experience do I need?</p>
-                    <div className="is-me-text">{makePoints(levelArr)}</div>
+                    <div className="is-me-text">{iconList(levelArr)}</div>
                 </div>
                 <div className="is-me-section">
                     <img className="is-me-img" src={traveler} alt="" />
                     <p className="retreat-header is-me-head">Type of Traveler</p>
                     <p className="is-me-sub">Lone travelers, groups of friends & couples.</p>
-                    <div className="is-me-text">{makePoints(travelerArr)}</div>
+                    <div className="is-me-text">{iconList(travelerArr)}</div>
                 </div>
             </section>
         </div>

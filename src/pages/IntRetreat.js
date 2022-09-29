@@ -1,7 +1,6 @@
 import React from "react"
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
+import {iconList} from "../utils"
 
 function IntRetreat({retreat}) {
 
@@ -14,12 +13,6 @@ function IntRetreat({retreat}) {
     const included = retreat.stay.included.surf
     const accommodation = retreat.stay.included.accommodation
     const lifestyle = retreat.stay.included.lifestyle
-
-    function makePoints(array) {
-        return array.map((bullet, index) => {
-            return  <p className="info-space" ><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
-        })
-    }
 
     return (
         <div className="retreat-page">
@@ -40,7 +33,7 @@ function IntRetreat({retreat}) {
                         <p className="retreat-header">{retreat.where.title}</p>
                         <p>{retreat.where.des}</p>
                         <div className="main-info-bullets">
-                            {makePoints(wherePoints)}
+                            {iconList(wherePoints)}
                         </div> 
                     </div>
                     <img className="right-img" src={retreat.imgs.where} alt=""/>
@@ -60,7 +53,7 @@ function IntRetreat({retreat}) {
                             <p className="retreat-header">Intermediate to Advanced Spots</p>
                             <p>{retreat.waves.des}</p>
                             <div className="main-info-bullets">
-                                {makePoints(spots)}
+                                {iconList(spots)}
                             </div> 
                         </div>
                         <img className="right-img" src={retreat.imgs.advanced} alt="" />
@@ -72,7 +65,7 @@ function IntRetreat({retreat}) {
                             <p className="retreat-header">Intermediate Spots</p>
                             <p>{retreat.waves.intNote}</p>
                             <div className="main-info-bullets">
-                                {makePoints(intermediate)}
+                                {iconList(intermediate)}
                             </div> 
                         </div>
                     </div>
@@ -84,7 +77,7 @@ function IntRetreat({retreat}) {
                             <p className="retreat-header">{retreat.stay.method}</p>
                             <p>{retreat.stay.des}</p>
                             <div className="main-info-bullets">
-                                {makePoints(stay)}
+                                {iconList(stay)}
                             </div>
                         </div>
                         <img className="right-img" src={retreat.imgs.accommodation} alt=""/>
@@ -96,7 +89,7 @@ function IntRetreat({retreat}) {
                             <p className="retreat-header">Rooms</p>
                             <p>{retreat.stay.rooms.des}</p>
                             <div className="main-info-bullets">
-                                {makePoints(rooms)}
+                                {iconList(rooms)}
                             </div> 
                         </div>
                     </div>
@@ -106,7 +99,7 @@ function IntRetreat({retreat}) {
                             <p className="retreat-header">Meals</p> 
                             <p>{retreat.stay.meals.des}</p>
                             <div className="main-info-bullets">
-                                {makePoints(meals)}
+                                {iconList(meals)}
                             </div>
                             <p className="int-meals-note">{retreat.stay.meals.note}</p>
                         </div>
@@ -122,7 +115,7 @@ function IntRetreat({retreat}) {
                             <p className="included included-header">Surf</p>
                             <hr className="included-hr"/>
                             <div className="main-info-bullets bullet-info">
-                                {makePoints(included)}
+                                {iconList(included)}
                             </div>
                         </div>
 
@@ -130,7 +123,7 @@ function IntRetreat({retreat}) {
                             <p className="included included-header">Accommodation</p>
                             <hr className="included-hr"/>
                             <div className="main-info-bullets bullet-info">
-                                {makePoints(accommodation)}
+                                {iconList(accommodation)}
                             </div>
                         </div>
 
@@ -138,7 +131,7 @@ function IntRetreat({retreat}) {
                             <p className="included included-header">Lifestyle</p>
                             <hr className="included-hr"/>
                             <div className="main-info-bullets bullet-info">
-                                {makePoints(lifestyle)}
+                                {iconList(lifestyle)}
                             </div>
                         </div>
                     </div>

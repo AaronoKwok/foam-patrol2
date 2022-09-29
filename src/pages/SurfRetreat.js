@@ -1,7 +1,6 @@
 import React from "react"
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
+import {iconList} from "../utils" 
 
 function SurfRetreat({retreat}) {
 
@@ -9,12 +8,6 @@ function SurfRetreat({retreat}) {
     const discoverPoints = retreat.discoverDestination
     const accommodationPoints = retreat.accommodations.points
     const surfPoints = retreat.surfInfo.surfSpots
-
-    function makePoints(array) {
-        return array.map((bullet, index) => {
-            return  <p className="info-space"><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/> {bullet}</p>
-        })
-    }
 
     function tempRange() {
         const tempArr = retreat.surfInfo.temp.airTemp
@@ -42,7 +35,7 @@ function SurfRetreat({retreat}) {
                         <p className="retreat-header">Surf trip in {retreat.loc.title}</p>
                         <p>{retreat.loc.description}</p>
                         <div className="main-info-bullets">
-                            {makePoints(wherePoints)}
+                            {iconList(wherePoints)}
                         </div>
                     </div>
                     <img className="right-img" src={retreat.whereImg} alt=""/>
@@ -70,7 +63,7 @@ function SurfRetreat({retreat}) {
                         }
                         <p>Other nearby places to explore:</p>
                         <div className="main-info-bullets">
-                            {makePoints(discoverPoints)}
+                            {iconList(discoverPoints)}
                         </div>
                     </div>
                     
@@ -83,7 +76,7 @@ function SurfRetreat({retreat}) {
                         <p className="retreat-header">Accommodations</p>
                         <p>{retreat.accommodations.des}</p>
                         <div className="main-info-bullets">
-                            {makePoints(accommodationPoints)}
+                            {iconList(accommodationPoints)}
                         </div>
                     </div>
                     
@@ -127,7 +120,7 @@ function SurfRetreat({retreat}) {
                         <div className="info-spots info-spec">
                             <p className="info-title">SURF SPOTS</p>
                             <div className="info-info">
-                                {makePoints(surfPoints)}
+                                {iconList(surfPoints)}
                             </div>
                         </div>
                     </section>

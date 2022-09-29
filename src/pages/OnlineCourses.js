@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from "react"
 
-/* import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight} from '@fortawesome/free-solid-svg-icons' NOTE: not working atm*/
-
 import courseData from "../Data/courseData.json"
 import OnlineCourse from "../components/OnlineCourse"
 

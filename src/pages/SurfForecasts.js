@@ -593,7 +593,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        getData() //turn off when editing
+        //getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
@@ -628,7 +628,7 @@ function SurfForecasts({loc}) {
                     {
                         !loaded && 
                             <div className="forecast-load">
-                                <p className="loading-text">Loading...</p>
+                                <p className="loading-text">Loading... (api call is off)</p>
                             </div>
                     }
 
