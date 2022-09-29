@@ -1843,6 +1843,21 @@ nav {
 
 /* is for me */
 
+.for-me-back {
+  position: relative
+}
+
+.is-forMe-sub {
+  position: absolute; 
+  bottom: 40px;
+  margin-left: 45px; 
+  color: white; 
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: 3.3em; 
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
 .is-me-holder {
   display: flex;
   margin-top: 50px;
@@ -1878,8 +1893,84 @@ nav {
 
 /* surf level */
 
+.level-background {
+  position: relative;
+}
 
+.level-fade {
+  position: absolute; 
+  width: 100%; 
+  bottom: 0px; 
+  background-image: linear-gradient(rgba(255, 255, 255, 0.144), rgba(20, 20, 20, 0.836));
+}
 
+.level-back-title {
+  color: white; 
+  font-size: 3.3em; 
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: 700;
+  margin-left: 45px; 
+  margin-top: 35px; 
+  margin-bottom: 0px; 
+  letter-spacing: 0.05em;
+}
+
+.level-back-sub {
+  color: white; 
+  font-size: 2em; 
+  font-family: 'Montserrat', 'sans-serif';
+  margin-left: 45px; 
+  margin-top: -10px; 
+  margin-bottom: 20px; 
+  letter-spacing: 0.03em;
+}
+
+.beg-lvl {
+  display: flex;
+  justify-content: center;
+}
+
+.level-two {
+  margin-bottom: 45px;
+}
+
+.level-center {
+  text-align: center;
+  margin-top: 50px; 
+}
+
+.level-icon {
+  width: 50px; 
+  left: 30px; 
+}
+
+.level-head {
+  margin-top: 15px; 
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.level-section {
+  width: 33%;
+  margin: 15px; 
+}
+
+.level-title {
+  font-weight: 500; 
+}
+
+.level-quote {
+  font-style: italic;
+  font-size: 0.88em;
+  margin-left: 5px; 
+}
+
+.level-focus {
+  font-size: 0.95em;
+  color: rgb(70, 69, 69); 
+  margin-bottom: 8px; 
+}
 
 
 

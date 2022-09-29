@@ -6,6 +6,7 @@ import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
 import age from "../images/travelerAge.jpeg"
 import level from "../images/surfLevel.jpeg"
 import traveler from "../images/world.jpeg"
+import forMe from "../images/isForMe.jpeg"
 
 function IsForMe() {
 
@@ -33,9 +34,14 @@ function IsForMe() {
     }
 
     return (
-        <div className="retreat-width">
+        <div>
             <div className="filler"></div>
-            <section className="is-me-holder">
+            <div className="for-me-back">
+                <img className="background-image" src={forMe} alt="" />
+                <p className="is-forMe-sub">Is this trip for me?</p>
+            </div>
+            
+            <section className="is-me-holder retreat-width">
                 <div className="is-me-section">
                     <img className="is-me-img" src={age} alt="" />
                     <p className="retreat-header is-me-head">Traveler Age</p>
