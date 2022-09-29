@@ -1947,7 +1947,7 @@ nav {
 .level-head {
   margin-top: 15px; 
   font-size: 1.2em;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
@@ -1967,9 +1967,9 @@ nav {
 }
 
 .level-focus {
-  font-size: 0.95em;
-  color: rgb(70, 69, 69); 
-  margin-bottom: 8px; 
+  font-size: 0.9em;
+  margin-bottom: 10px; 
+  font-weight: 500;
 }
 
 
@@ -2087,5 +2087,15 @@ nav {
     width: 100%; 
     margin: 0px; 
     margin-bottom: 30px; 
+  }
+
+  .beg-lvl {
+    display: block;
+  }
+
+  .level-section {
+    width: 60%;
+    margin-left: 20.5%; 
+
   }
 }
