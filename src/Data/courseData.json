@@ -1,7 +1,7 @@
 [
     {
         "id": "0",
-        "link": "/onlineCourses/duckDive",
+        "link": "/online-courses/duck-dive",
         "free": true, 
         "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/DuckDive-1024x576.jpg", 
@@ -12,7 +12,7 @@
     },
     {
         "id": "1",
-        "link": "/onlineCourses/generateSpeed",
+        "link": "/online-courses/generate-speed",
         "free": false, 
         "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/BBA4D6DD-D013-4958-97D8-33DAC8B5C365.jpeg", 
@@ -23,7 +23,7 @@
     }, 
     {
         "id": "2",
-        "link": "/onlineCourses/paddleEfficiently",
+        "link": "/online-courses/paddle-efficiently",
         "free": false, 
         "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/A0584307-A6CA-457D-893D-9CEB7B3685A2.jpeg", 
@@ -34,7 +34,7 @@
     },
     {
         "id": "3",
-        "link": "/onlineCourses/popUp",
+        "link": "/online-courses/pop-up",
         "free": true, 
         "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/WahtTakeOff-624x351@2x.jpg", 
@@ -45,7 +45,7 @@
     }, 
     {
         "id": "4",
-        "link": "/onlineCourses/pushThrough",
+        "link": "/online-courses/push-through",
         "free": false, 
         "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/84B56C19-712C-4B7C-8102-7C313A8246EB.jpeg", 
@@ -56,7 +56,7 @@
     }, 
     {
         "id": "5",
-        "link": "/onlineCourses/catchBetterWaves", 
+        "link": "/online-courses/catch-better-waves", 
         "free": true, 
         "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Precise-Positioning-no-logo-1-1-624x347@2x.png", 
@@ -67,7 +67,7 @@
     }, 
     {
         "id": "6",
-        "link": "/onlineCourses",
+        "link": "/online-courses",
         "free": false, 
         "address": "",
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/IMG_0183-2048x1134.jpg", 
@@ -78,7 +78,7 @@
     }, 
     {
         "id": "7", 
-        "link": "/onlineCourses/learningTips", 
+        "link": "/online-courses/learning-tips", 
         "free": true, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2021/02/Learndash-Image-Learning-624x333@2x.png", 
@@ -89,7 +89,7 @@
     }, 
     {
         "id": "8", 
-        "link": "/onlineCourses/surfboardsForBeginners", 
+        "link": "/online-courses/surfboards-for-beginners", 
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/464EBBCF-71AF-4890-BF41-D352936EF1E9-1024x576.jpeg", 
@@ -100,7 +100,7 @@
     }, 
     {
         "id": "9",
-        "link": "/onlineCourses/turtleRoll",
+        "link": "/online-courses/turtle-roll",
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/479BF669-5E1F-42FD-B0B9-E76F0E1821EC-1024x576.jpeg", 
@@ -111,7 +111,7 @@
     }, 
     {
         "id": "10",
-        "link": "/onlineCourses/turningInTheWhiteWater", 
+        "link": "/online-courses/turning-in-the-white-water", 
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/FD99928A-0EE8-43CF-9D5A-E2A6315FA120-1024x576.jpeg", 
@@ -122,7 +122,7 @@
     }, 
     {
         "id": "11", 
-        "link": "/onlineCourses/footwork",
+        "link": "/online-courses/footwork",
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Footwork-624x358@2x.png", 
@@ -133,7 +133,7 @@
     }, 
     {
         "id": "12",
-        "link": "/onlineCourses/anglingTheTakeoff", 
+        "link": "/online-courses/angling-the-takeoff", 
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Youtube-Thumbnail-3-624x351@2x.jpg", 
@@ -144,7 +144,7 @@
     }, 
     {
         "id": "13",
-        "link": "/onlineCourses/readingWaves", 
+        "link": "/online-courses/reading-waves", 
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Reading-Waves-624x382@2x.png", 
@@ -155,7 +155,7 @@
     }, 
     {
         "id": "14",
-        "link": "/onlineCourses/stance", 
+        "link": "/online-courses/stance", 
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/F7C4D9C5-C620-48DD-BA75-4D49539C6CA4-1024x576.jpeg", 
@@ -166,7 +166,7 @@
     }, 
     {
         "id": "15",
-        "link": "/onlineCourses/etiquette", 
+        "link": "/online-courses/etiquette", 
         "free": true, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/F7FA33A8-61C9-4238-BB89-6CF8771E59BC.jpeg", 
@@ -177,7 +177,7 @@
     }, 
     {
         "id": "16", 
-        "link": "/onlineCourses/surfboardsForIntermediates",
+        "link": "/online-courses/surfboards-for-intermediates",
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/FAE7B88F-D0A7-4578-8F25-E81A3D9B6339-1024x576.jpeg", 
@@ -188,7 +188,7 @@
     }, 
     {
         "id": "17", 
-        "link": "/onlineCourses/positioningForWaves",
+        "link": "/online-courses/positioning-for-waves",
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/Precise-Positioning-no-logo-1-1-624x347@2x.png", 
@@ -199,7 +199,7 @@
     },
     {
         "id": "18", 
-        "link": "/onlineCourses/crossStep",
+        "link": "/online-courses/cross-step",
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/FBB267FF-7215-4423-88DF-9FE1F08F52FE-1024x576.jpeg", 
@@ -210,7 +210,7 @@
     }, 
     {
         "id": "19", 
-        "link": "/onlineCourses/bottomTurn",
+        "link": "/online-courses/bottom-turn",
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/7B01A4DD-728E-4FFE-8B5D-29E5BACBA319-1024x576.jpeg", 
@@ -221,7 +221,7 @@
     }, 
     {
         "id": "20",
-        "link": "/onlineCourses/cutback",  
+        "link": "/online-courses/cutback",  
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/89B5D79A-3C64-47DB-8483-090A62DE631E-1024x576.jpeg", 
@@ -232,7 +232,7 @@
     }, 
     {
         "id": "21",
-        "link": "/onlineCourses/topTurn", 
+        "link": "/online-courses/top-turn", 
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2020/04/8615BDBD-82DA-4457-886D-F355B86F11AA-1024x576.jpeg", 
@@ -243,7 +243,7 @@
     }, 
     {
         "id": "22",
-        "link": "/onlineCourses/yogaWithSally", 
+        "link": "/online-courses/yoga-with-sally", 
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2021/03/YogaCourse-624x354@2x.jpg", 
@@ -254,7 +254,7 @@
     }, 
     {
         "id": "23",
-        "link": "/onlineCourses/fitnessMobilityWithMichelle", 
+        "link": "/online-courses/fitness-mobility-with-michelle", 
         "free": false, 
         "address": "", 
         "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2021/08/Learndash-Thumbnail-Michelle-2-624x351@2x.jpg", 

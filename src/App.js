@@ -110,33 +110,33 @@ function App() {
                 </Route> 
                 {/* <Route path="/shop" element={<Shop />} /> */}
 
-                <Route path="/onlineCourses" element={<OnlineCourses />} />  
+                <Route path="/online-courses" element={<OnlineCourses />} />  
 
-                <Route path="/onlineCourses"> {/* originally had <Route path="/onlineCourses" element={<OnlineCourse />} />, but the "element={<OnlineCourse />}" would override the elements in the nested routes, so I made another route with the OnlineCourses element above */}
-                    <Route path="/onlineCourses/duckDive" element={<ChosenCourse course={duckDive}/>} />
-                    <Route path="/onlineCourses/generateSpeed" element={<ChosenCourse course={generateSpeed}/>} />
-                    <Route path="/onlineCourses/paddleEfficiently" element={<ChosenCourse course={paddleEfficient}/>} />
-                    <Route path="/onlineCourses/popUp" element={<ChosenCourse course={popUp}/>} />
-                    <Route path="/onlineCourses/pushThrough" element={<ChosenCourse course={pushThrough}/>} />
-                    <Route path="/onlineCourses/catchBetterWaves" element={<ChosenCourse course={betterWave}/>} />
-                    <Route path="/onlineCourses/allOthers" element={<ChosenCourse course={otherCourse}/>} />
-                    <Route path="/onlineCourses/learningTips" element={<ChosenCourse course={tips}/>} />
-                    <Route path="/onlineCourses/surfboardsForBeginners" element={<ChosenCourse course={beginners}/>} />
-                    <Route path="/onlineCourses/turtleRoll" element={<ChosenCourse course={turtleRoll}/>} />
-                    <Route path="/onlineCourses/turningInTheWhiteWater" element={<ChosenCourse course={turnWhite}/>} />
-                    <Route path="/onlineCourses/footwork" element={<ChosenCourse course={footwork}/>} />
-                    <Route path="/onlineCourses/anglingTheTakeoff" element={<ChosenCourse course={angle}/>} />
-                    <Route path="/onlineCourses/readingWaves" element={<ChosenCourse course={readWave}/>} />
-                    <Route path="/onlineCourses/stance" element={<ChosenCourse course={stance}/>} />
-                    <Route path="/onlineCourses/etiquette" element={<ChosenCourse course={etiquette}/>} />
-                    <Route path="/onlineCourses/surfboardsForIntermediates" element={<ChosenCourse course={intermediates}/>} />
-                    <Route path="/onlineCourses/positioningForWaves" element={<ChosenCourse course={position}/>} />
-                    <Route path="/onlineCourses/crossStep" element={<ChosenCourse course={crossStep}/>} />
-                    <Route path="/onlineCourses/bottomTurn" element={<ChosenCourse course={bottomTurn}/>} />
-                    <Route path="/onlineCourses/cutback" element={<ChosenCourse course={cutback}/>} />
-                    <Route path="/onlineCourses/topTurn" element={<ChosenCourse course={topTurn}/>} />
-                    <Route path="/onlineCourses/yogaWithSally" element={<ChosenCourse course={sally}/>} />
-                    <Route path="/onlineCourses/fitnessMobilityWithMichelle" element={<ChosenCourse course={michelle}/>} />
+                <Route path="/online-courses"> {/* originally had <Route path="/online-courses" element={<OnlineCourse />} />, but the "element={<OnlineCourse />}" would override the elements in the nested routes, so I made another route with the Online-courses element above */}
+                    <Route path="/online-courses/duck-dive" element={<ChosenCourse course={duckDive}/>} />
+                    <Route path="/online-courses/generate-speed" element={<ChosenCourse course={generateSpeed}/>} />
+                    <Route path="/online-courses/paddle-efficiently" element={<ChosenCourse course={paddleEfficient}/>} />
+                    <Route path="/online-courses/pop-up" element={<ChosenCourse course={popUp}/>} />
+                    <Route path="/online-courses/push-through" element={<ChosenCourse course={pushThrough}/>} />
+                    <Route path="/online-courses/catch-better-waves" element={<ChosenCourse course={betterWave}/>} />
+                    <Route path="/online-courses/all-others" element={<ChosenCourse course={otherCourse}/>} />
+                    <Route path="/online-courses/learning-tips" element={<ChosenCourse course={tips}/>} />
+                    <Route path="/online-courses/surfboards-for-beginners" element={<ChosenCourse course={beginners}/>} />
+                    <Route path="/online-courses/turtle-roll" element={<ChosenCourse course={turtleRoll}/>} />
+                    <Route path="/online-courses/turning-in-the-white-water" element={<ChosenCourse course={turnWhite}/>} />
+                    <Route path="/online-courses/footwork" element={<ChosenCourse course={footwork}/>} />
+                    <Route path="/online-courses/angling-the-takeoff" element={<ChosenCourse course={angle}/>} />
+                    <Route path="/online-courses/reading-waves" element={<ChosenCourse course={readWave}/>} />
+                    <Route path="/online-courses/stance" element={<ChosenCourse course={stance}/>} />
+                    <Route path="/online-courses/etiquette" element={<ChosenCourse course={etiquette}/>} />
+                    <Route path="/online-courses/surfboards-for-intermediates" element={<ChosenCourse course={intermediates}/>} />
+                    <Route path="/online-courses/positioning-for-waves" element={<ChosenCourse course={position}/>} />
+                    <Route path="/online-courses/cross-step" element={<ChosenCourse course={crossStep}/>} />
+                    <Route path="/online-courses/bottom-turn" element={<ChosenCourse course={bottomTurn}/>} />
+                    <Route path="/online-courses/cutback" element={<ChosenCourse course={cutback}/>} />
+                    <Route path="/online-courses/top-turn" element={<ChosenCourse course={topTurn}/>} />
+                    <Route path="/online-courses/yoga-with-sally" element={<ChosenCourse course={sally}/>} />
+                    <Route path="/online-courses/fitness-mobility-with-michelle" element={<ChosenCourse course={michelle}/>} />
                 </Route>
 
                 <Route path="/about">

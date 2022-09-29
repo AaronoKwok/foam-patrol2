@@ -1,17 +1,39 @@
 import React from "react"
 import {Link} from "react-router-dom"
+
+//import {Context} from "../Context"
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
 
 import courseData from '../Data/courseData.json'
 import retreatData from '../Data/retreatData.json'
-//import {Context} from "../Context"
+//import locationData from '../Data/locationData.json'
+
 
 import BackScene from "../components/BackScene"
 import Course from "../components/Course"
 import Retreat from "../components/Retreat"
 
 function MainPage() { //to change once have a courses scroll functionality
+
+    const pointArr = [
+        "Tailored surf coaching", 
+        "6 coaches for 12 students", 
+        "Authentic travel experience", 
+        "Only the best surf spots for your level"
+    ]
+
+    function makePoints(arr) {
+        return arr.map((txt) => {
+            return (
+                <div className="info-space-mp">
+                    <FontAwesomeIcon className="arrow-icon" icon={faAnglesRight}/>
+                    <p className="bullet-point">{txt}</p>                    
+                </div> 
+            )
+        })
+    }
 
     const courses = courseData.map((course) => {
         if (course.id < 4) {
@@ -20,6 +42,10 @@ function MainPage() { //to change once have a courses scroll functionality
             return null
         }
     })
+
+   /*  const current = locationData.map((location) => {
+        return <CurrentCondition 
+    }) */
 
     const retreats = retreatData.map((retreat) => {
         return <Retreat key={retreat.id} retreat={retreat} />
@@ -32,10 +58,7 @@ function MainPage() { //to change once have a courses scroll functionality
                 <section className="main-info">
                     <p className="main-info-paragraph">Beginner? Intermediate? <span className="main-info-span">Surfing is more fun the better you get.</span> We help you surf better, faster.</p>
                     <div className="main-info-bullets">
-                        <p><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} /> Tailored surf coaching</p>
-                        <p><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} /> 6 coaches for 12 students</p>
-                        <p><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} /> Authentic travel experience</p>
-                        <p><FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} /> Only the best surf spots for your level</p>
+                        {makePoints(pointArr)}
                     </div>
                 </section>
             </div>
@@ -54,11 +77,7 @@ function MainPage() { //to change once have a courses scroll functionality
                     <p className="retreats-p">NorCal & Hawaii Current Conditions</p>
                     <hr className="main-hr"/>
                     <div className="retreats-layout">
-                        <p>placeholder</p>
-                        <p>placeholder</p>
-                        <p>placeholder</p>
-                        <p>placeholder</p>
-                        <p>placeholder</p>
+                        current conditions 4 spots
                     </div>
                 </section>
                 
@@ -68,7 +87,7 @@ function MainPage() { //to change once have a courses scroll functionality
                     <div className="courses-layout">
                         {courses}
                     </div>
-                    <Link className="courses-link" to="/onlineCourses">Go to more courses...</Link>
+                    <Link className="courses-link" to="/online-courses">Go to more courses...</Link>
                 </section>
             </div>
             

@@ -307,13 +307,15 @@ function SurfForecasts({loc}) {
     /* clear/rainy function */
 
     function findSky(clouds, rain, visible, light, dark) { 
-        //return dayClear
         if (clouds === loading) {
             return loading
         }
         const currentMs = Date.now()
         const startDay = new Date(light).getTime()
         const endDay = new Date(dark).getTime()
+        console.log(currentMs)
+        console.log(startDay)
+        console.log(endDay)
         console.log(clouds, "findSky clouds")
         console.log(rain, "findSky rain")
         console.log(visible, "findSky visible")
@@ -541,7 +543,10 @@ function SurfForecasts({loc}) {
                 console.log(weatherForecast)
                 console.log(weatherForecast[0], "weather hour used")
                 console.log(astronomyForecast, "ast forecast")
-                console.log(astronomyForecast[0], "ast day used")
+                console.log(astronomyForecast[0], "ast day used") 
+
+                /* Bug for astronomy, need function that finds closest day using returned time data, as api returns next utc hour */
+
                 console.log(new Date(weatherForecast[0].time).toLocaleString('en-US', {timeZone: "PST"}), "current local weather hour")
                 console.log(weatherForecast[0].precipitation.sg, "precipitation")
                 console.log(weatherForecast[0].cloudCover.sg, "cloud cover")
@@ -628,7 +633,7 @@ function SurfForecasts({loc}) {
                     {
                         !loaded && 
                             <div className="forecast-load">
-                                <p className="loading-text">Loading... (api call is off)</p>
+                                <p className="loading-text">Loading...</p>
                             </div>
                     }
 

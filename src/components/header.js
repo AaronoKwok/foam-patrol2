@@ -183,7 +183,7 @@ function Header() {
 
                     </div>
 
-                    <Link className="nav-link color-change" to="/onlineCourses">
+                    <Link className="nav-link color-change" to="/online-courses">
                         <p className="nav-button">ONLINE COURSES</p>
                     </Link>
                     
