@@ -324,7 +324,7 @@ function findSky(clouds, rain, visible, light, dark) {
 console.log(findSky(cloudCover, precipitation, visibility, firstLight, lastLight))
  */
 
-console.log(Date.now())
+/* console.log(Date.now())
 console.log(Date.parse(new Date().toLocaleString("en-US", {timeZone: "HST"})))
 console.log(new Date("2022-09-29T16:00:59+00:00").getTime())
 console.log((new Date("2022-09-30T04:44:37+00:00").toLocaleString("en-US", {timeZone: "HST"})))
@@ -639,5 +639,11 @@ function correctAst(forecast) {
     }
     return "time exceeds forecast's limit"
 }
-console.log(correctAst(ast))
+console.log(correctAst(ast)) */
+
+
+
+
+
+
 

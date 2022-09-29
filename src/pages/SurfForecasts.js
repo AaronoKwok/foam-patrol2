@@ -231,11 +231,8 @@ function SurfForecasts({loc}) {
 
     /* calc current tide height */
     function calcTideHeight(nextTide, tideArray) {
+
         const prevTideHeight = (tideArray[nextTide.ident - 1].height + loc.msl) * 3.281
-        /* 
-            if nextTide is the first obj tideforecast, nextTide.ident - 1 won't exist
-            - can fix by changing tide start time
-        */
         const prevTideType = tideArray[nextTide.ident - 1].type
         const nextTideHeight = (nextTide.height + loc.msl) * 3.281
         const prevTideTime = Date.parse(tideArray[nextTide.ident - 1].time)
@@ -291,8 +288,15 @@ function SurfForecasts({loc}) {
             return timeHeightArr[timeHeightArr.length - 1].tide.toFixed(1)
         }
         return currentTideHeight(timeHeight())
+    }
 
-         // currently returns an object which can't be displayed as screen
+    /* -0.0 tide */
+    function zeroTide() {
+        if (tideHeight === -0.0) {
+            return setTideHeight(0)
+        } else {
+            return tideHeight
+        } 
     }
 
     /* tide up or down image */
@@ -308,7 +312,6 @@ function SurfForecasts({loc}) {
     function correctAst(forecast, location) {
         for (let i = 0; i < forecast.length; i++) {
             if (Date.parse(forecast[i].civilDusk) - Date.parse(new Date().toLocaleString("en-US", {timeZone: location.timezone})) >= 0) {
-                console.log("correctAst ran")
                 return forecast[i]
             }
         }
@@ -566,17 +569,12 @@ function SurfForecasts({loc}) {
                 console.log(tideForecast, "tide forecast")
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
-
                 setCalcTide(calcTideHeight(nextTideHour, tideForecast))
-                
                 setCloudCover(weatherForecast[0].cloudCover.sg)
-                
                 setFirstLight(correctAst(astronomyForecast, loc).civilDawn)
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
-                
                 setLastLight(correctAst(astronomyForecast, loc).civilDusk)
                 setNextTideTime(nextTideHour.time) 
-                
                 setPrecipitation(weatherForecast[0].precipitation.sg)
                 setSwellDirection(Math.floor(weatherForecast[0].swellDirection.sg))
                 setSwellLetters(findDegreeLetters(weatherForecast[0].swellDirection.sg))
@@ -586,13 +584,11 @@ function SurfForecasts({loc}) {
                 setSecondarySwellLetters(findDegreeLetters(weatherForecast[0].secondarySwellDirection.sg))
                 setSecondarySwellHeight((weatherForecast[0].secondarySwellHeight.sg).toFixed(1))
                 setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
-                
                 setSunrise(correctAst(astronomyForecast, loc).sunrise)
-                
                 setSunset(correctAst(astronomyForecast,loc).sunset)
+                
                 setTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1)) 
                 setTideType(capTide[0].toUpperCase() + capTide.substring(1))
-                
                 setVisibility(weatherForecast[0].visibility.sg)
                 setWaterTemperature(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
                 setWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
@@ -611,7 +607,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        getData() //turn off when editing
+        //getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
@@ -644,14 +640,14 @@ function SurfForecasts({loc}) {
                     <p className="fcRating">FAIR</p>
 
                     {
-                        !loaded && 
+                        loaded && 
                             <div className="forecast-load">
                                 <p className="loading-text">Loading...</p>
                             </div>
                     }
 
                     {
-                        loaded &&
+                        !loaded &&
                             <section className="fcData">
                             <div className="first-data-row">
                                 <div className="data-box">
@@ -664,7 +660,7 @@ function SurfForecasts({loc}) {
                                     <p className="type-name">Tide</p>
                                     <hr className="data-hr"/>
                                     <p className="current-data-point">{calcTide}<span className="data-span">ft</span><span><img className="up-down-arrow" src={upOrDown(tideType)} alt =""/></span></p>
-                                    <p className="data-description">{tideType} tide {tideHeight}ft at {ampm(nextTideTime, loc.timezone)}</p>
+                                    <p className="data-description">{tideType} tide {zeroTide()}ft at {ampm(nextTideTime, loc.timezone)}</p>
                                 </div>
                                 <div className="data-box">
                                     <p className="type-name">Wind</p>
@@ -728,128 +724,132 @@ function SurfForecasts({loc}) {
 
                 <section className="surfConditions">
                     <p className="sc-Title">Ideal {loc.name} Surf Conditions</p>
-                    <div className="icon-container">
-                        <img className="sc-icon" src={swellDirectionIcon} alt=""></img>
-                        <div >
-                            <p className="condition-title">Swell Direction</p>
-                            <p className="condition-des">{swellDirectionDes}</p>
+                    
+                    <section className="conditions">
+                        <div className="icon-container">
+                            <img className="sc-icon" src={swellDirectionIcon} alt=""></img>
+                            <div >
+                                <p className="condition-title">Swell Direction</p>
+                                <p className="condition-des">{swellDirectionDes}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="icon-container">
-                        <img className="sc-icon" src={windIcon} alt=""></img>
-                        <div >
-                            <p className="condition-title">Wind</p>
-                            <p className="condition-des">{windDes}</p>
+                        <div className="icon-container">
+                            <img className="sc-icon" src={windIcon} alt=""></img>
+                            <div >
+                                <p className="condition-title">Wind</p>
+                                <p className="condition-des">{windDes}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="icon-container">
-                        <img className="sc-icon" src={surfHeightIcon} alt=""></img>
-                        <div >
-                            <p className="condition-title">Surf Height</p>
-                            <p className="condition-des">{surfHeightDes}</p>
+                        <div className="icon-container">
+                            <img className="sc-icon" src={surfHeightIcon} alt=""></img>
+                            <div >
+                                <p className="condition-title">Surf Height</p>
+                                <p className="condition-des">{surfHeightDes}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="icon-container">
-                        <img className="sc-icon" src={tideIcon} alt=""></img>
-                        <div >
-                            <p className="condition-title">Tide</p>
-                            <p className="condition-des">{tideDes}</p>
+                        <div className="icon-container">
+                            <img className="sc-icon" src={tideIcon} alt=""></img>
+                            <div >
+                                <p className="condition-title">Tide</p>
+                                <p className="condition-des">{tideDes}</p>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+                    
                 </section>
 
                 <section className="fcGuide">
                     <p className="fcGuideName">{loc.name} Surf Guide</p>
                     <p className="fcGuideAbout">{loc.about}</p>
-                    <div className="guide">
-                        <section className="abilitySpot">
-                            <div className="guideContainer">
-                                <p className="guideName">Ability Level</p>
-                                <p className="guideTitle">{loc.guide.abilityLevel.title}</p>
-                                <div className="abilityLevel">
-                                    <div className="partLevel">
-                                        {isBlue(0)}
-                                        <p className="levelText">Beg</p>
-                                    </div>
-                                    <div className="partLevel">
-                                        {isBlue(1)}
-                                        <p className="levelText">Int</p>
-                                    </div>
-                                    <div className="partLevel">
-                                        {isBlue(2)}
-                                        <p className="levelText">Adv</p>
-                                    </div>
-                                </div>
-                                <p className="guideDes">{loc.guide.abilityLevel.description}</p>
-                            </div>
-                            <div className="guideContainer">
-                                <p className="guideName">Spot Rating</p>
-                                <p className="guideTitle">{loc.guide.spotRating.title}</p>
-                                <div className="barContainer">
-                                    {isFilled(spotRating)}
-                                </div>
-                                <div className="barDes">
-                                    <p className="barDesText">Poor</p>
-                                    <p className="barDesText">Perfect</p>
-                                </div>
-                                <p className="guideDes">{loc.guide.spotRating.description}</p>
-                            </div>
-                        </section>
 
-                        <section className="localShoulder">
-                            <div className="guideContainer">
-                                <p className="guideName">Local Vibe</p>
-                                <p className="guideTitle">{loc.guide.localVibe.title}</p>
-                                <div className="barContainer">
-                                    {isFilled(localVibe)}
-                                </div>
-                                <div className="barDes">
-                                    <p className="barDesText">Welcoming</p>
-                                    <p className="barDesText">Intimidating</p>
-                                </div>
-                                <p className="guideDes">{loc.guide.localVibe.description}</p>
-                            </div>
-                            <div className="guideContainer">
-                                <p className="guideName">Shoulder Burn</p>
-                                <p className="guideTitle">{loc.guide.shoulderBurn.title}</p>
-                                <div className="barContainer">
-                                    {isFilled(shoulderBurn)}
-                                </div>
-                                <div className="barDes">
-                                    <p className="barDesText">Light</p>
-                                    <p className="barDesText">Exhausting</p>
-                                </div>
-                                <p className="guideDes">{loc.guide.shoulderBurn.description}</p>
-                            </div>
-                        </section>
+                    <section className="guide">
 
-                        <section className="crowdWater"> 
-                            <div className="guideContainer">
-                                <p className="guideName">Crowd Factor</p>
-                                <p className="guideTitle">{loc.guide.crowdFactor.title}</p>
-                                <div className="barContainer">
-                                    {isFilled(crowdFactor)}
+                        <div className="guideContainer">
+                            <p className="guideName">Ability Level</p>
+                            <p className="guideTitle">{loc.guide.abilityLevel.title}</p>
+                            <div className="abilityLevel">
+                                <div className="partLevel">
+                                    {isBlue(0)}
+                                    <p className="levelText">Beg</p>
                                 </div>
-                                <div className="barDes">
-                                    <p className="barDesText">Mellow</p>
-                                    <p className="barDesText">Heavy</p>
+                                <div className="partLevel">
+                                    {isBlue(1)}
+                                    <p className="levelText">Int</p>
                                 </div>
-                                <p className="guideDes">{loc.guide.crowdFactor.description}</p>
+                                <div className="partLevel">
+                                    {isBlue(2)}
+                                    <p className="levelText">Adv</p>
+                                </div>
                             </div>
-                            <div className="guideContainer">
-                                <p className="guideName">Water Quality</p>
-                                <p className="guideTitle">{loc.guide.waterQuality.title}</p>
-                                <div className="barContainer">
-                                    {isFilled(waterQuality)}
-                                </div>
-                                <div className="barDes">
-                                    <p className="barDesText">Clean</p>
-                                    <p className="barDesText">Dirty</p>
-                                </div>
-                                <p className="guideDes">{loc.guide.waterQuality.description}</p>
+                            <p className="guideDes">{loc.guide.abilityLevel.description}</p>
+                        </div>
+
+                        <div className="guideContainer">
+                            <p className="guideName">Spot Rating</p>
+                            <p className="guideTitle">{loc.guide.spotRating.title}</p>
+                            <div className="barContainer">
+                                {isFilled(spotRating)}
                             </div>
-                        </section>
-                    </div>
+                            <div className="barDes">
+                                <p className="barDesText">Poor</p>
+                                <p className="barDesText">Perfect</p>
+                            </div>
+                            <p className="guideDes">{loc.guide.spotRating.description}</p>
+                        </div>
+                    
+                        <div className="guideContainer">
+                            <p className="guideName">Local Vibe</p>
+                            <p className="guideTitle">{loc.guide.localVibe.title}</p>
+                            <div className="barContainer">
+                                {isFilled(localVibe)}
+                            </div>
+                            <div className="barDes">
+                                <p className="barDesText">Welcoming</p>
+                                <p className="barDesText">Intimidating</p>
+                            </div>
+                            <p className="guideDes">{loc.guide.localVibe.description}</p>
+                        </div>
+
+                        <div className="guideContainer">
+                            <p className="guideName">Shoulder Burn</p>
+                            <p className="guideTitle">{loc.guide.shoulderBurn.title}</p>
+                            <div className="barContainer">
+                                {isFilled(shoulderBurn)}
+                            </div>
+                            <div className="barDes">
+                                <p className="barDesText">Light</p>
+                                <p className="barDesText">Exhausting</p>
+                            </div>
+                            <p className="guideDes">{loc.guide.shoulderBurn.description}</p>
+                        </div>
+                    
+                        <div className="guideContainer">
+                            <p className="guideName">Crowd Factor</p>
+                            <p className="guideTitle">{loc.guide.crowdFactor.title}</p>
+                            <div className="barContainer">
+                                {isFilled(crowdFactor)}
+                            </div>
+                            <div className="barDes">
+                                <p className="barDesText">Mellow</p>
+                                <p className="barDesText">Heavy</p>
+                            </div>
+                            <p className="guideDes">{loc.guide.crowdFactor.description}</p>
+                        </div>
+
+                        <div className="guideContainer">
+                            <p className="guideName">Water Quality</p>
+                            <p className="guideTitle">{loc.guide.waterQuality.title}</p>
+                            <div className="barContainer">
+                                {isFilled(waterQuality)}
+                            </div>
+                            <div className="barDes">
+                                <p className="barDesText">Clean</p>
+                                <p className="barDesText">Dirty</p>
+                            </div>
+                            <p className="guideDes">{loc.guide.waterQuality.description}</p>
+                        </div>        
+
+                    </section>
 
                     <hr className="conditions-hr"/>
 

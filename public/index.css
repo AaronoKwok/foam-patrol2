@@ -201,25 +201,22 @@ nav {
 .one-percent {
   display: flex; 
   height: 200px; 
-  background-color: rgb(93, 168, 146); /* rgb(233, 224, 148) */
-  justify-content: space-between;
+  background-color: rgb(84, 184, 154); /* rgb(233, 224, 148) */
+  justify-content: center;
   align-items: center;
 }
 
 .one-percent-desc {
-  margin-left: 25%; 
   margin-right: 5%;
   color: white;
   font-size: 1.5em;
-  width: 400px;
+  width: 45%;
   font-weight: 500;
   letter-spacing: 0.04em;
   text-align: center;
 }
 
-.one-percent-link {
-  margin-right: 25%;
-}
+
 
 .one-percent-img {
   height: 150px; 
@@ -228,10 +225,14 @@ nav {
 .footer-mid {
   color: white;
   display: flex; 
-  justify-content: space-evenly;
-  padding-top: 50px; 
+  justify-content: center;
   height: 250px;
+  padding-top: 70px;
   background-color: rgb(21, 58, 88);
+}
+
+.footer-internal-links {
+  margin-right: 30%; 
 }
 
 .footer-surf {
@@ -771,16 +772,16 @@ nav {
 }
 
 .primary-dot {
-  height: 8px; 
-  width: 8px; 
+  height: 7px; 
+  min-width: 7px; 
   border-radius: 10px; 
   background-color: rgb(16, 35, 139); 
   margin-right: 3px; 
 }
 
 .secondary-dot {
-  height: 8px; 
-  width: 8px; 
+  height: 7px; 
+  min-width: 7px; 
   border-radius: 10px; 
   background-color: rgb(235, 138, 48); 
   margin-right: 3px; 
@@ -832,7 +833,6 @@ nav {
   margin-bottom: 3px; 
 }
 
-
 /* forcast Data */
 
 .forecast-row {
@@ -842,32 +842,10 @@ nav {
   width: 100%;
 }
 
-/* .forecast-data-box {
-  position: absolute; 
-  top: 20px; 
-  left: 20px; 
-  background-color: white;
-  margin-right: 30px; 
-  min-width: 150px;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Ideal Conditions */
 
 .surfConditions {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -878,6 +856,10 @@ nav {
   padding: 0px; 
   background-color: white;
   padding: 10px;
+}
+
+.conditions {
+  display: flex; 
 }
 
 .sc-Title {
@@ -949,7 +931,6 @@ nav {
 }
 
 .guideContainer {
-  background-color: white;
   padding-left: 5px;
   height: 210px; 
 }
@@ -1064,22 +1045,12 @@ nav {
 
 .guideDes {
   font-size: 0.85em; 
-  width: 250px; 
+  width: 80%;
   letter-spacing: .042em;
   color:rgb(110, 110, 110)
 }
 
-.abilitySpot {
-  height: 100%; 
-}
 
-.localShoulder  {
-  height: 100%; 
-}
-
-.crowdWater {
-  height: 100%; 
-}
 
 .guideHr {
   margin: 0px; 
@@ -2094,6 +2065,16 @@ nav {
   .course {
     margin-bottom: 24px; 
   }
+
+  .first-data-row {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .data-box {
+    width: 85%;
+    margin-bottom: 20px; 
+  }
 }
 
 @media screen and (max-width: 1050px) {
@@ -2118,6 +2099,18 @@ nav {
   .level-section {
     width: 60%;
     margin-left: 20.5%; 
+  }
 
+  .conditions {
+    display: grid; 
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .icon-container {
+    width: auto; 
+  }
+
+  .guide {
+    grid-template-columns: repeat(2, auto);
   }
 }

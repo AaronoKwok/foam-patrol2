@@ -10,10 +10,10 @@ function Footer() {
         <div>
             <section className="one-percent">
                 <p className="one-percent-desc">1% of every sale goes to nonprofit organizations that work to clean and protect our oceans.</p>
-                <a className="one-percent-link" target="_blank" rel="noreferrer" href="https://onepercentfortheplanet.org/"><img className="one-percent-img" src={onePercent} alt="" /></a>
+                <a target="_blank" rel="noreferrer" href="https://onepercentfortheplanet.org/"><img className="one-percent-img" src={onePercent} alt="" /></a>
             </section>
             <section className="footer-mid">
-                <div>
+                <div className="footer-internal-links">
                     <p className="footer-surf">Surfing</p>
                     <Link className="footer-surf-questions" to="/about/is-this-trip-for-me"><p>What's my surfing level?</p></Link> 
                     <Link className="footer-surf-questions" to="/about/surfing-level"><p className="footer-second">Is this surf trip for me?</p></Link>
