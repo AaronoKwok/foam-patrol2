@@ -324,8 +324,320 @@ function findSky(clouds, rain, visible, light, dark) {
 console.log(findSky(cloudCover, precipitation, visibility, firstLight, lastLight))
  */
 
- console.log(new Date("2022-09-20T02:37:20+00:00").getTime())
+console.log(Date.now())
+console.log(Date.parse(new Date().toLocaleString("en-US", {timeZone: "HST"})))
+console.log(new Date("2022-09-29T16:00:59+00:00").getTime())
+console.log((new Date("2022-09-30T04:44:37+00:00").toLocaleString("en-US", {timeZone: "HST"})))
 
+console.log((Date.now() - Date.parse(new Date().toLocaleString("en-US", {timeZone: "HST"}))) / 1000 / 60 / 60)
 
+const ast = [
+    {
+        "ident": 0,
+        "astronomicalDawn": "2022-09-29T15:09:26+00:00",
+        "astronomicalDusk": "2022-09-30T05:36:11+00:00",
+        "civilDawn": "2022-09-29T16:00:59+00:00",
+        "civilDusk": "2022-09-30T04:44:37+00:00", 
+        "moonFraction": 0.09891435409492172,
+        "moonPhase": {
+            "closest": {
+                "text": "New moon",
+                "time": "2022-09-25T22:49:00+00:00",
+                "value": 0
+            },
+            "current": {
+                "text": "Waxing crescent",
+                "time": "2022-09-28T23:00:00+00:00",
+                "value": 0.10183903177916515
+            }
+        },
+        "moonrise": "2022-09-28T19:00:31+00:00",
+        "moonset": "2022-09-28T05:51:19+00:00",
+        "nauticalDawn": "2022-09-29T15:35:13+00:00",
+        "nauticalDusk": "2022-09-30T05:10:23+00:00",
+        "sunrise": "2022-09-29T16:23:10+00:00",
+        "sunset": "2022-09-30T04:22:26+00:00",
+        "time": "2022-09-28T23:00:00+00:00"
+    },
+    {
+        "ident": 1,
+        "astronomicalDawn": "2022-09-30T15:09:42+00:00",
+        "astronomicalDusk": "2022-10-01T05:35:13+00:00",
+        "civilDawn": "2022-09-30T16:01:14+00:00",
+        "civilDusk": "2022-10-01T04:43:41+00:00",
+        "moonFraction": 0.17673736008625468,
+        "moonPhase": {
+            "closest": {
+                "text": "First quarter",
+                "time": "2022-10-03T06:17:00+00:00",
+                "value": 0.25
+            },
+            "current": {
+                "text": "Waxing crescent",
+                "time": "2022-09-29T23:00:00+00:00",
+                "value": 0.13811074369228998
+            }
+        },
+        "moonrise": "2022-09-29T20:01:24+00:00",
+        "moonset": "2022-09-29T06:31:13+00:00",
+        "nauticalDawn": "2022-09-30T15:35:29+00:00",
+        "nauticalDusk": "2022-10-01T05:09:26+00:00",
+        "sunrise": "2022-09-30T16:23:26+00:00",
+        "sunset": "2022-10-01T04:21:29+00:00",
+        "time": "2022-09-29T23:00:00+00:00"
+    },
+    {
+        "ident": 2,
+        "astronomicalDawn": "2022-10-01T15:09:58+00:00",
+        "astronomicalDusk": "2022-10-02T05:34:17+00:00",
+        "civilDawn": "2022-10-01T16:01:30+00:00",
+        "civilDusk": "2022-10-02T04:42:45+00:00",
+        "moonFraction": 0.2731123001352468,
+        "moonPhase": {
+            "closest": {
+                "text": "First quarter",
+                "time": "2022-10-03T04:07:00+00:00",
+                "value": 0.25
+            },
+            "current": {
+                "text": "Waxing crescent",
+                "time": "2022-09-30T23:00:00+00:00",
+                "value": 0.1750384196119955
+            }
+        },
+        "moonrise": "2022-09-30T21:04:56+00:00",
+        "moonset": "2022-09-30T07:16:00+00:00",
+        "nauticalDawn": "2022-10-01T15:35:45+00:00",
+        "nauticalDusk": "2022-10-02T05:08:30+00:00",
+        "sunrise": "2022-10-01T16:23:42+00:00",
+        "sunset": "2022-10-02T04:20:33+00:00",
+        "time": "2022-09-30T23:00:00+00:00"
+    },
+    {
+        "ident": 3,
+        "astronomicalDawn": "2022-10-02T15:10:15+00:00",
+        "astronomicalDusk": "2022-10-03T05:33:21+00:00",
+        "civilDawn": "2022-10-02T16:01:46+00:00",
+        "civilDusk": "2022-10-03T04:41:49+00:00",
+        "moonFraction": 0.38304297230320794,
+        "moonPhase": {
+            "closest": {
+                "text": "First quarter",
+                "time": "2022-10-03T01:37:00+00:00",
+                "value": 0.25
+            },
+            "current": {
+                "text": "Waxing crescent",
+                "time": "2022-10-01T23:00:00+00:00",
+                "value": 0.2124232813635203
+            }
+        },
+        "moonrise": "2022-10-01T22:09:39+00:00",
+        "moonset": "2022-10-01T08:06:51+00:00",
+        "nauticalDawn": "2022-10-02T15:36:01+00:00",
+        "nauticalDusk": "2022-10-03T05:07:35+00:00",
+        "sunrise": "2022-10-02T16:23:59+00:00",
+        "sunset": "2022-10-03T04:19:37+00:00",
+        "time": "2022-10-01T23:00:00+00:00"
+    },
+    {
+        "ident": 4,
+        "astronomicalDawn": "2022-10-03T15:10:31+00:00",
+        "astronomicalDusk": "2022-10-04T05:32:25+00:00",
+        "civilDawn": "2022-10-03T16:02:03+00:00",
+        "civilDusk": "2022-10-04T04:40:54+00:00",
+        "moonFraction": 0.5001988660582154,
+        "moonPhase": {
+            "closest": {
+                "text": "First quarter",
+                "time": "2022-10-02T22:57:00+00:00",
+                "value": 0.25
+            },
+            "current": {
+                "text": "Waxing gibbous",
+                "time": "2022-10-02T23:00:00+00:00",
+                "value": 0.2500633010340253
+            }
+        },
+        "moonrise": "2022-10-02T23:13:02+00:00",
+        "moonset": "2022-10-02T09:04:07+00:00",
+        "nauticalDawn": "2022-10-03T15:36:17+00:00",
+        "nauticalDusk": "2022-10-04T05:06:40+00:00",
+        "sunrise": "2022-10-03T16:24:15+00:00",
+        "sunset": "2022-10-04T04:18:41+00:00",
+        "time": "2022-10-02T23:00:00+00:00"
+    },
+    {
+        "ident": 5,
+        "astronomicalDawn": "2022-10-04T15:10:48+00:00",
+        "astronomicalDusk": "2022-10-05T05:31:31+00:00",
+        "civilDawn": "2022-10-04T16:02:19+00:00",
+        "civilDusk": "2022-10-05T04:39:59+00:00",
+        "moonFraction": 0.6175089393903711,
+        "moonPhase": {
+            "closest": {
+                "text": "First quarter",
+                "time": "2022-10-02T20:14:00+00:00",
+                "value": 0.25
+            },
+            "current": {
+                "text": "Waxing gibbous",
+                "time": "2022-10-03T23:00:00+00:00",
+                "value": 0.28775743519122565
+            }
+        },
+        "moonrise": "2022-10-04T00:12:21+00:00",
+        "moonset": "2022-10-03T10:06:42+00:00",
+        "nauticalDawn": "2022-10-04T15:36:33+00:00",
+        "nauticalDusk": "2022-10-05T05:05:45+00:00",
+        "sunrise": "2022-10-04T16:24:32+00:00",
+        "sunset": "2022-10-05T04:17:46+00:00",
+        "time": "2022-10-03T23:00:00+00:00"
+    },
+    {
+        "ident": 6,
+        "astronomicalDawn": "2022-10-05T15:11:04+00:00",
+        "astronomicalDusk": "2022-10-06T05:30:37+00:00",
+        "civilDawn": "2022-10-05T16:02:36+00:00",
+        "civilDusk": "2022-10-06T04:39:05+00:00",
+        "moonFraction": 0.727868041523059,
+        "moonPhase": {
+            "closest": {
+                "text": "First quarter",
+                "time": "2022-10-02T17:37:00+00:00",
+                "value": 0.25
+            },
+            "current": {
+                "text": "Waxing gibbous",
+                "time": "2022-10-04T23:00:00+00:00",
+                "value": 0.3253119586474462
+            }
+        },
+        "moonrise": "2022-10-04T00:12:21+00:00",
+        "moonset": "2022-10-04T11:12:11+00:00",
+        "nauticalDawn": "2022-10-05T15:36:50+00:00",
+        "nauticalDusk": "2022-10-06T05:04:51+00:00",
+        "sunrise": "2022-10-05T16:24:50+00:00",
+        "sunset": "2022-10-06T04:16:51+00:00",
+        "time": "2022-10-04T23:00:00+00:00"
+    },
+    {
+        "ident": 7,
+        "astronomicalDawn": "2022-10-06T15:11:21+00:00",
+        "astronomicalDusk": "2022-10-07T05:29:43+00:00",
+        "civilDawn": "2022-10-06T16:02:53+00:00",
+        "civilDusk": "2022-10-07T04:38:12+00:00",
+        "moonFraction": 0.824829925988306,
+        "moonPhase": {
+            "closest": {
+                "text": "First quarter",
+                "time": "2022-10-02T15:14:00+00:00",
+                "value": 0.25
+            },
+            "current": {
+                "text": "Waxing gibbous",
+                "time": "2022-10-05T23:00:00+00:00",
+                "value": 0.36254433632808736
+            }
+        },
+        "moonrise": "2022-10-05T01:05:53+00:00",
+        "moonset": "2022-10-05T12:17:46+00:00",
+        "nauticalDawn": "2022-10-06T15:37:06+00:00",
+        "nauticalDusk": "2022-10-07T05:03:58+00:00",
+        "sunrise": "2022-10-06T16:25:08+00:00",
+        "sunset": "2022-10-07T04:15:57+00:00",
+        "time": "2022-10-05T23:00:00+00:00"
+    },
+    {
+        "ident": 8,
+        "astronomicalDawn": "2022-10-07T15:11:38+00:00",
+        "astronomicalDusk": "2022-10-08T05:28:51+00:00",
+        "civilDawn": "2022-10-07T16:03:10+00:00",
+        "civilDusk": "2022-10-08T04:37:18+00:00",
+        "moonFraction": 0.9031759407177815,
+        "moonPhase": {
+            "closest": {
+                "text": "Full moon",
+                "time": "2022-10-09T22:22:00+00:00",
+                "value": 0.5
+            },
+            "current": {
+                "text": "Waxing gibbous",
+                "time": "2022-10-06T23:00:00+00:00",
+                "value": 0.39928060125374076
+            }
+        },
+        "moonrise": "2022-10-06T01:53:24+00:00",
+        "moonset": "2022-10-06T13:21:27+00:00",
+        "nauticalDawn": "2022-10-07T15:37:23+00:00",
+        "nauticalDusk": "2022-10-08T05:03:05+00:00",
+        "sunrise": "2022-10-07T16:25:26+00:00",
+        "sunset": "2022-10-08T04:15:03+00:00",
+        "time": "2022-10-06T23:00:00+00:00"
+    },
+    {
+        "ident": 9,
+        "astronomicalDawn": "2022-10-08T15:11:55+00:00",
+        "astronomicalDusk": "2022-10-09T05:27:59+00:00",
+        "civilDawn": "2022-10-08T16:03:28+00:00",
+        "civilDusk": "2022-10-09T04:36:26+00:00",
+        "moonFraction": 0.9592865732340347,
+        "moonPhase": {
+            "closest": {
+                "text": "Full moon",
+                "time": "2022-10-09T20:50:00+00:00",
+                "value": 0.5
+            },
+            "current": {
+                "text": "Waxing gibbous",
+                "time": "2022-10-07T23:00:00+00:00",
+                "value": 0.4353288030297046
+            }
+        },
+        "moonrise": "2022-10-07T02:35:48+00:00",
+        "moonset": "2022-10-07T14:22:28+00:00",
+        "nauticalDawn": "2022-10-08T15:37:41+00:00",
+        "nauticalDusk": "2022-10-09T05:02:13+00:00",
+        "sunrise": "2022-10-08T16:25:44+00:00",
+        "sunset": "2022-10-09T04:14:10+00:00",
+        "time": "2022-10-07T23:00:00+00:00"
+    },
+    {
+        "ident": 10,
+        "astronomicalDawn": "2022-10-09T15:12:12+00:00",
+        "astronomicalDusk": "2022-10-10T05:27:08+00:00",
+        "civilDawn": "2022-10-09T16:03:46+00:00",
+        "civilDusk": "2022-10-10T04:35:34+00:00",
+        "moonFraction": 0.9912883443343703,
+        "moonPhase": {
+            "closest": {
+                "text": "Full moon",
+                "time": "2022-10-09T20:05:00+00:00",
+                "value": 0.5
+            },
+            "current": {
+                "text": "Waxing gibbous",
+                "time": "2022-10-08T23:00:00+00:00",
+                "value": 0.4702468417236905
+            }
+        },
+        "moonrise": "2022-10-08T03:14:30+00:00",
+        "moonset": "2022-10-08T15:21:06+00:00",
+        "nauticalDawn": "2022-10-09T15:37:58+00:00",
+        "nauticalDusk": "2022-10-10T05:01:22+00:00",
+        "sunrise": "2022-10-09T16:26:03+00:00",
+        "sunset": "2022-10-10T04:13:17+00:00",
+        "time": "2022-10-08T23:00:00+00:00"
+    }
+]
 
+function correctAst(forecast) {
+    for (let i = 0; i < forecast.length; i++) {
+        if (Date.parse(forecast[i].civilDusk) - Date.parse(new Date().toLocaleString("en-US", {timeZone: "HST"})) >= 0) {
+            return forecast[i]
+        }
+    }
+    return "time exceeds forecast's limit"
+}
+console.log(correctAst(ast))
 

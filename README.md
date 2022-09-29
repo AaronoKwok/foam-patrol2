@@ -2,7 +2,7 @@
 
 This is a project created to aid beginner and intermediate surfers, as well as those who want to learn how to surf. Foam Patrol has multiple pages for online courses, an interactive surf forecast, and a shop. The site is inspired by websites like [Barefoot Surf](https://barefootsurftravel.com/), [Magic Seaweed](https://magicseaweed.com/), and [Global Surf Industries](https://www.surfindustries.com/).
 
-Draft version of Foam Patrol: [here](https://foam-patrol-rough-draft.netlify.app/)
+Draft version of Foam Patrol: [here](https://foam-patrol.netlify.app/)
 
 ## Project Description 
 

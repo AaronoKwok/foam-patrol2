@@ -303,6 +303,17 @@ function SurfForecasts({loc}) {
             return down
         }
     }
+
+    /* find correct day */
+    function correctAst(forecast, location) {
+        for (let i = 0; i < forecast.length; i++) {
+            if (Date.parse(forecast[i].civilDusk) - Date.parse(new Date().toLocaleString("en-US", {timeZone: location.timezone})) >= 0) {
+                console.log("correctAst ran")
+                return forecast[i]
+            }
+        }
+        return "time exceeds forecast's limit"
+    }
     
     /* clear/rainy function */
 
@@ -560,10 +571,10 @@ function SurfForecasts({loc}) {
                 
                 setCloudCover(weatherForecast[0].cloudCover.sg)
                 
-                setFirstLight(astronomyForecast[0].civilDawn)
+                setFirstLight(correctAst(astronomyForecast, loc).civilDawn)
                 setGust(Math.floor((weatherForecast[0].gust.sg) * 1.944))
                 
-                setLastLight(astronomyForecast[0].civilDusk)
+                setLastLight(correctAst(astronomyForecast, loc).civilDusk)
                 setNextTideTime(nextTideHour.time) 
                 
                 setPrecipitation(weatherForecast[0].precipitation.sg)
@@ -575,8 +586,10 @@ function SurfForecasts({loc}) {
                 setSecondarySwellLetters(findDegreeLetters(weatherForecast[0].secondarySwellDirection.sg))
                 setSecondarySwellHeight((weatherForecast[0].secondarySwellHeight.sg).toFixed(1))
                 setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
-                setSunrise(astronomyForecast[0].sunrise)
-                setSunset(astronomyForecast[0].sunset)
+                
+                setSunrise(correctAst(astronomyForecast, loc).sunrise)
+                
+                setSunset(correctAst(astronomyForecast,loc).sunset)
                 setTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1)) 
                 setTideType(capTide[0].toUpperCase() + capTide.substring(1))
                 
@@ -598,7 +611,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("effect ran")
-        //getData() //turn off when editing
+        getData() //turn off when editing
 
         /* 
             Place api call and state changes outside of useEffect 
