@@ -4,7 +4,7 @@ function Faq() {
     return (
         <div>
             <div className="filler"></div>
-            frequently asked questions
+            frequently asked questions - in development
         </div>
     )
 }

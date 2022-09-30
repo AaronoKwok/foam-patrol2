@@ -198,10 +198,23 @@ nav {
 
 /* Footer Component */
 
+.barefoot {
+  color: white;
+  text-decoration: underline;
+}
+
+.barefoot:visited {
+  color: white;
+}
+.barefoot:hover {
+  color: white; 
+  text-decoration: none;
+}
+
 .one-percent {
   display: flex; 
   height: 200px; 
-  background-color: rgb(84, 184, 154); /* rgb(233, 224, 148) */
+  background-color: rgb(62, 161, 132); /* rgb(233, 224, 148) */
   justify-content: center;
   align-items: center;
 }
@@ -227,7 +240,7 @@ nav {
   display: flex; 
   justify-content: center;
   height: 250px;
-  padding-top: 70px;
+  padding-top: 60px;
   background-color: rgb(21, 58, 88);
 }
 
@@ -397,7 +410,6 @@ nav {
 
 .info-space {
   display: flex; 
-  margin-bottom: 5px; 
 }
 
 .info-space-mp {
@@ -406,6 +418,11 @@ nav {
 
 .bullet-point {
   margin-left: 5px; 
+  margin-bottom: 6px;
+}
+
+.bullet-point-main {
+  margin-left: 5px;
 }
 
 .main-info-bullets {
@@ -860,6 +877,7 @@ nav {
 
 .conditions {
   display: flex; 
+  align-items: center;
 }
 
 .sc-Title {

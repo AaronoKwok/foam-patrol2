@@ -29,7 +29,7 @@ function MainPage() { //to change once have a courses scroll functionality
             return (
                 <div className="info-space-mp">
                     <FontAwesomeIcon className="arrow-icon" icon={faAnglesRight}/>
-                    <p className="bullet-point">{txt}</p>                    
+                    <p className="bullet-point-main">{txt}</p>                    
                 </div> 
             )
         })

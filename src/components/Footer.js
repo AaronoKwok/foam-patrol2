@@ -15,8 +15,8 @@ function Footer() {
             <section className="footer-mid">
                 <div className="footer-internal-links">
                     <p className="footer-surf">Surfing</p>
-                    <Link className="footer-surf-questions" to="/about/is-this-trip-for-me"><p>What's my surfing level?</p></Link> 
-                    <Link className="footer-surf-questions" to="/about/surfing-level"><p className="footer-second">Is this surf trip for me?</p></Link>
+                    <Link className="footer-surf-questions" to="/about/surfing-level"><p>What's my surfing level?</p></Link> 
+                    <Link className="footer-surf-questions" to="/about/is-this-trip-for-me"><p className="footer-second">Is this surf trip for me?</p></Link>
                 </div>
                 {/* <div>
                     <p>Trip Advisor</p>
@@ -31,7 +31,7 @@ function Footer() {
             </section>
             <section className="footer-base">
                 <p className="footer-base-left">United States | English (US) | $ (USD)</p>
-                <p className="footer-base-right">&#169; 2022 Foam Patrol. Travel</p>
+                <p className="footer-base-right">&#169; 2022 Foam Patrol. Travel | Images and design inspiration from <a className="barefoot" href="https://barefootsurftravel.com/" target="_blank" rel="noreferrer">Barefoot Surf</a></p>
             </section>
         </div>
     )

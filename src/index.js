@@ -6,7 +6,7 @@ import {ContextProvider} from "./Context"
 import App from "./App"
 
 ReactDOM.render(
-  <ContextProvider>
+  <ContextProvider> {/* {children} in Context.js is the <Router> <App /> </Router>*/}
     <Router>
       <App />
     </Router>
