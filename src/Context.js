@@ -67,36 +67,36 @@ function ContextProvider({children}) {
     const [loaded, setLoaded] = useState(false)
 
     //weather states
-    const [airTemp, setAirTemp] = useState(loading)
-    const [cloudCover, setCloudCover] = useState(loading)
-    const [gust, setGust] = useState(loading)
-    const [precipitation, setPrecipitation] = useState(loading)
-    const [swellDirection, setSwellDirection] = useState(loading)
-    const [swellLetters, setSwellLetters] = useState(loading)
-    const [swellHeight, setSwellHeight] = useState(loading)
-    const [swellPeriod, setSwellPeriod] = useState(loading)
-    const [secondarySwellPeriod, setSecondarySwellPeriod] = useState(loading)
-    const [secondarySwellDirection, setSecondarySwellDirection] = useState(loading)
-    const [secondarySwellLetters, setSecondarySwellLetters] = useState(loading)
-    const [secondarySwellHeight, setSecondarySwellHeight] = useState(loading)
-    const [waterTemperature, setWaterTemperature] = useState(loading)
-    const [waveHeight, setWaveHeight] = useState(loading)
-    const [windLetters, setWindLetters] = useState(loading)
-    const [windDirection, setWindDirection] = useState(loading)
-    const [windSpeed, setWindSpeed] = useState(loading)
-    const [visibility, setVisibility] = useState(loading)
+    const [airTemp, setAirTemp] = useState("LOL")
+    const [cloudCover, setCloudCover] = useState("LOL")
+    const [gust, setGust] = useState("LOL")
+    const [precipitation, setPrecipitation] = useState("LOL")
+    const [swellDirection, setSwellDirection] = useState("LOL")
+    const [swellLetters, setSwellLetters] = useState("LOL")
+    const [swellHeight, setSwellHeight] = useState("LOL")
+    const [swellPeriod, setSwellPeriod] = useState("LOL")
+    const [secondarySwellPeriod, setSecondarySwellPeriod] = useState("LOL")
+    const [secondarySwellDirection, setSecondarySwellDirection] = useState("LOL")
+    const [secondarySwellLetters, setSecondarySwellLetters] = useState("LOL")
+    const [secondarySwellHeight, setSecondarySwellHeight] = useState("LOL")
+    const [waterTemperature, setWaterTemperature] = useState("LOL")
+    const [waveHeight, setWaveHeight] = useState("LOL")
+    const [windLetters, setWindLetters] = useState("LOL")
+    const [windDirection, setWindDirection] = useState("LOL")
+    const [windSpeed, setWindSpeed] = useState("LOL")
+    const [visibility, setVisibility] = useState("LOL")
 
     //astronomy states
-    const [firstLight, setFirstLight] = useState(loading)
-    const [sunrise, setSunrise] = useState(loading)
-    const [sunset, setSunset] = useState(loading)
-    const [lastLight, setLastLight] = useState(loading)
+    const [firstLight, setFirstLight] = useState("LOL")
+    const [sunrise, setSunrise] = useState("LOL")
+    const [sunset, setSunset] = useState("LOL")
+    const [lastLight, setLastLight] = useState("LOL")
 
     //tide states 
-    const [calcTide, setCalcTide] = useState(loading)
-    const [nextTideTime, setNextTideTime] = useState(loading)
-    const [tideHeight, setTideHeight] = useState(loading)
-    const [tideType, setTideType] = useState(loading)
+    const [calcTide, setCalcTide] = useState("LOL")
+    const [nextTideTime, setNextTideTime] = useState("LOL")
+    const [tideHeight, setTideHeight] = useState("LOL")
+    const [tideType, setTideType] = useState("LOL")
 
     //weather function
 
@@ -217,6 +217,7 @@ function ContextProvider({children}) {
 
     //get api data
     function getData(loc) {
+
         console.log("retrieving data...")
         console.log(localStartString(loc))
 

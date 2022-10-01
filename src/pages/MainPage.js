@@ -15,6 +15,7 @@ import Retreat from "../components/Retreat"
 import CurrentCondition from "../components/CurrentCondition"
 
 
+
 function MainPage() { //to change once have a courses scroll functionality
 
     const {

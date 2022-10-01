@@ -18,11 +18,6 @@ function BacksceneText() {
                 <Link className="link-loc" to="/surfRetreats/bali-retreat">Bali</Link>
                 <Link className="link-loc" to="/surfRetreats/intermediate/maldives-retreat">Mentawai</Link>
                 <Link className="link-loc" to="/surfRetreats/intermediate/mentawais-retreat">Maldives</Link>
-                {/* <a className="link-loc" href="#">Costa Rica</a>
-                <a className="link-loc" href="#">Nicaragua</a>
-                <a className="link-loc" href="#">Bali</a>
-                <a className="link-loc" href="#">Mentawai</a>
-                <a className="link-loc" href="#">Maldives</a> */}
             </div>
         </div>
     )

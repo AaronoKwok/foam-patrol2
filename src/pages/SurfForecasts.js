@@ -23,7 +23,7 @@ import up from "../images/up.jpeg"
 import down from "../images/down.jpeg"
 
 function SurfForecasts({loc}) {
-    console.log(loc, "surf forecast comp")
+    console.log(loc.name, "surf forecast comp")
 
     const spot = loc.location 
     const location = useLocation()

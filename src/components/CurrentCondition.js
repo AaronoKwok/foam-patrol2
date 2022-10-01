@@ -6,7 +6,6 @@ import {Context} from "../Context"
 import {
     determineHeight,
     zeroTide,
-
 } from "../utils"
 
 function CurrentCondition({loc}) {
@@ -23,13 +22,12 @@ function CurrentCondition({loc}) {
         firstLight, 
         lastLight, 
         waterTemperature,
-
         getData
     } = useContext(Context)
     
     useEffect(() => {
-        console.log(loc, "mp retrieving data...")
-        getData(loc)
+        console.log("mp retrieving data...")
+        //getData(loc)
     }, [])
 
 
@@ -40,18 +38,18 @@ function CurrentCondition({loc}) {
                 <div className="main-condition">
                     <div className="condition-div">
                         <p className="main-condition-fetch">fetching data...</p>
-                        <img src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt="" />
-                        <p>{airTemp}</p>
-                        <p>{determineHeight(waveHeight)}</p>
-                        <p>{zeroTide(tideHeight)}</p>
-                        <p>{waterTemperature}</p>
+                        <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt="" />
+                        <p>{airTemp} air</p>
+                        <p>{determineHeight(waveHeight)} wave</p>
+                        <p>{zeroTide(tideHeight)} tide</p>
+                        <p>{waterTemperature} water</p>
                     </div>
                 </div>
             }
 
             { !loaded && 
                 <div className="main-condition">
-                    <p>loaded</p>
+                    <p>loading...</p>
                 </div>
             }
 
