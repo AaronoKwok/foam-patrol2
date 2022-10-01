@@ -3,6 +3,12 @@ import {Link} from "react-router-dom"
 
 import {Context} from "../Context"
 
+import {
+    determineHeight,
+    zeroTide,
+
+} from "../utils"
+
 function CurrentCondition({loc}) {
     console.log(loc.name, "mp")
     const {
@@ -17,32 +23,38 @@ function CurrentCondition({loc}) {
         firstLight, 
         lastLight, 
         waterTemperature,
+
         getData
     } = useContext(Context)
     
     useEffect(() => {
         console.log(loc, "mp retrieving data...")
-        //getData(loc)
+        getData(loc)
     }, [])
 
 
     return (
         <Link className="link-hover" to={loc.link}>
-            <div>
-
-            { !loaded && 
+            
+            { loaded && 
                 <div className="main-condition">
-                    <p>fetching data...</p>
+                    <div className="condition-div">
+                        <p className="main-condition-fetch">fetching data...</p>
+                        <img src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt="" />
+                        <p>{airTemp}</p>
+                        <p>{determineHeight(waveHeight)}</p>
+                        <p>{zeroTide(tideHeight)}</p>
+                        <p>{waterTemperature}</p>
+                    </div>
                 </div>
             }
 
-            { loaded && 
+            { !loaded && 
                 <div className="main-condition">
                     <p>loaded</p>
                 </div>
             }
 
-        </div>
         </Link>
         
     )

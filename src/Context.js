@@ -108,9 +108,9 @@ function ContextProvider({children}) {
         const startDay = new Date(light).getTime()
         const endDay = new Date(dark).getTime()
 
-        console.log(clouds, "findSky clouds")
+        /* console.log(clouds, "findSky clouds")
         console.log(rain, "findSky rain")
-        console.log(visible, "findSky visible")
+        console.log(visible, "findSky visible") */
         
         if (currentMs > startDay && currentMs < endDay) {
             if (clouds < 30) {
@@ -230,9 +230,6 @@ function ContextProvider({children}) {
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString(loc))}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString(loc))}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         
-        console.log(weatherUrl)
-        
-        
         const headers = {
             headers: {
                 'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
@@ -245,7 +242,6 @@ function ContextProvider({children}) {
             }
         });
 
-        console.log(requestOne)
         const requestTwo = axios.get(astronomyUrl, headers);
         const requestThree = axios.get(tideUrl, headers); 
 
@@ -291,16 +287,16 @@ function ContextProvider({children}) {
                 const nextTideHour = correctTideTime(tideForecast);
                 const capTide = nextTideHour.type
                 
-                console.log(weatherForecast)
+                /* console.log(weatherForecast)
                 console.log(weatherForecast[0], "weather hour used")
                 console.log(astronomyForecast, "ast forecast")
                 console.log(astronomyForecast[0], "ast day used") 
                 console.log(new Date(weatherForecast[0].time).toLocaleString('en-US', {timeZone: "PST"}), "current local weather hour")
                 console.log(weatherForecast[0].precipitation.sg, "precipitation")
                 console.log(weatherForecast[0].cloudCover.sg, "cloud cover")
-                console.log(weatherForecast[0].visibility.sg, "visibility")
+                console.log(weatherForecast[0].visibility.sg, "visibility") */
 
-                console.log(tideForecast, "tide forecast")
+                //console.log(tideForecast, "tide forecast")
 
                 setAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                 setCalcTide(calcTideHeight(nextTideHour, tideForecast, loc))
