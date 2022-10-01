@@ -1,21 +1,28 @@
-import React from "react"
+import React, {useContext} from "react"
 import {Link} from "react-router-dom"
 
-//import {Context} from "../Context"
+import {Context} from "../Context"
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
 
 import courseData from '../Data/courseData.json'
 import retreatData from '../Data/retreatData.json'
-//import locationData from '../Data/locationData.json'
-
 
 import BackScene from "../components/BackScene"
 import Course from "../components/Course"
 import Retreat from "../components/Retreat"
+import CurrentCondition from "../components/CurrentCondition"
+
 
 function MainPage() { //to change once have a courses scroll functionality
+
+    const {
+        pleasurePoint, 
+        pacifica, 
+        hbPier, 
+        waikiki
+    } = useContext(Context)
 
     const pointArr = [
         "Tailored surf coaching", 
@@ -25,9 +32,9 @@ function MainPage() { //to change once have a courses scroll functionality
     ]
 
     function makePoints(arr) {
-        return arr.map((txt) => {
+        return arr.map((txt, i) => {
             return (
-                <div className="info-space-mp">
+                <div className="info-space-mp" key={i}>
                     <FontAwesomeIcon className="arrow-icon" icon={faAnglesRight}/>
                     <p className="bullet-point-main">{txt}</p>                    
                 </div> 
@@ -42,10 +49,6 @@ function MainPage() { //to change once have a courses scroll functionality
             return null
         }
     })
-
-   /*  const current = locationData.map((location) => {
-        return <CurrentCondition 
-    }) */
 
     const retreats = retreatData.map((retreat) => {
         return <Retreat key={retreat.id} retreat={retreat} />
@@ -74,10 +77,13 @@ function MainPage() { //to change once have a courses scroll functionality
                 </section> 
 
                 <section className="browse-forecasts"> 
-                    <p className="retreats-p">NorCal & Hawaii Current Conditions</p>
+                    <p className="retreats-p">California & Hawaii Current Conditions</p>
                     <hr className="main-hr"/>
-                    <div className="retreats-layout">
-                        current conditions 4 spots
+                    <div className="courses-layout">
+                        <CurrentCondition loc={pleasurePoint}/>
+                        <CurrentCondition loc={pacifica}/>
+                        <CurrentCondition loc={hbPier}/>
+                        <CurrentCondition loc={waikiki}/>
                     </div>
                 </section>
                 

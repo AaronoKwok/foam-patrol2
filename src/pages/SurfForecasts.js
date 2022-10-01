@@ -22,27 +22,11 @@ import seaIcon from "../images/seaIcon.svg"
 import up from "../images/up.jpeg"
 import down from "../images/down.jpeg"
 
-//weather 
-import dayClear from "../images/dayClear.jpeg"
-import dayBriefShower from "../images/dayBriefShower.jpeg"
-import dayLightRain from "../images/dayLightRain.jpeg" 
-import dayMostlyCloudy from "../images/dayMostlyCloudy.jpeg"
-import dayOvercastCloudy from "../images/dayOvercastCloudy.jpeg"
-import dayShowers from "../images/dayShowers.jpeg"
-import fogHaze from "../images/fogHaze.jpeg"
-import heavyRain from "../images/heavyRain.jpeg"
-import mist from "../images/mist.jpeg"
-import moderateRain from "../images/moderateRain.jpeg"
-import nightClear from "../images/nightClear.jpeg"
-import nightLightRain from "../images/nightLightRain.jpeg"
-import nightLightShower from "../images/nightLightShower.jpeg"
-import nightMostlyCloudy from "../images/nightMostlyCloudy.jpeg"
-import nightOvercastCloudy from "../images/nightOvercastCloudy.jpeg"
-
-
 function SurfForecasts({loc}) {
-    const refresh = loc.location //used in useEffect so that it gets new data on location change
-    console.log(loc.name)
+    console.log(loc, "surf forecast comp")
+
+    const spot = loc.location 
+    const location = useLocation()
 
     const {
         loaded, 
@@ -73,6 +57,7 @@ function SurfForecasts({loc}) {
         tideHeight, 
         tideType, 
         setLoaded,
+        findSky,
         getData
     } = useContext(Context)
 
@@ -87,123 +72,6 @@ function SurfForecasts({loc}) {
     const tideDes = loc.guide.idealConditions.tide
     const windDes = loc.guide.idealConditions.wind 
 
-    /* clear/rainy function */
-
-    function findSky(clouds, rain, visible, light, dark) { 
-        if (clouds === "...") {
-            return "..."
-        }
-        const currentMs = Date.now()
-        const startDay = new Date(light).getTime()
-        const endDay = new Date(dark).getTime()
-
-        console.log(clouds, "findSky clouds")
-        console.log(rain, "findSky rain")
-        console.log(visible, "findSky visible")
-        
-        if (currentMs > startDay && currentMs < endDay) {
-            if (clouds < 30) {
-                if (rain > 0.1 && rain < 0.5) {
-                    return dayBriefShower
-                } else if (visible < 1) {
-                    return fogHaze
-                } else if (visible >= 1 && visible < 2) {
-                    return mist
-                } else if  (visible >= 2 && visible < 5) {
-                    return fogHaze
-                } else {
-                    return dayClear
-                }
-            } else if (clouds >= 30 && clouds < 70) {
-                if (rain > 0.1 && rain < 0.5) {
-                    return dayBriefShower
-                } else if (rain >= 0.5 && rain < 4) {
-                    return dayShowers
-                } else if (rain > 4 && rain < 8) {
-                    return moderateRain
-                } else if (rain >= 8) {
-                    return heavyRain 
-                } else {
-                    return mist
-                }
-            } else if (clouds >= 70 && clouds < 95) {
-                if (rain > 0.1 && rain < 0.5) {
-                    return dayLightRain
-                } else if (rain >= 0.5 && rain < 4) {
-                    return dayShowers
-                } else if (rain > 4 && rain < 8) {
-                    return moderateRain
-                } else if (rain >= 8) {
-                    return heavyRain 
-                } else {
-                    return dayMostlyCloudy
-                }
-            } else if (clouds >= 95) {
-                if (rain > 0.1 && rain < 0.5) {
-                    return dayLightRain
-                } else if (rain >= 0.5 && rain < 4) {
-                    return dayShowers
-                } else if (rain > 4 && rain < 8) {
-                    return moderateRain
-                } else if (rain >= 8) {
-                    return heavyRain 
-                } else {
-                    return dayOvercastCloudy
-                }
-            }
-        } else {
-            if (clouds < 30) {
-                if (rain > 0.1 && rain < 0.5) {
-                    return nightLightShower
-                } else if (visible < 1) {
-                    return fogHaze
-                } else if (visible >= 1 && visible < 2) {
-                    return mist
-                } else if  (visible >= 2 && visible < 5) {
-                    return fogHaze
-                } else {
-                    return nightClear
-                }
-            } else if (clouds >= 30 && clouds < 70) {
-                if (rain > 0.1 && rain < 0.5) {
-                    return nightLightShower
-                } else if (rain >= 0.5 && rain < 4) {
-                    return nightLightShower
-                } else if (rain > 4 && rain < 8) {
-                    return moderateRain
-                } else if (rain >= 8) {
-                    return heavyRain
-                } else {
-                    return mist
-                }
-            } else if (clouds >= 70 && clouds < 95) {
-                if (rain > 0.1 && rain < 0.5) {
-                    return nightLightRain
-                } else if (rain >= 0.5 && rain < 4) {
-                    return nightLightShower
-                } else if (rain > 4 && rain < 8) {
-                    return moderateRain
-                } else if (rain >= 8) {
-                    return heavyRain
-                } else {
-                    return nightMostlyCloudy
-                }
-            } else if (clouds >= 95) {
-                if (rain > 0.1 && rain < 0.5) {
-                    return nightLightRain
-                } else if (rain >= 0.5 && rain < 4) {
-                    return nightLightShower
-                } else if (rain > 4 && rain < 8) {
-                    return moderateRain
-                } else if (rain >= 8) {
-                    return heavyRain 
-                } else {
-                    return nightOvercastCloudy
-                }
-            }
-        }
-    }
-
     /* //searchbar
     function lookChange(event) {
         const text = event.target.value
@@ -217,15 +85,9 @@ function SurfForecasts({loc}) {
     } */
 
     useEffect(() => {
-        console.log("effect ran")
-        getData(loc) //turn off when editing
-
-        /* 
-            Place api call and state changes outside of useEffect 
-            to avoid recalling api on each state change as state 
-            changes trigger rerenders and thus useEffect, repeatedly
-        */
-    }, [refresh]) //get forecast on location name change for now...
+        console.log("surfforecast effect ran for", loc.name)
+        //getData(loc)
+    }, [spot])
     /* 
         //NOTE: //when using dependency array as an optimization, 
         make sure the array includes all values from the component 
@@ -234,7 +96,6 @@ function SurfForecasts({loc}) {
         reference stale values from previous renders
     */
 
-    const location = useLocation()
     useEffect(() => {
         setLoaded(false)
     }, [location])
@@ -247,7 +108,7 @@ function SurfForecasts({loc}) {
 
                 <div className="top-forecast">
                     <p className="fcDir">{loc.country} / {loc.state} / {loc.county} / {loc.name}</p>
-                    <p className="fcTitle">{loc.name} Surf Report & Forecast</p>
+                    <p className="fcTitle">{loc.name} Surf Report</p>
                     <p className="fcRating">FAIR</p>
 
                     {

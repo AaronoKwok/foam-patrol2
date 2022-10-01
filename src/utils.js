@@ -4,8 +4,8 @@ import {faAnglesRight} from '@fortawesome/free-solid-svg-icons'
 /* fontAwesome list */
 export const iconList = (arr) => {
     return arr.map((bullet, index) => {
-        return  <div className="info-space">
-                    <FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} key={index}/>
+        return  <div className="info-space" key={index}>
+                    <FontAwesomeIcon className="arrow-icon" icon={faAnglesRight} />
                     <p className="bullet-point">{bullet}</p>
                 </div>
     })
@@ -204,7 +204,7 @@ export const calcTideHeight = (nextTide, tideArray, loc) => {
 
 /* fixes -0.0 tide bug */
 export const zeroTide = (tideHeight) => {
-    if (tideHeight === "-0.0") {
+    if (tideHeight === "-0.0" || tideHeight === "0.0") {
         return 0
     } else {
         return tideHeight

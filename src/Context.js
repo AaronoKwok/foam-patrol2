@@ -1,6 +1,25 @@
 import React, {useState} from "react"
 import axios from "axios"
 
+import locationData from "./Data/locationData.json"
+
+//weather 
+import dayClear from "./images/dayClear.jpeg"
+import dayBriefShower from "./images/dayBriefShower.jpeg"
+import dayLightRain from "./images/dayLightRain.jpeg" 
+import dayMostlyCloudy from "./images/dayMostlyCloudy.jpeg"
+import dayOvercastCloudy from "./images/dayOvercastCloudy.jpeg"
+import dayShowers from "./images/dayShowers.jpeg"
+import fogHaze from "./images/fogHaze.jpeg"
+import heavyRain from "./images/heavyRain.jpeg"
+import mist from "./images/mist.jpeg"
+import moderateRain from "./images/moderateRain.jpeg"
+import nightClear from "./images/nightClear.jpeg"
+import nightLightRain from "./images/nightLightRain.jpeg"
+import nightLightShower from "./images/nightLightShower.jpeg"
+import nightMostlyCloudy from "./images/nightMostlyCloudy.jpeg"
+import nightOvercastCloudy from "./images/nightOvercastCloudy.jpeg"
+
 import {
     addZero,
     localStartString, 
@@ -13,7 +32,22 @@ import {
 
 const Context = React.createContext()
 
+
+
 function ContextProvider({children}) {
+
+    const usaState = locationData[0].globe.northAmerica.country.unitedStates.state
+
+    const pleasurePoint = usaState.california.county.santaCruz[0];
+    const jacks = usaState.california.county.santaCruz[1]
+    const cowells = usaState.california.county.santaCruz[2]
+    const steamer = usaState.california.county.santaCruz[3]
+    const theHook = usaState.california.county.santaCruz[4]
+    const capitola = usaState.california.county.santaCruz[5]
+    const davenport = usaState.california.county.santaCruz[6]
+    const pacifica = usaState.california.county.sanMateo[0]
+    const hbPier = usaState.california.county.orange[0]
+    const waikiki = usaState.hawaii.county.oahu[0];
 
     const loading = "..."
 
@@ -64,8 +98,127 @@ function ContextProvider({children}) {
     const [tideHeight, setTideHeight] = useState(loading)
     const [tideType, setTideType] = useState(loading)
 
+    //weather function
+
+    function findSky(clouds, rain, visible, light, dark) { 
+        if (clouds === "...") {
+            return "..."
+        }
+        const currentMs = Date.now()
+        const startDay = new Date(light).getTime()
+        const endDay = new Date(dark).getTime()
+
+        console.log(clouds, "findSky clouds")
+        console.log(rain, "findSky rain")
+        console.log(visible, "findSky visible")
+        
+        if (currentMs > startDay && currentMs < endDay) {
+            if (clouds < 30) {
+                if (rain > 0.1 && rain < 0.5) {
+                    return dayBriefShower
+                } else if (visible < 1) {
+                    return fogHaze
+                } else if (visible >= 1 && visible < 2) {
+                    return mist
+                } else if  (visible >= 2 && visible < 5) {
+                    return fogHaze
+                } else {
+                    return dayClear
+                }
+            } else if (clouds >= 30 && clouds < 70) {
+                if (rain > 0.1 && rain < 0.5) {
+                    return dayBriefShower
+                } else if (rain >= 0.5 && rain < 4) {
+                    return dayShowers
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain 
+                } else {
+                    return mist
+                }
+            } else if (clouds >= 70 && clouds < 95) {
+                if (rain > 0.1 && rain < 0.5) {
+                    return dayLightRain
+                } else if (rain >= 0.5 && rain < 4) {
+                    return dayShowers
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain 
+                } else {
+                    return dayMostlyCloudy
+                }
+            } else if (clouds >= 95) {
+                if (rain > 0.1 && rain < 0.5) {
+                    return dayLightRain
+                } else if (rain >= 0.5 && rain < 4) {
+                    return dayShowers
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain 
+                } else {
+                    return dayOvercastCloudy
+                }
+            }
+        } else {
+            if (clouds < 30) {
+                if (rain > 0.1 && rain < 0.5) {
+                    return nightLightShower
+                } else if (visible < 1) {
+                    return fogHaze
+                } else if (visible >= 1 && visible < 2) {
+                    return mist
+                } else if  (visible >= 2 && visible < 5) {
+                    return fogHaze
+                } else {
+                    return nightClear
+                }
+            } else if (clouds >= 30 && clouds < 70) {
+                if (rain > 0.1 && rain < 0.5) {
+                    return nightLightShower
+                } else if (rain >= 0.5 && rain < 4) {
+                    return nightLightShower
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain
+                } else {
+                    return mist
+                }
+            } else if (clouds >= 70 && clouds < 95) {
+                if (rain > 0.1 && rain < 0.5) {
+                    return nightLightRain
+                } else if (rain >= 0.5 && rain < 4) {
+                    return nightLightShower
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain
+                } else {
+                    return nightMostlyCloudy
+                }
+            } else if (clouds >= 95) {
+                if (rain > 0.1 && rain < 0.5) {
+                    return nightLightRain
+                } else if (rain >= 0.5 && rain < 4) {
+                    return nightLightShower
+                } else if (rain > 4 && rain < 8) {
+                    return moderateRain
+                } else if (rain >= 8) {
+                    return heavyRain 
+                } else {
+                    return nightOvercastCloudy
+                }
+            }
+        }
+    }
+
+    //get api data
     function getData(loc) {
         console.log("retrieving data...")
+        console.log(localStartString(loc))
 
         const lat = loc.location[0]; 
         const tideLat = loc.tideLocation[0];
@@ -76,6 +229,10 @@ function ContextProvider({children}) {
         const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}` //`https://api.stormglass.io/v2/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${tideStart(localStartString())}`
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString(loc))}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString(loc))}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
+        
+        console.log(weatherUrl)
+        
+        
         const headers = {
             headers: {
                 'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
@@ -87,6 +244,8 @@ function ContextProvider({children}) {
                 'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
             }
         });
+
+        console.log(requestOne)
         const requestTwo = axios.get(astronomyUrl, headers);
         const requestThree = axios.get(tideUrl, headers); 
 
@@ -136,9 +295,6 @@ function ContextProvider({children}) {
                 console.log(weatherForecast[0], "weather hour used")
                 console.log(astronomyForecast, "ast forecast")
                 console.log(astronomyForecast[0], "ast day used") 
-
-                /* Bug for astronomy, need function that finds closest day using returned time data, as api returns next utc hour */
-
                 console.log(new Date(weatherForecast[0].time).toLocaleString('en-US', {timeZone: "PST"}), "current local weather hour")
                 console.log(weatherForecast[0].precipitation.sg, "precipitation")
                 console.log(weatherForecast[0].cloudCover.sg, "cloud cover")
@@ -213,7 +369,18 @@ function ContextProvider({children}) {
             tideHeight, 
             tideType, 
             setLoaded,
-            getData
+            getData, 
+            findSky,
+            pleasurePoint, 
+            jacks, 
+            cowells, 
+            steamer, 
+            theHook, 
+            capitola, 
+            davenport, 
+            pacifica, 
+            hbPier, 
+            waikiki
         }}>
             {children}
         </Context.Provider>

@@ -437,7 +437,28 @@ nav {
 
 /* Mainpage Forecast */
 
+.main-condition {
+  position: relative; 
+  height: 320px; 
+  min-width: 280px; 
+  max-width: 280px;
+  background-color: lightblue;
+  margin: 0px 12px;
+}
 
+.main-condition:hover {
+  box-shadow: 0px 3px 7px 0px rgb(155, 155, 155); 
+  cursor: pointer;
+}
+
+.main-condition:active {
+  box-shadow: none;
+  cursor: grabbing; 
+}
+
+.browse-forecasts {
+  margin-bottom: 45px;
+}
 
 
 
@@ -542,6 +563,24 @@ nav {
 .link-hover:hover {
   text-decoration: none
 }
+
+/* current condition */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MainPage Courses */
 
@@ -2056,6 +2095,10 @@ nav {
 
   .course {
     margin-bottom: 24px
+  }
+
+  .main-condition {
+    margin-bottom: 24px;
   }
 }
 

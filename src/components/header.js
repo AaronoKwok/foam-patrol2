@@ -1,28 +1,30 @@
-import React from "react" 
+import React, {useContext} from "react" 
 import {Link} from "react-router-dom"
 
 import Logo from "./Logo"
 import githubSVG from "../images/github.svg"
 import linkedinSVG from "../images/linkedin.svg" 
 
-import locationData from "../Data/locationData.json"
-
+import {Context} from "../Context"
  
 function Header() {
 
-    const usaState = locationData[0].globe.northAmerica.country.unitedStates.state
+    const {
+        pleasurePoint, 
+        jacks, 
+        cowells, 
+        steamer, 
+        theHook, 
+        capitola, 
+        davenport, 
+        pacifica, 
+        hbPier, 
+        waikiki
+    } = useContext(Context)
 
-    const pleasurePoint = usaState.california.county.santaCruz[0].name.toUpperCase();
-    const jacks = usaState.california.county.santaCruz[1].name.toUpperCase();
-    const cowells = usaState.california.county.santaCruz[2].name.toUpperCase();
-    const steamer = usaState.california.county.santaCruz[3].name.toUpperCase();
-    const theHook = usaState.california.county.santaCruz[4].name.toUpperCase();
-    const capitola = usaState.california.county.santaCruz[5].name.toUpperCase();
-    const davenport = usaState.california.county.santaCruz[6].name.toUpperCase();
-    const pacifica = usaState.california.county.sanMateo[0].name.toUpperCase();
-    const hbPier = usaState.california.county.orange[0].name.toUpperCase();
-    const waikiki = usaState.hawaii.county.oahu[0].name.toUpperCase();
-
+    function nameUppercase(obj) {
+        return obj.name.toUpperCase()
+    }
 
     return (
         <header>
@@ -80,7 +82,7 @@ function Header() {
 
                     <div className="nav-dropdown">
 
-                        <p className="nav-button">SURF FORECASTS &nbsp;<i className="arrow down"></i></p>
+                        <p className="nav-button">SURF REPORTS &nbsp;<i className="arrow down"></i></p>
 
                         <section className="dropdown-section locs"> 
                             <div className="retreat-dropdown-content">
@@ -88,31 +90,31 @@ function Header() {
                                 <hr className="hr-dropdown"/>
 
                                 <Link className="dropdown-link" to="/surfForecasts/pleasurePoint">
-                                    <p className="dropdown-info">{pleasurePoint}</p>
+                                    <p className="dropdown-info">{nameUppercase(pleasurePoint)}</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/surfForecasts/jacks">
-                                    <p className="dropdown-info">{jacks}</p>
+                                    <p className="dropdown-info">{nameUppercase(jacks)}</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/surfForecasts/cowells">
-                                    <p className="dropdown-info">{cowells}</p>
+                                    <p className="dropdown-info">{nameUppercase(cowells)}</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/surfForecasts/steamer">
-                                    <p className="dropdown-info">{steamer}</p>
+                                    <p className="dropdown-info">{nameUppercase(steamer)}</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/surfForecasts/theHook">
-                                    <p className="dropdown-info">{theHook}</p>
+                                    <p className="dropdown-info">{nameUppercase(theHook)}</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/surfForecasts/capitola">
-                                    <p className="dropdown-info">{capitola}</p>
+                                    <p className="dropdown-info">{nameUppercase(capitola)}</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/surfForecasts/davenport">
-                                    <p className="dropdown-info">{davenport}</p>
+                                    <p className="dropdown-info">{nameUppercase(davenport)}</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/surfForecasts/pacifica">
-                                    <p className="dropdown-info">{pacifica}</p>
+                                    <p className="dropdown-info">{nameUppercase(pacifica)}</p>
                                 </Link>
                                 <Link className="dropdown-link" to="/surfForecasts/hbPier">
-                                    <p className="dropdown-info">{hbPier}</p>
+                                    <p className="dropdown-info">{nameUppercase(hbPier)}</p>
                                 </Link>
                             </div>
                             <div className="retreat-dropdown-content">
@@ -120,7 +122,7 @@ function Header() {
                                 <hr className="hr-dropdown"/>
 
                                 <Link className="dropdown-link" to="/surfForecasts/waikiki">
-                                    <p className="dropdown-info">{waikiki}</p>            
+                                    <p className="dropdown-info">{nameUppercase(waikiki)}</p>            
                                 </Link>
                             </div>
                         </section>
