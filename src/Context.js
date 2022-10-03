@@ -67,36 +67,36 @@ function ContextProvider({children}) {
     const [loaded, setLoaded] = useState(false)
 
     //weather states
-    const [airTemp, setAirTemp] = useState("LOL")
-    const [cloudCover, setCloudCover] = useState("LOL")
-    const [gust, setGust] = useState("LOL")
-    const [precipitation, setPrecipitation] = useState("LOL")
-    const [swellDirection, setSwellDirection] = useState("LOL")
-    const [swellLetters, setSwellLetters] = useState("LOL")
-    const [swellHeight, setSwellHeight] = useState("LOL")
-    const [swellPeriod, setSwellPeriod] = useState("LOL")
-    const [secondarySwellPeriod, setSecondarySwellPeriod] = useState("LOL")
-    const [secondarySwellDirection, setSecondarySwellDirection] = useState("LOL")
-    const [secondarySwellLetters, setSecondarySwellLetters] = useState("LOL")
-    const [secondarySwellHeight, setSecondarySwellHeight] = useState("LOL")
-    const [waterTemperature, setWaterTemperature] = useState("LOL")
-    const [waveHeight, setWaveHeight] = useState("LOL")
-    const [windLetters, setWindLetters] = useState("LOL")
-    const [windDirection, setWindDirection] = useState("LOL")
-    const [windSpeed, setWindSpeed] = useState("LOL")
-    const [visibility, setVisibility] = useState("LOL")
+    const [airTemp, setAirTemp] = useState("...")
+    const [cloudCover, setCloudCover] = useState("...")
+    const [gust, setGust] = useState("...")
+    const [precipitation, setPrecipitation] = useState("...")
+    const [swellDirection, setSwellDirection] = useState("...")
+    const [swellLetters, setSwellLetters] = useState("...")
+    const [swellHeight, setSwellHeight] = useState("...")
+    const [swellPeriod, setSwellPeriod] = useState("...")
+    const [secondarySwellPeriod, setSecondarySwellPeriod] = useState("...")
+    const [secondarySwellDirection, setSecondarySwellDirection] = useState("...")
+    const [secondarySwellLetters, setSecondarySwellLetters] = useState("...")
+    const [secondarySwellHeight, setSecondarySwellHeight] = useState("...")
+    const [waterTemperature, setWaterTemperature] = useState("...")
+    const [waveHeight, setWaveHeight] = useState("...")
+    const [windLetters, setWindLetters] = useState("...")
+    const [windDirection, setWindDirection] = useState("...")
+    const [windSpeed, setWindSpeed] = useState("...")
+    const [visibility, setVisibility] = useState("...")
 
     //astronomy states
-    const [firstLight, setFirstLight] = useState("LOL")
-    const [sunrise, setSunrise] = useState("LOL")
-    const [sunset, setSunset] = useState("LOL")
-    const [lastLight, setLastLight] = useState("LOL")
+    const [firstLight, setFirstLight] = useState("...")
+    const [sunrise, setSunrise] = useState("...")
+    const [sunset, setSunset] = useState("...")
+    const [lastLight, setLastLight] = useState("...")
 
     //tide states 
-    const [calcTide, setCalcTide] = useState("LOL")
-    const [nextTideTime, setNextTideTime] = useState("LOL")
-    const [tideHeight, setTideHeight] = useState("LOL")
-    const [tideType, setTideType] = useState("LOL")
+    const [calcTide, setCalcTide] = useState("...")
+    const [nextTideTime, setNextTideTime] = useState("...")
+    const [tideHeight, setTideHeight] = useState("...")
+    const [tideType, setTideType] = useState("...")
 
     //weather function
 
@@ -219,7 +219,7 @@ function ContextProvider({children}) {
     function getData(loc) {
 
         console.log("retrieving data...")
-        console.log(localStartString(loc))
+        console.log(localStartString(loc), loc.name)
 
         const lat = loc.location[0]; 
         const tideLat = loc.tideLocation[0];
@@ -231,6 +231,10 @@ function ContextProvider({children}) {
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString(loc))}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString(loc))}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         
+        console.log(weatherUrl, "weather url")
+        console.log(astronomyUrl, "ast url")
+        console.log(tideUrl, "tide url")
+
         const headers = {
             headers: {
                 'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'

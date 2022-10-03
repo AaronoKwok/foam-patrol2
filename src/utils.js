@@ -36,8 +36,10 @@ export const tideStart = (timeString) => {
     const dateArr = date.split("/")
     function dateMonth() {
         if (dateArr[1][0] === "0") {
-            return dateArr[1][1]
+
+            return dateArr[1][1] // if day is 03, dateMonth returns just 3
         }
+        else return dateArr[1] // if day is 10, dateMonth returns 10
     }
     const callDate = `${dateArr[2]}-${dateMonth()}-${dateArr[0]}`
     const time = splitArr[1].slice(0, -3)
@@ -131,10 +133,10 @@ export const ampm = (time, zone) => {
 
 /* finds next tide in forecast */
 export const correctTideTime = (forecast) => {
-    console.log(forecast, "correctTideTime forecase")
+    console.log(forecast, "correctTideTime forecast")
     for (let i = 0; i < forecast.length; i++) {
         if (Date.parse(forecast[i].time) - Date.now() >= 0) {
-            console.log(forecast[i])
+            console.log(forecast[i], "next tide hour")
             return forecast[i]
         }
     }

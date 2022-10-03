@@ -911,22 +911,22 @@ nav {
 /* Ideal Conditions */
 
 .surfConditions {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
   min-height: 120px; 
   box-shadow: 0px 2px 3px 2px rgb(236, 236, 236);
   border-radius: 5px; 
   padding: 0px; 
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 10px;
 }
 
 .conditions {
   display: flex; 
+  width: 100%;
   align-items: center;
+  justify-content:space-around;
 }
 
 .sc-Title {
@@ -949,7 +949,7 @@ nav {
   display: flex;
   margin: 15px 20px 15px 0px;
   max-height: 100%;
-  width: 25%;
+  max-width: 300px;
 }
 
 .condition-title {
