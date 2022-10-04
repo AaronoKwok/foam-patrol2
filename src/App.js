@@ -28,10 +28,10 @@ function App() {
 
     //need method to have each page start at top when loaded
     //note, below does not work for going back, only foward
-    const location = useLocation(); 
+    const page = useLocation(); 
     useEffect(() => {
         window.scrollTo(0,0);
-    }, [location])
+    }, [page])
 
     //retreats 
     const costaRica = retreatData[0]

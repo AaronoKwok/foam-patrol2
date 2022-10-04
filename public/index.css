@@ -69,12 +69,9 @@ nav {
 
 .dropdown-section {
   position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity .5s; z-index: 1;
   width: 50vw; 
   height: 200px; 
-  background-color: rgb(255, 255, 255); 
+  background-color: rgb(247, 134, 134); 
   top: 100%;
   left: -170px;
   border-radius: 5px; 
@@ -82,7 +79,6 @@ nav {
   justify-content: space-evenly;
   padding-top: 25px; 
   padding-left: 10px; 
-  border: 1px solid rgb(136, 136, 136);
 }
 
 .dropdown-section.locs {
@@ -90,10 +86,7 @@ nav {
   height: 390px; 
 }
 
-.nav-dropdown:hover .dropdown-section {
-  visibility: visible;
-  opacity: 1; 
-}
+
 
 .retreat-dropdown-content {
   width: 200px;
@@ -118,7 +111,6 @@ nav {
 .dropdown-link:hover {
   text-decoration: none;
 }
-
 
 .dropdown-info:hover {
   font-weight: 600; 
@@ -177,7 +169,7 @@ nav {
 .color-change:active {
   background-color: rgb(59, 121, 121);
   border-radius: 5px;
-  }
+}
 
 /* Logo  */
 
@@ -445,8 +437,12 @@ nav {
   background-color: rgb(231, 249, 255);
   margin: 0px 12px;
   border-radius: 10px;
+  color: black; 
 }
 
+.main-condition:link {
+  color: black;
+}
 .main-condition:visited {
   color: black
 }
@@ -463,24 +459,9 @@ nav {
   position: absolute;
 }
 
-.main-condition-fetch { 
-}
-
 .browse-forecasts {
   margin-bottom: 45px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* MainPage Retreats */
 
@@ -574,24 +555,6 @@ nav {
   text-decoration: none
 }
 
-/* current condition */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* MainPage Courses */
 
 .browse-courses { 
@@ -637,7 +600,6 @@ nav {
   color: white; 
   text-decoration: none;
 }
-
 
 /* Course component */
 
@@ -760,7 +722,7 @@ nav {
   height: var(--nav-height);
 }
 
-.locSet {
+.loc-set {
   width: var(--screen-width);
   margin: auto;
   margin-top: 15px; 
@@ -949,7 +911,7 @@ nav {
   display: flex;
   margin: 15px 20px 15px 0px;
   max-height: 100%;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .condition-title {

@@ -37,7 +37,6 @@ function CurrentCondition({loc}) {
             { loaded && 
                 <div className="main-condition">
                     <div className="condition-div">
-                        <p className="main-condition-fetch">fetching data...</p>
                         <img className="weather-icon" src={findSky(cloudCover, precipitation, visibility, firstLight, lastLight)} alt="" />
                         <p>{airTemp} air</p>
                         <p>{determineHeight(waveHeight)} wave</p>
