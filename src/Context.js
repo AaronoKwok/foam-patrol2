@@ -32,8 +32,6 @@ import {
 
 const Context = React.createContext()
 
-
-
 function ContextProvider({children}) {
 
     const usaState = locationData[0].globe.northAmerica.country.unitedStates.state
@@ -48,8 +46,6 @@ function ContextProvider({children}) {
     const pacifica = usaState.california.county.sanMateo[0]
     const hbPier = usaState.california.county.orange[0]
     const waikiki = usaState.hawaii.county.oahu[0];
-
-    const loading = "..."
 
     const utcYear = (new Date()).getUTCFullYear()
     const utcMonth = (new Date()).getUTCMonth() + 1

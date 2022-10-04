@@ -58,20 +58,23 @@ nav {
   border: var(--border);
   border-radius: 5px;
   cursor: pointer;
-  transition: all .1s ease;
   padding: 5px;
   margin: 0px;
 }
 
 .nav-dropdown {
   position: relative;
+  display: inline-block;
 }
 
 .dropdown-section {
+  background-color: white; 
+  visibility: hidden; 
+  opacity: 0; 
+  transition: opacity .1s;
   position: absolute;
   width: 50vw; 
   height: 200px; 
-  background-color: rgb(247, 134, 134); 
   top: 100%;
   left: -170px;
   border-radius: 5px; 
@@ -81,12 +84,15 @@ nav {
   padding-left: 10px; 
 }
 
+.nav-dropdown:hover .dropdown-section { /* on nav-dropdown hover, I want the dropdown-section to have properties below */
+  opacity: 1;
+  visibility: visible;
+}
+
 .dropdown-section.locs {
   width: 35vw; 
   height: 390px; 
 }
-
-
 
 .retreat-dropdown-content {
   width: 200px;

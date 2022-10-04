@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useState} from "react" 
-import {Link, useLocation} from "react-router-dom"
+import React, {useContext} from "react" 
+import {Link} from "react-router-dom"
 
 import Logo from "./Logo"
 import githubSVG from "../images/github.svg"
@@ -26,48 +26,6 @@ function Header() {
         return obj.name.toUpperCase()
     }
 
-    const [retreatDown, setRetreatDown] = useState(false)
-    const [reportDown, setReportDown] = useState(false)
-    const [aboutDown, setAboutDown] = useState(false)
-
-    function retreatDrop() {
-        setRetreatDown(true)
-        console.log(retreatDown)
-    }
-
-    function retreatRise() {
-        setRetreatDown(false)
-        console.log(retreatDown)
-    }
-
-    function reportDrop() {
-        setReportDown(true)
-        console.log(reportDown)
-    }
-
-    function reportRise() {
-        setReportDown(false)
-        console.log(reportDown)
-    }
-
-    function aboutDrop() {
-        setAboutDown(true)
-        console.log(aboutDown)
-    }
-
-    function aboutRise() {
-        setAboutDown(false) 
-        console.log(aboutDown)
-    }
-
-
-
-    const location = useLocation()
-
-    useEffect(() => {
-        setRetreatDown(false)
-    }, [location])
-
     return (
         <header>
 
@@ -78,11 +36,9 @@ function Header() {
 
                     {/* Retreats */}
                     <div className="nav-dropdown">
-                        <p className="nav-button" onClick={retreatDrop}>SURF RETREATS &nbsp;<i className="arrow down"></i></p>
+                        <p className="nav-button">SURF RETREATS &nbsp;<i className="arrow down"></i></p>
 
-                        {
-                            retreatDown &&
-                            <span className="dropdown-section" onMouseLeave={retreatRise}>
+                            <div className="dropdown-section" >
 
                                 <div className="retreat-dropdown-content">
                                     <p className="dropdown-title">MAIN COACHING RETREATS</p>
@@ -120,19 +76,16 @@ function Header() {
                                     </Link>
                                 </div>
 
-                            </span>
-                        }
-
+                            </div>
                     </div> 
 
                     {/* Reports */}
                     <div className="nav-dropdown">
 
-                        <p className="nav-button" onClick={reportDrop}>SURF REPORTS &nbsp;<i className="arrow down"></i></p>
+                        <p className="nav-button">SURF REPORTS &nbsp;<i className="arrow down"></i></p>
 
-                        {
-                            reportDown &&
-                            <section className="dropdown-section locs" onMouseLeave={reportRise}> 
+                        <section className="dropdown-section locs"> 
+
                             <div className="retreat-dropdown-content">
                                 <p className="dropdown-title">CALIFORNIA</p>
                                 <hr className="hr-dropdown"/>
@@ -173,12 +126,9 @@ function Header() {
                                     <p className="dropdown-info">{nameUppercase(waikiki)}</p>            
                                 </Link>
                             </div>
-                        </section>
-                        }
+                        </section> 
 
-                        
-
-                    </div>
+                    </div> 
 
                     {/* Products */}
                     {/* <div className="nav-dropdown">
@@ -194,11 +144,9 @@ function Header() {
 
                     {/* About */}
                     <div className="nav-dropdown">
-                        <p className="nav-button" onClick={aboutDrop}>ABOUT &nbsp;<i className="arrow down"></i></p>
+                        <p className="nav-button">ABOUT &nbsp;<i className="arrow down"></i></p>
 
-                        {
-                            aboutDown &&
-                            <span className="dropdown-section" onMouseLeave={aboutRise}> 
+                        <span className="dropdown-section"> 
 
                             <div className="retreat-dropdown-content">
                                 <p className="dropdown-title">OUR COMPANY</p>
@@ -237,11 +185,7 @@ function Header() {
                             </div>
 
                         </span>
-                        }
-                        
-                        
-
-                    </div>
+                    </div> 
 
                     <Link className="nav-link color-change" to="/online-courses">
                         <p className="nav-button">ONLINE COURSES</p>
