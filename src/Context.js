@@ -94,6 +94,52 @@ function ContextProvider({children}) {
     const [tideHeight, setTideHeight] = useState("...")
     const [tideType, setTideType] = useState("...")
 
+    //mainpage current condition states
+    //point
+    const [pointLoaded, setPointLoaded] = useState("...")
+    const [pointAirTemp, setPointAirTemp] = useState("...")
+    const [pointCloud, setPointCloud] = useState("...")
+    const [pointPrecip, setPointPrecip] = useState("...")
+    const [pointVis, setPointVis] = useState("...")
+    const [pointWaveHeight, setPointWaveHeight] = useState("...")
+    const [pointTideHeight, setPointTideHeight] = useState("...")
+    const [pointFirstLight, setPointFirstLight] = useState("...")
+    const [pointLastLight, setPointLastLight] = useState("...")
+    const [pointWaterTemp, setPointWaterTemp] = useState("...")
+    //mar
+    const [marLoaded, setMarLoaded] = useState("...")
+    const [marAirTemp, setMarAirTemp] = useState("...")
+    const [marCloud, setMarCloud] = useState("...")
+    const [marPrecip, setMarPrecip] = useState("...")
+    const [marVis, setMarVis] = useState("...")
+    const [marWaveHeight, setMarWaveHeight] = useState("...")
+    const [marTideHeight, setMarTideHeight] = useState("...")
+    const [marFirstLight, setMarFirstLight] = useState("...")
+    const [marLastLight, setMarLastLight] = useState("...")
+    const [marWaterTemp, setMarWaterTemp] = useState("...")
+    //hb
+    const [hbLoaded, setHbLoaded] = useState("...")
+    const [hbAirTemp, setHbAirTemp] = useState("...")
+    const [hbCloud, setHbCloud] = useState("...")
+    const [hbPrecip, setHbPrecip] = useState("...")
+    const [hbVis, setHbVis] = useState("...")
+    const [hbWaveHeight, setHbWaveHeight] = useState("...")
+    const [hbTideHeight, setHbTideHeight] = useState("...")
+    const [hbFirstLight, setHbFirstLight] = useState("...")
+    const [hbLastLight, setHbLastLight] = useState("...")
+    const [hbWaterTemp, setHbWaterTemp] = useState("...")
+    //waikiki
+    const [waikikiLoaded, setWaikikiLoaded] = useState("...")
+    const [waikikiAirTemp, setWaikikiAirTemp] = useState("...")
+    const [waikikiCloud, setWaikikiCloud] = useState("...")
+    const [waikikiPrecip, setWaikikiPrecip] = useState("...")
+    const [waikikiVis, setWaikikiVis] = useState("...")
+    const [waikikiWaveHeight, setWaikikiWaveHeight] = useState("...")
+    const [waikikiTideHeight, setWaikikiTideHeight] = useState("...")
+    const [waikikiFirstLight, setWaikikiFirstLight] = useState("...")
+    const [waikikiLastLight, setWaikikiLastLight] = useState("...")
+    const [waikikiWaterTemp, setWaikikiWaterTemp] = useState("...")
+
     //weather function
 
     function findSky(clouds, rain, visible, light, dark) { 
@@ -211,7 +257,7 @@ function ContextProvider({children}) {
         }
     }
 
-    //get api data
+    //get api data for surf page
     function getData(loc) {
 
         console.log("retrieving data...")
@@ -317,7 +363,6 @@ function ContextProvider({children}) {
                 setSecondarySwellPeriod(Math.floor(weatherForecast[0].secondarySwellPeriod.sg))
                 setSunrise(correctAst(astronomyForecast, loc).sunrise)
                 setSunset(correctAst(astronomyForecast,loc).sunset)
-                
                 setTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1)) 
                 setTideType(capTide[0].toUpperCase() + capTide.substring(1))
                 setVisibility(weatherForecast[0].visibility.sg)
@@ -330,6 +375,140 @@ function ContextProvider({children}) {
                 setLoaded(true)
 
                 console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+            }))
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    //get api data for main page surf component
+    function getMPData(loc) {
+
+        console.log("retrieving data...")
+        console.log(localStartString(loc), loc.name)
+
+        const lat = loc.location[0]; 
+        const tideLat = loc.tideLocation[0];
+        const lng = loc.location[1];
+        const tideLng = loc.tideLocation[1];
+
+        const weatherParams = 'seaLevel,airTemperature,cloudCover,gust,precipitation,swellDirection,swellHeight,swellPeriod,secondarySwellPeriod,secondarySwellDirection,secondarySwellHeight,waterTemperature,waveHeight,windDirection,windSpeed,visibility'; 
+        const weatherUrl = `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${weatherParams}` //`https://api.stormglass.io/v2/point?lat=${lat}&lng=${lng}&params=${weatherParams}&start=${tideStart(localStartString())}`
+        const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString(loc))}`
+        const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString(loc))}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
+        
+        console.log(weatherUrl, "weather url")
+        console.log(astronomyUrl, "ast url")
+        console.log(tideUrl, "tide url")
+
+        const headers = {
+            headers: {
+                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+            }
+        } 
+        
+        const requestOne = axios.get(weatherUrl, headers);
+        const requestTwo = axios.get(astronomyUrl, headers);
+        const requestThree = axios.get(tideUrl, headers); 
+
+        axios
+            .all([requestOne, requestTwo, requestThree])
+            .then(axios.spread((...res) => {  
+                console.log(res[0], "weather")
+                console.log(res[1], "ast")
+                console.log(res[2], "tide")
+
+                const weatherIdents = res[0].data.hours.map((hour, i) => { //adds and ident to each hour returned in weather
+                    return {
+                        "ident": i, 
+                        ...hour
+                    }
+                }) 
+                
+                const startingHour = weatherIdents.filter(hour => { //finds hour obj in weatherIdents array that has a time that matches utcDate declared above
+                    return hour.time === utcDate
+                }) //starting hour should be 0 bc I called api with start time as local time
+
+                const additionalHours = 4;
+                const weatherForecastLastId = startingHour[0].ident + additionalHours //weather forecast length in hours (5), zero included
+
+                const weatherForecast = weatherIdents.filter(hour => { //filters hours from weatherIdents that are between the first and last desired weather hours 
+                    return hour.ident >= weatherForecastLastId - additionalHours && hour.ident <= weatherForecastLastId
+                })
+                
+                const astronomyForecast = res[1].data.data.map((day, i) => {
+                    return {
+                        "ident": i, 
+                        ...day
+                    }
+                })
+
+                const tideForecast = res[2].data.data.map((tide, i) => {
+                    return {
+                        "ident": i, 
+                        ...tide
+                    }
+                })
+
+                const nextTideHour = correctTideTime(tideForecast);
+
+                if (loc.name === "Pleasure Point") {
+                    setPointAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
+                    setPointCloud(weatherForecast[0].cloudCover.sg)
+                    setPointPrecip(weatherForecast[0].precipitation.sg)
+                    setPointVis(weatherForecast[0].visibility.sg)
+                    setPointWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
+                    setPointTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1))
+                    setPointFirstLight(correctAst(astronomyForecast, loc).civilDawn)
+                    setPointLastLight(correctAst(astronomyForecast, loc).civilDusk)
+                    setPointWaterTemp(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+
+                    setPointLoaded(true)
+
+                    console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                } else if (loc.name === "Pacifica/Linda Mar") {
+                    setMarAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
+                    setMarCloud(weatherForecast[0].cloudCover.sg)
+                    setMarPrecip(weatherForecast[0].precipitation.sg)
+                    setMarVis(weatherForecast[0].visibility.sg)
+                    setMarWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
+                    setMarTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1))
+                    setMarFirstLight(correctAst(astronomyForecast, loc).civilDawn)
+                    setMarLastLight(correctAst(astronomyForecast, loc).civilDusk)
+                    setMarWaterTemp(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+
+                    setMarLoaded(true)
+
+                    console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                } else if (loc.name === "HB Pier") {
+                    setHbAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
+                    setHbCloud(weatherForecast[0].cloudCover.sg)
+                    setHbPrecip(weatherForecast[0].precipitation.sg)
+                    setHbVis(weatherForecast[0].visibility.sg)
+                    setHbWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
+                    setHbTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1))
+                    setHbFirstLight(correctAst(astronomyForecast, loc).civilDawn)
+                    setHbLastLight(correctAst(astronomyForecast, loc).civilDusk)
+                    setHbWaterTemp(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+
+                    setHbLoaded(true)
+
+                    console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                } else if (loc.name === "Waikiki Beach") {
+                    setWaikikiAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
+                    setWaikikiCloud(weatherForecast[0].cloudCover.sg)
+                    setWaikikiPrecip(weatherForecast[0].precipitation.sg)
+                    setWaikikiVis(weatherForecast[0].visibility.sg)
+                    setWaikikiWaveHeight(Math.floor(weatherForecast[0].waveHeight.sg * 3.281))
+                    setWaikikiTideHeight(((loc.msl + nextTideHour.height) * 3.281).toFixed(1))
+                    setWaikikiFirstLight(correctAst(astronomyForecast, loc).civilDawn)
+                    setWaikikiLastLight(correctAst(astronomyForecast, loc).civilDusk)
+                    setWaikikiWaterTemp(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+
+                    setWaikikiLoaded(true)
+
+                    console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                }
             }))
             .catch((error) => {
                 console.log(error)
@@ -366,7 +545,12 @@ function ContextProvider({children}) {
             tideHeight, 
             tideType, 
             setLoaded,
-            getData, 
+            setPointLoaded,
+            setMarLoaded, 
+            setHbLoaded, 
+            setWaikikiLoaded,
+            getData,
+            getMPData, 
             findSky,
             pleasurePoint, 
             jacks, 
@@ -377,7 +561,47 @@ function ContextProvider({children}) {
             davenport, 
             pacifica, 
             hbPier, 
-            waikiki
+            waikiki,
+            pointLoaded, 
+            pointAirTemp, 
+            pointCloud, 
+            pointPrecip, 
+            pointVis, 
+            pointWaveHeight, 
+            pointTideHeight, 
+            pointFirstLight, 
+            pointLastLight, 
+            pointWaterTemp, 
+            marLoaded, 
+            marAirTemp, 
+            marCloud, 
+            marPrecip, 
+            marVis, 
+            marWaveHeight, 
+            marTideHeight, 
+            marFirstLight, 
+            marLastLight, 
+            marWaterTemp, 
+            hbLoaded, 
+            hbAirTemp, 
+            hbCloud, 
+            hbPrecip, 
+            hbVis, 
+            hbWaveHeight, 
+            hbTideHeight, 
+            hbFirstLight, 
+            hbLastLight, 
+            hbWaterTemp, 
+            waikikiLoaded, 
+            waikikiAirTemp, 
+            waikikiCloud, 
+            waikikiPrecip, 
+            waikikiVis, 
+            waikikiWaveHeight, 
+            waikikiTideHeight, 
+            waikikiFirstLight, 
+            waikikiLastLight, 
+            waikikiWaterTemp
         }}>
             {children}
         </Context.Provider>

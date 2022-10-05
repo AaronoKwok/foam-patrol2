@@ -85,6 +85,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("surfforecast effect ran for", loc.name)
+        setLoaded(false) //sets loaded back to false when navigating to other forecast without manual page reload
         getData(loc)
     }, [spot])
     /* 
@@ -94,10 +95,6 @@ function SurfForecasts({loc}) {
         that are used by the effect. Otherwise, your code will 
         reference stale values from previous renders
     */
-
-    useEffect(() => {
-        setLoaded(false)
-    }, [spot])  //sets loaded back to false when navigating to other forecast without reload
 
     return ( 
         <div className="forecast-background">
