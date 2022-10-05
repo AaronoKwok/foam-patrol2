@@ -87,6 +87,7 @@ nav {
 .nav-dropdown:hover .dropdown-section { /* on nav-dropdown hover, I want the dropdown-section to have properties below */
   opacity: 1;
   visibility: visible;
+  border: var(--border);
 }
 
 .arrow {

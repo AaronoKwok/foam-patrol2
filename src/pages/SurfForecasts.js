@@ -1,5 +1,4 @@
 import React, {useContext, useEffect} from "react"
-import {useLocation} from "react-router-dom"
 import {Context} from "../Context"
 
 //from utils
@@ -25,8 +24,8 @@ import down from "../images/down.jpeg"
 function SurfForecasts({loc}) {
     console.log(loc.name, "surf forecast comp")
 
-    const spot = loc.location 
-    const location = useLocation()
+    const spot = loc.name 
+    console.log(loc.name)
 
     const {
         loaded, 
@@ -86,7 +85,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         console.log("surfforecast effect ran for", loc.name)
-        //getData(loc)
+        getData(loc)
     }, [spot])
     /* 
         //NOTE: //when using dependency array as an optimization, 
@@ -98,7 +97,7 @@ function SurfForecasts({loc}) {
 
     useEffect(() => {
         setLoaded(false)
-    }, [location])
+    }, [spot])  //sets loaded back to false when navigating to other forecast without reload
 
     return ( 
         <div className="forecast-background">

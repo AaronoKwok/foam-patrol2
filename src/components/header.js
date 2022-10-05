@@ -1,4 +1,4 @@
-import React, {useContext} from "react" 
+import React, {useContext, useEffect} from "react" 
 import {Link, useLocation} from "react-router-dom"
 
 import Logo from "./Logo"
@@ -19,20 +19,28 @@ function Header() {
         davenport, 
         pacifica, 
         hbPier, 
-        waikiki
+        waikiki 
     } = useContext(Context)
 
+    const location = useLocation()
+   
     function nameUppercase(obj) {
         return obj.name.toUpperCase()
     }
 
-    const location = useLocation()
-    function testReload() {
-        
-        setTimeout(() => {
-            window.location.reload()
-        }, 0)
-    }
+    /* Function reloads page after element in navbar clicked
+    function testReload() { 
+        console.log(location.pathname, "lp")
+        console.log(currentUrl, "url")
+        if (location.pathname !== currentUrl) {
+            setCurrentUrl(location.pathname)
+            setTimeout(() => {
+                window.location.reload();
+            }, 100) 
+        }
+    } */
+    
+    console.log(location.pathname, "location pathname")
 
     return (
         <header>
@@ -52,13 +60,13 @@ function Header() {
                                     <p className="dropdown-title">MAIN COACHING RETREATS</p>
                                     <hr className="hr-dropdown"/> 
 
-                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/costarica-retreat">
+                                    <Link className="dropdown-link" to="/surfRetreats/costarica-retreat">
                                         <p className="dropdown-info">COSTA RICA | 7 DAYS</p>
                                     </Link>
-                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/nicaragua-retreat">
+                                    <Link className="dropdown-link" to="/surfRetreats/nicaragua-retreat">
                                         <p className="dropdown-info">NICARAGUA | 7 DAYS</p>
                                     </Link>
-                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/bali-retreat">
+                                    <Link className="dropdown-link" to="/surfRetreats/bali-retreat">
                                         <p className="dropdown-info">BALI | 10 DAYS</p>
                                     </Link> 
                                 </div>
@@ -67,10 +75,10 @@ function Header() {
                                     <p className="dropdown-title">INTERMEDIATE ONLY TRIPS</p>
                                     <hr className="hr-dropdown"/>
                                     
-                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/intermediate/maldives-retreat">
+                                    <Link className="dropdown-link" to="/surfRetreats/intermediate/maldives-retreat">
                                         <p className="dropdown-info">MALDIVES | OCTOBER</p>
                                     </Link>
-                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/intermediate/mentawais-retreat">
+                                    <Link className="dropdown-link" to="/surfRetreats/intermediate/mentawais-retreat">
                                         <p className="dropdown-info">MENTAWAIS | NOVEMBER</p>
                                     </Link> 
                                 </div>
@@ -79,7 +87,7 @@ function Header() {
                                     <p className="dropdown-title">MORE TRIP INFO</p>
                                     <hr className="hr-dropdown"/>
 
-                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/surf-trip-calendar">
+                                    <Link className="dropdown-link" to="/surfRetreats/surf-trip-calendar">
                                         <p className="dropdown-info">SURF TRIP CALENDAR</p>
                                     </Link>
                                 </div>
@@ -160,10 +168,10 @@ function Header() {
                                 <p className="dropdown-title">OUR COMPANY</p>
                                 <hr className="hr-dropdown"/>
 
-                                <Link className="dropdown-link" onClick={testReload} to="/about/team">
+                                <Link className="dropdown-link" to="/about/team">
                                     <p className="dropdown-info">TEAM</p>
                                 </Link>
-                                <Link className="dropdown-link" onClick={testReload} to="/about/what-we-do">
+                                <Link className="dropdown-link" to="/about/what-we-do">
                                     <p className="dropdown-info">WHAT WE DO</p>
                                 </Link>
                             </div>
@@ -172,10 +180,10 @@ function Header() {
                                 <p className="dropdown-title">SURFING</p>
                                 <hr className="hr-dropdown"/>
 
-                                <Link className="dropdown-link" onClick={testReload} to="/about/is-this-trip-for-me">
+                                <Link className="dropdown-link" to="/about/is-this-trip-for-me">
                                     <p className="dropdown-info">IS THIS TRIP FOR ME?</p>
                                 </Link>
-                                <Link className="dropdown-link" onClick={testReload} to="/about/surfing-level">
+                                <Link className="dropdown-link" to="/about/surfing-level">
                                     <p className="dropdown-info">WHAT IS MY SURF LEVEL?</p>
                                 </Link>
                             </div>

@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import axios from "axios"
 
+
 import locationData from "./Data/locationData.json"
 
 //weather 
@@ -58,7 +59,6 @@ function ContextProvider({children}) {
     //const utcStart = `${utcYear}-${utcMonth}-${addZero(utcDay)}${utcDay} ${addZero(utcHour)}${utcHour}:00`  // format is 0digit:00 if utc hour is less than 10;;; utc from local time
 
     //const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
-  
 
     const [loaded, setLoaded] = useState(false)
 
