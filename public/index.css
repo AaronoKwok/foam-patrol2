@@ -74,7 +74,7 @@ nav {
   transition: opacity .1s;
   position: absolute;
   width: 50vw; 
-  height: 200px; 
+  height: 180px; 
   top: 100%;
   left: -170px;
   border-radius: 5px; 
@@ -89,9 +89,32 @@ nav {
   visibility: visible;
 }
 
+.arrow {
+  border: solid var(--black);
+  border-width: 0rem .12rem .12rem 0rem;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(225deg);
+  margin-bottom: -1.6px; 
+  margin-right: 2.1px;
+}
+
+.nav-dropdown:hover .arrow {
+  transform: rotate(45deg);
+  margin-bottom: 2.5px;
+}
+
 .dropdown-section.locs {
   width: 35vw; 
-  height: 390px; 
+  height: 380px; 
+}
+
+.dropdown-section.about {
+  width: 35vw; 
+  height: 140px;
 }
 
 .retreat-dropdown-content {
@@ -145,20 +168,6 @@ nav {
 
 .gh, .lkn {
   margin: 10px; 
-}
-
-.arrow {
-  border: solid var(--black);
-  border-width: 0rem .12rem .12rem 0rem;
-  display: inline-block;
-  padding: 3px;
-}
-
-.down {
-  transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  margin-bottom: 2.5px; 
 }
 
 .nav-link:link {

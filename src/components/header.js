@@ -1,5 +1,5 @@
 import React, {useContext} from "react" 
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 
 import Logo from "./Logo"
 import githubSVG from "../images/github.svg"
@@ -26,6 +26,14 @@ function Header() {
         return obj.name.toUpperCase()
     }
 
+    const location = useLocation()
+    function testReload() {
+        
+        setTimeout(() => {
+            window.location.reload()
+        }, 0)
+    }
+
     return (
         <header>
 
@@ -44,13 +52,13 @@ function Header() {
                                     <p className="dropdown-title">MAIN COACHING RETREATS</p>
                                     <hr className="hr-dropdown"/> 
 
-                                    <Link className="dropdown-link" to="/surfRetreats/costarica-retreat">
+                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/costarica-retreat">
                                         <p className="dropdown-info">COSTA RICA | 7 DAYS</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfRetreats/nicaragua-retreat">
+                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/nicaragua-retreat">
                                         <p className="dropdown-info">NICARAGUA | 7 DAYS</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfRetreats/bali-retreat">
+                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/bali-retreat">
                                         <p className="dropdown-info">BALI | 10 DAYS</p>
                                     </Link> 
                                 </div>
@@ -59,10 +67,10 @@ function Header() {
                                     <p className="dropdown-title">INTERMEDIATE ONLY TRIPS</p>
                                     <hr className="hr-dropdown"/>
                                     
-                                    <Link className="dropdown-link" to="/surfRetreats/intermediate/maldives-retreat">
+                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/intermediate/maldives-retreat">
                                         <p className="dropdown-info">MALDIVES | OCTOBER</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfRetreats/intermediate/mentawais-retreat">
+                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/intermediate/mentawais-retreat">
                                         <p className="dropdown-info">MENTAWAIS | NOVEMBER</p>
                                     </Link> 
                                 </div>
@@ -71,7 +79,7 @@ function Header() {
                                     <p className="dropdown-title">MORE TRIP INFO</p>
                                     <hr className="hr-dropdown"/>
 
-                                    <Link className="dropdown-link" to="/surfRetreats/surf-trip-calendar">
+                                    <Link className="dropdown-link" onClick={testReload} to="/surfRetreats/surf-trip-calendar">
                                         <p className="dropdown-info">SURF TRIP CALENDAR</p>
                                     </Link>
                                 </div>
@@ -146,16 +154,16 @@ function Header() {
                     <div className="nav-dropdown">
                         <p className="nav-button">ABOUT &nbsp;<i className="arrow down"></i></p>
 
-                        <span className="dropdown-section"> 
+                        <span className="dropdown-section about"> 
 
                             <div className="retreat-dropdown-content">
                                 <p className="dropdown-title">OUR COMPANY</p>
                                 <hr className="hr-dropdown"/>
 
-                                <Link className="dropdown-link" to="/about/team">
+                                <Link className="dropdown-link" onClick={testReload} to="/about/team">
                                     <p className="dropdown-info">TEAM</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/about/what-we-do">
+                                <Link className="dropdown-link" onClick={testReload} to="/about/what-we-do">
                                     <p className="dropdown-info">WHAT WE DO</p>
                                 </Link>
                             </div>
@@ -164,15 +172,15 @@ function Header() {
                                 <p className="dropdown-title">SURFING</p>
                                 <hr className="hr-dropdown"/>
 
-                                <Link className="dropdown-link" to="/about/is-this-trip-for-me">
+                                <Link className="dropdown-link" onClick={testReload} to="/about/is-this-trip-for-me">
                                     <p className="dropdown-info">IS THIS TRIP FOR ME?</p>
                                 </Link>
-                                <Link className="dropdown-link" to="/about/surfing-level">
+                                <Link className="dropdown-link" onClick={testReload} to="/about/surfing-level">
                                     <p className="dropdown-info">WHAT IS MY SURF LEVEL?</p>
                                 </Link>
                             </div>
 
-                            <div className="retreat-dropdown-content">
+                            {/* <div className="retreat-dropdown-content">
                                 <p className="dropdown-title">RESOURCES</p>
                                 <hr className="hr-dropdown"/>
 
@@ -182,7 +190,7 @@ function Header() {
                                 <Link className="dropdown-link" to="/about/faq">
                                     <p className="dropdown-info">FAQ</p>
                                 </Link>
-                            </div>
+                            </div> */}
 
                         </span>
                     </div> 
