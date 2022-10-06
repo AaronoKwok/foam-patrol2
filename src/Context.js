@@ -96,7 +96,7 @@ function ContextProvider({children}) {
 
     //mainpage current condition states
     //point
-    const [pointLoaded, setPointLoaded] = useState("...")
+    const [pointLoaded, setPointLoaded] = useState(false)
     const [pointAirTemp, setPointAirTemp] = useState("...")
     const [pointCloud, setPointCloud] = useState("...")
     const [pointPrecip, setPointPrecip] = useState("...")
@@ -107,7 +107,7 @@ function ContextProvider({children}) {
     const [pointLastLight, setPointLastLight] = useState("...")
     const [pointWaterTemp, setPointWaterTemp] = useState("...")
     //mar
-    const [marLoaded, setMarLoaded] = useState("...")
+    const [marLoaded, setMarLoaded] = useState(false)
     const [marAirTemp, setMarAirTemp] = useState("...")
     const [marCloud, setMarCloud] = useState("...")
     const [marPrecip, setMarPrecip] = useState("...")
@@ -118,7 +118,7 @@ function ContextProvider({children}) {
     const [marLastLight, setMarLastLight] = useState("...")
     const [marWaterTemp, setMarWaterTemp] = useState("...")
     //hb
-    const [hbLoaded, setHbLoaded] = useState("...")
+    const [hbLoaded, setHbLoaded] = useState(false)
     const [hbAirTemp, setHbAirTemp] = useState("...")
     const [hbCloud, setHbCloud] = useState("...")
     const [hbPrecip, setHbPrecip] = useState("...")
@@ -129,7 +129,7 @@ function ContextProvider({children}) {
     const [hbLastLight, setHbLastLight] = useState("...")
     const [hbWaterTemp, setHbWaterTemp] = useState("...")
     //waikiki
-    const [waikikiLoaded, setWaikikiLoaded] = useState("...")
+    const [waikikiLoaded, setWaikikiLoaded] = useState(false)
     const [waikikiAirTemp, setWaikikiAirTemp] = useState("...")
     const [waikikiCloud, setWaikikiCloud] = useState("...")
     const [waikikiPrecip, setWaikikiPrecip] = useState("...")

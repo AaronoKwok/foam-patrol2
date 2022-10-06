@@ -445,38 +445,72 @@ nav {
 
 /* Mainpage Forecast */
 
-.main-condition {
+.main-condition-loaded {
   position: relative; 
-  height: 320px; 
+  height: 280px; 
   min-width: 280px; 
   max-width: 280px;
-  background-color: rgb(231, 249, 255);
+  border: 1px solid gray;
   margin: 0px 12px;
   border-radius: 10px;
   color: black; 
 }
 
-.main-condition:link {
+.main-condition-not-loaded {
+  position: relative;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 280px; 
+  min-width: 280px; 
+  max-width: 280px;
+  margin: 0px 12px;
+  border-radius: 10px;
+  color: black; 
+  border: 1px solid gray; 
+  letter-spacing: 0.05em;
+}
+
+.main-condition-loaded:link {
   color: black;
 }
-.main-condition:visited {
+.main-condition-loaded:visited {
   color: black
 }
-.main-condition:hover {
+.main-condition-loaded:hover {
   box-shadow: 0px 3px 7px 0px rgb(155, 155, 155); 
   cursor: pointer;
 }
-.main-condition:active {
+.main-condition-loaded:active {
   box-shadow: none;
   cursor: grabbing; 
 }
 
 .condition-div {
   position: absolute;
+  display: flex; 
+  width: 100%;
+  justify-content: space-around;
 }
 
 .browse-forecasts {
   margin-bottom: 45px;
+}
+
+.place-img {
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: var(--course-radius); 
+  border-top-right-radius: var(--course-radius); 
+}
+
+.weather-icon-condition {
+  margin-right: 5px; 
+  height: 22px;
+  width: 22px; 
+  border: 1px solid black;
 }
 
 /* MainPage Retreats */

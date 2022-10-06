@@ -110,7 +110,7 @@ function SurfForecasts({loc}) {
                     {
                         !loaded && 
                             <div className="forecast-load">
-                                <p className="loading-text">Loading...</p>
+                                <p className="loading-text">LOADING. . .</p>
                             </div>
                     }
 
