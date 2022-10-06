@@ -106,6 +106,7 @@ function ContextProvider({children}) {
     const [pointFirstLight, setPointFirstLight] = useState("...")
     const [pointLastLight, setPointLastLight] = useState("...")
     const [pointWaterTemp, setPointWaterTemp] = useState("...")
+    const [pointTideType, setPointTideType] = useState("...")
     //mar
     const [marLoaded, setMarLoaded] = useState(false)
     const [marAirTemp, setMarAirTemp] = useState("...")
@@ -117,6 +118,7 @@ function ContextProvider({children}) {
     const [marFirstLight, setMarFirstLight] = useState("...")
     const [marLastLight, setMarLastLight] = useState("...")
     const [marWaterTemp, setMarWaterTemp] = useState("...")
+    const [marTideType, setMarTideType] = useState("...")
     //hb
     const [hbLoaded, setHbLoaded] = useState(false)
     const [hbAirTemp, setHbAirTemp] = useState("...")
@@ -128,6 +130,7 @@ function ContextProvider({children}) {
     const [hbFirstLight, setHbFirstLight] = useState("...")
     const [hbLastLight, setHbLastLight] = useState("...")
     const [hbWaterTemp, setHbWaterTemp] = useState("...")
+    const [hbTideType, setHbTideType] = useState("...")
     //waikiki
     const [waikikiLoaded, setWaikikiLoaded] = useState(false)
     const [waikikiAirTemp, setWaikikiAirTemp] = useState("...")
@@ -139,6 +142,7 @@ function ContextProvider({children}) {
     const [waikikiFirstLight, setWaikikiFirstLight] = useState("...")
     const [waikikiLastLight, setWaikikiLastLight] = useState("...")
     const [waikikiWaterTemp, setWaikikiWaterTemp] = useState("...")
+    const [waikikiTideType, setWaikikiTideType] = useState("...")
 
     //weather function
 
@@ -451,6 +455,7 @@ function ContextProvider({children}) {
                 })
 
                 const nextTideHour = correctTideTime(tideForecast);
+                const capTide = nextTideHour.type
 
                 if (loc.name === "Pleasure Point") {
                     setPointAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
@@ -462,6 +467,7 @@ function ContextProvider({children}) {
                     setPointFirstLight(correctAst(astronomyForecast, loc).civilDawn)
                     setPointLastLight(correctAst(astronomyForecast, loc).civilDusk)
                     setPointWaterTemp(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+                    setPointTideType(capTide[0].toUpperCase() + capTide.substring(1))
 
                     setPointLoaded(true)
 
@@ -476,6 +482,7 @@ function ContextProvider({children}) {
                     setMarFirstLight(correctAst(astronomyForecast, loc).civilDawn)
                     setMarLastLight(correctAst(astronomyForecast, loc).civilDusk)
                     setMarWaterTemp(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+                    setMarTideType(capTide[0].toUpperCase() + capTide.substring(1))
 
                     setMarLoaded(true)
 
@@ -490,6 +497,7 @@ function ContextProvider({children}) {
                     setHbFirstLight(correctAst(astronomyForecast, loc).civilDawn)
                     setHbLastLight(correctAst(astronomyForecast, loc).civilDusk)
                     setHbWaterTemp(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+                    setHbTideType(capTide[0].toUpperCase() + capTide.substring(1))
 
                     setHbLoaded(true)
 
@@ -504,6 +512,7 @@ function ContextProvider({children}) {
                     setWaikikiFirstLight(correctAst(astronomyForecast, loc).civilDawn)
                     setWaikikiLastLight(correctAst(astronomyForecast, loc).civilDusk)
                     setWaikikiWaterTemp(Math.floor((weatherForecast[0].waterTemperature.sg) * (9/5) + 32))
+                    setWaikikiTideType(capTide[0].toUpperCase() + capTide.substring(1))
 
                     setWaikikiLoaded(true)
 
@@ -571,7 +580,8 @@ function ContextProvider({children}) {
             pointTideHeight, 
             pointFirstLight, 
             pointLastLight, 
-            pointWaterTemp, 
+            pointWaterTemp,
+            pointTideType, 
             marLoaded, 
             marAirTemp, 
             marCloud, 
@@ -582,6 +592,7 @@ function ContextProvider({children}) {
             marFirstLight, 
             marLastLight, 
             marWaterTemp, 
+            marTideType,
             hbLoaded, 
             hbAirTemp, 
             hbCloud, 
@@ -592,6 +603,7 @@ function ContextProvider({children}) {
             hbFirstLight, 
             hbLastLight, 
             hbWaterTemp, 
+            hbTideType,
             waikikiLoaded, 
             waikikiAirTemp, 
             waikikiCloud, 
@@ -601,7 +613,8 @@ function ContextProvider({children}) {
             waikikiTideHeight, 
             waikikiFirstLight, 
             waikikiLastLight, 
-            waikikiWaterTemp
+            waikikiWaterTemp,
+            waikikiTideType
         }}>
             {children}
         </Context.Provider>

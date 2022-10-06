@@ -491,12 +491,12 @@ nav {
   display: grid; 
   width: 100%;
   grid-template-columns: repeat(2, auto);
-  padding-left: 37px; 
-  margin-top: 15px; 
+  padding-left: 34px; 
+  margin-top: 13px; 
   font-family: 'Montserrat', 'sans-serif' ;
   font-weight: 500;
   letter-spacing: 0.02em;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .browse-forecasts {
@@ -555,6 +555,13 @@ nav {
 
 .condition-temp {
   margin-top: 0.5px; 
+}
+
+.up-down-cond {
+  height: 13px; 
+  width: 10px;
+  margin-left: 5px;
+  margin-bottom: 2.3px; 
 }
 
 /* MainPage Retreats */

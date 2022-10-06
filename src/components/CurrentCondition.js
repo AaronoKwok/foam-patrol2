@@ -6,6 +6,7 @@ import {Context} from "../Context"
 import {
     determineHeight,
     zeroTide,
+    upOrDown
 } from "../utils"
 
 import point from "../images/conditionPoint.jpeg"
@@ -13,6 +14,8 @@ import mar from "../images/conditionMar.jpeg"
 import hb from "../images/conditionHb.jpeg" 
 import waikiki from "../images/conditionWaikiki.jpeg"
 import seaIcon from "../images/seaIcon.svg"
+import up from "../images/up.jpeg"
+import down from "../images/down.jpeg"
 
 function CurrentCondition({loc}) {
     console.log(loc.name, "mp")
@@ -28,6 +31,7 @@ function CurrentCondition({loc}) {
         pointFirstLight, 
         pointLastLight, 
         pointWaterTemp, 
+        pointTideType,
         marLoaded, 
         marAirTemp, 
         marCloud, 
@@ -38,6 +42,7 @@ function CurrentCondition({loc}) {
         marFirstLight, 
         marLastLight, 
         marWaterTemp, 
+        marTideType,
         hbLoaded, 
         hbAirTemp, 
         hbCloud, 
@@ -48,6 +53,7 @@ function CurrentCondition({loc}) {
         hbFirstLight, 
         hbLastLight, 
         hbWaterTemp, 
+        hbTideType, 
         waikikiLoaded, 
         waikikiAirTemp, 
         waikikiCloud, 
@@ -58,6 +64,7 @@ function CurrentCondition({loc}) {
         waikikiFirstLight, 
         waikikiLastLight, 
         waikikiWaterTemp,
+        waikikiTideType,
         getMPData
     } = useContext(Context)
     
@@ -69,7 +76,7 @@ function CurrentCondition({loc}) {
     function findData() {
         console.log(pointLoaded)
         if (loc.name === "Pleasure Point") {
-            if (pointLoaded === false) {
+            if (pointLoaded === true) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={point} alt="" />
@@ -83,7 +90,7 @@ function CurrentCondition({loc}) {
                                     <img className="weather-icon-condition" src={seaIcon} alt="" />
                                     <p className="condition-temp">{pointWaterTemp}<span className="condition-deg">&#176;f</span></p> 
                                 </div>
-                                <p>Tide: {zeroTide(pointTideHeight)}<span className="condition-feet">ft</span></p>
+                                <p>Tide: {zeroTide(pointTideHeight)}<span className="condition-feet">ft</span><span><img className="up-down-cond" src={upOrDown(pointTideType) ? up : down} alt =""/></span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={findSky(pointCloud, pointPrecip, pointVis, pointFirstLight, pointLastLight)} alt="" />
                                     <p>{pointAirTemp}<span className="condition-deg">&#176;f</span></p> 
@@ -97,7 +104,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Pacifica/Linda Mar") {
-            if (marLoaded === false) {
+            if (marLoaded === true) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={mar} alt="" />
@@ -111,7 +118,7 @@ function CurrentCondition({loc}) {
                                     <img className="weather-icon-condition" src={seaIcon} alt="" />
                                     <p className="condition-temp">{marWaterTemp}<span className="condition-deg">&#176;f</span></p> 
                                 </div>
-                                <p>Tide: {zeroTide(marTideHeight)}<span className="condition-feet">ft</span></p>  
+                                <p>Tide: {zeroTide(marTideHeight)}<span className="condition-feet">ft</span><span><img className="up-down-cond" src={upOrDown(marTideType) ? up : down} alt =""/></span></p>  
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={findSky(marCloud, marPrecip, marVis, marFirstLight, marLastLight)} alt="" />
                                     <p>{marAirTemp}<span className="condition-deg">&#176;f</span></p>
@@ -125,7 +132,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "HB Pier") {
-            if (hbLoaded === false) {
+            if (hbLoaded === true) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={hb} alt="" />
@@ -139,7 +146,7 @@ function CurrentCondition({loc}) {
                                     <img className="weather-icon-condition" src={seaIcon} alt="" />
                                     <p className="condition-temp">{hbWaterTemp}<span className="condition-deg">&#176;f</span></p>
                                 </div>
-                                <p>Tide: {zeroTide(hbTideHeight)}<span className="condition-feet">ft</span></p>
+                                <p>Tide: {zeroTide(hbTideHeight)}<span className="condition-feet">ft</span><span><img className="up-down-cond" src={upOrDown(hbTideType) ? up : down} alt =""/></span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={findSky(hbCloud, hbPrecip, hbVis, hbFirstLight, hbLastLight)} alt="" />
                                     <p>{hbAirTemp}<span className="condition-deg">&#176;f</span></p>  
@@ -153,7 +160,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Waikiki Beach") {
-            if (waikikiLoaded === false) {
+            if (waikikiLoaded === true) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={waikiki} alt=""/>
@@ -167,7 +174,7 @@ function CurrentCondition({loc}) {
                                     <img className="weather-icon-condition" src={seaIcon} alt="" />
                                     <p className="condition-temp">{waikikiWaterTemp}<span className="condition-deg">&#176;f</span></p>
                                 </div>
-                                <p>Tide: {zeroTide(waikikiTideHeight)}<span className="condition-feet">ft</span></p>
+                                <p>Tide: {zeroTide(waikikiTideHeight)}<span className="condition-feet">ft</span><span><img className="up-down-cond" src={upOrDown(waikikiTideType) ? up : down} alt =""/></span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={findSky(waikikiCloud, waikikiPrecip, waikikiVis, waikikiFirstLight, waikikiLastLight)} alt="" />
                                     <p>{waikikiAirTemp}<span className="condition-deg">&#176;f</span></p>
