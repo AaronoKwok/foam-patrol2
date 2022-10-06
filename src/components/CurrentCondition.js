@@ -78,16 +78,15 @@ function CurrentCondition({loc}) {
                                 </div>
                             </div>
                             <div className="condition-div">
-                                <p>Waves: {determineHeight(pointWaveHeight)}ft</p>
-                                <p>Tide: {zeroTide(pointTideHeight)}ft</p>
+                                <p>Waves: {determineHeight(pointWaveHeight)}<span className="condition-feet">ft</span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={seaIcon} alt="" />
-                                    <p>{pointWaterTemp}&#176;f</p> 
+                                    <p className="condition-temp">{pointWaterTemp}<span className="condition-deg">&#176;f</span></p> 
                                 </div>
-                                
+                                <p>Tide: {zeroTide(pointTideHeight)}<span className="condition-feet">ft</span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={findSky(pointCloud, pointPrecip, pointVis, pointFirstLight, pointLastLight)} alt="" />
-                                    <p>{pointAirTemp}&#176;f</p> 
+                                    <p>{pointAirTemp}<span className="condition-deg">&#176;f</span></p> 
                                 </div>
                                 
                             </div>
@@ -107,16 +106,15 @@ function CurrentCondition({loc}) {
                                 </div>
                             </div>
                             <div className="condition-div">
-                                <p>Waves: {determineHeight(marWaveHeight)}ft</p>
-                                <p>Tide: {zeroTide(marTideHeight)}ft</p>
+                                <p>Waves: {determineHeight(marWaveHeight)}<span className="condition-feet">ft</span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={seaIcon} alt="" />
-                                    <p>{marWaterTemp}&#176;f</p> 
+                                    <p className="condition-temp">{marWaterTemp}<span className="condition-deg">&#176;f</span></p> 
                                 </div>
-                                  
+                                <p>Tide: {zeroTide(marTideHeight)}<span className="condition-feet">ft</span></p>  
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={findSky(marCloud, marPrecip, marVis, marFirstLight, marLastLight)} alt="" />
-                                    <p>{marAirTemp}&#176;f</p>
+                                    <p>{marAirTemp}<span className="condition-deg">&#176;f</span></p>
                                 </div>
                                 
                             </div>
@@ -134,18 +132,17 @@ function CurrentCondition({loc}) {
                                 <div className="level-fade-condition">
                                     <p className="condition-img-title">Huntington</p>
                                 </div>
-                                
                             </div>
                             <div className="condition-div">
-                                <p>Waves: {determineHeight(hbWaveHeight)}ft</p>
-                                <p>Tide: {zeroTide(hbTideHeight)}ft</p>
+                                <p>Waves: {determineHeight(hbWaveHeight)}<span className="condition-feet">ft</span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={seaIcon} alt="" />
-                                    <p>{hbWaterTemp}&#176;f</p>
+                                    <p className="condition-temp">{hbWaterTemp}<span className="condition-deg">&#176;f</span></p>
                                 </div>
+                                <p>Tide: {zeroTide(hbTideHeight)}<span className="condition-feet">ft</span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={findSky(hbCloud, hbPrecip, hbVis, hbFirstLight, hbLastLight)} alt="" />
-                                    <p>{hbAirTemp}&#176;f</p>  
+                                    <p>{hbAirTemp}<span className="condition-deg">&#176;f</span></p>  
                                 </div>
                                 
                             </div>
@@ -165,15 +162,15 @@ function CurrentCondition({loc}) {
                                 </div>
                             </div>
                             <div className="condition-div">
-                                <p>Waves: {determineHeight(waikikiWaveHeight)}ft</p>
-                                <p>Tide: {zeroTide(waikikiTideHeight)}ft</p>
+                                <p>Waves: {determineHeight(waikikiWaveHeight)}<span className="condition-feet">ft</span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={seaIcon} alt="" />
-                                    <p>{waikikiWaterTemp}&#176;f</p>
+                                    <p className="condition-temp">{waikikiWaterTemp}<span className="condition-deg">&#176;f</span></p>
                                 </div>
+                                <p>Tide: {zeroTide(waikikiTideHeight)}<span className="condition-feet">ft</span></p>
                                 <div className="condition-weather">
                                     <img className="weather-icon-condition" src={findSky(waikikiCloud, waikikiPrecip, waikikiVis, waikikiFirstLight, waikikiLastLight)} alt="" />
-                                    <p>{waikikiAirTemp}&#176;f</p>
+                                    <p>{waikikiAirTemp}<span className="condition-deg">&#176;f</span></p>
                                 </div>
                             </div>
                         </div> 

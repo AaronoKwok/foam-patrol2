@@ -450,9 +450,9 @@ nav {
   height: 280px; 
   min-width: 280px; 
   max-width: 280px;
-  border: 1px solid gray;
+  border: 1px solid rgb(209, 209, 209);
   margin: 0px 12px;
-  border-radius: 10px;
+  border-radius: 11px;
   color: black; 
 }
 
@@ -465,9 +465,9 @@ nav {
   min-width: 280px; 
   max-width: 280px;
   margin: 0px 12px;
-  border-radius: 10px;
+  border-radius: 11px;
   color: black; 
-  border: 1px solid gray; 
+  border: 1px solid rgb(209, 209, 209); 
   letter-spacing: 0.05em;
 }
 
@@ -491,8 +491,12 @@ nav {
   display: grid; 
   width: 100%;
   grid-template-columns: repeat(2, auto);
-  padding-left: 40px; 
-  margin-top: 10px; 
+  padding-left: 37px; 
+  margin-top: 15px; 
+  font-family: 'Montserrat', 'sans-serif' ;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 0.9em;
 }
 
 .browse-forecasts {
@@ -538,6 +542,19 @@ nav {
   height: 22px;
   width: 22px; 
   margin-right: 10px;
+}
+
+.condition-feet {
+  font-size: 0.86em;
+  margin-left: 3px; 
+}
+
+.condition-deg {
+  font-size: 0.86em;
+}
+
+.condition-temp {
+  margin-top: 1.5px; 
 }
 
 /* MainPage Retreats */
@@ -2142,8 +2159,20 @@ nav {
     grid-template-columns: repeat(3, auto);
   }
 
+  .browse-forecasts {
+    margin-bottom: 0px;
+  }
+
   .course {
     margin-bottom: 24px
+  }
+
+  .main-condition-loaded {
+    margin-bottom: 24px;
+  }
+
+  .main-condition-not-loaded {
+    margin-bottom: 24px; 
   }
 
   .main-condition {
@@ -2173,6 +2202,14 @@ nav {
   }
 
   .course {
+    margin-bottom: 24px; 
+  }
+
+  .main-condition-loaded {
+    margin-bottom: 24px;
+  }
+
+  .main-condition-not-loaded {
     margin-bottom: 24px; 
   }
 
