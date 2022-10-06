@@ -76,7 +76,7 @@ function CurrentCondition({loc}) {
     function findData() {
         console.log(pointLoaded)
         if (loc.name === "Pleasure Point") {
-            if (pointLoaded === false) {
+            if (pointLoaded === true) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={point} alt="" />
@@ -104,7 +104,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Pacifica/Linda Mar") {
-            if (marLoaded === false) {
+            if (marLoaded === true) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={mar} alt="" />
@@ -132,7 +132,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "HB Pier") {
-            if (hbLoaded === false) {
+            if (hbLoaded === true) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={hb} alt="" />
@@ -160,7 +160,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Waikiki Beach") {
-            if (waikikiLoaded === false) {
+            if (waikikiLoaded === true) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={waikiki} alt=""/>

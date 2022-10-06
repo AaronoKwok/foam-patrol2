@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import {Link} from "react-router-dom"
 
 import {Context} from "../Context"
@@ -14,9 +14,13 @@ import Course from "../components/Course"
 import Retreat from "../components/Retreat"
 import CurrentCondition from "../components/CurrentCondition"
 
+import useWindowWidth from "../hooks/useWindowWidth"
+
 
 
 function MainPage() { //to change once have a courses scroll functionality
+
+    console.log(useWindowWidth())
 
     const {
         pleasurePoint, 

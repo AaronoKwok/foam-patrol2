@@ -641,9 +641,31 @@ function correctAst(forecast) {
 }
 console.log(correctAst(ast)) */
 
+//binding pattern - destructured assignment
+/* const obj = { a: 1, b: { c: 2 } };
+const { a } = obj; // a is constant
+let { b: { c: d } } = obj; // d is re-assignable
 
+console.log(a, d) */ // 1 2
 
+//assignment pattern = destructured assignment
+/* const numbers = [];
+const obj = { a: 1, b: 2 };
+({ a: numbers[0], b: numbers[1] } = obj); //note the parentheses -- needed when using object literal destructuring assignment without a declaration
+/* NOTE: if the destructured assignment above is not followed by a semi-colon, program 
+may execute a function above. 
+console.log(numbers) */ // [1, 2]
 
+//default values
+const [a = 1] = []
+console.log(a)
+const {b = 2} = {b: undefined}
+console.log(b)
+const {c = 3} = {c: null} //default values don't work if property is null
+console.log(c)
+
+const {d = console.log("default value can be any expression")} = {d: undefined}
+console.log(d)
 
 
 
