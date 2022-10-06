@@ -12,6 +12,7 @@ import point from "../images/conditionPoint.jpeg"
 import mar from "../images/conditionMar.jpeg" 
 import hb from "../images/conditionHb.jpeg" 
 import waikiki from "../images/conditionWaikiki.jpeg"
+import seaIcon from "../images/seaIcon.svg"
 
 function CurrentCondition({loc}) {
     console.log(loc.name, "mp")
@@ -62,26 +63,33 @@ function CurrentCondition({loc}) {
     
     useEffect(() => {
         console.log("mp retrieving data...")
-        //getMPData(loc)
+        getMPData(loc)
     }, [])
 
     function findData() {
         console.log(pointLoaded)
         if (loc.name === "Pleasure Point") {
-            if (pointLoaded === false) {
+            if (pointLoaded === true) {
                 return <div className="main-condition-loaded">
-                            <div>
+                            <div className="condition-img-cont">
                                 <img className="place-img" src={point} alt="" />
-                                <div className="level-fade">
-                                    <p>The Point</p>
+                                <div className="level-fade-condition">
+                                    <p className="condition-img-title">The Point</p>
                                 </div>
                             </div>
                             <div className="condition-div">
-                                <p>{determineHeight(pointWaveHeight)}ft</p>
-                                <p>{zeroTide(pointTideHeight)}ft</p>
-                                <p>{pointWaterTemp}&#176;f</p>
-                                <img className="weather-icon-condition" src={findSky(pointCloud, pointPrecip, pointVis, pointFirstLight, pointLastLight)} alt="" />
-                                <p>{pointAirTemp}&#176;f</p>
+                                <p>Waves: {determineHeight(pointWaveHeight)}ft</p>
+                                <p>Tide: {zeroTide(pointTideHeight)}ft</p>
+                                <div className="condition-weather">
+                                    <img className="weather-icon-condition" src={seaIcon} alt="" />
+                                    <p>{pointWaterTemp}&#176;f</p> 
+                                </div>
+                                
+                                <div className="condition-weather">
+                                    <img className="weather-icon-condition" src={findSky(pointCloud, pointPrecip, pointVis, pointFirstLight, pointLastLight)} alt="" />
+                                    <p>{pointAirTemp}&#176;f</p> 
+                                </div>
+                                
                             </div>
                         </div>
             } else {
@@ -90,20 +98,27 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Pacifica/Linda Mar") {
-            if (marLoaded === false) {
+            if (marLoaded === true) {
                 return <div className="main-condition-loaded">
-                            <div>
+                            <div className="condition-img-cont">
                                 <img className="place-img" src={mar} alt="" />
-                                <div className="level-fade">
-                                   <p>Pacifica</p> 
+                                <div className="level-fade-condition">
+                                   <p className="condition-img-title">Pacifica</p> 
                                 </div>
                             </div>
                             <div className="condition-div">
-                                <p>{determineHeight(marWaveHeight)}ft</p>
-                                <p>{zeroTide(marTideHeight)}ft</p>
-                                <p>{marWaterTemp}&#176;f</p>   
-                                <img className="weather-icon-condition" src={findSky(marCloud, marPrecip, marVis, marFirstLight, marLastLight)} alt="" />
-                                <p>{marAirTemp}&#176;f</p>
+                                <p>Waves: {determineHeight(marWaveHeight)}ft</p>
+                                <p>Tide: {zeroTide(marTideHeight)}ft</p>
+                                <div className="condition-weather">
+                                    <img className="weather-icon-condition" src={seaIcon} alt="" />
+                                    <p>{marWaterTemp}&#176;f</p> 
+                                </div>
+                                  
+                                <div className="condition-weather">
+                                    <img className="weather-icon-condition" src={findSky(marCloud, marPrecip, marVis, marFirstLight, marLastLight)} alt="" />
+                                    <p>{marAirTemp}&#176;f</p>
+                                </div>
+                                
                             </div>
                         </div> 
             } else {
@@ -112,21 +127,27 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "HB Pier") {
-            if (hbLoaded === false) {
+            if (hbLoaded === true) {
                 return <div className="main-condition-loaded">
-                            <div>
+                            <div className="condition-img-cont">
                                 <img className="place-img" src={hb} alt="" />
-                                <div className="level-fade">
-                                    <p>Huntington</p>
+                                <div className="level-fade-condition">
+                                    <p className="condition-img-title">Huntington</p>
                                 </div>
                                 
                             </div>
                             <div className="condition-div">
-                                <p>{determineHeight(hbWaveHeight)}ft</p>
-                                <p>{zeroTide(hbTideHeight)}ft</p>
-                                <p>{hbWaterTemp}&#176;f</p>
-                                <img className="weather-icon-condition" src={findSky(hbCloud, hbPrecip, hbVis, hbFirstLight, hbLastLight)} alt="" />
-                                <p>{hbAirTemp}&#176;f</p>
+                                <p>Waves: {determineHeight(hbWaveHeight)}ft</p>
+                                <p>Tide: {zeroTide(hbTideHeight)}ft</p>
+                                <div className="condition-weather">
+                                    <img className="weather-icon-condition" src={seaIcon} alt="" />
+                                    <p>{hbWaterTemp}&#176;f</p>
+                                </div>
+                                <div className="condition-weather">
+                                    <img className="weather-icon-condition" src={findSky(hbCloud, hbPrecip, hbVis, hbFirstLight, hbLastLight)} alt="" />
+                                    <p>{hbAirTemp}&#176;f</p>  
+                                </div>
+                                
                             </div>
                         </div> 
             } else {
@@ -135,20 +156,25 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Waikiki Beach") {
-            if (waikikiLoaded === false) {
+            if (waikikiLoaded === true) {
                 return <div className="main-condition-loaded">
-                            <div>
+                            <div className="condition-img-cont">
                                 <img className="place-img" src={waikiki} alt=""/>
-                                <div className="level-fade">
-                                    <p>Waikiki</p>
+                                <div className="level-fade-condition">
+                                    <p className="condition-img-title">Waikiki</p>
                                 </div>
                             </div>
                             <div className="condition-div">
-                                <p>{determineHeight(waikikiWaveHeight)}ft</p>
-                                <p>{zeroTide(waikikiTideHeight)}ft</p>
-                                <p>{waikikiWaterTemp}&#176;f</p>
-                                <img className="weather-icon-condition" src={findSky(waikikiCloud, waikikiPrecip, waikikiVis, waikikiFirstLight, waikikiLastLight)} alt="" />
-                                <p>{waikikiAirTemp}&#176;f</p>
+                                <p>Waves: {determineHeight(waikikiWaveHeight)}ft</p>
+                                <p>Tide: {zeroTide(waikikiTideHeight)}ft</p>
+                                <div className="condition-weather">
+                                    <img className="weather-icon-condition" src={seaIcon} alt="" />
+                                    <p>{waikikiWaterTemp}&#176;f</p>
+                                </div>
+                                <div className="condition-weather">
+                                    <img className="weather-icon-condition" src={findSky(waikikiCloud, waikikiPrecip, waikikiVis, waikikiFirstLight, waikikiLastLight)} alt="" />
+                                    <p>{waikikiAirTemp}&#176;f</p>
+                                </div>
                             </div>
                         </div> 
             } else {

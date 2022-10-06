@@ -487,14 +487,38 @@ nav {
 }
 
 .condition-div {
-  position: absolute;
-  display: flex; 
+  position: relative;
+  display: grid; 
   width: 100%;
-  justify-content: space-around;
+  grid-template-columns: repeat(2, auto);
+  padding-left: 40px; 
+  margin-top: 10px; 
 }
 
 .browse-forecasts {
   margin-bottom: 45px;
+}
+
+.condition-img-cont {
+  position: relative;
+}
+
+.level-fade-condition {
+  height: 50px;
+  position: absolute; 
+  width: 100%; 
+  bottom: 0px; 
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(46, 46, 46));
+}
+
+.condition-img-title {
+  color: white;
+  font-family: 'Montserrat', 'sans-serif';
+  margin-left: 10px;
+  margin-top: 10px; 
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: 0.05em;
 }
 
 .place-img {
@@ -506,11 +530,14 @@ nav {
   border-top-right-radius: var(--course-radius); 
 }
 
+.condition-weather {
+  display: flex; 
+}
+
 .weather-icon-condition {
-  margin-right: 5px; 
   height: 22px;
   width: 22px; 
-  border: 1px solid black;
+  margin-right: 10px;
 }
 
 /* MainPage Retreats */
