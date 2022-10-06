@@ -63,13 +63,13 @@ function CurrentCondition({loc}) {
     
     useEffect(() => {
         console.log("mp retrieving data...")
-        getMPData(loc)
+        //getMPData(loc)
     }, [])
 
     function findData() {
         console.log(pointLoaded)
         if (loc.name === "Pleasure Point") {
-            if (pointLoaded === true) {
+            if (pointLoaded === false) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={point} alt="" />
@@ -97,7 +97,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Pacifica/Linda Mar") {
-            if (marLoaded === true) {
+            if (marLoaded === false) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={mar} alt="" />
@@ -125,7 +125,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "HB Pier") {
-            if (hbLoaded === true) {
+            if (hbLoaded === false) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={hb} alt="" />
@@ -153,7 +153,7 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Waikiki Beach") {
-            if (waikikiLoaded === true) {
+            if (waikikiLoaded === false) {
                 return <div className="main-condition-loaded">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={waikiki} alt=""/>
