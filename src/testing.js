@@ -657,7 +657,7 @@ may execute a function above.
 console.log(numbers) */ // [1, 2]
 
 //default values
-const [a = 1] = []
+/* const [a = 1] = []
 console.log(a)
 const {b = 2} = {b: undefined}
 console.log(b)
@@ -665,7 +665,33 @@ const {c = 3} = {c: null} //default values don't work if property is null
 console.log(c)
 
 const {d = console.log("default value can be any expression")} = {d: undefined}
-console.log(d)
+console.log(d) */
+
+//understanding parentheses and functions
+/* function printHi() {
+    console.log("HI")
+}
+
+setTimeout(printHi, 1000)
+//
+
+printHi() //invokes */
+
+/* function printHiClosure() {
+    return () => {
+        console.log("hi")
+    }
+}
+
+setTimeout(printHiClosure(), 500)
+//add parentheses above to invoke printHiClosure so that it 
+//returns 'console.log("hi"). Without parentheses, [Function: printHiClosure]
+//is returned to setTimeout
+
+printHiClosure()()
+//bc printHiClosure returns a function, adding another pair of parentheses
+//executes the returned function  */
+
 
 
 
