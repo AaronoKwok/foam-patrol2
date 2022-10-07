@@ -17,5 +17,5 @@ export default function useWindowWidth() {
         return () => window.removeEventListener('resize', assignWidth)
     }, [])
 
-    return windowWidth
+    return windowWidth <= 950 //switch to mobile design if window with is less than 950px
 }

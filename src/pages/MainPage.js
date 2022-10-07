@@ -14,13 +14,13 @@ import Course from "../components/Course"
 import Retreat from "../components/Retreat"
 import CurrentCondition from "../components/CurrentCondition"
 
-import useWindowWidth from "../hooks/useWindowWidth"
+//import useWindowWidth from "../hooks/useWindowWidth"
 
 
 
 function MainPage() { //to change once have a courses scroll functionality
 
-    console.log(useWindowWidth())
+    //console.log(useWindowWidth())
 
     const {
         pleasurePoint, 

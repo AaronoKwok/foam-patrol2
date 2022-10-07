@@ -23,8 +23,18 @@ import locationData from "./Data/locationData.json"
 import intRetreatData from "./Data/intermediateRetreat.json"
 import courseData from "./Data/courseData.json"
 
+import useWindowWidth from "./hooks/useWindowWidth"
 
 function App() {
+
+    //if app width is smaller than 950px, switch to mobile design
+    console.log(useWindowWidth())
+    if (useWindowWidth() === true) {
+        console.log("mobile")
+    }
+    if (useWindowWidth() === false) {
+        console.log("desktop")
+    }
 
     //need method to have each page start at top when loaded
     //note, below does not work for going back, only foward

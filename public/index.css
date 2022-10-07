@@ -553,8 +553,12 @@ nav {
   font-size: 0.86em;
 }
 
+.condition-sea {
+  margin-top: 0em; 
+}
+
 .condition-temp {
-  margin-top: -1px; 
+  margin-top: -0.07em; 
 }
 
 .up-down-cond {
