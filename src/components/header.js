@@ -1,4 +1,4 @@
-import React, {useContext} from "react" 
+import React, {useContext, useEffect} from "react" 
 import {Link, useLocation} from "react-router-dom"
 
 import Logo from "./Logo"
@@ -40,7 +40,21 @@ function Header() {
         }
     } */
     
-    console.log(location.pathname, "location pathname")
+    console.log(location.pathname, "+ location pathname")
+
+    //add function to return different css element names on page load - use location as dependency in useEffect??
+    useEffect(() => {
+        console.log(location.pathname, "+ stop hover")
+    }, [location])
+
+    function doHover() { //returns css element to either have dropdown/not have dropdown
+        //return "nav-dropdown"
+        return "nav-dropdown-noHover"
+    }
+
+
+
+
 
     return (
         <header>
@@ -51,7 +65,7 @@ function Header() {
                 <section className="white-in-nav">
 
                     {/* Retreats */}
-                    <div className="nav-dropdown">
+                    <div className={doHover()}> {/* when page load, for period of time, have function return nav-dropdown-noHover, then switch back to normal nav-dropdown */}
                         <p className="nav-button">SURF RETREATS &nbsp;<i className="arrow down"></i></p>
 
                             <div className="dropdown-section" >

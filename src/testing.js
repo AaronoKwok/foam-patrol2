@@ -692,6 +692,16 @@ printHiClosure()()
 //bc printHiClosure returns a function, adding another pair of parentheses
 //executes the returned function  */
 
+function makeWord() {
+    return "test"
+}
+
+function addWord() {
+    return makeWord.toString()
+}
+
+console.log(addWord())
+
 
 
 

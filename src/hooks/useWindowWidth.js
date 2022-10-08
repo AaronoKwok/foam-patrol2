@@ -6,16 +6,17 @@ function getWidth() {
 }
 
 export default function useWindowWidth() {
-    const [windowWidth, setWindowWidth] = useState(getWidth())
+    const mobileWidth = 950; //max mobile width
+    const [windowWidth, setWindowWidth] = useState(getWidth()) //function declared globally to get actual width, instead of a random starting point
 
     useEffect(() => {
         function assignWidth() {
-            setWindowWidth(getWidth())
+            setWindowWidth(getWidth()) //calls globally declared function
         }
 
-        window.addEventListener('resize', assignWidth)
+        window.addEventListener('resize', assignWidth) //here, assignWidth is seen as a variable holding a function and is the callback that is executed
         return () => window.removeEventListener('resize', assignWidth)
     }, [])
 
-    return windowWidth <= 950 //switch to mobile design if window with is less than 950px
+    return windowWidth <= mobileWidth //switch to mobile design if window with is less than 950px
 }

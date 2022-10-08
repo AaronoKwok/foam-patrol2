@@ -84,6 +84,12 @@ nav {
   padding-left: 10px; 
 }
 
+/* delete tool tip on load */
+.nav-dropdown-noHover {
+  position: relative;
+  display: inline-block;
+}
+
 .nav-dropdown:hover .dropdown-section { /* on nav-dropdown hover, I want the dropdown-section to have properties below */
   opacity: 1;
   visibility: visible;
@@ -2195,6 +2201,10 @@ nav {
   .courses-in-grid {
     grid-template-columns: repeat(3, 33.33333%);
   }
+
+  .dropdown-section {
+    height: 200px; 
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -2270,5 +2280,9 @@ nav {
 
   .guide {
     grid-template-columns: repeat(2, auto);
+  }
+
+  .dropdown-section.about {
+    height: 160px;
   }
 }
