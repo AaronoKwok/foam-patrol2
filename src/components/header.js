@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react" 
+import React, {useState, useContext, useEffect} from "react" 
 import {Link, useLocation} from "react-router-dom"
 
 import Logo from "./Logo"
@@ -8,6 +8,8 @@ import linkedinSVG from "../images/linkedin.svg"
 import {Context} from "../Context"
  
 function Header() {
+
+    const [hover, setHover] = useState(false)
 
     const {
         pleasurePoint, 
@@ -39,22 +41,20 @@ function Header() {
             }, 100) 
         }
     } */
-    
-    console.log(location.pathname, "+ location pathname")
-
-    //add function to return different css element names on page load - use location as dependency in useEffect??
-    useEffect(() => {
-        console.log(location.pathname, "+ stop hover")
-    }, [location])
 
     function doHover() { //returns css element to either have dropdown/not have dropdown
-        //return "nav-dropdown"
-        return "nav-dropdown-noHover"
+        if (hover === false)
+            return "nav-dropdown-noHover"
+        return "nav-dropdown"
     }
 
-
-
-
+    //Returns different css element names on page load - use location.pathname as dependency
+    useEffect(() => {
+        setHover(false)
+        setTimeout(() => {
+            setHover(true)
+        }, 50) //turns nav button dropdown off for 50ms
+    }, [location.pathname])
 
     return (
         <header>
@@ -110,7 +110,7 @@ function Header() {
                     </div> 
 
                     {/* Reports */}
-                    <div className="nav-dropdown">
+                    <div className={doHover()}>
 
                         <p className="nav-button">SURF REPORTS &nbsp;<i className="arrow down"></i></p>
 
@@ -173,7 +173,7 @@ function Header() {
                     </div> */}
 
                     {/* About */}
-                    <div className="nav-dropdown">
+                    <div className={doHover()}>
                         <p className="nav-button">ABOUT &nbsp;<i className="arrow down"></i></p>
 
                         <span className="dropdown-section about"> 

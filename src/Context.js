@@ -60,6 +60,7 @@ function ContextProvider({children}) {
 
     //const start = utcStart //utcDate and utcStart need to be different as they are used for different processes
 
+    //has api retrieved data
     const [loaded, setLoaded] = useState(false)
 
     //weather states

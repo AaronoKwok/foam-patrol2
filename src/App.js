@@ -28,7 +28,6 @@ import useWindowWidth from "./hooks/useWindowWidth"
 function App() {
 
     //if app width is smaller than 950px, switch to mobile design
-    console.log(useWindowWidth())
     if (useWindowWidth() === true) {
         console.log("mobile")
     }
