@@ -76,8 +76,8 @@ function CurrentCondition({loc}) {
     function findData() {
         console.log(pointLoaded)
         if (loc.name === "Pleasure Point") {
-            if (pointLoaded === true) {
-                return <div className="main-condition-loaded">
+            if (pointLoaded === false) {
+                return <div className="">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={point} alt="" />
                                 <div className="level-fade-condition">
@@ -104,8 +104,8 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Pacifica/Linda Mar") {
-            if (marLoaded === true) {
-                return <div className="main-condition-loaded">
+            if (marLoaded === false) {
+                return <div className="">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={mar} alt="" />
                                 <div className="level-fade-condition">
@@ -132,8 +132,8 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "HB Pier") {
-            if (hbLoaded === true) {
-                return <div className="main-condition-loaded">
+            if (hbLoaded === false) {
+                return <div className="">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={hb} alt="" />
                                 <div className="level-fade-condition">
@@ -160,8 +160,8 @@ function CurrentCondition({loc}) {
                         </div>
             }
         } else if (loc.name === "Waikiki Beach") {
-            if (waikikiLoaded === true) {
-                return <div className="main-condition-loaded">
+            if (waikikiLoaded === false) {
+                return <div className="">
                             <div className="condition-img-cont">
                                 <img className="place-img" src={waikiki} alt=""/>
                                 <div className="level-fade-condition">
@@ -190,10 +190,9 @@ function CurrentCondition({loc}) {
     }
 
     return (
-        <Link className="link-hover" to={loc.link}>
+        <Link className="link-hover main-condition-loaded" to={loc.link}>
             {findData()}
         </Link>
-        
     )
 }
 
