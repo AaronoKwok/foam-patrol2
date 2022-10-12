@@ -1192,8 +1192,6 @@ nav {
   color:rgb(110, 110, 110)
 }
 
-
-
 .guideHr {
   margin: 0px; 
   width: 100%;
@@ -1241,14 +1239,48 @@ nav {
 }
 
 /* Online Courses */
+.course-text-holder {
+  position: absolute;
+  background-color: rgb(100, 100, 100);
+  text-align: center; 
+  bottom: 260px; 
+}
+
+.course-title {
+  color: rgb(13, 62, 102); 
+  font-size: 3.2em;
+  font-weight: bold; 
+  letter-spacing: 0.05em;
+}
+
+.course-title:hover {
+  text-decoration: none;
+  color: rgb(189, 160, 30); 
+}
+
+.course-backscene-text {
+  position: absolute; 
+  top: 25vh; 
+  width: 100%; 
+  color: rgb(13, 62, 102); 
+  text-align: center;
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+.course-backscene-title {
+  width: fit-content;
+  margin: auto; 
+  background-color: rgba(255, 255, 255, 0.932);
+  border-radius: 8px; 
+  padding: 0px 20px 0px; 
+}
 
 .youtube {
-  position: absolute; 
-  bottom: 20px; 
-  margin-left: 45px; 
-  color: white; 
-  font-size: 1.3em; 
-  font-family: 'Montserrat', 'sans-serif';
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: -20px;
+  padding-bottom: 10px; 
+  letter-spacing: 0.02em;
 }
 
 .oc-bg-img {
@@ -1697,6 +1729,7 @@ nav {
   padding: 10px 50px; 
   border-radius: 8px; 
 }
+
 .retreat-title {
   font-size: 3.2em;
   font-weight: bold; 
@@ -1804,6 +1837,7 @@ nav {
 
 .info-info {
   width: 50%;
+  padding-right: 50px;
 }
 
 .info-pair {

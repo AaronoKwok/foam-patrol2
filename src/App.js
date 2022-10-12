@@ -3,9 +3,9 @@ import {Routes, Route, useLocation} from "react-router-dom"
 
 import SurfForecasts from "./pages/SurfForecasts"
 //import Shop from "./pages/Shop"
-import SurfRetreat from "./pages/SurfRetreat"
-import IntRetreat from "./pages/IntRetreat"
-import ChosenCourse from "./pages/ChosenCourse"
+import SurfRetreat from "./components/SurfRetreat"
+import IntRetreat from "./components/IntRetreat"
+import ChosenCourse from "./components/ChosenCourse"
 import SurfCalendar from "./pages/SurfCalendar"
 import OnlineCourses from "./pages/OnlineCourses"
 import Header from "./components/header"
@@ -30,7 +30,7 @@ function App() {
     //if app width is smaller than 950px, switch to mobile design
     if (useWindowWidth() === true) {
         console.log("mobile")
-    }
+    }    
     if (useWindowWidth() === false) {
         console.log("desktop")
     }
