@@ -73,7 +73,7 @@ nav {
   opacity: 0; 
   transition: opacity .1s;
   position: absolute;
-  width: 50vw; 
+  width: 35vw; 
   height: 180px; 
   top: 100%;
   left: -170px;
@@ -1892,7 +1892,7 @@ nav {
 }
 
 .team-img {
-  width: 70%;
+  width: 50vw;
   border-radius: 10px;
 }
 
@@ -2138,21 +2138,6 @@ nav {
 
 
 /* media queries */
-
-@media screen and (max-height: 650px) {
-  .background-image {
-    height: 500px
-  }
-
-  .oc-backscene {
-    height: 500px
-  }
-
-  .whatDoBack {
-    height: 500px; 
-  }
-}
-
 @media screen and (min-width: 1441px) {
   .retreat-width {
     width: 80%
@@ -2160,6 +2145,16 @@ nav {
   
   .team-width {
     width: 80%;
+  }
+} 
+
+@media screen and (max-width: 1380px) {
+  .courses-in-grid {
+    grid-template-columns: repeat(3, 33.33333%);
+  }
+
+  .dropdown-section {
+    height: 200px; 
   }
 }
 
@@ -2196,54 +2191,6 @@ nav {
 
   .main-condition {
     margin-bottom: 24px;
-  }
-}
-
-@media screen and (max-width: 1380px) {
-  .courses-in-grid {
-    grid-template-columns: repeat(3, 33.33333%);
-  }
-
-  .dropdown-section {
-    height: 200px; 
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .team-members {
-    grid-template-columns: repeat(2, 50%);
-  }
-
-  .retreats-layout {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-  }
-
-  .courses-layout {
-    display: grid; 
-    grid-template-columns: repeat(2, auto);
-  }
-
-  .course {
-    margin-bottom: 24px; 
-  }
-
-  .main-condition-loaded {
-    margin-bottom: 24px;
-  }
-
-  .main-condition-not-loaded {
-    margin-bottom: 24px; 
-  }
-
-  .first-data-row {
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .data-box {
-    width: 85%;
-    margin-bottom: 20px; 
   }
 }
 
@@ -2286,5 +2233,72 @@ nav {
 
   .dropdown-section.about {
     height: 160px;
+  }
+
+  /* team page */
+  .team-bar {
+    display: block; 
+  }
+
+  .team-img{
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .team-bar-description {
+    text-align: center;
+    margin-right: 0px; 
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .team-members {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .retreats-layout {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .courses-layout {
+    display: grid; 
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .course {
+    margin-bottom: 24px; 
+  }
+
+  .main-condition-loaded {
+    margin-bottom: 24px;
+  }
+
+  .main-condition-not-loaded {
+    margin-bottom: 24px; 
+  }
+
+  .first-data-row {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .data-box {
+    width: 85%;
+    margin-bottom: 20px; 
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .background-image {
+    height: 500px
+  }
+
+  .oc-backscene {
+    height: 500px
+  }
+
+  .whatDoBack {
+    height: 500px; 
   }
 }

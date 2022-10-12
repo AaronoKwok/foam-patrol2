@@ -9,7 +9,7 @@ import {Context} from "../Context"
  
 function Header() {
 
-    const [hover, setHover] = useState(false)
+    const [hover, setHover] = useState(true)
 
     const {
         pleasurePoint, 
@@ -30,22 +30,12 @@ function Header() {
         return obj.name.toUpperCase()
     }
 
-    /* Function reloads page after element in navbar clicked
-    function testReload() { 
-        console.log(location.pathname, "lp")
-        console.log(currentUrl, "url")
-        if (location.pathname !== currentUrl) {
-            setCurrentUrl(location.pathname)
-            setTimeout(() => {
-                window.location.reload();
-            }, 100) 
-        }
-    } */
-
     function doHover() { //returns css element to either have dropdown/not have dropdown
-        if (hover === false)
+        if (hover === false) {
             return "nav-dropdown-noHover"
-        return "nav-dropdown"
+        } else if (hover === true) {
+            return "nav-dropdown"
+        }
     }
 
     //Returns different css element names on page load - use location.pathname as dependency
@@ -53,7 +43,7 @@ function Header() {
         setHover(false)
         setTimeout(() => {
             setHover(true)
-        }, 50) //turns nav button dropdown off for 50ms
+        }, 300) //turns nav button dropdown off for ms
     }, [location.pathname])
 
     return (
@@ -97,14 +87,14 @@ function Header() {
                                     </Link> 
                                 </div>
 
-                                <div className="retreat-dropdown-content">
+                                {/* <div className="retreat-dropdown-content">
                                     <p className="dropdown-title">MORE TRIP INFO</p>
                                     <hr className="hr-dropdown"/>
 
                                     <Link className="dropdown-link" to="/surfRetreats/surf-trip-calendar">
                                         <p className="dropdown-info">SURF TRIP CALENDAR</p>
                                     </Link>
-                                </div>
+                                </div> */}
 
                             </div>
                     </div> 
