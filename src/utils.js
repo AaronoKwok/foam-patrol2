@@ -25,7 +25,9 @@ export const addZero = (num) => {
 export const localStartString = (loc) =>  {
     const date = new Date()
     const localTime = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours() - 12, date.getUTCMinutes(), date.getUTCSeconds())
-    const timeString = new Date(localTime).toLocaleString('en-UK', {timeZone: loc.timezone}) //needs to be en-UK
+    console.log(loc.timezone, "utils localStartString")
+    const timeString = new Date(localTime).toLocaleString('en-UK', {timeZone: loc.timezone}) //24 hour time is used, so need 'en-UK' / 'en-GB' or any place that uses 24 hour time
+    //using "PST'HST" does not work on ff. "US/'state'" works on all browsers
     return timeString
 }
 
@@ -225,7 +227,7 @@ export const upOrDown = (tide) => {
 /* finds which day to use astrology data from */
 export const correctAst = (forecast, location) => {
     for (let i = 0; i < forecast.length; i++) {
-        if (Date.parse(forecast[i].civilDusk) - Date.parse(new Date().toLocaleString("en-US", {timeZone: location.timezone})) >= 0) {
+        if (Date.parse(forecast[i].civilDusk) - Date.parse(new Date().toLocaleString("en-US", {timeZone: location.timezone})) >= 0) { //using "PST'HST" does not work on ff. "US/'state'" works on all browsers
             return forecast[i]
         }
     }

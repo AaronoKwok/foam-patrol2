@@ -18,7 +18,7 @@ import up from "../images/up.jpeg"
 import down from "../images/down.jpeg"
 
 function CurrentCondition({loc}) {
-    console.log(loc.name, "mp")
+    console.log(loc.timezone , "mp")
     const {
         findSky, 
         pointLoaded, 

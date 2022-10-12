@@ -390,7 +390,7 @@ function ContextProvider({children}) {
     function getMPData(loc) {
 
         console.log("retrieving data...")
-        console.log(localStartString(loc), loc.name)
+        //console.log(localStartString(loc), loc.name)
 
         const lat = loc.location[0]; 
         const tideLat = loc.tideLocation[0];

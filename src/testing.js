@@ -692,7 +692,7 @@ printHiClosure()()
 //bc printHiClosure returns a function, adding another pair of parentheses
 //executes the returned function  */
 
-function makeWord() {
+/* function makeWord() {
     return "test"
 }
 
@@ -700,8 +700,11 @@ function addWord() {
     return makeWord.toString()
 }
 
-console.log(addWord())
-
+console.log(addWord()) */
+const date = new Date()
+const localTime = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours() - 12, date.getUTCMinutes(), date.getUTCSeconds())
+const timeString = new Date(localTime).toLocaleString('en-UK', {timeZone: "America/Los_Angeles"}) //"PST" works in safari and chrome, but not firefox; "US/'State'" works in firefox
+console.log(timeString)
 
 
 
