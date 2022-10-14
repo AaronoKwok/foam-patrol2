@@ -11,6 +11,7 @@ import useWindowWidth from "../hooks/useWindowWidth"
 function Header() {
 
     const [hover, setHover] = useState(true)
+    const [drop, setDrop] = useState(false)
 
     const {
         pleasurePoint, 
@@ -39,8 +40,13 @@ function Header() {
         }
     }
 
+    function mobileDrop() {
+        setDrop(!drop)
+    }
+
     //Returns different css element names on page load - use location.pathname as dependency
     useEffect(() => {
+        setDrop(false)
         setHover(false)
         setTimeout(() => {
             setHover(true)
@@ -49,19 +55,43 @@ function Header() {
 
     return (
         <header>
+
             {
                 (useWindowWidth() === true) && 
-                <nav>
+                <nav className="mobile-nav">
                     <Logo />
 
-                    <section >
+                    {
+                        drop &&
+                        <div className="lines" onClick={mobileDrop}>
+                            <div className="top-line"></div>
+                            <div className="bottom-line"></div>
+                        </div>
+                    }
+                    
+                    {
+                        !drop &&
+                        <div>
+                            <div className="lines" onClick={mobileDrop}>
+                                <div className="top-cross"></div>
+                                <div className="bottom-cross"></div>
+                            </div>
+                            <section className="mobile-drop">
+                                <p className="drop-title">Retreats</p>
+                                <p className="drop-title">Current Conditions</p>
+                                <Link className="mobile-link" to="/online-courses"><p className="drop-title">Online Courses</p></Link>
+                            </section>
+                        </div>
                         
-                    </section>
+                    }
+
+                    
                 </nav>
             }
+
             {
                 (useWindowWidth() === false) && 
-                <nav>
+                <nav className="nav-desk">
                     <Logo />
 
                     <section className="white-in-nav">
@@ -237,6 +267,7 @@ function Header() {
                     {/* <button>Login</button> */}
                 </nav>
             }
+
         </header>
     )
 }

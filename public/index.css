@@ -25,7 +25,7 @@ body {
 
 /* Header  */
 
-nav {
+.nav-desk {
   letter-spacing: .05em;
   position: fixed; 
   display: flex; 
@@ -2138,7 +2138,114 @@ nav {
   font-weight: 500;
 }
 
-/* contact us */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobile */
+
+/* navbar */
+.mobile-logo {
+  cursor: pointer; 
+  font-weight: 600;
+  margin-top: -5%;
+}
+
+.mobile-nav { 
+  letter-spacing: .05em;
+  position: fixed; 
+  display: flex; 
+  color: var(--black);
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  padding: 5px 15px 5px;
+}
+
+.top-line {
+  height: 2px; 
+  width: 20px; 
+  background-color: black; 
+  border-radius: 10px; 
+}
+
+.bottom-line {
+  height: 2px; 
+  width: 20px; 
+  background-color: black; 
+  margin-top: 5px; 
+  border-radius: 10px;
+}
+
+.lines {
+  padding: 6px; 
+}
+
+.lines:hover {
+  cursor: pointer;
+}
+
+.top-cross {
+  height: 2px; 
+  width: 20px; 
+  background-color: black; 
+  border-radius: 10px;
+  transform: rotate(45.5deg) translate(0px, 1.2px); 
+}
+
+.bottom-cross {
+  height: 2px; 
+  width: 20px; 
+  background-color: black; 
+  border-radius: 10px;
+  transform: rotate(-44.5deg) translate(0px, -1.5px); 
+}
+
+.mobile-drop {
+  position: absolute;
+  background-color: white;
+  padding: 5px; 
+  width: 80vw; 
+  right: 0px; 
+  top: 44px; 
+  border-bottom-left-radius: 10px;
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+.drop-title {
+  font-size: 2em; 
+  font-weight: 500;
+  background-color: rgb(18, 106, 117); 
+  color: white; 
+  border-radius: 10px; 
+  padding-left: 5px;
+}
+
+.mobile-link:hover {
+  text-decoration: none;
+}
+
+
+
+
+
+
 
 
 
