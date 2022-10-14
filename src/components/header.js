@@ -12,6 +12,8 @@ function Header() {
 
     const [hover, setHover] = useState(true)
     const [drop, setDrop] = useState(false)
+    const [retreats, setRetreats] = useState(false)
+    const [conditions, setConditions] = useState(false)
 
     const {
         pleasurePoint, 
@@ -42,6 +44,19 @@ function Header() {
 
     function mobileDrop() {
         setDrop(!drop)
+    }
+
+    function chooseRetreats() {
+        setRetreats(true)
+    }
+
+    function chooseConditions() {
+        setConditions(true)
+    }
+
+    function goBack() {
+        setRetreats(false); 
+        setConditions(false);
     }
 
     //Returns different css element names on page load - use location.pathname as dependency
@@ -77,9 +92,26 @@ function Header() {
                                 <div className="bottom-cross"></div>
                             </div>
                             <section className="mobile-drop">
-                                <p className="drop-title">Retreats</p>
-                                <p className="drop-title">Current Conditions</p>
-                                <Link className="mobile-link" to="/online-courses"><p className="drop-title">Online Courses</p></Link>
+                                {
+                                    (!retreats && conditions) &&
+                                    <div>
+                                        <p className="drop-title" onClick={chooseRetreats}>Retreats</p>
+                                        <p className="drop-title" onClick={chooseConditions}>Current Conditions</p>
+                                        <Link className="mobile-link" to="/online-courses"><p className="drop-title">Online Courses</p></Link>
+                                    </div>
+                                }
+                                {
+                                    (!retreats) &&
+                                    <div>
+                                        <div onClick={goBack} className="go-back">Back</div>
+                                    </div>
+                                }
+                                {
+                                    (conditions) &&
+                                    <div>
+                                        <div onClick={goBack}>Back</div>
+                                    </div>
+                                }
                             </section>
                         </div>
                         
