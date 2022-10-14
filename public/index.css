@@ -2231,8 +2231,8 @@ body {
 .drop-title {
   font-size: 2em; 
   font-weight: 500;
-  background-color: rgb(42, 142, 155); 
-  color: white; 
+  background-color: white; 
+  color: black; 
   border-radius: 10px; 
   padding-left: 5px;
 }
@@ -2247,9 +2247,36 @@ body {
 
 .go-back {
   background-color: white; 
-  width: fit-content
+  width: fit-content;
+  border-radius: 20px;
+  padding: 3px 5px; 
+  margin: 0px 0px 10px 5px;
+  font-weight: 600;
 }
 
+.go-back:hover {
+  cursor: pointer;
+}
+
+.drop-nav-info {
+  background-color: rgb(255, 255, 255); 
+  width: fit-content;
+  margin-left: 5px;
+  padding: 3px 5px;
+  border-radius: 5px; 
+  color: black;
+  font-weight: 600;
+}
+
+.drop-nav-link:link {
+  color: white;
+}
+.drop-nav-link:visited {
+  color: white; 
+}
+.drop-nav-link:hover {
+  text-decoration: none;
+}
 
 
 

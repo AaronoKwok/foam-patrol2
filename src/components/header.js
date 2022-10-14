@@ -14,6 +14,7 @@ function Header() {
     const [drop, setDrop] = useState(false)
     const [retreats, setRetreats] = useState(false)
     const [conditions, setConditions] = useState(false)
+    const [about, setAbout] = useState(false)
 
     const {
         pleasurePoint, 
@@ -44,6 +45,9 @@ function Header() {
 
     function mobileDrop() {
         setDrop(!drop)
+        setRetreats(false)
+        setConditions(false)
+        setAbout(false)
     }
 
     function chooseRetreats() {
@@ -54,9 +58,14 @@ function Header() {
         setConditions(true)
     }
 
+    function chooseAbout() {
+        setAbout(true)
+    }
+
     function goBack() {
         setRetreats(false); 
         setConditions(false);
+        setAbout(false)
     }
 
     //Returns different css element names on page load - use location.pathname as dependency
@@ -71,7 +80,7 @@ function Header() {
     return (
         <header>
 
-            {
+            {   
                 (useWindowWidth() === true) && 
                 <nav className="mobile-nav">
                     <Logo />
@@ -93,31 +102,94 @@ function Header() {
                             </div>
                             <section className="mobile-drop">
                                 {
-                                    (!retreats && conditions) &&
+                                    (!retreats && !conditions && !about) &&
                                     <div>
                                         <p className="drop-title" onClick={chooseRetreats}>Retreats</p>
                                         <p className="drop-title" onClick={chooseConditions}>Current Conditions</p>
+                                        <p className="drop-title" onClick={chooseAbout}>About</p>
                                         <Link className="mobile-link" to="/online-courses"><p className="drop-title">Online Courses</p></Link>
                                     </div>
                                 }
                                 {
-                                    (!retreats) &&
+                                    (retreats) &&
                                     <div>
                                         <div onClick={goBack} className="go-back">Back</div>
+                                        <Link className="drop-nav-link" to="/surfRetreats/costarica-retreat">
+                                            <p className="drop-nav-info">COSTA RICA | 7 DAYS</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfRetreats/nicaragua-retreat">
+                                            <p className="drop-nav-info">NICARAGUA | 7 DAYS</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfRetreats/bali-retreat">
+                                            <p className="drop-nav-info">BALI | 10 DAYS</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfRetreats/intermediate/maldives-retreat">
+                                            <p className="drop-nav-info">MALDIVES | OCTOBER</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfRetreats/intermediate/mentawais-retreat">
+                                            <p className="drop-nav-info">MENTAWAIS | NOVEMBER</p>
+                                        </Link> 
                                     </div>
                                 }
                                 {
                                     (conditions) &&
                                     <div>
-                                        <div onClick={goBack}>Back</div>
+                                        <div onClick={goBack} className="go-back">Back</div>
+                                        <Link className="drop-nav-link" to="/surfForecasts/pleasurePoint">
+                                            <p className="drop-nav-info">{nameUppercase(pleasurePoint)}</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfForecasts/jacks">
+                                            <p className="drop-nav-info">{nameUppercase(jacks)}</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfForecasts/cowells">
+                                            <p className="drop-nav-info">{nameUppercase(cowells)}</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfForecasts/steamer">
+                                            <p className="drop-nav-info">{nameUppercase(steamer)}</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfForecasts/theHook">
+                                            <p className="drop-nav-info">{nameUppercase(theHook)}</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfForecasts/capitola">
+                                            <p className="drop-nav-info">{nameUppercase(capitola)}</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfForecasts/davenport">
+                                            <p className="drop-nav-info">{nameUppercase(davenport)}</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfForecasts/pacifica">
+                                            <p className="drop-nav-info">{nameUppercase(pacifica)}</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/surfForecasts/hbPier">
+                                            <p className="drop-nav-info">{nameUppercase(hbPier)}</p>
+                                        </Link>
+
+                                        <Link className="drop-nav-link" to="/surfForecasts/waikiki">
+                                            <p className="drop-nav-info">{nameUppercase(waikiki)}</p>            
+                                        </Link>
+                                    </div>
+                                }
+                                {
+                                    (about) && 
+                                    <div>
+                                        <div onClick={goBack} className="go-back">Back</div>
+                                        <Link className="drop-nav-link" to="/about/team">
+                                            <p className="drop-nav-info">TEAM</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/about/what-we-do">
+                                            <p className="drop-nav-info">WHAT WE DO</p>
+                                        </Link>
+
+                                        <Link className="drop-nav-link" to="/about/is-this-trip-for-me">
+                                            <p className="drop-nav-info">SHOULD I GO?</p>
+                                        </Link>
+                                        <Link className="drop-nav-link" to="/about/surfing-level">
+                                            <p className="drop-nav-info">MY SURF LEVEL</p>
+                                        </Link>
                                     </div>
                                 }
                             </section>
                         </div>
-                        
                     }
-
-                    
                 </nav>
             }
 
