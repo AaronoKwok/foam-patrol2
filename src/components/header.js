@@ -102,8 +102,8 @@ function Header() {
                             </div>
                             <section className="mobile-drop">
                                 {
-                                    (!retreats && !conditions && !about) &&
-                                    <div>
+                                    (!retreats && conditions && !about) &&
+                                    <div className="nav-align">
                                         <p className="drop-title" onClick={chooseRetreats}>Retreats</p>
                                         <p className="drop-title" onClick={chooseConditions}>Current Conditions</p>
                                         <p className="drop-title" onClick={chooseAbout}>About</p>
@@ -112,7 +112,7 @@ function Header() {
                                 }
                                 {
                                     (retreats) &&
-                                    <div>
+                                    <div className="nav-align">
                                         <div onClick={goBack} className="go-back">Back</div>
                                         <Link className="drop-nav-link" to="/surfRetreats/costarica-retreat">
                                             <p className="drop-nav-info">COSTA RICA | 7 DAYS</p>
@@ -132,8 +132,8 @@ function Header() {
                                     </div>
                                 }
                                 {
-                                    (conditions) &&
-                                    <div>
+                                    (!conditions) &&
+                                    <div className="nav-align">
                                         <div onClick={goBack} className="go-back">Back</div>
                                         <Link className="drop-nav-link" to="/surfForecasts/pleasurePoint">
                                             <p className="drop-nav-info">{nameUppercase(pleasurePoint)}</p>
@@ -170,7 +170,7 @@ function Header() {
                                 }
                                 {
                                     (about) && 
-                                    <div>
+                                    <div className="nav-align">
                                         <div onClick={goBack} className="go-back">Back</div>
                                         <Link className="drop-nav-link" to="/about/team">
                                             <p className="drop-nav-info">TEAM</p>
