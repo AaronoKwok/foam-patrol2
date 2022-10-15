@@ -79,8 +79,18 @@ function Header() {
     }
 
     function goBack() {
+        if (santaCruz || sanMateo || orange) {
+            setSantaCruz(false)
+        }
+
         if (ca) {
             setSantaCruz(false)
+            setSanMateo(false)
+            setOrange(false)
+        }
+
+        if (hi) {
+            setOahu(false)
         }
 
         if (conditions && !ca) {
@@ -105,15 +115,15 @@ function Header() {
     }
 
     function chooseSanMateo() {
-        setSanMateo(true)
+        setSanMateo(!sanMateo)
     }
 
     function chooseOrange() {
-        setOrange(true)
+        setOrange(!orange)
     }
 
     function chooseOahu() {
-        setOahu(true)
+        setOahu(!oahu)
     }
 
     
@@ -187,13 +197,13 @@ function Header() {
                                         <div onClick={goBack} className="go-back">Back</div>
 
                                         { 
-                                            (!hi && !santaCruz) && <p className="drop-title" onClick={chooseCa}>California</p>
+                                            (!hi && !sanMateo && !santaCruz && !orange) && <p className="drop-title" onClick={chooseCa}>California</p>
                                         }
 
                                         {
                                             ca && 
                                             <div>
-                                                <p  onClick={chooseSantaCruz}>Santa Cruz</p>
+                                                { (!sanMateo && !orange) && <p onClick={chooseSantaCruz}>Santa Cruz</p>}
 
                                                 {
                                                     santaCruz && 
@@ -218,52 +228,52 @@ function Header() {
                                                         </Link>
                                                     </div>
                                                 }
-                                                <p  onClick={chooseSanMateo}>San Mateo</p>
-                                                <p  onClick={chooseOrange}>Orange</p>
+
+                                                { (!santaCruz && !orange) && <p  onClick={chooseSanMateo}>San Mateo</p>}
+
+                                                {
+                                                    sanMateo &&
+                                                    <div>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/davenport">
+                                                            <p className="drop-nav-info">{nameUppercase(davenport)}</p>
+                                                        </Link>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/pacifica">
+                                                            <p className="drop-nav-info">{nameUppercase(pacifica)}</p>
+                                                        </Link>
+                                                    </div>
+                                                }
+                                                
+                                                { (!santaCruz && !sanMateo) && <p  onClick={chooseOrange}>Orange</p>}
+
+                                                {
+                                                    orange &&
+                                                    <div>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/hbPier">
+                                                            <p className="drop-nav-info">{nameUppercase(hbPier)}</p>
+                                                        </Link>
+                                                    </div>
+                                                }
                                             </div>
                                         }
 
                                         { 
-                                            !ca && <p className="drop-title" onClick={chooseHi}>Hawaii</p>
+                                            !ca && !oahu && <p className="drop-title" onClick={chooseHi}>Hawaii</p>
                                         }
 
                                         {
                                             hi && 
                                             <div>
-                                                <p  onClick={chooseOahu}>Oahu</p>
+                                                <p onClick={chooseOahu}>Oahu</p>
+
+                                                {
+                                                    oahu &&
+                                                    <Link className="drop-nav-link" to="/surfForecasts/waikiki">
+                                                        <p className="drop-nav-info">{nameUppercase(waikiki)}</p>            
+                                                    </Link> 
+                                                }
                                             </div>
                                         }
-                                        {/* <Link className="drop-nav-link" to="/surfForecasts/pleasurePoint">
-                                            <p className="drop-nav-info">{nameUppercase(pleasurePoint)}</p>
-                                        </Link>
-                                        <Link className="drop-nav-link" to="/surfForecasts/jacks">
-                                            <p className="drop-nav-info">{nameUppercase(jacks)}</p>
-                                        </Link>
-                                        <Link className="drop-nav-link" to="/surfForecasts/cowells">
-                                            <p className="drop-nav-info">{nameUppercase(cowells)}</p>
-                                        </Link>
-                                        <Link className="drop-nav-link" to="/surfForecasts/steamer">
-                                            <p className="drop-nav-info">{nameUppercase(steamer)}</p>
-                                        </Link>
-                                        <Link className="drop-nav-link" to="/surfForecasts/theHook">
-                                            <p className="drop-nav-info">{nameUppercase(theHook)}</p>
-                                        </Link>
-                                        <Link className="drop-nav-link" to="/surfForecasts/capitola">
-                                            <p className="drop-nav-info">{nameUppercase(capitola)}</p>
-                                        </Link>
-                                        <Link className="drop-nav-link" to="/surfForecasts/davenport">
-                                            <p className="drop-nav-info">{nameUppercase(davenport)}</p>
-                                        </Link>
-                                        <Link className="drop-nav-link" to="/surfForecasts/pacifica">
-                                            <p className="drop-nav-info">{nameUppercase(pacifica)}</p>
-                                        </Link>
-                                        <Link className="drop-nav-link" to="/surfForecasts/hbPier">
-                                            <p className="drop-nav-info">{nameUppercase(hbPier)}</p>
-                                        </Link>
-
-                                        <Link className="drop-nav-link" to="/surfForecasts/waikiki">
-                                            <p className="drop-nav-info">{nameUppercase(waikiki)}</p>            
-                                        </Link> */}
+                                        
                                     </div>
                                 }
                                 {
