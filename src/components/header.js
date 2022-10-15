@@ -146,7 +146,7 @@ function Header() {
                     <Logo />
 
                     {
-                        drop &&
+                        !drop &&
                         <div className="lines" onClick={mobileDrop}>
                             <div className="top-line"></div>
                             <div className="bottom-line"></div>
@@ -154,7 +154,7 @@ function Header() {
                     }
                     
                     {
-                        !drop &&
+                        drop &&
                         <div>
                             <div className="lines" onClick={mobileDrop}>
                                 <div className="top-cross"></div>
@@ -164,16 +164,16 @@ function Header() {
                                 {
                                     (!retreats && !conditions && !about) &&
                                     <div className="nav-align">
-                                        <p className="drop-title" onClick={chooseRetreats}>Retreats</p>
-                                        <p className="drop-title" onClick={chooseConditions}>Current Conditions</p>
-                                        <p className="drop-title" onClick={chooseAbout}>About</p>
-                                        <Link className="mobile-link" to="/online-courses"><p className="drop-title">Online Courses</p></Link>
+                                        <p className="drop-title" onClick={chooseRetreats}>RETREATS</p>
+                                        <p className="drop-title" onClick={chooseConditions}>CURRENT CONDITIONS</p>
+                                        <p className="drop-title" onClick={chooseAbout}>ABOUT</p>
+                                        <Link className="mobile-link" to="/online-courses"><p className="drop-title">ONLINE COURSES</p></Link>
                                     </div>
                                 }
                                 {
                                     (retreats) &&
                                     <div className="nav-align">
-                                        <div onClick={goBack} className="go-back">Back</div>
+                                        <div onClick={goBack} className="go-back">BACK</div>
                                         <Link className="drop-nav-link" to="/surfRetreats/costarica-retreat">
                                             <p className="drop-nav-info">COSTA RICA | 7 DAYS</p>
                                         </Link>
@@ -194,16 +194,16 @@ function Header() {
                                 {
                                     (conditions) &&
                                     <div className="nav-align">
-                                        <div onClick={goBack} className="go-back">Back</div>
+                                        <div onClick={goBack} className="go-back">BACK</div>
 
                                         { 
-                                            (!hi && !sanMateo && !santaCruz && !orange) && <p className="drop-title" onClick={chooseCa}>California</p>
+                                            (!hi && !sanMateo && !santaCruz && !orange) && <p className="drop-title" onClick={chooseCa}>CALIFORNIA</p>
                                         }
 
                                         {
                                             ca && 
                                             <div>
-                                                { (!sanMateo && !orange) && <p onClick={chooseSantaCruz}>Santa Cruz</p>}
+                                                { (!sanMateo && !orange) && <p className="nav-county" onClick={chooseSantaCruz}>SANTA CRUZ</p>}
 
                                                 {
                                                     santaCruz && 
@@ -229,7 +229,7 @@ function Header() {
                                                     </div>
                                                 }
 
-                                                { (!santaCruz && !orange) && <p  onClick={chooseSanMateo}>San Mateo</p>}
+                                                { (!santaCruz && !orange) && <p className="nav-county" onClick={chooseSanMateo}>SAN MATEO</p>}
 
                                                 {
                                                     sanMateo &&
@@ -243,7 +243,7 @@ function Header() {
                                                     </div>
                                                 }
                                                 
-                                                { (!santaCruz && !sanMateo) && <p  onClick={chooseOrange}>Orange</p>}
+                                                { (!santaCruz && !sanMateo) && <p className="nav-county" onClick={chooseOrange}>ORANGE</p>}
 
                                                 {
                                                     orange &&
@@ -257,13 +257,13 @@ function Header() {
                                         }
 
                                         { 
-                                            !ca && !oahu && <p className="drop-title" onClick={chooseHi}>Hawaii</p>
+                                            !ca && !oahu && <p className="drop-title" onClick={chooseHi}>HAWAII</p>
                                         }
 
                                         {
                                             hi && 
                                             <div>
-                                                <p onClick={chooseOahu}>Oahu</p>
+                                                <p className="nav-county" onClick={chooseOahu}>OAHU</p>
 
                                                 {
                                                     oahu &&
@@ -279,7 +279,7 @@ function Header() {
                                 {
                                     (about) && 
                                     <div className="nav-align">
-                                        <div onClick={goBack} className="go-back">Back</div>
+                                        <div onClick={goBack} className="go-back">BACK</div>
                                         <Link className="drop-nav-link" to="/about/team">
                                             <p className="drop-nav-info">TEAM</p>
                                         </Link>
