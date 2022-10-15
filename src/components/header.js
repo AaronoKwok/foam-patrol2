@@ -15,6 +15,14 @@ function Header() {
     const [retreats, setRetreats] = useState(false)
     const [conditions, setConditions] = useState(false)
     const [about, setAbout] = useState(false)
+    
+    const [ca, setCa] = useState(false)
+    const [hi, setHi] = useState(false)
+
+    const [santaCruz, setSantaCruz] = useState(false)
+    const [sanMateo, setSanMateo] = useState(false)
+    const [orange, setOrange] = useState(false)
+    const [oahu, setOahu] = useState(false)
 
     const {
         pleasurePoint, 
@@ -62,11 +70,53 @@ function Header() {
         setAbout(true)
     }
 
-    function goBack() {
-        setRetreats(false); 
-        setConditions(false);
-        setAbout(false)
+    function chooseCa() {
+        setCa(!ca)
     }
+
+    function chooseHi() {
+        setHi(!hi)
+    }
+
+    function goBack() {
+        if (ca) {
+            setSantaCruz(false)
+        }
+
+        if (conditions && !ca) {
+            setHi(false)
+            setCa(true)
+        }
+
+        if(conditions) {
+            setHi(false)
+            setCa(false)
+        }
+
+        if (!ca && !hi) {
+            setRetreats(false)
+            setConditions(false)
+            setAbout(false)
+        }   
+    }
+
+    function chooseSantaCruz() {
+        setSantaCruz(!santaCruz)
+    }
+
+    function chooseSanMateo() {
+        setSanMateo(true)
+    }
+
+    function chooseOrange() {
+        setOrange(true)
+    }
+
+    function chooseOahu() {
+        setOahu(true)
+    }
+
+    
 
     //Returns different css element names on page load - use location.pathname as dependency
     useEffect(() => {
@@ -102,7 +152,7 @@ function Header() {
                             </div>
                             <section className="mobile-drop">
                                 {
-                                    (!retreats && conditions && !about) &&
+                                    (!retreats && !conditions && !about) &&
                                     <div className="nav-align">
                                         <p className="drop-title" onClick={chooseRetreats}>Retreats</p>
                                         <p className="drop-title" onClick={chooseConditions}>Current Conditions</p>
@@ -132,10 +182,58 @@ function Header() {
                                     </div>
                                 }
                                 {
-                                    (!conditions) &&
+                                    (conditions) &&
                                     <div className="nav-align">
                                         <div onClick={goBack} className="go-back">Back</div>
-                                        <Link className="drop-nav-link" to="/surfForecasts/pleasurePoint">
+
+                                        { 
+                                            (!hi && !santaCruz) && <p className="drop-title" onClick={chooseCa}>California</p>
+                                        }
+
+                                        {
+                                            ca && 
+                                            <div>
+                                                <p  onClick={chooseSantaCruz}>Santa Cruz</p>
+
+                                                {
+                                                    santaCruz && 
+                                                    <div>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/pleasurePoint">
+                                                            <p className="drop-nav-info">{nameUppercase(pleasurePoint)}</p>
+                                                        </Link>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/jacks">
+                                                            <p className="drop-nav-info">{nameUppercase(jacks)}</p>
+                                                        </Link>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/cowells">
+                                                            <p className="drop-nav-info">{nameUppercase(cowells)}</p>
+                                                        </Link>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/steamer">
+                                                            <p className="drop-nav-info">{nameUppercase(steamer)}</p>
+                                                        </Link>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/theHook">
+                                                            <p className="drop-nav-info">{nameUppercase(theHook)}</p>
+                                                        </Link>
+                                                        <Link className="drop-nav-link" to="/surfForecasts/capitola">
+                                                            <p className="drop-nav-info">{nameUppercase(capitola)}</p>
+                                                        </Link>
+                                                    </div>
+                                                }
+                                                <p  onClick={chooseSanMateo}>San Mateo</p>
+                                                <p  onClick={chooseOrange}>Orange</p>
+                                            </div>
+                                        }
+
+                                        { 
+                                            !ca && <p className="drop-title" onClick={chooseHi}>Hawaii</p>
+                                        }
+
+                                        {
+                                            hi && 
+                                            <div>
+                                                <p  onClick={chooseOahu}>Oahu</p>
+                                            </div>
+                                        }
+                                        {/* <Link className="drop-nav-link" to="/surfForecasts/pleasurePoint">
                                             <p className="drop-nav-info">{nameUppercase(pleasurePoint)}</p>
                                         </Link>
                                         <Link className="drop-nav-link" to="/surfForecasts/jacks">
@@ -165,7 +263,7 @@ function Header() {
 
                                         <Link className="drop-nav-link" to="/surfForecasts/waikiki">
                                             <p className="drop-nav-info">{nameUppercase(waikiki)}</p>            
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 }
                                 {
