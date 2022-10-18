@@ -203,7 +203,7 @@ function Header() {
                                         {
                                             ca && 
                                             <div>
-                                                { (!sanMateo && !orange) && <p className="nav-county" onClick={chooseSantaCruz}>SANTA CRUZ</p>}
+                                                { (!sanMateo && !orange) && <p className="nav-county" onClick={chooseSantaCruz}>SANTA CRUZ COUNTY</p>}
 
                                                 {
                                                     santaCruz && 
@@ -229,7 +229,7 @@ function Header() {
                                                     </div>
                                                 }
 
-                                                { (!santaCruz && !orange) && <p className="nav-county" onClick={chooseSanMateo}>SAN MATEO</p>}
+                                                { (!santaCruz && !orange) && <p className="nav-county" onClick={chooseSanMateo}>SAN MATEO COUNTY</p>}
 
                                                 {
                                                     sanMateo &&
@@ -243,7 +243,7 @@ function Header() {
                                                     </div>
                                                 }
                                                 
-                                                { (!santaCruz && !sanMateo) && <p className="nav-county" onClick={chooseOrange}>ORANGE</p>}
+                                                { (!santaCruz && !sanMateo) && <p className="nav-county" onClick={chooseOrange}>ORANGE COUNTY</p>}
 
                                                 {
                                                     orange &&
@@ -263,7 +263,7 @@ function Header() {
                                         {
                                             hi && 
                                             <div>
-                                                <p className="nav-county" onClick={chooseOahu}>OAHU</p>
+                                                <p className="nav-county" onClick={chooseOahu}>HONOLULU COUNTY</p>
 
                                                 {
                                                     oahu &&
