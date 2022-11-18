@@ -323,6 +323,14 @@ body {
   object-position: 0% 55%;
 }
 
+.background-image-mobile {
+  width: 100%;
+  height: 50vh; 
+  overflow: hidden;
+  object-fit: cover;
+  object-position: 0% 55%;
+}
+
 /* backscene text */
 
 .backscene-text {
@@ -2515,10 +2523,11 @@ body {
   .footer-mid {
     height: 100%;
     padding-top: 20px; 
+    justify-content: space-around;
   }
 
   .footer-internal-links {
-    margin-right: 5%
+    margin-right: 0%;
   }
 
   .footer-base {
@@ -2536,7 +2545,20 @@ body {
     padding-bottom: 10px; 
   }
 
+  /* Mainpage */
 
+  .backscene-text {
+    left: 15px;
+    top: 110px; 
+  }
+
+  .image-h1 {
+    font-size: 2em; 
+  }
+
+  .wave {
+    width: 60px;
+  }
 
 
 
@@ -2556,6 +2578,10 @@ body {
 @media screen and (max-height: 650px) {
   .background-image {
     height: 500px
+  }
+
+  .background-image-mobile {
+    height: 76vh;
   }
 
   .oc-backscene {

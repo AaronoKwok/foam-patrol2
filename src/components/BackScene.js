@@ -1,19 +1,30 @@
 import React from "react" 
 //import Carousel from 'react-bootstrap/Carousel';
 
-/* import barrel from "../images/barrel.png"
-import sunsetlb from "../images/sunsetlb.png"  
-import emptywave from "../images/emptywave.png"  */
+import useWindowWidth from "../hooks/useWindowWidth"
 import marWave from "../images/margarita-salyek-wave.png"
 
 import BacksceneText from "./BacksceneText" 
 
 function BackScene() {
     return (
-        <div className="background">
-            <img className="background-image" src={marWave} alt="" />
-            <BacksceneText />                
+        <div>
+            {
+               (useWindowWidth()) && 
+               <div className="background">
+                    <img className="background-image-mobile" src={marWave} alt="" />
+                    <BacksceneText />                
+                </div>
+            }
+            {
+                (!useWindowWidth()) &&
+                <div className="background">
+                    <img className="background-image" src={marWave} alt="" />
+                    <BacksceneText />                
+                </div>
+            }
         </div>
+        
     )
 }
 
