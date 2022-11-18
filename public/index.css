@@ -325,7 +325,7 @@ body {
 
 .background-image-mobile {
   width: 100%;
-  height: 50vh; 
+  height: 300px; 
   overflow: hidden;
   object-fit: cover;
   object-position: 0% 55%;
@@ -2553,11 +2553,11 @@ body {
   }
 
   .image-h1 {
-    font-size: 2em; 
+    font-size: 2.1em; 
   }
 
   .wave {
-    width: 60px;
+    width: 80px;
   }
 
 
@@ -2575,7 +2575,7 @@ body {
   }
 
   .background-image-mobile {
-      height: 75vh; 
+      height: 300px; 
   }
 
   .oc-backscene {

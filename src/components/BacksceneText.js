@@ -9,15 +9,14 @@ function BacksceneText() {
     return (
         <div>
             {
-                useWindowWidth &&
+                (useWindowWidth()) &&
                 <div className="backscene-text">
                     <img className="wave" src={wave} alt=""/>
-                    <h1 className="image-h1">The most consistent surf</h1>
-                    <h1 className="image-h1">spots on earth.</h1>
+                    <h1 className="image-h1">The most consistent surf spots on earth.</h1>
                 </div>
             }
             {
-                !useWindowWidth &&
+                (!useWindowWidth()) &&
                 <div className="backscene-text">
                     <img className="wave" src={wave} alt=""/>
                     <div>
