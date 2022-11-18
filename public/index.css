@@ -323,6 +323,14 @@ body {
   object-position: 0% 55%;
 }
 
+.background-image-mobile {
+  width: 100%;
+  height: 50vh; 
+  overflow: hidden;
+  object-fit: cover;
+  object-position: 0% 55%;
+}
+
 /* backscene text */
 
 .backscene-text {
@@ -2539,17 +2547,9 @@ body {
 
   /* Mainpage */
 
-  .background-image-mobile {
-    width: 100%;
-    height: 40vh; 
-    overflow: hidden;
-    object-fit: cover;
-    object-position: 0% 55%;
-  }
-
   .backscene-text {
     left: 15px;
-    top: 110px; /* change to bottom */
+    bottom: 15px; /* change to bottom */
   }
 
   .image-h1 {
@@ -2567,12 +2567,6 @@ body {
 
 
 
-
-
-
-
-
-
 }
 
 @media screen and (max-height: 650px) {
@@ -2581,11 +2575,7 @@ body {
   }
 
   .background-image-mobile {
-      width: 100%;
       height: 75vh; 
-      overflow: hidden;
-      object-fit: cover;
-      object-position: 0% 55%;
   }
 
   .oc-backscene {
