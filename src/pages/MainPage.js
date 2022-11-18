@@ -66,15 +66,9 @@ function MainPage() { //to change once have a courses scroll functionality
                 <div>
                     <div className="mp-img-position">
                         <BackScene />
-                        <section className="main-info">
-                            <p className="main-info-paragraph">Beginner? Intermediate? <span className="main-info-span">Surfing is more fun the better you get.</span> We help you surf better, faster.</p>
-                            <div className="main-info-bullets">
-                                {makePoints(pointArr)}
-                            </div>
-                        </section>
                     </div>
 
-                    {/* <div className="mainpage-width">
+                    <div className="mainpage-width">
 
                         <section className="browse-retreats">
                             <p className="retreats-p">Surf Trips</p>
@@ -84,7 +78,7 @@ function MainPage() { //to change once have a courses scroll functionality
                             </div>
                         </section> 
 
-                        <section className="browse-forecasts"> 
+{/*                         <section className="browse-forecasts"> 
                             <p className="retreats-p">California & Hawaii Current Conditions</p>
                             <hr className="main-hr"/>
                             <div className="courses-layout">
@@ -102,8 +96,8 @@ function MainPage() { //to change once have a courses scroll functionality
                                 {courses}
                             </div>
                             <Link className="courses-link" to="/online-courses">Go to more courses...</Link>
-                        </section>
-                    </div> */}
+                        </section> */}
+                    </div>
                 </div>
             }
             {
