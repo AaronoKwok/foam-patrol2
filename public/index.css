@@ -243,8 +243,6 @@ body {
   text-align: center;
 }
 
-
-
 .one-percent-img {
   height: 150px; 
 }
@@ -2495,6 +2493,64 @@ body {
     width: 85%;
     margin-bottom: 20px; 
   }
+}
+
+@media screen and (max-width: 950px) {
+  .one-percent {
+    height: 100%; 
+    padding: 10px; 
+    padding-bottom: 0px; 
+  }
+
+  .one-percent-desc {
+    font-size: 1.3em; 
+    font-weight: 500;
+    line-height: 1.2em; 
+  }
+
+  .one-percent-img {
+    margin-bottom: 10px;
+  }
+
+  .footer-mid {
+    height: 100%;
+    padding-top: 20px; 
+  }
+
+  .footer-internal-links {
+    margin-right: 5%
+  }
+
+  .footer-base {
+    height: 100%;
+    display: block;
+  }
+
+  .footer-base-left {
+    margin-left: 5%; 
+    margin-bottom: 5px; 
+  }
+
+  .footer-base-right {
+    margin: 0px 0px 0px 5%; 
+    padding-bottom: 10px; 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 @media screen and (max-height: 650px) {
