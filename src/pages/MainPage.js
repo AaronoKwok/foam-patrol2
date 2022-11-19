@@ -82,7 +82,7 @@ function MainPage() { //to change once have a courses scroll functionality
                         </section> 
 
                         <section className="browse-forecasts"> 
-                            <p className="retreats-p">California & Hawaii Current Conditions</p>
+                            <p className="conditions-p">California & Hawaii Current Conditions</p>
                             <hr className="main-hr"/>
                             <div className="mainpage-conditions">
                                 <CurrentCondition loc={pleasurePoint}/>
@@ -92,14 +92,14 @@ function MainPage() { //to change once have a courses scroll functionality
                             </div>
                         </section>
                         
-                        {/* <section className="browse-courses">
+                        <section className="browse-courses">
                             <p className="courses-p">Discover our Online Surf Courses</p>
                             <hr className="main-hr" />
                             <div className="courses-layout">
                                 {courses}
                             </div>
                             <Link className="courses-link" to="/online-courses">Go to more courses...</Link>
-                        </section> */}
+                        </section>
                     </div>
                 </div>
             }

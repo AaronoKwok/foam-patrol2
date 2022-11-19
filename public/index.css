@@ -671,6 +671,15 @@ body {
   text-decoration: none
 }
 
+.conditions-p {
+  font-size: 2em;
+  font-weight: var(--des-weight);
+  text-align: center;
+  color: rgb(58, 58, 58);
+  letter-spacing: 0.1em;
+  margin: 5px 0px 0px 0px;
+}
+
 /* MainPage Courses */
 
 .browse-courses { 
@@ -2583,7 +2592,7 @@ body {
     margin: auto; 
     text-align: center; 
     margin-top: 20px; 
-    margin-bottom: 10px; 
+    margin-bottom: 20px; 
   }
 
   .main-info-bullets {
@@ -2617,6 +2626,21 @@ body {
     grid-template-columns: repeat(1, auto);
   }
 
+  .condition-img-title {
+    font-size: 1.6em
+  }
+
+  .browse-retreats {
+    margin-bottom: 20px; 
+  }
+
+  .browse-forecasts {
+    margin-bottom: -20px; 
+  }
+
+  .courses-layout {
+    grid-template-columns: repeat(1, auto)
+  }
 
 
 
