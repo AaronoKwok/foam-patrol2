@@ -66,12 +66,15 @@ function MainPage() { //to change once have a courses scroll functionality
                 <div>
                     <div className="mp-img-position">
                         <BackScene />
+                        <section className="main-info">
+                            <p className="main-info-paragraph">Beginner? Intermediate? <span className="main-info-span">Surfing is more fun the better you get.</span> We help you surf better, faster.</p>
+                        </section>
                     </div>
 
                     <div className="mainpage-width">
 
                         <section className="browse-retreats">
-                            <p className="retreats-p">Surf Trips</p>
+                            <p className="retreats-p">Browse Surf Trips</p>
                             <hr className="main-hr"/>
                             <div className="retreats-layout">
                                 {retreats}

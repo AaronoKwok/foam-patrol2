@@ -610,9 +610,8 @@ body {
   position: relative;
   min-width: 230px;
   max-width: 230px;
-  margin: 10px 5px 5px 5px; 
+  margin: 10px 5px 15px 5px; 
   border-radius: 10px; 
-  padding-bottom: 10px;  
 }
 
 .retreat:hover {
@@ -633,13 +632,11 @@ body {
 }
 
 .retreat-img {
-  display: block; 
   height: 230px; 
   width: 230px;
   object-fit: cover;
   border-radius: var(--ten-radius); 
 }
-
 
 .retreat-location {
   position: absolute;
@@ -663,7 +660,7 @@ body {
   width: 100%; 
   font-size: 1em; 
   font-family: 'Montserrat', sans-serif;
-  padding: 0px 8px; 
+  padding: 0px 8px 10px 8px; 
 }
 
 .link-hover:visited {
@@ -2560,18 +2557,43 @@ body {
     width: 80px;
   }
 
+  .main-info {
+    display: block;
+    height: 100%;
+  }
+
+  .main-info-paragraph {
+    margin: auto; 
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+  }
+
+  .main-info-bullets {
+    margin: auto; 
+  }
+
   .retreat {
     min-width: 160px; 
     max-width: 160px; 
-
+    margin: 0px 5px 10px 5px;
   }
 
   .retreat-img {
     width: 160px; 
+    height: 160px;
   }
 
   .retreat-location {
-    top: 35px; 
+    top: 5px; 
+    left: 5px; 
+    background-color: rgba(18, 52, 97);
+    font-size: 1.02em;
+    font-weight: 700;
+  }
+
+  .retreat:hover .retreat-img {
+    border-radius: 10px;
   }
 
 
