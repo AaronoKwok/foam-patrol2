@@ -694,6 +694,13 @@ body {
   width: 100%;
 } 
 
+.mainpage-conditions {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 0px auto;
+  width: 100%;
+}
+
 .courses-link {
   display: block;
   width: 200px; 
@@ -2384,6 +2391,11 @@ body {
     grid-template-columns: repeat(3, auto);
   }
 
+  .mainpage-conditions {
+    display: grid;
+    grid-template-columns: repeat(3, auto)
+  }
+
   .browse-forecasts {
     margin-bottom: 0px;
   }
@@ -2473,6 +2485,11 @@ body {
   }
 
   .courses-layout {
+    display: grid; 
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .mainpage-conditions {
     display: grid; 
     grid-template-columns: repeat(2, auto);
   }
@@ -2596,7 +2613,9 @@ body {
     border-radius: 10px;
   }
 
-
+  .mainpage-conditions {
+    grid-template-columns: repeat(1, auto);
+  }
 
 
 
