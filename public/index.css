@@ -1793,6 +1793,12 @@ body {
   border-radius: 10px; 
 }
 
+.retreat-mobile-image {
+  max-height: 350px;
+  border-radius: 10px;
+  max-width: 90%;
+}
+
 .destination {
   font-size: 1.15em;  
 }
@@ -2593,6 +2599,7 @@ body {
     text-align: center; 
     margin-top: 20px; 
     margin-bottom: 20px; 
+    width: 70%
   }
 
   .main-info-bullets {
@@ -2641,6 +2648,39 @@ body {
   .courses-layout {
     grid-template-columns: repeat(1, auto)
   }
+
+  /* beg and int retreats */
+
+  .retreat-backscene {
+    height: 320px;
+    margin-bottom: 20px;
+  }
+
+  .retreat-backscene-text {
+    top: 35%;
+  }
+
+  .retreat-backscene-title {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .retreat-title {
+    font-size: 1.5em;
+  }
+
+  .retreat-backscene-subtitle {
+    font-size: 1em;
+  }
+
+  .holder {
+    display: block; 
+    text-align: center; 
+  }
+
+  
+
+
 
 
 
