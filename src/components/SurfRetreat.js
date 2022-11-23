@@ -40,17 +40,18 @@ function SurfRetreat({retreat}) {
                         <section className="holder">
                             <div>
                                 <p className="retreat-header">Surf trip in {retreat.loc.title}</p>
-                                <p>{retreat.loc.description}</p>
+                                <p className="retreat-text-mobile">{retreat.loc.description}</p>
                             </div>
                             <img className="retreat-mobile-image" src={retreat.whereImg} alt=""/>
                         </section>
 
                         <section className="holder">
-                            <img className="left-img" src={retreat.typicalImg} alt=""/>
                             <div>
+                            
                                 <p className="retreat-header">A Typical Day </p>
-                                <p>{retreat.typicalDayDes}</p> 
+                                <p className="retreat-text-mobile">{retreat.typicalDayDes}</p> 
                             </div> 
+                            <img className="retreat-mobile-image" src={retreat.typicalImg} alt=""/>
                         </section>
 
                         <section className="holder">
@@ -67,16 +68,15 @@ function SurfRetreat({retreat}) {
                                 }
                             </div>
                             
-                            <img className="right-img" src={retreat.map} alt=""/>
+                            <img className="retreat-mobile-image" src={retreat.map} alt=""/>
                         </section>
 
                         <section className="holder">
-                            <img className="left-img" src={retreat.accImg} alt=""></img>
                             <div>
                                 <p className="retreat-header">Accommodations</p>
-                                <p>{retreat.accommodations.des}</p>
+                                <p className="retreat-text-mobile">{retreat.accommodations.des}</p>
                             </div>
-                            
+                            <img className="retreat-mobile-image" src={retreat.accImg} alt=""></img>
                         </section>
 
                         <section className="holder">

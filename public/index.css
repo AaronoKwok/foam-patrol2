@@ -1779,6 +1779,10 @@ body {
   font-family: 'Montserrat', 'sans-serif';
 }
 
+.retreat-text-mobile {
+  text-align: left;
+}
+
 .right-img {
   margin-left: 25px; 
   max-height: 600px; 
@@ -1794,9 +1798,9 @@ body {
 }
 
 .retreat-mobile-image {
-  max-height: 350px;
+  max-height: 390px;
   border-radius: 10px;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .destination {
@@ -2676,10 +2680,25 @@ body {
   .holder {
     display: block; 
     text-align: center; 
+    margin-bottom: 20px; 
   }
 
-  
+  .retreat-header {
+    font-size: 1.2em; 
+    text-align: left;
+    margin-bottom: 5px; 
+  }
 
+  .destination {
+    text-align: left;
+    margin-bottom: 0px;
+    font-weight: 500;
+  }
+  
+  .des-des {
+    margin-left: 0px; 
+    text-align: left;
+  }
 
 
 
