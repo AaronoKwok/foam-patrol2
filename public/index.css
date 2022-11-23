@@ -2700,6 +2700,20 @@ body {
     text-align: left;
   }
 
+  .info-left {
+    width: 100%;
+    margin-right: 0px; 
+  }
+
+  .info-diagram {
+    width: 100%;
+    margin-left: 0px; 
+  }
+
+  .info-title {
+    
+  }
+
 
 
 

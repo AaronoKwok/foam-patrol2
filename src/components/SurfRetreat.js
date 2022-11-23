@@ -88,41 +88,7 @@ function SurfRetreat({retreat}) {
                                     <p className="destination">Surf Conditions</p>
                                     <p className="des-des">{retreat.surfInfo.typical}</p>
                             </div>
-                            
-                            <section className="info-diagram">
-                                <div className="info-swell info-spec">
-                                    <p className="info-title">SEASON</p>
-                                    <div className="info-info">
-                                        <p className="info-pair"><span className="info-span">Swell Season: </span>{retreat.surfInfo.season.swell}</p>
-                                        <p className="info-pair"><span className="info-span">Larger Waves: </span>{retreat.surfInfo.season.bigger}</p> 
-                                    </div>
-                                </div>
-                                <div className="info-waves info-spec">
-                                    <p className="info-title">TYPICAL DAY</p>
-                                    <div className="info-info">
-                                        <p className="info-pair"><span className="info-span">Waves: </span>{retreat.surfInfo.day.waves} ft</p>
-                                        <p className="info-pair"><span className="info-span">Winds: </span>{retreat.surfInfo.day.winds}</p>
-                                    </div>
-                                </div>
-                                <div className="info-temp info-spec">
-                                    <p className="info-title">TEMPERATURE</p>
-                                    <div className="info-info">
-                                        <p className="info-pair"><span className="info-span">Air Temp: </span>{tempRange()}&#176;f</p>
-                                        <p className="info-pair"><span className="info-span">Rainy Season: </span>{retreat.surfInfo.temp.rain}</p>
-                                    </div>  
-                                </div>
-                                <div className="info-skill info-spec">
-                                    <p className="info-title">SKILL LEVEL</p>
-                                    <p className="info-lvl">{retreat.surfInfo.skillLvl}</p>
-                                </div>
-                                <div className="info-spots info-spec">
-                                    <p className="info-title">SURF SPOTS</p>
-                                    <div className="info-info">
-                                        {iconList(surfPoints)}
-                                    </div>
-                                </div>
-                            </section>
-                            
+                                                        
                         </section>
                         
                     </div>
