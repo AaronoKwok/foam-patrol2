@@ -1,5 +1,7 @@
 import React from 'react' 
 
+import useWindowWidth from "../hooks/useWindowWidth"
+
 import {iconList} from "../utils"  //utils is a library of functions
 
 import age from "../images/travelerAge.jpeg"
@@ -28,32 +30,67 @@ function IsForMe() {
 
     return (
         <div>
-            <div className="filler"></div>
-            <div className="for-me-back">
-                <img className="background-image" src={forMe} alt="" />
-                <p className="is-forMe-sub">Is this trip for me?</p>
-            </div>
-            
-            <section className="is-me-holder retreat-width">
-                <div className="is-me-section">
-                    <img className="is-me-img" src={age} alt="" />
-                    <p className="retreat-header is-me-head">Traveler Age</p>
-                    <p className="is-me-sub">Am I too young / too old for this trip?</p>
-                    <div className="is-me-text">{iconList(ageArr)}</div>
+            {
+                (useWindowWidth()) &&
+                <div>
+                    <div className="for-me-back">
+                        <img className="retreat-backscene" src={forMe} alt="" />
+                        <p className="is-forMe-sub">Is this trip for me?</p>
+                    </div>
+                    
+                    <section className="is-me-holder retreat-width">
+                        <div className="is-me-section">
+                            <img className="is-me-img" src={age} alt="" />
+                            <p className="is-for-me-header">Traveler Age</p>
+                            <p className="is-me-sub">Am I too young / too old for this trip?</p>
+                            <div className="is-me-text">{iconList(ageArr)}</div>
+                        </div>
+                        <div className="is-me-section">
+                            <img className="is-me-img" src={level} alt="" />
+                            <p className="is-for-me-header">Surf Level</p>
+                            <p className="is-me-sub">What surf experience do I need?</p>
+                            <div className="is-me-text">{iconList(levelArr)}</div>
+                        </div>
+                        <div className="is-me-section">
+                            <img className="is-me-img" src={traveler} alt="" />
+                            <p className="is-for-me-header">Type of Traveler</p>
+                            <p className="is-me-sub">Lone travelers, groups of friends & couples.</p>
+                            <div className="is-me-text">{iconList(travelerArr)}</div>
+                        </div>
+                    </section>
                 </div>
-                <div className="is-me-section">
-                    <img className="is-me-img" src={level} alt="" />
-                    <p className="retreat-header is-me-head">Surf Level</p>
-                    <p className="is-me-sub">What surf experience do I need?</p>
-                    <div className="is-me-text">{iconList(levelArr)}</div>
+            }
+            {
+                (!useWindowWidth()) &&
+                <div>
+                    <div className="filler"></div>
+                    <div className="for-me-back">
+                        <img className="background-image" src={forMe} alt="" />
+                        <p className="is-forMe-sub">Is this trip for me?</p>
+                    </div>
+                    
+                    <section className="is-me-holder retreat-width">
+                        <div className="is-me-section">
+                            <img className="is-me-img" src={age} alt="" />
+                            <p className="retreat-header is-me-head">Traveler Age</p>
+                            <p className="is-me-sub">Am I too young / too old for this trip?</p>
+                            <div className="is-me-text">{iconList(ageArr)}</div>
+                        </div>
+                        <div className="is-me-section">
+                            <img className="is-me-img" src={level} alt="" />
+                            <p className="retreat-header is-me-head">Surf Level</p>
+                            <p className="is-me-sub">What surf experience do I need?</p>
+                            <div className="is-me-text">{iconList(levelArr)}</div>
+                        </div>
+                        <div className="is-me-section">
+                            <img className="is-me-img" src={traveler} alt="" />
+                            <p className="retreat-header is-me-head">Type of Traveler</p>
+                            <p className="is-me-sub">Lone travelers, groups of friends & couples.</p>
+                            <div className="is-me-text">{iconList(travelerArr)}</div>
+                        </div>
+                    </section>
                 </div>
-                <div className="is-me-section">
-                    <img className="is-me-img" src={traveler} alt="" />
-                    <p className="retreat-header is-me-head">Type of Traveler</p>
-                    <p className="is-me-sub">Lone travelers, groups of friends & couples.</p>
-                    <div className="is-me-text">{iconList(travelerArr)}</div>
-                </div>
-            </section>
+            }
         </div>
     )
 }

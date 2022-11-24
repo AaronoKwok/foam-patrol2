@@ -1779,6 +1779,15 @@ body {
   font-family: 'Montserrat', 'sans-serif';
 }
 
+.is-for-me-header {
+  font-size: 1.3em;
+  font-weight: bold; 
+  text-align: center; 
+  letter-spacing: var(--retreat-spacing);
+  font-family: 'Montserrat', 'sans-serif';
+  margin-bottom: 5px; 
+}
+
 .retreat-text-mobile {
   text-align: left;
 }
@@ -2177,21 +2186,6 @@ body {
   margin-bottom: 10px; 
   font-weight: 500;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2743,6 +2737,21 @@ body {
     margin-left: 25px; 
     bottom: 20px; 
   }
+
+  /* is for me */
+
+  .is-forMe-sub {
+    font-size: 2.3em;
+    margin-left: 25px; 
+    bottom: 20px; 
+    line-height: 1.1em;
+  }
+
+  .is-me-holder {
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+  }
+
 
 
 
