@@ -36,34 +36,34 @@ function IntRetreat({retreat}) {
                         <section className="holder">
                             <div>
                                 <p className="retreat-header">{retreat.where.title}</p>
-                                <p>{retreat.where.des}</p>
+                                <p className="retreat-text-mobile">{retreat.where.des}</p>
                             </div>
                             <img className="retreat-mobile-image" src={retreat.imgs.where} alt=""/>
                         </section>
 
                         <section className="holder">
-                            <img className="retreat-mobile-image" src={retreat.imgs.typical} alt=""/>
                             <div>
                                 <p className="retreat-header">A Typical Day</p>
-                                <p>{retreat.typical.des}</p>
+                                <p className="retreat-text-mobile">{retreat.typical.des}</p>
                             </div>
+                            <img className="retreat-mobile-image" src={retreat.imgs.typical} alt=""/>
                         </section>
 
                         <section>
                             <div className="holder">
                                 <div>
                                     <p className="retreat-header">Intermediate to Advanced Spots</p>
-                                    <p>{retreat.waves.des}</p> 
+                                    <p className="retreat-text-mobile">{retreat.waves.des}</p> 
                                 </div>
                                 <img className="retreat-mobile-image" src={retreat.imgs.advanced} alt="" />
                             </div>
 
                             <div className="holder">
-                                <img className="retreat-mobile-image" src={retreat.imgs.intermediate} alt="" />
                                 <div>
                                     <p className="retreat-header">Intermediate Spots</p>
-                                    <p>{retreat.waves.intNote}</p>
+                                    <p className="retreat-text-mobile">{retreat.waves.intNote}</p>
                                 </div>
+                                <img className="retreat-mobile-image" src={retreat.imgs.intermediate} alt="" />
                             </div>
                         </section>
 
@@ -71,58 +71,27 @@ function IntRetreat({retreat}) {
                             <div className="holder">
                                 <div>
                                     <p className="retreat-header">{retreat.stay.method}</p>
-                                    <p>{retreat.stay.des}</p>
+                                    <p className="retreat-text-mobile">{retreat.stay.des}</p>
                                 </div>
                                 <img className="retreat-mobile-image" src={retreat.imgs.accommodation} alt=""/>
                             </div>
                             
                             <div className="holder">
-                                <img className="retreat-mobile-image" src={retreat.imgs.room} alt="" />
                                 <div>
                                     <p className="retreat-header">Rooms</p>
-                                    <p>{retreat.stay.rooms.des}</p> 
+                                    <p className="retreat-text-mobile">{retreat.stay.rooms.des}</p> 
                                 </div>
+                                <img className="retreat-mobile-image" src={retreat.imgs.room} alt="" />
                             </div>
 
                             <div className="holder">
                                 <div>
                                     <p className="retreat-header">Meals</p> 
-                                    <p>{retreat.stay.meals.des}</p>
-                                    <p className="int-meals-note">{retreat.stay.meals.note}</p>
+                                    <p className="retreat-text-mobile">{retreat.stay.meals.des}</p>
                                 </div>
                                 <img className="retreat-mobile-image" src={retreat.imgs.meals} alt="" />
                             </div>
 
-                        </section>
-
-                        <section>
-                            <p className="retreat-header included">Included</p>
-                            <div className="included-holder">
-                                <div className="included-con">
-                                    <p className="included included-header">Surf</p>
-                                    <hr className="included-hr"/>
-                                    <div className="main-info-bullets bullet-info">
-                                        {iconList(included)}
-                                    </div>
-                                </div>
-
-                                <div className="included-con">
-                                    <p className="included included-header">Accommodation</p>
-                                    <hr className="included-hr"/>
-                                    <div className="main-info-bullets bullet-info">
-                                        {iconList(accommodation)}
-                                    </div>
-                                </div>
-
-                                <div className="included-con">
-                                    <p className="included included-header">Lifestyle</p>
-                                    <hr className="included-hr"/>
-                                    <div className="main-info-bullets bullet-info">
-                                        {iconList(lifestyle)}
-                                    </div>
-                                </div>
-                            </div>
-                            
                         </section>
 
                     </div>
