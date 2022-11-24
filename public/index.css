@@ -2104,8 +2104,6 @@ body {
   text-align: left;
 }
 
-
-
 /* surf level */
 
 .level-background {
@@ -2752,8 +2750,38 @@ body {
     margin-bottom: 0px; 
   }
 
+  /* surf level */
 
+  .level-back-title {
+    font-size: 2.3em;
+    margin-left: 20px; 
+    margin-bottom: 15px; 
+    line-height: 1.1em;
+  }
 
+  .surflvl-backscene {
+    height: 300px;
+    object-position: 45% 40%;
+  }
+
+  .level-center {
+    margin-top: 30px; 
+  }
+
+  .level-section {
+    width: 95%;
+    margin: auto; 
+    margin-bottom: 10px;
+  }
+
+  .level-title {
+    font-size: 1.1em; 
+    text-align: center;
+  }
+
+  .level-quote {
+    font-size: .93em
+  }
 
 
 
