@@ -70,7 +70,7 @@ function CurrentCondition({loc}) {
     
     useEffect(() => {
         console.log("mp retrieving data...")
-        //getMPData(loc)
+        getMPData(loc)
     }, [])
 
     function findData() {
