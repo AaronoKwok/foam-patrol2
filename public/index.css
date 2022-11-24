@@ -1941,6 +1941,11 @@ body {
   margin-right: 25px; 
 }
 
+.team-bar-mobile {
+  text-align: center; 
+  padding-top: 50px;
+}
+
 .team-title {
   font-size: 2em;
   font-weight: 600;
@@ -1952,6 +1957,11 @@ body {
 .team-subtitle {
   font-size: 1.3em;
   letter-spacing: 0.01em;
+}
+
+.team-mobile-des {
+  margin-top: -10px; 
+  margin-bottom: -10px;
 }
 
 .team-img {
@@ -2477,20 +2487,6 @@ body {
     height: 160px;
   }
 
-  /* team page */
-  .team-bar {
-    display: block; 
-  }
-
-  .team-img{
-    visibility: hidden;
-    position: absolute;
-  }
-
-  .team-bar-description {
-    text-align: center;
-    margin-right: 0px; 
-  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -2710,9 +2706,28 @@ body {
     margin-left: 0px; 
   }
 
+  /* Team */
+
+  .team-width {
+    width: 95%;
+  }
+
+  .team-person {
+    height: 250px; 
+    margin-bottom: 15px; 
+  }
+
+  .person-name {
+    font-size: 1.1em;
+  }
+
+  .person-role {
+    font-size: 0.9em;
+  }
 
 
-  
+
+
 
 
 
