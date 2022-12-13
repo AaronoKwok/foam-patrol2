@@ -3,6 +3,8 @@ import React, {useState, useEffect} from "react"
 import courseData from "../Data/courseData.json"
 import OnlineCourse from "../components/OnlineCourse"
 
+import useWindowWidth from "../hooks/useWindowWidth"
+
 import gridIcon from "../images/gridIcon.png"
 import listIcon from "../images/listView.png"
 
@@ -81,73 +83,150 @@ function OnlineCourses() {
     })
 
     return (
-        <section className="oc-bg-img">
-            <div className="oc-bg-img-position">
-                <img className="oc-backscene" src={courseBackscene} alt=""></img>  {/* need to change sizing of image when screen size changes */}
-                <div className="oc-backscene-text">
-                    <img className="progress-icon" src={progress} alt=""></img> {/* need to fix positioning of text when screen size changes */}
-                    <div>
-                        <h1 className="image-h1 image-h1-margin">Here to Help You Surf</h1>
-                        <h1 className="image-h1">Better, Faster.</h1>
-                    </div>
-                    <p className="description-on-backscene-oc">Over 70 hours of courses.</p>
-                    <div className="backscene-types">
-                        <p className={`button-${allButton}`} onClick={() => payCourses(false)}>All Courses</p>
-                        <p className={`button-${freeButton}`} onClick={() => payCourses(true)}>Free Courses</p>
-                    </div>
-                </div>
-            </div>
-         
-            <div className="courses-pg-layout">
-                <p className="all-surf-header">{numberCourses} Surfing Courses</p>
-                <hr className="hr-surf-header"/>
-
-                <div className="choose-view"> {/* grid/list view chooser - add color background color change */}
-                    <div className="grid-tip" onClick={() => viewChange("grid")}>
-                        <img className="grid-icon" src={gridIcon} alt="" />
-                        <span className="grid-tip-text">Grid View</span>
-                    </div>
-
-                    <div className="vert"></div>
-
-                    <div className="list-tip" onClick={() => viewChange("list")}>
-                        <img className="list-icon" src={listIcon} alt=""/> 
-                        <span className="list-tip-text">List View</span>
-                    </div>
-                </div>
-
-                <p>
-                    <label className="course-levels">Course Levels:</label>
-                    <select className="level-select" name="levels" value={level} onChange={levelCourses}>
-                        <option value="all">All</option>
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="more">More</option>
-                    </select>
-                </p>
-
-                {
-                    isGrid === true && 
-                        <div className="courses-in-grid">
-                            {specifiedCourses}
+        <div>
+            {
+                (useWindowWidth()) &&
+                <section className="oc-bg-img">
+                    <div className="oc-bg-img-position">
+                        <img className="oc-backscene" src={courseBackscene} alt=""></img>  {/* need to change sizing of image when screen size changes */}
+                        <div className="oc-backscene-text">
+                            <img className="progress-icon" src={progress} alt=""></img> {/* need to fix positioning of text when screen size changes */}
+                            <div>
+                                <h1 className="image-h1 image-h1-margin">Here to Help You Surf</h1>
+                                <h1 className="image-h1">Better, Faster.</h1>
+                            </div>
+                            <div className="backscene-types">
+                                <p className={`button-${allButton}`} onClick={() => payCourses(false)}>All Courses</p>
+                                <p className={`button-${freeButton}`} onClick={() => payCourses(true)}>Free Courses</p>
+                            </div>
                         </div>
-                }
-
-                {
-                    isGrid === false && 
-                        <div className="courses-in-list">
-                            {specifiedCourses}
-                        </div>
-                }
-
+                    </div>
                 
-            </div>
+                    <div className="courses-pg-layout">
+                        <p className="all-surf-header">{numberCourses} Surfing Courses</p>
+                        <hr className="hr-surf-header"/>
 
-            <p className="online-anytime">Learn Online, Anytime.</p>
-            <p className="course-page-bottom">With our surf courses tailored for beginner and intermediate surfers.</p>
-          
+                        <div>
+                            <div className="choose-view"> {/* grid/list view chooser - add color background color change */}
+                                <div className="grid-tip" onClick={() => viewChange("grid")}>
+                                    <img className="grid-icon" src={gridIcon} alt="" />
+                                    <span className="grid-tip-text">Grid View</span>
+                                </div>
 
-        </section>
+                                <div className="vert"></div>
+
+                                <div className="list-tip" onClick={() => viewChange("list")}>
+                                    <img className="list-icon" src={listIcon} alt=""/> 
+                                    <span className="list-tip-text">List View</span>
+                                </div>
+                            </div>
+
+                            <p>
+                                <label className="course-levels">Course Levels:</label>
+                                <select className="level-select" name="levels" value={level} onChange={levelCourses}>
+                                    <option value="all">All</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="more">More</option>
+                                </select>
+                            </p>
+                        </div>
+
+                        {
+                            isGrid === true && 
+                                <div className="courses-in-grid">
+                                    {specifiedCourses}
+                                </div>
+                        }
+
+                        {
+                            isGrid === false && 
+                                <div className="courses-in-list">
+                                    {specifiedCourses}
+                                </div>
+                        }
+
+                        
+                    </div>
+
+                    <p className="online-anytime">Learn Online, Anytime.</p>
+                    <p className="course-page-bottom">With our surf courses tailored for beginner and intermediate surfers.</p>
+                
+
+                </section>
+            }
+
+            {
+                (!useWindowWidth()) &&
+                <section className="oc-bg-img">
+                    <div className="oc-bg-img-position">
+                        <img className="oc-backscene" src={courseBackscene} alt=""></img>  {/* need to change sizing of image when screen size changes */}
+                        <div className="oc-backscene-text">
+                            <img className="progress-icon" src={progress} alt=""></img> {/* need to fix positioning of text when screen size changes */}
+                            <div>
+                                <h1 className="image-h1 image-h1-margin">Here to Help You Surf</h1>
+                                <h1 className="image-h1">Better, Faster.</h1>
+                            </div>
+                            <p className="description-on-backscene-oc">Over 70 hours of courses.</p>
+                            <div className="backscene-types">
+                                <p className={`button-${allButton}`} onClick={() => payCourses(false)}>All Courses</p>
+                                <p className={`button-${freeButton}`} onClick={() => payCourses(true)}>Free Courses</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div className="courses-pg-layout">
+                        <p className="all-surf-header">{numberCourses} Surfing Courses</p>
+                        <hr className="hr-surf-header"/>
+
+                        <div className="choose-view"> {/* grid/list view chooser - add color background color change */}
+                            <div className="grid-tip" onClick={() => viewChange("grid")}>
+                                <img className="grid-icon" src={gridIcon} alt="" />
+                                <span className="grid-tip-text">Grid View</span>
+                            </div>
+
+                            <div className="vert"></div>
+
+                            <div className="list-tip" onClick={() => viewChange("list")}>
+                                <img className="list-icon" src={listIcon} alt=""/> 
+                                <span className="list-tip-text">List View</span>
+                            </div>
+                        </div>
+
+                        <p>
+                            <label className="course-levels">Course Levels:</label>
+                            <select className="level-select" name="levels" value={level} onChange={levelCourses}>
+                                <option value="all">All</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="more">More</option>
+                            </select>
+                        </p>
+
+                        {
+                            isGrid === true && 
+                                <div className="courses-in-grid">
+                                    {specifiedCourses}
+                                </div>
+                        }
+
+                        {
+                            isGrid === false && 
+                                <div className="courses-in-list">
+                                    {specifiedCourses}
+                                </div>
+                        }
+
+                        
+                    </div>
+
+                    <p className="online-anytime">Learn Online, Anytime.</p>
+                    <p className="course-page-bottom">With our surf courses tailored for beginner and intermediate surfers.</p>
+                
+
+                </section>
+            }
+        </div>
     )
 }
 

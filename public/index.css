@@ -1341,7 +1341,6 @@ body {
 
 .backscene-types {
   margin-top: 40px; 
-  width: 800px;
   font-weight: 300;
   display: flex; 
 }
@@ -2782,6 +2781,85 @@ body {
   .level-quote {
     font-size: .93em
   }
+
+  /* online courses */
+
+  .oc-backscene {
+   height: 320px; 
+  }
+
+  .oc-backscene-text {
+    bottom: 0px; 
+    left: 0px;
+    padding-left: 15px; 
+    width: 100%;
+  }
+
+  .button-free {
+    margin-right: 20px; 
+  }
+
+  .button-notFree {
+    margin-right: 20px; 
+  }
+
+  .backscene-types {
+    margin-top: 10px; 
+  }
+
+  .progress-icon {
+    margin-bottom: 10px; 
+  }
+
+  .image-h1 {
+    font-size: 1.7em; 
+  }
+
+  .image-h1-margin {
+    margin-bottom: -4px; 
+  }
+
+  .courses-pg-layout {
+    margin-top: 10px;
+  }
+
+  .level-select {
+    width: 120px; 
+  }
+
+  .course-levels {
+    margin-top: 0px; 
+  }
+
+  .online-anytime {
+    font-size: 2em; 
+  }
+
+  /* chosen courses */
+
+  .oc-card {
+    width: 150px; 
+    height: 160px; 
+  }
+
+  .oc-card-img {
+    height: 70%;
+  }
+
+  .oc-card-title {
+    font-size: 1.05em; 
+    margin: 7px 7px;
+    line-height: 1.1em;
+  }
+
+  
+
+
+
+
+
+
+
 
 
 
