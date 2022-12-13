@@ -2251,7 +2251,7 @@ body {
 
 .mobile-drop {
   position: absolute;
-  background-color: rgb(17, 100, 96);
+  background-color: rgba(28, 116, 116, 0.781);
   padding: 10px 5px 0px 5px; 
   width: 80vw; 
   right: 0px; 
@@ -2262,11 +2262,11 @@ body {
 }
 
 .drop-title {
-  font-size: 1.7em; 
+  font-size: 1.5em; 
   font-weight: 500;
   background-color: white; 
   color: black; 
-  border-radius: 50px; 
+  border-radius: 10px; 
   padding: 5px 15px;
   line-height: 0.95em;
   letter-spacing: 0.09em;
