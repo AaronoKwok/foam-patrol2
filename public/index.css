@@ -895,7 +895,6 @@ body {
 
 .first-data-row {
   display: flex; 
-  justify-content: start;
   margin-bottom: 20px; 
 }
 
@@ -2512,6 +2511,7 @@ body {
   .first-data-row {
     display: grid; 
     grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 0px; 
   }
 
   .data-box {
@@ -2892,6 +2892,15 @@ body {
     object-position: 50% 50%;
   }
 
+  /* current condition page */
+
+  .filler-mobile {
+    height: 45px; 
+  }
+
+  .data-box {
+    
+  }
 
 
 
@@ -2904,6 +2913,25 @@ body {
 
 
 }
+
+@media screen and (max-width: 770px) {
+  /* current condition pages */
+
+  .first-data-row {
+    grid-template-columns: repeat(3, auto);
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  /* current condition page */
+
+  .first-data-row {
+    grid-template-columns: repeat(2, auto);
+  }
+
+}
+
 
 @media screen and (max-height: 650px) {
   .background-image {
@@ -2922,8 +2950,4 @@ body {
     height: 500px; 
   }
 
-  
 }
-
-
-
