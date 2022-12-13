@@ -24,11 +24,7 @@ function OnlineCourse({course, grid}) {
                         <div className="oc-long">
                             <img className="oc-long-img" src={course.img} alt=""/>  
                             <p className={`oc-card-${pay}`}>{cost}</p>   
-                            <p className="oc-long-tutorials">{course.tutorials} Tutorials</p>
                             <p className="oc-long-title">{course.title}</p>
-                            <div className="oc-long-progress"></div>
-                            <p className="oc-long-percent">0% Watched</p>
-                            <p className="oc-long-steps">0/{course.tutorials} Steps </p>
                         </div>
                 }
                 </section>

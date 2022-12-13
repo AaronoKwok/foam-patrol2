@@ -107,17 +107,15 @@ function OnlineCourses() {
                         <hr className="hr-surf-header"/>
 
                         <div>
-                            <div className="choose-view"> {/* grid/list view chooser - add color background color change */}
+                            <div className="choose-view"> 
                                 <div className="grid-tip" onClick={() => viewChange("grid")}>
                                     <img className="grid-icon" src={gridIcon} alt="" />
-                                    <span className="grid-tip-text">Grid View</span>
                                 </div>
 
                                 <div className="vert"></div>
 
                                 <div className="list-tip" onClick={() => viewChange("list")}>
                                     <img className="list-icon" src={listIcon} alt=""/> 
-                                    <span className="list-tip-text">List View</span>
                                 </div>
                             </div>
 

@@ -2852,6 +2852,23 @@ body {
     line-height: 1.1em;
   }
 
+  .oc-long {
+    width: 220px; 
+  }
+
+  .oc-long-img {
+    width: 100%; 
+    border-radius: 5px; 
+  }
+
+  .oc-long-title {
+    font-size: 1.05em; 
+    line-height: 1.1em;
+    left: 230px;
+    width: auto;
+    top: 35%; 
+  }
+
   
 
 
