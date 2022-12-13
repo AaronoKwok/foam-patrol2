@@ -71,22 +71,10 @@ function SurfForecasts({loc}) {
     const tideDes = loc.guide.idealConditions.tide
     const windDes = loc.guide.idealConditions.wind 
 
-    /* //searchbar
-    function lookChange(event) {
-        const text = event.target.value
-        setLookUpLoc(text)
-    }
-
-    function findLoc(event) {
-        event.preventDefault();   
-        console.log("Searching")
-        setLookUpLoc("")
-    } */
-
     useEffect(() => {
         console.log("surfforecast effect ran for", loc.name)
         setLoaded(false) //sets loaded back to false when navigating to other forecast without manual page reload
-        //getData(loc)
+        getData(loc)
     }, [spot])
     /* 
         //NOTE: //when using dependency array as an optimization, 
