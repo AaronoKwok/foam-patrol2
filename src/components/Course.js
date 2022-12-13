@@ -17,7 +17,7 @@ function Course({courseName}) {
 
     return (
         <Link className="link-hover course" to={courseName.link}>
-            <section > {/* className="course" place format on actual link component so empty space is not clickable */}
+            <section > 
                 <img className="course-image" src={courseName.img} alt=""/>
                 {courseName.free && <div className="is-free">Free Access</div>}
                 {level()}

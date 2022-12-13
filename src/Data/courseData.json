@@ -240,28 +240,6 @@
         "preposition": "to", 
         "title": "Top Turn", 
         "tutorials": 10
-    }, 
-    {
-        "id": "22",
-        "link": "/online-courses/yoga-with-Adriene", 
-        "free": false, 
-        "youtube": "https://www.youtube.com/watch?v=EqwgJpXA8O0", 
-        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2021/03/YogaCourse-624x354@2x.jpg", 
-        "level": 0, 
-        "preposition": "", 
-        "title": "Yoga with Adriene", 
-        "tutorials": 7
-    }, 
-    {
-        "id": "23",
-        "link": "/online-courses/fitness-mobility-with-tim", 
-        "free": false, 
-        "youtube": "https://www.youtube.com/watch?v=Lj7PIL9VVGE", 
-        "img": "https://tutorials.barefootsurftravel.com/wp-content/uploads/2021/08/Learndash-Thumbnail-Michelle-2-624x351@2x.jpg", 
-        "level": 0, 
-        "preposition": "about", 
-        "title": "Fitness & Mobility with Tim", 
-        "tutorials": 7
     }
 ]
 
