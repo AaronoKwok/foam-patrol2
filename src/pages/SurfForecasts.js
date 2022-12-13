@@ -1,6 +1,8 @@
 import React, {useContext, useEffect} from "react"
 import {Context} from "../Context"
 
+import useWindowWidth from "../hooks/useWindowWidth"
+
 //from utils
 import {
     isBlue, 
