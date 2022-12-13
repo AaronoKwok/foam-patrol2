@@ -2898,19 +2898,6 @@ body {
     height: 45px; 
   }
 
-  .data-box {
-    
-  }
-
-
-
-
-
-
-
-
-
-
 
 }
 
@@ -2921,6 +2908,20 @@ body {
     grid-template-columns: repeat(3, auto);
   }
 
+  .surfConditions {
+    display: block;
+  }
+
+  .sc-Title {
+    width: auto; 
+  }
+
+  .conditions {
+    justify-content: start;
+  }
+
+
+
 }
 
 @media screen and (max-width: 550px) {
@@ -2928,6 +2929,10 @@ body {
 
   .first-data-row {
     grid-template-columns: repeat(2, auto);
+  }
+
+  .conditions {
+    display: block;
   }
 
 }
