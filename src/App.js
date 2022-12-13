@@ -15,8 +15,6 @@ import Team from "./pages/Team"
 import WhatDo from "./pages/WhatDo" 
 import IsForMe from "./pages/IsForMe" 
 import SurfLevel from "./pages/SurfLevel" 
-import Contact from "./pages/Contact"  
-import Faq from "./pages/Faq" 
 
 import retreatData from "./Data/retreatData.json"
 import locationData from "./Data/locationData.json"
@@ -153,8 +151,6 @@ function App() {
                     <Route path="/about/what-we-do" element={<WhatDo />} />
                     <Route path="/about/is-this-trip-for-me" element={<IsForMe />} />
                     <Route path="/about/surfing-level" element={<SurfLevel />} />
-                    <Route path="/about/contact-us" element={<Contact />} />
-                    <Route path="/about/faq" element={<Faq />} />
                 </Route>
 
             </Routes>
