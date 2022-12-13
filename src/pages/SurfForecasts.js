@@ -74,7 +74,7 @@ function SurfForecasts({loc}) {
     useEffect(() => {
         //console.log("surfforecast effect ran for", loc.name)
         setLoaded(false) //sets loaded back to false when navigating to other forecast without manual page reload
-        //getData(loc)
+        getData(loc)
     }, [spot])
     /* 
         //NOTE: //when using dependency array as an optimization, 
@@ -98,14 +98,14 @@ function SurfForecasts({loc}) {
                             <p className="fcRating">FAIR</p>
 
                             {
-                                loaded && 
+                                !loaded && 
                                 <div className="forecast-load">
                                     <p className="loading-text">LOADING. . .</p>
                                 </div>
                             }
 
                             {
-                                !loaded &&
+                                loaded &&
                                 <section className="fcData">
                                     <div className="first-data-row">
                                         <div className="data-box">
@@ -159,10 +159,10 @@ function SurfForecasts({loc}) {
                                             <p className="type-name">Sunlight</p>
                                             <hr className="data-hr"/>
                                             <div className="time-data-box">
-                                                <p className="data-description">First Light: {ampm(firstLight, loc.timezone)}</p>
-                                                <p className="data-description">Sunrise: {ampm(sunrise, loc.timezone)}</p>
-                                                <p className="data-description">Sunset: {ampm(sunset, loc.timezone)}</p>
-                                                <p className="data-description">Last Light: {ampm(lastLight, loc.timezone)}</p>
+                                                <p className="data-description"> - <u> First Light:</u> <br/> {ampm(firstLight, loc.timezone)}</p>
+                                                <p className="data-description"> - <u> Sunrise:</u> <br/> {ampm(sunrise, loc.timezone)}</p>
+                                                <p className="data-description"> - <u>Sunset: </u> <br/> {ampm(sunset, loc.timezone)}</p>
+                                                <p className="data-description"> - <u>Last Light: </u> <br/> {ampm(lastLight, loc.timezone)}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -231,7 +231,6 @@ function SurfForecasts({loc}) {
                                             <p className="levelText">Adv</p>
                                         </div>
                                     </div>
-                                    <p className="guideDes">{loc.guide.abilityLevel.description}</p>
                                 </div>
 
                                 <div className="guideContainer">
@@ -244,7 +243,6 @@ function SurfForecasts({loc}) {
                                         <p className="barDesText">Poor</p>
                                         <p className="barDesText">Perfect</p>
                                     </div>
-                                    <p className="guideDes">{loc.guide.spotRating.description}</p>
                                 </div>
                             
                                 <div className="guideContainer">
@@ -257,7 +255,6 @@ function SurfForecasts({loc}) {
                                         <p className="barDesText">Welcoming</p>
                                         <p className="barDesText">Intimidating</p>
                                     </div>
-                                    <p className="guideDes">{loc.guide.localVibe.description}</p>
                                 </div>
 
                                 <div className="guideContainer">
@@ -270,7 +267,6 @@ function SurfForecasts({loc}) {
                                         <p className="barDesText">Light</p>
                                         <p className="barDesText">Exhausting</p>
                                     </div>
-                                    <p className="guideDes">{loc.guide.shoulderBurn.description}</p>
                                 </div>
                             
                                 <div className="guideContainer">
@@ -283,7 +279,6 @@ function SurfForecasts({loc}) {
                                         <p className="barDesText">Mellow</p>
                                         <p className="barDesText">Heavy</p>
                                     </div>
-                                    <p className="guideDes">{loc.guide.crowdFactor.description}</p>
                                 </div>
 
                                 <div className="guideContainer">
@@ -296,7 +291,6 @@ function SurfForecasts({loc}) {
                                         <p className="barDesText">Clean</p>
                                         <p className="barDesText">Dirty</p>
                                     </div>
-                                    <p className="guideDes">{loc.guide.waterQuality.description}</p>
                                 </div>        
 
                             </section>

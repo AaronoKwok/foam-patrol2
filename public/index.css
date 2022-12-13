@@ -1113,6 +1113,7 @@ body {
 
 .barContainer {
   display: flex;
+  width: 100%;
 }
 
 .percentBarFirst {
@@ -2898,6 +2899,21 @@ body {
     height: 45px; 
   }
 
+  .guide {
+    margin-bottom: 10px; 
+  }
+
+  .guideContainer {
+    height: auto; 
+  }
+
+  .guideName {
+    margin-top: 0px; 
+  }
+
+  .barDes {
+    margin-bottom: 15px; 
+  }
 
 }
 
@@ -2920,12 +2936,14 @@ body {
     justify-content: start;
   }
 
-
-
 }
 
 @media screen and (max-width: 550px) {
   /* current condition page */
+
+  .sc-Title {
+    margin-top: 5px;
+  }
 
   .first-data-row {
     grid-template-columns: repeat(2, auto);
@@ -2935,6 +2953,65 @@ body {
     display: block;
   }
 
+  .guide {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .guideContainer {
+    margin-bottom: 15px; 
+  }
+
+  .partLevel {
+    width: 33.333%;
+  }
+
+  .levelText {
+    font-size: .8em;
+  }
+
+  .barDes {
+    width: 100%;
+  }
+
+  .barDes p {
+    font-size: .8em;
+  }
+
+  .percentBarFirst {
+    width: 5%; 
+  }
+
+  .percentBarBlue {
+    width: 1%;
+  }
+
+  .percentBarGray {
+    width: 1%;
+  }
+
+  .percentBarLastBlue {
+    width: 5%; 
+  }
+
+  .percentBarLastGray {
+    width: 5%;
+  }
+
+  .addiPoints {
+    display: block;
+  }
+
+  .hazAccBest {
+    padding-right: 0px; 
+  }
+
+  .bringBottom {
+    padding-right: 0px; 
+  }
+
+  .fcGuideAbout {
+    margin-bottom: 20px;
+  }
 }
 
 

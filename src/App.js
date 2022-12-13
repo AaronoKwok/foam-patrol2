@@ -39,7 +39,7 @@ function App() {
     //note, below does not work for going back, only foward
     const page = useLocation(); 
     useEffect(() => {
-        //window.scrollTo(0,0); 
+        window.scrollTo(0,0); 
     }, [page])
 
     //retreats 
