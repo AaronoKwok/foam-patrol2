@@ -2,7 +2,7 @@
 
 This is a project created to aid beginner and intermediate surfers, as well as those who want to learn how to surf. Foam Patrol has an array of pages made using React Router, some of which include: retreats, online courses, and a number of surf spot conditions local to NorCal. The site is inspired by websites like [Barefoot Surf](https://barefootsurftravel.com/) and [Magic Seaweed](https://magicseaweed.com/).
 
-Live: [Foam Patrol](https://foam-patrol.netlify.app/)
+Live: [Foam Patrol](https://foampatrol.netlify.app)
 
 ## Project Description 
 
