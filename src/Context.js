@@ -266,7 +266,7 @@ function ContextProvider({children}) {
     function getData(loc) {
 
         console.log("retrieving data...")
-        console.log(localStartString(loc), loc.name)
+        //console.log(localStartString(loc), loc.name)
 
         const lat = loc.location[0]; 
         const tideLat = loc.tideLocation[0];
@@ -278,9 +278,9 @@ function ContextProvider({children}) {
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString(loc))}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString(loc))}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         
-        console.log(weatherUrl, "weather url")
+        /* console.log(weatherUrl, "weather url")
         console.log(astronomyUrl, "ast url")
-        console.log(tideUrl, "tide url")
+        console.log(tideUrl, "tide url") */
 
         const headers = {
             headers: {
@@ -300,9 +300,9 @@ function ContextProvider({children}) {
         axios
             .all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => {  
-                console.log(res[0], "weather")
+                /* console.log(res[0], "weather")
                 console.log(res[1], "ast")
-                console.log(res[2], "tide")
+                console.log(res[2], "tide") */
 
                 const weatherIdents = res[0].data.hours.map((hour, i) => { //adds and ident to each hour returned in weather
                     return {
@@ -379,7 +379,7 @@ function ContextProvider({children}) {
 
                 setLoaded(true)
 
-                console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                //console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
             }))
             .catch((error) => {
                 console.log(error)
@@ -402,9 +402,9 @@ function ContextProvider({children}) {
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString(loc))}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString(loc))}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         
-        console.log(weatherUrl, "weather url")
+        /* console.log(weatherUrl, "weather url")
         console.log(astronomyUrl, "ast url")
-        console.log(tideUrl, "tide url")
+        console.log(tideUrl, "tide url") */
 
         const headers = {
             headers: {
@@ -419,9 +419,9 @@ function ContextProvider({children}) {
         axios
             .all([requestOne, requestTwo, requestThree])
             .then(axios.spread((...res) => {  
-                console.log(res[0], "weather")
+                /* console.log(res[0], "weather")
                 console.log(res[1], "ast")
-                console.log(res[2], "tide")
+                console.log(res[2], "tide") */
 
                 const weatherIdents = res[0].data.hours.map((hour, i) => { //adds and ident to each hour returned in weather
                     return {
@@ -472,7 +472,7 @@ function ContextProvider({children}) {
 
                     setPointLoaded(true)
 
-                    console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                    //console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
                 } else if (loc.name === "Pacifica/Linda Mar") {
                     setMarAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                     setMarCloud(weatherForecast[0].cloudCover.sg)
@@ -487,7 +487,7 @@ function ContextProvider({children}) {
 
                     setMarLoaded(true)
 
-                    console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                    //console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
                 } else if (loc.name === "HB Pier") {
                     setHbAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                     setHbCloud(weatherForecast[0].cloudCover.sg)
@@ -502,7 +502,7 @@ function ContextProvider({children}) {
 
                     setHbLoaded(true)
 
-                    console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                    //console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
                 } else if (loc.name === "Waikiki Beach") {
                     setWaikikiAirTemp(Math.floor((weatherForecast[0].airTemperature.sg) * (9/5) + 32))
                     setWaikikiCloud(weatherForecast[0].cloudCover.sg)
@@ -517,7 +517,7 @@ function ContextProvider({children}) {
 
                     setWaikikiLoaded(true)
 
-                    console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
+                    //console.log(res[2].data.meta.requestCount + 1, "stormglass requests made")
                 }
             }))
             .catch((error) => {

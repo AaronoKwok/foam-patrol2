@@ -25,7 +25,7 @@ export const addZero = (num) => {
 export const localStartString = (loc) =>  {
     const date = new Date()
     const localTime = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours() - 12, date.getUTCMinutes(), date.getUTCSeconds())
-    console.log(loc.timezone, "utils localStartString")
+    //console.log(loc.timezone, "utils localStartString")
     const timeString = new Date(localTime).toLocaleString('en-UK', {timeZone: loc.timezone}) //24 hour time is used, so need 'en-UK' / 'en-GB' or any place that uses 24 hour time
     //using "PST'HST" does not work on ff. "US/'state'" works on all browsers
     return timeString
@@ -45,7 +45,7 @@ export const tideStart = (timeString) => {
     }
     const callDate = `${dateArr[2]}-${dateMonth()}-${dateArr[0]}`
     const time = splitArr[1].slice(0, -3)
-    console.log(`${callDate} ${time}`, "tide start")
+    //console.log(`${callDate} ${time}`, "tide start")
     return `${callDate} ${time}`
 }
 
@@ -135,10 +135,10 @@ export const ampm = (time, zone) => {
 
 /* finds next tide in forecast */
 export const correctTideTime = (forecast) => {
-    console.log(forecast, "correctTideTime forecast")
+    //(forecast, "correctTideTime forecast")
     for (let i = 0; i < forecast.length; i++) {
         if (Date.parse(forecast[i].time) - Date.now() >= 0) {
-            console.log(forecast[i], "next tide hour")
+            //console.log(forecast[i], "next tide hour")
             return forecast[i]
         }
     }

@@ -22,10 +22,8 @@ import up from "../images/up.jpeg"
 import down from "../images/down.jpeg"
 
 function SurfForecasts({loc}) {
-    console.log(loc.name, "surf forecast comp")
 
     const spot = loc.name 
-    console.log(loc.name)
 
     const {
         loaded, 
@@ -72,7 +70,7 @@ function SurfForecasts({loc}) {
     const windDes = loc.guide.idealConditions.wind 
 
     useEffect(() => {
-        console.log("surfforecast effect ran for", loc.name)
+        //console.log("surfforecast effect ran for", loc.name)
         setLoaded(false) //sets loaded back to false when navigating to other forecast without manual page reload
         //getData(loc)
     }, [spot])

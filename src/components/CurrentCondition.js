@@ -18,7 +18,7 @@ import up from "../images/up.jpeg"
 import down from "../images/down.jpeg"
 
 function CurrentCondition({loc}) {
-    console.log(loc.timezone , "mp")
+    //console.log(loc.timezone , "mp")
     const {
         findSky, 
         pointLoaded, 
@@ -69,12 +69,12 @@ function CurrentCondition({loc}) {
     } = useContext(Context)
     
     useEffect(() => {
-        console.log("mp retrieving data...")
+        console.log("main page retrieving data...")
         //getMPData(loc)
     }, [])
 
     function findData() {
-        console.log(pointLoaded)
+        //console.log(pointLoaded)
         if (loc.name === "Pleasure Point") {
             if (pointLoaded === true) {
                 return <div className="">
