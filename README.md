@@ -27,4 +27,4 @@ Made this to cement development processes into memory, including state managemen
 Foam Patrol is a work in progress and needs the addition of the following: 
 
 1. shop and a cart + ability to "order"
-2. refactor cluttered JavaScript code 
+2. refactor styling 
