@@ -1807,6 +1807,14 @@ body {
   max-width: 100%;
 }
 
+.on-left {
+  margin-right: 15px;
+}
+
+.on-right {
+  margin-left: 15px;
+}
+
 .whatDo-second-img {
   max-height: 390px;
   border-radius: 10px;
@@ -2724,6 +2732,7 @@ body {
     display: block;
     text-align: center;
     margin-bottom: 20px; 
+    justify-content: space-between;
   }
 
   .whatDo-title {

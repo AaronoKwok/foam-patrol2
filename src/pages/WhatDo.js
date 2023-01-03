@@ -105,11 +105,11 @@ function WhatDo() {
                                 <p>We share our love for surfing because it changed our lives.</p>
                                 <p>From our experience, surfing becomes more fun the more you progress. We know there is a path to accelerate the process of learning to surf. We want to share it with you because we believe nothing is more satisfying, fun and rewarding than the feeling of learning to surf better on some of the best waves on earth.</p>
                             </div>
-                            <img className="retreat-mobile-image" src={why} alt=""/>
+                            <img className="retreat-mobile-image on-right" src={why} alt=""/>
                         </div>
 
                         <div className="whatDo-holder">
-                            <img className="retreat-mobile-image" src={whowe} alt="" />
+                            <img className="retreat-mobile-image on-left" src={whowe} alt="" />
                             <div>
                                 <p className="retreat-header">Who we are</p>
                                 <p>We are a family of passionate surf coaches dedicated to helping you learn to surf faster than you could ever imagine.</p>
@@ -122,10 +122,10 @@ function WhatDo() {
                                 <p>The people. Our #1 focus is to have the most passionate and professional surf coaching team at each destination. Our team members consider it a personal mission to provide the absolute best surf coaching retreats for beginners and intermediates.</p>
                                 <p>The surf classes don’t end after 2 hours. You will develop a connection with surf coaches who genuinely care about your progression and share their knowledge throughout the trip.</p>
                             </div>
-                            <img className="retreat-mobile-image" src={unique} alt=""/>
+                            <img className="retreat-mobile-image on-right" src={unique} alt=""/>
                         </div>
                         <div className="whatDo-holder">
-                            <img className="retreat-mobile-image" src={best} alt=""/>
+                            <img className="retreat-mobile-image on-left" src={best} alt=""/>
                             <div>
                                 <p className="retreat-header">Only the best surf spots at the optimal time of the year</p>
                                 <p>A key element to enjoy surfing and to progress is to maximize your chances of surfing waves suitable for your skill level. We take you to the best and safest surf spots for your level and only operate at the optimal time of the year in some of the most consistent surfing locations on earth.</p>
@@ -136,10 +136,10 @@ function WhatDo() {
                                 <p className="retreat-header">Authentic experience</p>
                                 <p>The relationship we have built with local communities and with the local surf coaches is one of the most unique perks of our trips. Our travelers feel the genuine friendship with the local surf coaches and the pride they have in collaborating with Barefoot Surf Travel. Our vision has always been to collaborate with the local communities in order to have a mutual, positive impact.</p>
                             </div>
-                            <img className="retreat-mobile-image" src={authentic} alt=""/>
+                            <img className="retreat-mobile-image on-right" src={authentic} alt=""/>
                         </div>
                         <div className="whatDo-holder">
-                            <img className="retreat-mobile-image" src={stress} alt=""/>
+                            <img className="retreat-mobile-image on-left" src={stress} alt=""/>
                             <div>
                                 <p className="retreat-header">Stress-free vacations</p>
                                 <p>Live a stress-free vacation while experiencing the very best that the destination has to offer.</p>
@@ -152,10 +152,10 @@ function WhatDo() {
                                 <p>There is a special energy on our trips. Is it because of the exclusive beach houses or the private beach bungalows? Is it because we only run during specific times of the year, when the weather and the waves are ideal for learning? Is it because we gather the most inspiring and friendly team of local surfers for our surf lessons?</p>
                                 <p>It’s a mix of it all. Since our mission is to take  people on the surf trip of a lifetime, every single decision we make aims to create an unforgettable experience.</p>
                             </div>
-                            <img className="retreat-mobile-image" src={atmosphere} alt=""/>
+                            <img className="retreat-mobile-image on-right" src={atmosphere} alt=""/>
                         </div>
                         <div className="whatDo-holder">
-                            <img className="retreat-mobile-image" src={breathtake} alt="" />
+                            <img className="retreat-mobile-image on-left" src={breathtake} alt="" />
                             <div>
                                 <p className="retreat-header">Breathtaking accommodations at the best locations</p>
                                 <p>We love to treat our guests to what we believe are the most amazing villas and bungalows available at each destination.</p>
