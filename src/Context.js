@@ -389,7 +389,7 @@ function ContextProvider({children}) {
     //get api data for main page surf component
     function getMPData(loc) {
 
-        console.log("retrieving data...")
+        //console.log("retrieving data...")
         //console.log(localStartString(loc), loc.name)
 
         const lat = loc.location[0]; 

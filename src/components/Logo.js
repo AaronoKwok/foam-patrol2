@@ -11,6 +11,8 @@ function Logo() {
     function handleClick() {
         if (location.pathname !== "/") {
             navigate("/")
+        } else {
+            window.scrollTo(0,0)
         }
     }
 
