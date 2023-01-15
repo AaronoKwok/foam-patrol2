@@ -69,8 +69,8 @@ function CurrentCondition({loc}) {
     } = useContext(Context)
     
     useEffect(() => {
-        console.log("main page retrieving data...")
-        getMPData(loc)
+        //console.log("main page retrieving data...")
+        //getMPData(loc)
     }, [])
 
     function findData() {

@@ -2,7 +2,6 @@ import React, {useEffect} from "react"
 import {Routes, Route, useLocation} from "react-router-dom" 
 
 import SurfForecasts from "./pages/SurfForecasts"
-//import Shop from "./pages/Shop"
 import SurfRetreat from "./components/SurfRetreat"
 import IntRetreat from "./components/IntRetreat"
 import ChosenCourse from "./components/ChosenCourse"

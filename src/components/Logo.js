@@ -1,14 +1,17 @@
 import React from "react" 
-import {useNavigate} from "react-router-dom"
+import {useNavigate, useLocation} from "react-router-dom"
 
 import useWindowWidth from "../hooks/useWindowWidth"
 
 function Logo() {
 
     const navigate = useNavigate()
+    const location = useLocation()
 
     function handleClick() {
-        navigate("/")
+        if (location.pathname !== "/") {
+            navigate("/")
+        }
     }
 
     return (
