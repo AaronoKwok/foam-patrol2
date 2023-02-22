@@ -2,31 +2,59 @@
 
 ## Overview
 
-Foam Patrol is a site I created to connect people who enjoy the sport of surfing or want to get into it. It hosts surf forecasts, surf trips, and paths to surf tutorials. The site is inspired by websites like [Barefoot Surf](https://barefootsurftravel.com/) and [Magic Seaweed](https://magicseaweed.com/). 🤙
+Foam Patrol is a site I created to connect people who enjoy the sport of surfing or want to get into it. It hosts surf forecasts, surf trips, and paths to surf tutorials. 🤙
 
 Live: [Foam Patrol](https://foampatrol.netlify.app)
 
-## Project Description 
+![main](/src/assets/images/main.jpg)
 
-Tech Stack: JavaScript, React, HTML, CSS
+## Tech Used
 
-![conditions](/src/images/rdmeCond.png)
-Above displays conditions of Pleasure Point, a popular surf spot in Northern California.
+<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React icon" height="30" /><img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="React Router icon" height="30" /><img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 icon" height="30" /><img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="html5 icon" height="30"/><img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="js icon" height="30"/>
 
-![mainpage conditions](/src/images/rdmeMain.png)
-Above displays summarized conditions of multiple surf spots on the Home page.
+## Features
 
-![online courses](/src/images/rdmeOnline.png)
-Above shows ability to toggle which types of courses to view on the Online Courses page.
+- [x] Retrieve weather and surf data from [Stormglass.io API](https://stormglass.io/) by using Axios <br>
+- [x] Use Javascrit's date object to display accurate time and weather information <br>
+- [x] Create responsive navbar with dropdowns <br>
+- [x] Uses variety of weather icons to display accurate current weather conditions at surf spots <br>
+- [x] Use React Router to route through site's pages <br>
+- [x] Create a number of pages to practice design with JSX and CSS <br>
+- [x] Make app responsive <br>
 
-![dynamic design](/src/images/rdmeResDes.png)
-Above is a responsive navbar. Other site elements are currently being made more responsive.
+## Project Structure
 
-Made this to cement development processes into memory, including state management, and API usage.
+```
+/
+ public/
+ src/
+    ├── assets/
+    │   └── images/
+    ├── components/
+    ├── Context
+    ├── hooks/
+    ├── pages/
+    └── utils/
+ package.json
+```
 
-## TO DO 
+## Running Locally
 
-Foam Patrol is a work in progress and needs the addition of the following: 
+1. Clone repo.
+2. Run `npm install && npm start` in terminal.
 
-1. shop and a cart + ability to "order"
-2. refactor styling 
+## Preview
+
+![conditions](/src/assets/images/rdmeCond.png)
+
+![mainpage conditions](/src/assets//images/rdmeMain.png)
+
+![online courses](/src/assets/images/rdmeOnline.png)
+
+![team](/src/assets/images/team.jpg)
+
+![dynamic design](/src/assets/images/rdmeResDes.png)
+
+## Inspiration
+
+This site is inspired by websites like [Barefoot Surf](https://barefootsurftravel.com/) and [Magic Seaweed](https://magicseaweed.com/).
