@@ -17,7 +17,7 @@ Live: [Foam Patrol](https://foampatrol.netlify.app)
 - [x] Retrieve weather and surf data from [Stormglass.io API](https://stormglass.io/) by using Axios <br>
 - [x] Use Javascrit's date object to display accurate time and weather information <br>
 - [x] Create responsive navbar with dropdowns <br>
-- [x] Uses variety of weather icons to display accurate current weather conditions at surf spots <br>
+- [x] Use variety of weather icons to display accurate current weather conditions at surf spots <br>
 - [x] Use React Router to route through site's pages <br>
 - [x] Create a number of pages to practice design with JSX and CSS <br>
 - [x] Make app responsive <br>
