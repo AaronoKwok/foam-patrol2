@@ -265,7 +265,7 @@ function ContextProvider({children}) {
     //get api data for surf page
     function getData(loc) {
 
-        console.log("retrieving data...")
+        // console.log("retrieving data...")
         //console.log(localStartString(loc), loc.name)
 
         const lat = loc.location[0]; 
@@ -278,19 +278,20 @@ function ContextProvider({children}) {
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString(loc))}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString(loc))}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         
+        const apiKey = process.env.REACT_APP_STORMGLASS_API
         /* console.log(weatherUrl, "weather url")
         console.log(astronomyUrl, "ast url")
         console.log(tideUrl, "tide url") */
 
         const headers = {
             headers: {
-                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+                'Authorization': `${apiKey}`
             }
         } 
         
         const requestOne = axios.get(weatherUrl, {
             headers: {
-                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+                'Authorization': `${apiKey}`
             }
         });
 
@@ -402,13 +403,14 @@ function ContextProvider({children}) {
         const astronomyUrl = `https://api.stormglass.io/v2/astronomy/point?lat=${lat}&lng=${lng}&start=${tideStart(localStartString(loc))}`
         const tideUrl = `https://api.stormglass.io/v2/tide/extremes/point?lat=${tideLat}&lng=${tideLng}&start=${tideStart(localStartString(loc))}`  //tide data relative to local mean sea level (msl) which is included in locationData.json
         
+        const apiKey = process.env.REACT_APP_STORMGLASS_API
         /* console.log(weatherUrl, "weather url")
         console.log(astronomyUrl, "ast url")
         console.log(tideUrl, "tide url") */
 
         const headers = {
             headers: {
-                'Authorization': '62822fc8-1452-11ed-8cb3-0242ac130002-62823040-1452-11ed-8cb3-0242ac130002'
+                'Authorization': `${apiKey}`
             }
         } 
         

@@ -71,6 +71,7 @@ function CurrentCondition({loc}) {
     useEffect(() => {
         //console.log("main page retrieving data...")
         getMPData(loc)
+        // eslint-disable-next-line
     }, [])
 
     function findData() {
