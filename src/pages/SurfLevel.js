@@ -4,9 +4,9 @@ import useWindowWidth from "../hooks/useWindowWidth"
 
 import {iconList} from "../utils"
 
-import surfLevel from "../images/mysurfLevel.jpeg"
-import begIcon from "../images/beg.jpeg"
-import intAdvIcon from "../images/intAdv.jpeg"
+import surfLevel from "../assets/images/mysurfLevel.jpeg"
+import begIcon from "../assets/images/beg.jpeg"
+import intAdvIcon from "../assets/images/intAdv.jpeg"
 
 function SurfLevel() {
 

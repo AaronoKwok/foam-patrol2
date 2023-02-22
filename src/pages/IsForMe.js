@@ -4,10 +4,10 @@ import useWindowWidth from "../hooks/useWindowWidth"
 
 import {iconList} from "../utils"  //utils is a library of functions
 
-import age from "../images/travelerAge.jpeg"
-import level from "../images/surfLevel.jpeg"
-import traveler from "../images/world.jpeg"
-import forMe from "../images/isForMe.jpeg"
+import age from "../assets/images/travelerAge.jpeg"
+import level from "../assets/images/surfLevel.jpeg"
+import traveler from "../assets/images/world.jpeg"
+import forMe from "../assets/images/isForMe.jpeg"
 
 function IsForMe() {
 

@@ -15,13 +15,13 @@ import {
 } from "../utils"
 
 //images
-import surfHeightIcon from "../images/surfHeight.jpeg"
-import swellDirectionIcon from "../images/swellDirection.jpeg"
-import tideIcon from "../images/tide.jpeg"
-import windIcon from "../images/wind.jpeg"
-import seaIcon from "../images/seaIcon.svg"
-import up from "../images/up.jpeg"
-import down from "../images/down.jpeg"
+import surfHeightIcon from "../assets/images/surfHeight.jpeg"
+import swellDirectionIcon from "../assets/images/swellDirection.jpeg"
+import tideIcon from "../assets/images/tide.jpeg"
+import windIcon from "../assets/images/wind.jpeg"
+import seaIcon from "../assets/images/seaIcon.svg"
+import up from "../assets/images/up.jpeg"
+import down from "../assets/images/down.jpeg"
 
 function SurfForecasts({loc}) {
 

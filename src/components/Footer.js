@@ -1,9 +1,9 @@
 import React from "react" 
 import {Link} from "react-router-dom"
 
-import onePercent from "../images/one-percent.png"
-import githubSVG from "../images/github.svg"
-import linkedinSVG from "../images/linkedin.svg" 
+import onePercent from "../assets/images/one-percent.png"
+import githubSVG from "../assets/images/github.svg"
+import linkedinSVG from "../assets/images/linkedin.svg" 
 
 import useWindowWidth from "../hooks/useWindowWidth"
 

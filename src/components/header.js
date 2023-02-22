@@ -2,8 +2,8 @@ import React, {useState, useContext, useEffect} from "react"
 import {Link, useLocation} from "react-router-dom"
 
 import Logo from "./Logo"
-import githubSVG from "../images/github.svg"
-import linkedinSVG from "../images/linkedin.svg" 
+import githubSVG from "../assets/images/github.svg"
+import linkedinSVG from "../assets/images/linkedin.svg" 
 
 import {Context} from "../Context"
 import useWindowWidth from "../hooks/useWindowWidth"

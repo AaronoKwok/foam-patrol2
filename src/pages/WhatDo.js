@@ -2,15 +2,15 @@ import React from "react"
 
 import useWindowWidth from "../hooks/useWindowWidth"
 
-import background from "../images/whatWeDoBack.jpeg"
-import why from "../images/why.jpeg"
-import whowe from "../images/whoWe.jpeg"
-import unique from "../images/unique.jpeg"
-import best from "../images/bestSurf.jpeg"
-import authentic from "../images/authentic.jpeg"
-import stress from "../images/stress.jpeg"
-import atmosphere from "../images/atmosphere.jpeg"
-import breathtake from "../images/breathtake.jpeg"
+import background from "../assets/images/whatWeDoBack.jpeg"
+import why from "../assets/images/why.jpeg"
+import whowe from "../assets/images/whoWe.jpeg"
+import unique from "../assets/images/unique.jpeg"
+import best from "../assets/images/bestSurf.jpeg"
+import authentic from "../assets/images/authentic.jpeg"
+import stress from "../assets/images/stress.jpeg"
+import atmosphere from "../assets/images/atmosphere.jpeg"
+import breathtake from "../assets/images/breathtake.jpeg"
 
 function WhatDo() {
     return (

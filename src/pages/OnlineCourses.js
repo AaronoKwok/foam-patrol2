@@ -5,11 +5,11 @@ import OnlineCourse from "../components/OnlineCourse"
 
 import useWindowWidth from "../hooks/useWindowWidth"
 
-import gridIcon from "../images/gridIcon.png"
-import listIcon from "../images/listView.png"
+import gridIcon from "../assets/images/gridIcon.png"
+import listIcon from "../assets/images/listView.png"
 
-import courseBackscene from "../images/courses.png"
-import progress from "../images/progress.png"
+import courseBackscene from "../assets/images/courses.png"
+import progress from "../assets/images/progress.png"
 
 function OnlineCourses() {
 

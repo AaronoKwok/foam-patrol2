@@ -9,13 +9,13 @@ import {
     upOrDown
 } from "../utils"
 
-import point from "../images/conditionPoint.jpeg"
-import mar from "../images/conditionMar.jpeg" 
-import hb from "../images/conditionHb.jpeg" 
-import waikiki from "../images/conditionWaikiki.jpeg"
-import seaIcon from "../images/seaIcon.svg"
-import up from "../images/up.jpeg"
-import down from "../images/down.jpeg"
+import point from "../assets/images/conditionPoint.jpeg"
+import mar from "../assets/images/conditionMar.jpeg" 
+import hb from "../assets/images/conditionHb.jpeg" 
+import waikiki from "../assets/images/conditionWaikiki.jpeg"
+import seaIcon from "../assets/images/seaIcon.svg"
+import up from "../assets/images/up.jpeg"
+import down from "../assets/images/down.jpeg"
 
 function CurrentCondition({loc}) {
     //console.log(loc.timezone , "mp")

@@ -2,7 +2,7 @@ import React from "react"
 //import Carousel from 'react-bootstrap/Carousel';
 
 import useWindowWidth from "../hooks/useWindowWidth"
-import marWave from "../images/margarita-salyek-wave.png"
+import marWave from "../assets/images/margarita-salyek-wave.png"
 
 import BacksceneText from "./BacksceneText" 
 

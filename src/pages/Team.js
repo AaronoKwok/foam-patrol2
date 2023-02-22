@@ -2,15 +2,15 @@ import React from "react"
 
 import useWindowWidth from "../hooks/useWindowWidth"
 
-import team from "../images/Team.jpeg"
-import elmo from "../images/elmo.jpeg"
-import bert from "../images/bert.jpeg"
-import bigBird from "../images/bigBird.jpeg" 
-import cookieMon from "../images/cookieMonster.jpeg"
-import countVon from "../images/countVon.jpeg"  
-import dorothy from "../images/dorothy.jpeg" 
-import ernie from "../images/ernie.jpeg" 
-import oscar from "../images/oscar.jpeg" 
+import team from "../assets/images/Team.jpeg"
+import elmo from "../assets/images/elmo.jpeg"
+import bert from "../assets/images/bert.jpeg"
+import bigBird from "../assets/images/bigBird.jpeg" 
+import cookieMon from "../assets/images/cookieMonster.jpeg"
+import countVon from "../assets/images/countVon.jpeg"  
+import dorothy from "../assets/images/dorothy.jpeg" 
+import ernie from "../assets/images/ernie.jpeg" 
+import oscar from "../assets/images/oscar.jpeg" 
 
 function Team() {
     return (

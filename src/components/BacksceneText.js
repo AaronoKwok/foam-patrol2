@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 import useWindowWidth from "../hooks/useWindowWidth"
 
-import wave from "../images/wave.png"  
+import wave from "../assets/images/wave.png"  
 
 function BacksceneText() {
     return (
