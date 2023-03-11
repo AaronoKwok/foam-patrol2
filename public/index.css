@@ -36,7 +36,7 @@ body {
   justify-content: space-around;
   align-items: center;
   padding: 0px 45px;
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.325);
   z-index: 1;
 }
 
@@ -173,7 +173,7 @@ body {
   margin-left: 15px;
 }
 
-.gh, .lkn {
+.github-link, .linkedin-link {
   margin: 10px; 
 }
 
@@ -207,7 +207,7 @@ body {
 }
 
 .travel {
-  color: rgb(71, 180, 194);
+  color: rgb(56, 148, 160);
 }
 
 /* Footer Component */
@@ -418,7 +418,7 @@ body {
 }
 
 .main-info-span {
-  color: rgb(80, 187, 187);
+  color: rgb(56, 148, 160);
 }
 
 .arrow-icon {
@@ -771,7 +771,7 @@ body {
   position: absolute;
   top: 20px;
   right: 0px;
-  background-color: rgb(212, 190, 66);
+  background-color: rgb(14, 68, 113);
   font-weight: 500;
   font-size: 0.9em;
   letter-spacing: .03em;
@@ -782,8 +782,8 @@ body {
 
 .level {
   position: absolute;
-  background-color:rgb(212, 212, 212);
-  color: rgb(121, 121, 121);
+  background-color:rgb(220, 220, 220);
+  color: rgb(82, 82, 82);
   bottom: 100px; 
   left: 18px; 
   padding: 2px 7px; 
