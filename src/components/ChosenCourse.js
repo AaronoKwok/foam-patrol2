@@ -12,7 +12,7 @@ function ChosenCourse({course}) {
                         <img className="course-background-image" src={course.img} alt="" />
                         <div className="course-backscene-text">
                             <div className="course-backscene-title">
-                                <a className="chosen-course-title" target="_blank" rel="noreferrer" href={course.youtube}><p>{course.title}</p></a>
+                                <a className="chosen-course-title" target="_blank" rel="noreferrer" aria-label={`Go to ${course.title} youtube video`} href={course.youtube}><p>{course.title}</p></a>
                                 <p className="youtube">Click the title above to see a related video on YouTube.</p>
                             </div>
                         </div>
@@ -27,7 +27,7 @@ function ChosenCourse({course}) {
                         <img className="background-image" src={course.img} alt="" />
                         <div className="course-backscene-text">
                             <div className="course-backscene-title">
-                                <a className="course-title" target="_blank" rel="noreferrer" href={course.youtube}><p>{course.title}</p></a>
+                                <a className="course-title" target="_blank" rel="noreferrer" aria-label={`Go to ${course.title} youtube video`} href={course.youtube}><p>{course.title}</p></a>
                                 <p className="youtube">Click the title above to see a related video on YouTube.</p>
                             </div>
                         </div>

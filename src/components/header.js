@@ -472,8 +472,8 @@ function Header() {
                     {/* <div>add tripad</div> */}
 
                     <div className="socials">
-                        <a className="github-link" target="_blank" href="https://github.com/AaronoKwok" rel="noreferrer"><img src={githubSVG} alt=""></img></a>
-                        <a className="linkedin-link" target="_blank" href="https://www.linkedin.com/in/aaronkwok1/" rel="noreferrer"><img src={linkedinSVG} alt=""></img></a>
+                        <a className="github-link" target="_blank" aria-label="Check out Aaron Kwok's Github" href="https://github.com/AaronoKwok" rel="noreferrer"><img src={githubSVG} alt=""></img></a>
+                        <a className="linkedin-link" target="_blank" aria-label="Check out Aaron Kwoks's Linkendin" href="https://www.linkedin.com/in/aaronkwok1/" rel="noreferrer"><img src={linkedinSVG} alt=""></img></a>
                     </div> 
 
                     {/* <button>Login</button> */}
