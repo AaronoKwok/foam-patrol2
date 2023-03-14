@@ -1,4 +1,5 @@
 import React, {useContext, useEffect} from "react"
+import Loading from "../components/Loading"
 import {Context} from "../Context"
 
 import useWindowWidth from "../hooks/useWindowWidth"
@@ -74,7 +75,7 @@ function SurfForecasts({loc}) {
     useEffect(() => {
         //console.log("surfforecast effect ran for", loc.name)
         setLoaded(false) //sets loaded back to false when navigating to other forecast without manual page reload
-        getData(loc)
+        //getData(loc)
         // eslint-disable-next-line
     }, [spot])
     /* 
@@ -101,7 +102,8 @@ function SurfForecasts({loc}) {
                             {
                                 !loaded && 
                                 <div className="forecast-load">
-                                    <p className="loading-text">LOADING. . .</p>
+                                    <p style={{marginBottom: "0px"}}>checking the waves</p>
+                                    <Loading />
                                 </div>
                             }
 
@@ -337,7 +339,8 @@ function SurfForecasts({loc}) {
                             {
                                 !loaded && 
                                 <div className="forecast-load">
-                                    <p className="loading-text">LOADING. . .</p>
+                                    <p style={{marginBottom: "0px"}}>checking the waves</p>
+                                    <Loading />
                                 </div>
                             }
 

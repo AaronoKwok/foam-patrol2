@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from "react" 
 import {Link} from "react-router-dom" 
-
+import Loading from "./Loading"
 import {Context} from "../Context"
 
 import {
@@ -70,7 +70,7 @@ function CurrentCondition({loc}) {
     
     useEffect(() => {
         //console.log("main page retrieving data...")
-        getMPData(loc)
+        //getMPData(loc)
         // eslint-disable-next-line
     }, [])
 
@@ -101,7 +101,8 @@ function CurrentCondition({loc}) {
                         </div>
             } else {
                 return <div className="main-condition-not-loaded">
-                            <p>CONDITIONS LOADING. . .</p>
+                            <p style={{margin:"0"}}>checking the waves</p>
+                            <Loading />
                         </div>
             }
         } else if (loc.name === "Pacifica/Linda Mar") {
@@ -129,7 +130,8 @@ function CurrentCondition({loc}) {
                         </div> 
             } else {
                 return <div className="main-condition-not-loaded">
-                            <p>CONDITIONS LOADING. . .</p>
+                            <p style={{margin:"0"}}>checking the waves</p>
+                            <Loading />
                         </div>
             }
         } else if (loc.name === "HB Pier") {
@@ -157,7 +159,8 @@ function CurrentCondition({loc}) {
                         </div> 
             } else {
                 return <div className="main-condition-not-loaded">
-                            <p>CONDITIONS LOADING. . .</p>
+                            <p style={{margin:"0"}}>checking the waves</p>
+                            <Loading />
                         </div>
             }
         } else if (loc.name === "Waikiki Beach") {
@@ -184,7 +187,8 @@ function CurrentCondition({loc}) {
                         </div> 
             } else {
                 return <div className="main-condition-not-loaded">
-                            <p>CONDITIONS LOADING. . .</p>
+                            <p style={{margin:"0"}}>checking the waves</p>
+                            <Loading />
                         </div>
             }
         }
