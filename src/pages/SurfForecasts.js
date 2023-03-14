@@ -75,7 +75,7 @@ function SurfForecasts({loc}) {
     useEffect(() => {
         //console.log("surfforecast effect ran for", loc.name)
         setLoaded(false) //sets loaded back to false when navigating to other forecast without manual page reload
-        //getData(loc)
+        getData(loc)
         // eslint-disable-next-line
     }, [spot])
     /* 

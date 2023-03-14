@@ -2509,10 +2509,6 @@ body {
     margin-bottom: 24px;
   }
 
-  .main-condition-not-loaded {
-    margin-bottom: 24px; 
-  }
-
   .first-data-row {
     display: grid; 
     grid-template-columns: repeat(4, 1fr);
