@@ -193,6 +193,29 @@ body {
   border-radius: 5px;
 }
 
+.page-not-found {
+  position: relative;
+  height: 80vh;
+  background-color: rgba(87, 182, 223, 0.262);
+}
+
+.page-not-found-text {
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  background-color: aliceblue;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto; 
+  font-size: 50px;
+  text-align: center;
+  padding: 0px 20px;
+  border-radius: 20px;
+  color: rgb(13, 80, 97);
+}
+
 /* Logo  */
 
 .logo {

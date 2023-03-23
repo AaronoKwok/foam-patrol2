@@ -10,6 +10,7 @@ import OnlineCourses from "./pages/OnlineCourses"
 import Header from "./components/header"
 import MainPage from "./pages/MainPage"
 import Footer from "./components/Footer"
+import PageNotFound from "./components/PageNotFound"
 import Team from "./pages/Team"
 import WhatDo from "./pages/WhatDo" 
 import IsForMe from "./pages/IsForMe" 
@@ -151,6 +152,8 @@ function App() {
                     <Route path="/about/is-this-trip-for-me" element={<IsForMe />} />
                     <Route path="/about/surfing-level" element={<SurfLevel />} />
                 </Route>
+
+                <Route path="*" element={<PageNotFound />} />
 
             </Routes>
 
