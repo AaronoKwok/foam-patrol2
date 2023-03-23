@@ -36,8 +36,8 @@ function Footer() {
                         </div>
                     </section>
                     <section className="footer-base">
-                        <p className="footer-base-left">United States | English (US) | $ (USD)</p>
-                        <p className="footer-base-right">&#169; 2022 Foam Patrol. Travel | Images and design inspiration from <a className="barefoot" aria-label="Check out design inspiration for Foam Patrol" href="https://barefootsurftravel.com/" target="_blank" rel="noreferrer">Barefoot Surf</a></p>
+                        <p className="footer-base-left">United States | English (US)</p>
+                        <p className="footer-base-right">&#169; 2023 Foam Patrol. Travel | Images and design inspiration from <a className="barefoot" aria-label="Check out design inspiration for Foam Patrol" href="https://barefootsurftravel.com/" target="_blank" rel="noreferrer">Barefoot Surf</a></p>
                     </section>
                 </div>
             }
@@ -66,8 +66,8 @@ function Footer() {
                         </div>
                     </section>
                     <section className="footer-base">
-                        <p className="footer-base-left">United States | English (US) | $ (USD)</p>
-                        <p className="footer-base-right">&#169; 2022 Foam Patrol. Travel | Images and design inspiration from <a className="barefoot" aria-label="Check out design inspiration for Foam Patrol" href="https://barefootsurftravel.com/" target="_blank" rel="noreferrer">Barefoot Surf</a></p>
+                        <p className="footer-base-left">United States | English (US)</p>
+                        <p className="footer-base-right">&#169; 2023 Foam Patrol. Travel | Images and design inspiration from <a className="barefoot" aria-label="Check out design inspiration for Foam Patrol" href="https://barefootsurftravel.com/" target="_blank" rel="noreferrer">Barefoot Surf</a></p>
                     </section>
                 </div>
             }
