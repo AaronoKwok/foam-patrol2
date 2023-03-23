@@ -16,8 +16,6 @@ import CurrentCondition from "../components/CurrentCondition"
 
 import useWindowWidth from "../hooks/useWindowWidth"
 
-
-
 function MainPage() { //to change once have a courses scroll functionality
 
     //console.log(useWindowWidth())
@@ -71,15 +69,7 @@ function MainPage() { //to change once have a courses scroll functionality
                         </section>
                     </div>
 
-                    <div className="mainpage-width">
-
-                        <section className="browse-retreats">
-                            <p className="retreats-p">Browse Surf Trips</p>
-                            <hr className="main-hr"/>
-                            <div className="retreats-layout">
-                                {retreats}
-                            </div>
-                        </section> 
+                    <div className="mainpage-width"> 
 
                         <section className="browse-forecasts"> 
                             <p className="conditions-p">California & Hawaii Current Conditions</p>
@@ -89,6 +79,14 @@ function MainPage() { //to change once have a courses scroll functionality
                                 <CurrentCondition loc={pacifica}/>
                                 <CurrentCondition loc={hbPier}/>
                                 <CurrentCondition loc={waikiki}/>
+                            </div>
+                        </section>
+
+                        <section className="browse-retreats">
+                            <p className="retreats-p">Browse Surf Trips</p>
+                            <hr className="main-hr"/>
+                            <div className="retreats-layout">
+                                {retreats}
                             </div>
                         </section>
                         
@@ -116,15 +114,7 @@ function MainPage() { //to change once have a courses scroll functionality
                         </section>
                     </div>
 
-                    <div className="mainpage-width">
-
-                        <section className="browse-retreats">
-                            <p className="retreats-p">Surf Trips</p>
-                            <hr className="main-hr"/>
-                            <div className="retreats-layout">
-                                {retreats}
-                            </div>
-                        </section> 
+                    <div className="mainpage-width"> 
 
                         <section className="browse-forecasts"> 
                             <p className="retreats-p">California & Hawaii Current Conditions</p>
@@ -134,6 +124,14 @@ function MainPage() { //to change once have a courses scroll functionality
                                 <CurrentCondition loc={pacifica}/>
                                 <CurrentCondition loc={hbPier}/>
                                 <CurrentCondition loc={waikiki}/>
+                            </div>
+                        </section>
+
+                        <section className="browse-retreats">
+                            <p className="retreats-p">Surf Trips</p>
+                            <hr className="main-hr"/>
+                            <div className="retreats-layout">
+                                {retreats}
                             </div>
                         </section>
                         

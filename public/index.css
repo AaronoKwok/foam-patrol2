@@ -582,7 +582,7 @@ body {
 /* MainPage Retreats */
 
 .browse-retreats {
-  margin-bottom: 45px; 
+  margin-bottom: 20px; 
 }
 
 .retreats-p {
@@ -611,7 +611,7 @@ body {
   position: relative;
   min-width: 230px;
   max-width: 230px;
-  margin: 10px 5px 15px 5px; 
+  margin: 10px 5px 0px 5px; 
   border-radius: 10px; 
 }
 
@@ -2631,7 +2631,7 @@ body {
   }
 
   .browse-forecasts {
-    margin-bottom: -20px; 
+    margin-bottom: 20px; 
   }
 
   .courses-layout {
