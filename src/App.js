@@ -93,26 +93,26 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage />} />
 
-                <Route path="/surfRetreats">
-                    <Route path="/surfRetreats/costarica-retreat" element={<SurfRetreat retreat={costaRica} />} />
-                    <Route path="/surfRetreats/nicaragua-retreat" element={<SurfRetreat retreat={nicaragua} />} />
-                    <Route path="/surfRetreats/bali-retreat" element={<SurfRetreat retreat={bali} /> }/>
-                    <Route path="/surfRetreats/intermediate/maldives-retreat" element={<IntRetreat retreat={maldives} />} />
-                    <Route path="/surfRetreats/intermediate/mentawais-retreat" element={<IntRetreat retreat={mentawais} />} />
-                    <Route path="/surfRetreats/surf-trip-calendar" element={<SurfCalendar />} />
+                <Route path="/surf-retreats">
+                    <Route path="/surf-retreats/costarica-retreat" element={<SurfRetreat retreat={costaRica} />} />
+                    <Route path="/surf-retreats/nicaragua-retreat" element={<SurfRetreat retreat={nicaragua} />} />
+                    <Route path="/surf-retreats/bali-retreat" element={<SurfRetreat retreat={bali} /> }/>
+                    <Route path="/surf-retreats/intermediate/maldives-retreat" element={<IntRetreat retreat={maldives} />} />
+                    <Route path="/surf-retreats/intermediate/mentawais-retreat" element={<IntRetreat retreat={mentawais} />} />
+                    <Route path="/surf-retreats/surf-trip-calendar" element={<SurfCalendar />} />
                 </Route>
                 
-                <Route path="/surfForecasts" >
-                    <Route path="/surfForecasts/pleasurePoint" element={<SurfForecasts loc={pleasurePoint}/>} />
-                    <Route path="/surfForecasts/waikiki" element={<SurfForecasts loc={waikiki}/>} />
-                    <Route path="/surfForecasts/jacks" element={<SurfForecasts loc={jacks}/>} />
-                    <Route path="/surfForecasts/cowells" element={<SurfForecasts loc={cowells}/>} />
-                    <Route path="/surfForecasts/steamer" element={<SurfForecasts loc={steamer}/>} />
-                    <Route path="/surfForecasts/theHook" element={<SurfForecasts loc={theHook}/>} />
-                    <Route path="/surfForecasts/capitola" element={<SurfForecasts loc={capitola}/>} />
-                    <Route path="/surfForecasts/davenport" element={<SurfForecasts loc={davenport}/>} />
-                    <Route path="/surfForecasts/pacifica" element={<SurfForecasts loc={pacifica}/>} />
-                    <Route path="/surfForecasts/hbPier" element={<SurfForecasts loc={hbPier}/>} />
+                <Route path="/surf-forecasts" >
+                    <Route path="/surf-forecasts/pleasure-point" element={<SurfForecasts loc={pleasurePoint}/>} />
+                    <Route path="/surf-forecasts/waikiki" element={<SurfForecasts loc={waikiki}/>} />
+                    <Route path="/surf-forecasts/jacks" element={<SurfForecasts loc={jacks}/>} />
+                    <Route path="/surf-forecasts/cowells" element={<SurfForecasts loc={cowells}/>} />
+                    <Route path="/surf-forecasts/steamer" element={<SurfForecasts loc={steamer}/>} />
+                    <Route path="/surf-forecasts/the-hook" element={<SurfForecasts loc={theHook}/>} />
+                    <Route path="/surf-forecasts/capitola" element={<SurfForecasts loc={capitola}/>} />
+                    <Route path="/surf-forecasts/davenport" element={<SurfForecasts loc={davenport}/>} />
+                    <Route path="/surf-forecasts/pacifica" element={<SurfForecasts loc={pacifica}/>} />
+                    <Route path="/surf-forecasts/hb-pier" element={<SurfForecasts loc={hbPier}/>} />
                 </Route> 
                 {/* <Route path="/shop" element={<Shop />} /> */}
 

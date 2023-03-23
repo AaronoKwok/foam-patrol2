@@ -13,7 +13,7 @@
                                     "santaCruz": [
                                         {
                                             "id": "0",
-                                            "link": "/surfForecasts/pleasurePoint", 
+                                            "link": "/surf-forecasts/pleasure-point", 
                                             "name": "Pleasure Point", 
                                             "state": "California", 
                                             "county": "Santa Cruz County",
@@ -73,7 +73,7 @@
                                         }, 
                                         {
                                             "id": "1",
-                                            "link": "/surfForecasts/jacks", 
+                                            "link": "/surf-forecasts/jacks", 
                                             "name": "Jack's", 
                                             "state": "California",
                                             "county": "Santa Cruz County",
@@ -133,7 +133,7 @@
                                         },
                                         {
                                             "id": "2",
-                                            "link": "/surfForecasts/cowells", 
+                                            "link": "/surf-forecasts/cowells", 
                                             "name": "Cowell's",
                                             "state": "California",
                                             "county": "Santa Cruz County",
@@ -193,7 +193,7 @@
                                         },
                                         {
                                             "id": "3",
-                                            "link": "/surfForecasts/steamer", 
+                                            "link": "/surf-forecasts/steamer", 
                                             "name": "Steamer Lane",
                                             "state": "California",
                                             "county": "Santa Cruz County",
@@ -253,7 +253,7 @@
                                         },
                                         {
                                             "id": "4",
-                                            "link": "/surfForecasts/theHook", 
+                                            "link": "/surf-forecasts/the-hook", 
                                             "name": "'The Hook'",
                                             "state": "California",
                                             "county": "Santa Cruz County",
@@ -313,7 +313,7 @@
                                         },
                                         {
                                             "id": "5",
-                                            "link": "/surfForecasts/capitola", 
+                                            "link": "/surf-forecasts/capitola", 
                                             "name": "Capitola", 
                                             "state": "California",
                                             "county": "Santa Cruz County",
@@ -373,7 +373,7 @@
                                         },
                                         {
                                             "id": "6",
-                                            "link": "/surfForecasts/davenport", 
+                                            "link": "/surf-forecasts/davenport", 
                                             "name": "Davenport",
                                             "state": "California",
                                             "county": "Santa Cruz County",
@@ -435,7 +435,7 @@
                                     "sanMateo": [
                                         {
                                             "id": "0",
-                                            "link": "/surfForecasts/pacifica", 
+                                            "link": "/surf-forecasts/pacifica", 
                                             "name": "Pacifica/Linda Mar", 
                                             "state": "California",
                                             "county": "San Mateo County",
@@ -497,7 +497,7 @@
                                     "orange": [
                                         {
                                             "id": "0",
-                                            "link": "/surfForecasts/hbPier", 
+                                            "link": "/surf-forecasts/hb-pier", 
                                             "name": "HB Pier", 
                                             "state": "California",
                                             "county": "Orange",
@@ -564,7 +564,7 @@
                                     "oahu": [
                                         {
                                             "id": "0",
-                                            "link": "/surfForecasts/waikiki", 
+                                            "link": "/surf-forecasts/waikiki", 
                                             "name": "Waikiki Beach",
                                             "state": "Hawaii",
                                             "county": "O'ahu",

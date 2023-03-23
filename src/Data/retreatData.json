@@ -1,7 +1,7 @@
 [
     { 
         "id": 0, 
-        "link": "/surfRetreats/costarica-retreat",
+        "link": "/surf-retreats/costarica-retreat",
         "whereImg": "https://barefootsurftravel.com/wp-content/uploads/2018/07/IMG_3776-1500x1050.jpg", 
         "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2015/05/3K2A0240-800x933.jpeg", 
         "accImg": "https://barefootsurftravel.com/wp-content/uploads/2018/06/deluxe2-2-1200x1000.jpg", 
@@ -85,7 +85,7 @@
     }, 
     {
         "id": 1,
-        "link": "/surfRetreats/nicaragua-retreat", 
+        "link": "/surf-retreats/nicaragua-retreat", 
         "whereImg": "https://barefootsurftravel.com/wp-content/uploads/2017/03/3K2A3410-1600x800.jpg", 
         "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2015/05/DJI_0084-1600x700.jpeg", 
         "accImg": "https://barefootsurftravel.com/wp-content/uploads/2017/10/3K2A4652-800x800.jpg", 
@@ -169,7 +169,7 @@
     }, 
     {
         "id": 2, 
-        "link": "/surfRetreats/bali-retreat",
+        "link": "/surf-retreats/bali-retreat",
         "whereImg": "https://barefootsurftravel.com/wp-content/uploads/2015/05/DJI_0093-700x840.jpeg", 
         "typicalImg": "https://barefootsurftravel.com/wp-content/uploads/2018/09/DSCF4935-1200x675.jpg", 
         "accImg": "https://barefootsurftravel.com/wp-content/uploads/2015/05/K2A8361-1600x933.jpg", 
@@ -257,7 +257,7 @@
     },
     {
         "id": 3, 
-        "link": "/surfRetreats/intermediate/maldives-retreat",
+        "link": "/surf-retreats/intermediate/maldives-retreat",
         "whereImg": "", 
         "typicalImg": "", 
         
@@ -269,7 +269,7 @@
     },
     {
         "id": 4,
-        "link": "/surfRetreats/intermediate/mentawais-retreat", 
+        "link": "/surf-retreats/intermediate/mentawais-retreat", 
         "whereImg": "", 
         "typicalImg": "", 
         

@@ -25,11 +25,11 @@ function BacksceneText() {
                     </div>
                     <p className="description-on-backscene">Retreats only occur during optimal surf seasons for your level.</p>
                     <div className="backscene-links">
-                        <Link className="link-loc" to="/surfRetreats/costarica-retreat">Costa Rica</Link>
-                        <Link className="link-loc" to="/surfRetreats/nicaragua-retreat">Nicaragua</Link>
-                        <Link className="link-loc" to="/surfRetreats/bali-retreat">Bali</Link>
-                        <Link className="link-loc" to="/surfRetreats/intermediate/maldives-retreat">Mentawai</Link>
-                        <Link className="link-loc" to="/surfRetreats/intermediate/mentawais-retreat">Maldives</Link>
+                        <Link className="link-loc" to="/surf-retreats/costarica-retreat">Costa Rica</Link>
+                        <Link className="link-loc" to="/surf-retreats/nicaragua-retreat">Nicaragua</Link>
+                        <Link className="link-loc" to="/surf-retreats/bali-retreat">Bali</Link>
+                        <Link className="link-loc" to="/surf-retreats/intermediate/maldives-retreat">Mentawai</Link>
+                        <Link className="link-loc" to="/surf-retreats/intermediate/mentawais-retreat">Maldives</Link>
                     </div>
                 </div>
             }

@@ -174,19 +174,19 @@ function Header() {
                                     (retreats) &&
                                     <div className="nav-align">
                                         <div onClick={goBack} className="go-back">BACK</div>
-                                        <Link className="drop-nav-link" to="/surfRetreats/costarica-retreat">
+                                        <Link className="drop-nav-link" to="/surf-retreats/costarica-retreat">
                                             <p className="drop-nav-info">COSTA RICA | 7 DAYS</p>
                                         </Link>
-                                        <Link className="drop-nav-link" to="/surfRetreats/nicaragua-retreat">
+                                        <Link className="drop-nav-link" to="/surf-retreats/nicaragua-retreat">
                                             <p className="drop-nav-info">NICARAGUA | 7 DAYS</p>
                                         </Link>
-                                        <Link className="drop-nav-link" to="/surfRetreats/bali-retreat">
+                                        <Link className="drop-nav-link" to="/surf-retreats/bali-retreat">
                                             <p className="drop-nav-info">BALI | 10 DAYS</p>
                                         </Link>
-                                        <Link className="drop-nav-link" to="/surfRetreats/intermediate/maldives-retreat">
+                                        <Link className="drop-nav-link" to="/surf-retreats/intermediate/maldives-retreat">
                                             <p className="drop-nav-info">MALDIVES | OCTOBER</p>
                                         </Link>
-                                        <Link className="drop-nav-link" to="/surfRetreats/intermediate/mentawais-retreat">
+                                        <Link className="drop-nav-link" to="/surf-retreats/intermediate/mentawais-retreat">
                                             <p className="drop-nav-info">MENTAWAIS | NOVEMBER</p>
                                         </Link> 
                                     </div>
@@ -208,22 +208,22 @@ function Header() {
                                                 {
                                                     santaCruz && 
                                                     <div>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/pleasurePoint">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/pleasure-point">
                                                             <p className="drop-nav-info">{nameUppercase(pleasurePoint)}</p>
                                                         </Link>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/jacks">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/jacks">
                                                             <p className="drop-nav-info">{nameUppercase(jacks)}</p>
                                                         </Link>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/cowells">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/cowells">
                                                             <p className="drop-nav-info">{nameUppercase(cowells)}</p>
                                                         </Link>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/steamer">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/steamer">
                                                             <p className="drop-nav-info">{nameUppercase(steamer)}</p>
                                                         </Link>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/theHook">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/the-hook">
                                                             <p className="drop-nav-info">{nameUppercase(theHook)}</p>
                                                         </Link>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/capitola">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/capitola">
                                                             <p className="drop-nav-info">{nameUppercase(capitola)}</p>
                                                         </Link>
                                                     </div>
@@ -234,10 +234,10 @@ function Header() {
                                                 {
                                                     sanMateo &&
                                                     <div>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/davenport">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/davenport">
                                                             <p className="drop-nav-info">{nameUppercase(davenport)}</p>
                                                         </Link>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/pacifica">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/pacifica">
                                                             <p className="drop-nav-info">{nameUppercase(pacifica)}</p>
                                                         </Link>
                                                     </div>
@@ -248,7 +248,7 @@ function Header() {
                                                 {
                                                     orange &&
                                                     <div>
-                                                        <Link className="drop-nav-link" to="/surfForecasts/hbPier">
+                                                        <Link className="drop-nav-link" to="/surf-forecasts/hb-pier">
                                                             <p className="drop-nav-info">{nameUppercase(hbPier)}</p>
                                                         </Link>
                                                     </div>
@@ -267,7 +267,7 @@ function Header() {
 
                                                 {
                                                     oahu &&
-                                                    <Link className="drop-nav-link" to="/surfForecasts/waikiki">
+                                                    <Link className="drop-nav-link" to="/surf-forecasts/waikiki">
                                                         <p className="drop-nav-info">{nameUppercase(waikiki)}</p>            
                                                     </Link> 
                                                 }
@@ -318,13 +318,13 @@ function Header() {
                                         <p className="dropdown-title">MAIN COACHING RETREATS</p>
                                         <hr className="hr-dropdown"/> 
 
-                                        <Link className="dropdown-link" to="/surfRetreats/costarica-retreat">
+                                        <Link className="dropdown-link" to="/surf-retreats/costarica-retreat">
                                             <p className="dropdown-info">COSTA RICA | 7 DAYS</p>
                                         </Link>
-                                        <Link className="dropdown-link" to="/surfRetreats/nicaragua-retreat">
+                                        <Link className="dropdown-link" to="/surf-retreats/nicaragua-retreat">
                                             <p className="dropdown-info">NICARAGUA | 7 DAYS</p>
                                         </Link>
-                                        <Link className="dropdown-link" to="/surfRetreats/bali-retreat">
+                                        <Link className="dropdown-link" to="/surf-retreats/bali-retreat">
                                             <p className="dropdown-info">BALI | 10 DAYS</p>
                                         </Link> 
                                     </div>
@@ -333,10 +333,10 @@ function Header() {
                                         <p className="dropdown-title">INTERMEDIATE ONLY TRIPS</p>
                                         <hr className="hr-dropdown"/>
                                         
-                                        <Link className="dropdown-link" to="/surfRetreats/intermediate/maldives-retreat">
+                                        <Link className="dropdown-link" to="/surf-retreats/intermediate/maldives-retreat">
                                             <p className="dropdown-info">MALDIVES | OCTOBER</p>
                                         </Link>
-                                        <Link className="dropdown-link" to="/surfRetreats/intermediate/mentawais-retreat">
+                                        <Link className="dropdown-link" to="/surf-retreats/intermediate/mentawais-retreat">
                                             <p className="dropdown-info">MENTAWAIS | NOVEMBER</p>
                                         </Link> 
                                     </div>
@@ -345,7 +345,7 @@ function Header() {
                                         <p className="dropdown-title">MORE TRIP INFO</p>
                                         <hr className="hr-dropdown"/>
 
-                                        <Link className="dropdown-link" to="/surfRetreats/surf-trip-calendar">
+                                        <Link className="dropdown-link" to="/surf-retreats/surf-trip-calendar">
                                             <p className="dropdown-info">SURF TRIP CALENDAR</p>
                                         </Link>
                                     </div> */}
@@ -364,31 +364,31 @@ function Header() {
                                     <p className="dropdown-title">CALIFORNIA</p>
                                     <hr className="hr-dropdown"/>
 
-                                    <Link className="dropdown-link" to="/surfForecasts/pleasurePoint">
+                                    <Link className="dropdown-link" to="/surf-forecasts/pleasure-point">
                                         <p className="dropdown-info">{nameUppercase(pleasurePoint)}</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfForecasts/jacks">
+                                    <Link className="dropdown-link" to="/surf-forecasts/jacks">
                                         <p className="dropdown-info">{nameUppercase(jacks)}</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfForecasts/cowells">
+                                    <Link className="dropdown-link" to="/surf-forecasts/cowells">
                                         <p className="dropdown-info">{nameUppercase(cowells)}</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfForecasts/steamer">
+                                    <Link className="dropdown-link" to="/surf-forecasts/steamer">
                                         <p className="dropdown-info">{nameUppercase(steamer)}</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfForecasts/theHook">
+                                    <Link className="dropdown-link" to="/surf-forecasts/the-hook">
                                         <p className="dropdown-info">{nameUppercase(theHook)}</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfForecasts/capitola">
+                                    <Link className="dropdown-link" to="/surf-forecasts/capitola">
                                         <p className="dropdown-info">{nameUppercase(capitola)}</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfForecasts/davenport">
+                                    <Link className="dropdown-link" to="/surf-forecasts/davenport">
                                         <p className="dropdown-info">{nameUppercase(davenport)}</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfForecasts/pacifica">
+                                    <Link className="dropdown-link" to="/surf-forecasts/pacifica">
                                         <p className="dropdown-info">{nameUppercase(pacifica)}</p>
                                     </Link>
-                                    <Link className="dropdown-link" to="/surfForecasts/hbPier">
+                                    <Link className="dropdown-link" to="/surf-forecasts/hb-pier">
                                         <p className="dropdown-info">{nameUppercase(hbPier)}</p>
                                     </Link>
                                 </div>
@@ -396,7 +396,7 @@ function Header() {
                                     <p>HAWAII</p>
                                     <hr className="hr-dropdown"/>
 
-                                    <Link className="dropdown-link" to="/surfForecasts/waikiki">
+                                    <Link className="dropdown-link" to="/surf-forecasts/waikiki">
                                         <p className="dropdown-info">{nameUppercase(waikiki)}</p>            
                                     </Link>
                                 </div>
