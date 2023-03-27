@@ -21,6 +21,7 @@ Live: [Foam Patrol](https://foampatrol.netlify.app)
 - [x] Use React Router to route through site's pages <br>
 - [x] Create a number of pages to practice design with JSX and CSS <br>
 - [x] Make app responsive <br>
+- [x] Figma wireframe [view](https://www.figma.com/file/5XCFXDAFt10KYh70g5NkOU/Foam-Patrol?node-id=0%3A1&t=2j2VuqxMd3krOQCt-1) <br>
 
 ## Project Structure
 
